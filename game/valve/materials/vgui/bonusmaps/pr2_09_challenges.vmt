@@ -1,0 +1,6 @@
+//"LightmappedGeneric"
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/bonusmaps/pr2_09_challenges"
+	"$vertexalpha" 1
+}
