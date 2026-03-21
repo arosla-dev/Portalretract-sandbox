@@ -1,0 +1,35 @@
+"NPC_FloorTurret.TalkBurned"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	
+	"rndwave"
+	{
+		"wave"		"npc/turret/TurretShotbylaser01.wav"
+		"wave"		"npc/turret/TurretShotbylaser02.wav"
+		"wave"		"npc/turret/TurretShotbylaser03.wav"
+		"wave"		"npc/turret/TurretShotbylaser04.wav"
+	}
+}
+"NPC_FloorTurret.TalkStartBurning"
+{
+	"channel"		"CHAN_VOICE"
+	"soundlevel"		"SNDLVL_TALKING"
+	"wave"		"npc/turret/TurretShotbylaser05.wav"
+}
+
+"NPC_FloorTurret.ShotSounds_Quiet"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.5"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_GUNFIRE"
+
+	"rndwave"
+	{
+		"wave"	"^npc/turret_floor/shoot1.wav"
+		"wave"	"^npc/turret_floor/shoot2.wav"
+		"wave"	"^npc/turret_floor/shoot3.wav"
+	}
+}

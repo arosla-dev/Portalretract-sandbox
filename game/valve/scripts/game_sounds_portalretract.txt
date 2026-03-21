@@ -1,0 +1,136 @@
+"Laser.BeamLoop"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_70dB"
+	"volume"		"0.4"
+	"rndwave"
+	{
+		"wave"		"ambient/energy/force_field_loop1.wav"
+	}
+}
+
+"Laser.BeamLoopMega"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_75dB"
+	"volume"		"0.45"
+	"rndwave"
+	{
+		"wave"		"ambient/energy/force_field_loop1.wav"
+	}
+}
+
+"LaserGreen.BeamLoop"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_75dB"
+	"volume"		"0.6"
+	"wave"		"ambient/energy/force_field_loop1.wav"
+}
+
+"prop_laser_catcher.poweron"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_95dB"
+	"volume"		"1.0"
+	"wave"		"world\laser_node_power_on.wav"
+}
+
+"prop_laser_catcher.poweroff"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_95dB"
+	"volume"		"1.0"
+	"wave"		"world\laser_node_power_off.wav"
+}
+
+"prop_laser_catcher.powerloop"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"		"SNDLVL_90dB"
+	"volume"		"0.80"
+	"wave"		"weapons/gauss/chargeloop.wav"
+}
+
+"VFX.PlayerEnterTbeam"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"		"SNDLVL_NONE"
+	"volume"		"1"
+	"wave"		"ambient/atmosphere/city_beacon_loop1.wav"
+}
+
+"VFX.TBeamPosPolarity"
+{
+	"channel"		"CHAN_AUTO"
+	"soundlevel"		"SNDLVL_75dB"
+	"volume"		"0.800, 0.800"
+	"pitch"			"150, 150"
+	"wave"		"ambient/levels/citadel/portal_beam_loop1.wav"
+}
+
+"Player.JumpPowerUse"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"1"
+	"soundlevel"  "SNDLVL_75dB"
+
+	"wave"	"player/jump_power.wav"
+}
+
+"PortalRetract.PR08_Radio"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"1.0"
+	"soundlevel"  "SNDLVL_65dB"
+	"wave"	"music/sp_a2_dual_lasers_r1.wav"
+}
+
+"PaintBomb.Splat"
+{
+	"channel"		"CHAN_VOICE"
+	"volume"		"0.800, 1.000"
+	"pitch"			"85, 115"
+
+	"soundlevel"	"SNDLVL_NORM"
+
+	"rndwave"
+	{
+		"wave"	"ambient/water/water_splash1.wav"
+		"wave"	"ambient/water/water_splash2.wav"
+		"wave"	"ambient/water/water_splash3.wav"
+	}
+}
+
+"PaintBlob.Impact"
+{
+	"soundlevel"		"SNDLVL_75dB"
+	"volume"		"0.7, 0.75"
+	"pitch"			"90, 110"
+
+	"wave"	"ambient/water/water_spray1.wav"
+}
+
+"PaintBlob.ImpactDrip"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_75dB"
+	"volume"		"0.55, 0.7"
+	"pitch"			"145, 155"
+
+	"wave"	"ambient/water/water_spray1.wav"
+}
+
+"Glass.BulletImpact_Quiet"
+{
+	"soundlevel"		"SNDLVL_55dB"
+	"volume"		"0.3"
+	"pitch"			"PITCH_NORM"
+	"rndwave"
+	{
+		"wave"	"physics/glass/glass_impact_bullet1.wav"
+		"wave"	"physics/glass/glass_impact_bullet2.wav"
+		"wave"	"physics/glass/glass_impact_bullet3.wav"	
+		"wave"	"physics/glass/glass_impact_bullet4.wav"
+	}
+}

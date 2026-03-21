@@ -1,0 +1,685 @@
+"#Bonus_Map_A3TC01Challenges"
+{
+	"map"		"pr2_01"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_01_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"8"
+			"silver"	"7"
+			"gold"		"6"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"75"
+			"silver"	"68"
+			"gold"		"60"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"55"
+			"silver"	"46"
+			"gold"		"40"
+		}
+	}
+}
+"#Bonus_Map_A3TC02Challenges"
+{
+	"map"		"pr2_02"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_02_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"8"
+			"silver"	"7"
+			"gold"		"5"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"35"
+			"silver"	"27"
+			"gold"		"20"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"35"
+			"silver"	"29"
+			"gold"		"22"
+		}
+	}
+}
+"#Bonus_Map_A3TC03Challenges"
+{
+	"map"		"pr2_03"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_03_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"9"
+			"silver"	"5"
+			"gold"		"4"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"41"
+			"silver"	"25"
+			"gold"		"15"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"33"
+			"silver"	"28"
+			"gold"		"23"
+		}
+	}
+}
+"#Bonus_Map_A3TC04Challenges"
+{
+	"map"		"pr2_04"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_04_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"5"
+			"silver"	"4"
+			"gold"		"3"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"30"
+			"silver"	"25"
+			"gold"		"20"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"33"
+			"silver"	"28"
+			"gold"		"12"
+		}
+	}
+}
+"#Bonus_Map_A3TC05Challenges"
+{
+	"map"		"pr2_05"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_05_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"11"
+			"silver"	"4"
+			"gold"		"3"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"100"
+			"silver"	"45"
+			"gold"		"35"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"48"
+			"silver"	"30"
+			"gold"		"16"
+		}
+	}
+}
+"#Bonus_Map_A3TC06Challenges"
+{
+	"map"		"pr2_06"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_06_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"10"
+			"silver"	"9"
+			"gold"		"8"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"73"
+			"silver"	"65"
+			"gold"		"56"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"36"
+			"silver"	"32"
+			"gold"		"28"
+		}
+	}
+}
+"#Bonus_Map_A3TC07Challenges"
+{
+	"map"		"pr2_07"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_07_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"13"
+			"silver"	"12"
+			"gold"		"11"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"50"
+			"silver"	"43"
+			"gold"		"35"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"48"
+			"silver"	"40"
+			"gold"		"35"
+		}
+	}
+}
+"#Bonus_Map_A3TC08Challenges"
+{
+	"map"		"pr2_08"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_08_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"11"
+			"silver"	"10"
+			"gold"		"9"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"35"
+			"silver"	"25"
+			"gold"		"15"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"45"
+			"silver"	"35"
+			"gold"		"25"
+		}
+	}
+}
+"#Bonus_Map_A3TC09Challenges"
+{
+	"map"		"pr2_09"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_09_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"12"
+			"silver"	"11"
+			"gold"		"10"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"70"
+			"silver"	"55"
+			"gold"		"40"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"40"
+			"silver"	"34"
+			"gold"		"29"
+		}
+	}
+}
+// Act 4
+"#Bonus_Map_A4TC02Challenges"
+{
+	"map"		"pr2_11"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_11_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"5"
+			"silver"	"4"
+			"gold"		"3"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"26"
+			"silver"	"22"
+			"gold"		"18"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"28"
+			"silver"	"25"
+			"gold"		"22"
+		}
+	}
+}
+"#Bonus_Map_A4TC03Challenges"
+{
+	"map"		"pr2_12"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_12_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"7"
+			"silver"	"6"
+			"gold"		"5"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"26"
+			"silver"	"22"
+			"gold"		"18"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"28"
+			"silver"	"25"
+			"gold"		"22"
+		}
+	}
+}
+"#Bonus_Map_A4TC04Challenges"
+{
+	"map"		"pr2_13"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_13_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"9"
+			"silver"	"8"
+			"gold"		"7"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"24"
+			"silver"	"31"
+			"gold"		"28"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"60"
+			"silver"	"54"
+			"gold"		"47"
+		}
+	}
+}
+"#Bonus_Map_A4TC05Challenges"
+{
+	"map"		"pr2_14"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_14_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"8"
+			"silver"	"7"
+			"gold"		"6"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"32"
+			"silver"	"28"
+			"gold"		"24"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"42"
+			"silver"	"38"
+			"gold"		"34"
+		}
+	}
+}
+"#Bonus_Map_A4TC06Challenges"
+{
+	"map"		"pr2_15"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_15_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"7"
+			"silver"	"6"
+			"gold"		"5"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"50"
+			"silver"	"40"
+			"gold"		"33"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"43"
+			"silver"	"35"
+			"gold"		"27"
+		}
+	}
+}
+"#Bonus_Map_A4TC07Challenges"
+{
+	"map"		"pr2_16"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_16_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"8"
+			"silver"	"7"
+			"gold"		"6"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"65"
+			"silver"	"55"
+			"gold"		"45"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"42"
+			"silver"	"35"
+			"gold"		"28"
+		}
+	}
+}
+"#Bonus_Map_A4TC08Challenges"
+{
+	"map"		"pr2_17"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_17_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"13"
+			"silver"	"12"
+			"gold"		"11"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"90"
+			"silver"	"80"
+			"gold"		"70"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"105"
+			"silver"	"95"
+			"gold"		"83"
+		}
+	}
+}
+"#Bonus_Map_A4TC09Challenges"
+{
+	"map"		"pr2_18"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_18_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"16"
+			"silver"	"15"
+			"gold"		"14"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"40"
+			"silver"	"32"
+			"gold"		"26"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"120"
+			"silver"	"105"
+			"gold"		"90"
+		}
+	}
+}
+"#Bonus_Map_A4TC10Challenges"
+{
+	"map"		"pr2_19"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_19_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"11"
+			"silver"	"10"
+			"gold"		"9"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"52"
+			"silver"	"45"
+			"gold"		"38"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"71"
+			"silver"	"63"
+			"gold"		"55"
+		}
+	}
+}
+"#Bonus_Map_A4TC11Challenges"
+{
+	"map"		"pr2_20"
+	"chapter"	"chapter1.cfg"	[$X360]
+	"image"		"bonusmaps/pr2_20_challenges"
+	"comment"	"#Bonus_Map_ChallengesComment"
+	"lock"		"1"
+
+	"challenges"
+	{
+		"#Bonus_Map_ChallengePortals"
+		{
+			"comment"	"#Bonus_Map_LeastPortalsComment"
+
+			"bronze"	"10"
+			"silver"	"9"
+			"gold"		"8"
+		}
+		"#Bonus_Map_ChallengeSteps"
+		{
+			"comment"	"#Bonus_Map_LeastStepsComment"
+
+			"bronze"	"42"
+			"silver"	"35"
+			"gold"		"27"
+		}
+		"#Bonus_Map_ChallengeTime"
+		{
+			"comment"	"#Bonus_Map_LeastTimeComment"
+
+			"bronze"	"80"
+			"silver"	"70"
+			"gold"		"59"
+		}
+	}
+}

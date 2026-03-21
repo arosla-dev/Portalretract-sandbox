@@ -1,0 +1,25 @@
+"GameInfo"
+{
+	"game"		"Portal: Retract Part 2"
+	"title"		"Portal: Retract Part 2"
+	"type"		"singleplayer_only"
+	GameData	"portalretract_part2.fgd"
+	InstancePath "tilegen/instances/"
+	
+	SupportsDX8     0
+	
+	"FileSystem"
+	{
+		"SteamAppId"	"630"
+		"ToolsAppId"	"211"
+		
+		"SearchPaths"
+		{
+			"Game"	"|gameinfo_path|."
+			"Game"	"hl2"
+			"Game"	"swarm_base"
+			"Game"	"../SourceFilmmaker/game/hl2"			// This is workaround for hl2 content mounting
+			"Game"	"platform"
+		}
+	}
+}

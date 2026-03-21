@@ -1,0 +1,49 @@
+// 09 Advanced
+"#Bonus_Map_A2TC04Advanced"
+{
+	"map"		"pr_09_advanced"
+	"chapter"	"chapter3.cfg"	[$X360]
+	"image"		"bonusmaps/pr_09_advanced"
+	"comment"	"#Bonus_Map_A2TC04AdvancedComment"
+	"lock"		"1"
+}
+
+// 18 Advanced
+"#Bonus_Map_A2TC13Advanced"
+{
+	"map"		"pr_18_advanced"
+	"chapter"	"chapter3.cfg"	[$X360]
+	"image"		"bonusmaps/pr_18_advanced"
+	"comment"	"#Bonus_Map_A2TC13AdvancedComment"
+	"lock"		"1"
+}
+
+// 20 Advanced
+"#Bonus_Map_A2TC15Advanced"
+{
+	"map"		"pr_20_advanced"
+	"chapter"	"chapter3.cfg"	[$X360]
+	"image"		"bonusmaps/pr_20_advanced"
+	"comment"	"#Bonus_Map_A2TC15AdvancedComment"
+	"lock"		"1"
+}
+
+// 22 Advanced
+"#Bonus_Map_A2TC17Advanced"
+{
+	"map"		"pr_22_advanced"
+	"chapter"	"chapter3.cfg"	[$X360]
+	"image"		"bonusmaps/pr_22_advanced"
+	"comment"	"#Bonus_Map_A2TC17AdvancedComment"
+	"lock"		"1"
+}
+
+// 22 Advanced
+"#Bonus_Map_A2TC19Advanced"
+{
+	"map"		"pr_24_advanced"
+	"chapter"	"chapter3.cfg"	[$X360]
+	"image"		"bonusmaps/pr_24_advanced"
+	"comment"	"#Bonus_Map_A2TC19AdvancedComment"
+	"lock"		"1"
+}

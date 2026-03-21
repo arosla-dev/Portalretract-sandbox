@@ -1,0 +1,75 @@
+//Adrian: This file contains the credits info for both the Intro and outro.
+"credits.txt"
+{
+
+//========================================================
+//These are the names used in the intro (trainride)
+//========================================================
+"IntroCreditsNames"
+{
+	" " "CreditsText"
+}
+
+"CreditsParams"
+{	
+	"fadeintime"	"2.5"
+	"fadeouttime"	"1"
+	"fadeholdtime"	"1.0"
+	"nextfadetime"	"1.0"
+	"pausebetweenwaves" "1.0"
+	"logotime" "1.0"
+	"posx"	"96"
+	"posy"	"360"
+
+	"color" "255 255 255 128"
+
+//Outro Parameters
+	"scrolltime" "60"
+	"separation"  "10"
+}
+
+//========================================================
+//These are the names used in the outro (breen_01)
+//========================================================
+"OutroCreditsNames"
+{
+	"Portal: Retract Part 2"	"CreditsOutroLogos"
+	" "	"CreditsOutroText"
+	"V"	"CreditsOutroValve"
+	"#portalretract_credits_developers"	"CreditsOutroText"
+	"#portalretract_credits_wonderland_war"   "CreditsOutroText"
+	"#portalretract_credits_moist_potatoes"   "CreditsOutroText"
+	"#portalretract_credits_hazel_webs"   "CreditsOutroText"
+	
+	" "	"CreditsOutroText"
+	"#portalretract_credits_additional_help"	"CreditsOutroText"
+	"#portalretract_credits_canister0"   "CreditsOutroText"
+	"#portalretract_credits_oyqea"   "CreditsOutroText"
+	"#portalretract_credits_p2asw"   "CreditsOutroText"
+	"#portalretract_credits_kelsey"   "CreditsOutroText"
+	"#portalretract_credits_theaperturecat"   "CreditsOutroText"
+	"#portalretract_credits_reactivedrop"   "CreditsOutroText"
+	"#portalretract_credits_stanriders"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#portalretract_credits_testers" "CreditsOutroText"
+	"oyqea"   "CreditsOutroText"
+	"kiddu"   "CreditsOutroText"
+	"misty42"   "CreditsOutroText"
+	"mgs608"   "CreditsOutroText"
+	"HazardVPK"   "CreditsOutroText"
+	"Lars1261"	"CreditsOutroText"
+	"Rye"	"CreditsOutroText"
+	"Prodabic"	"CreditsOutroText"
+	"ChrisTheFurry"	"CreditsOutroText"
+	"Nebula The Protogen"	"CreditsOutroText"
+	"CnicK The Crocodile"	"CreditsOutroText"
+	"MEVAR448"	"CreditsOutroText"
+	"Hazel Webs"	"CreditsOutroText"
+	
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#portalretract_credits_endingmessage"	"CreditsOutroText"
+}
+
+}
