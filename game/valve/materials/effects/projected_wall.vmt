@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	// Original shader: AddTexture
+	"$basetexture" "effects/projected_wall"
+	"$additive" 1
+	"$vertexcolor" 1
+	$translucent 1
+	$nocull 1 
+}
