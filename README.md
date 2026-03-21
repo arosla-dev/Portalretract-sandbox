@@ -1,6 +1,6 @@
 ## Info
 
-This is the source code for Portal: Retract Part 2's game dll's. You can find the mod at: https://www.moddb.com/mods/portal-retract
+This is sandbox (no, not really sandbox mod, just mess with this) project
 
 ## Features
 
