@@ -1,1 +1,3 @@
 /src/.vs
+/src/materialsystem/shaderlib/Release
+*.pdb

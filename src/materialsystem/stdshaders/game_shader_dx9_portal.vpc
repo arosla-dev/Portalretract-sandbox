@@ -6,7 +6,7 @@
 
 $Macro OUTBINNAME	"game_shader_dx9"
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME "portalretract_part2"
+$Macro GAMENAME "valve"
 $Include "$SRCDIR\materialsystem\stdshaders\game_shader_dx9_base.vpc"
 
 $Configuration

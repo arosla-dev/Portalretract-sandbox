@@ -16,9 +16,6 @@
 		"SearchPaths"
 		{
 			"Game"	"|gameinfo_path|."
-			"Game"	"hl2"
-			"Game"	"swarm_base"
-			"Game"	"../SourceFilmmaker/game/hl2"			// This is workaround for hl2 content mounting
 			"Game"	"platform"
 		}
 	}
