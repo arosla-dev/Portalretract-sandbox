@@ -1,0 +1,79 @@
+"Configs"
+{
+	"Games"
+	{
+		"Portal-Retract"
+		{
+			"GameDir"		".\..\portalretract_part2"
+			"Hammer"
+			{
+				"GameData0"		"C:\SourceCode\portal-crossed\game\bin\base.fgd"
+				"GameData1"		"C:\SourceCode\portal-crossed\game\bin\halflife2.fgd"
+				"GameData2"		"C:\SourceCode\portal-crossed\game\bin\portal.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		".\..\portalretract_part2.exe"
+				"DefaultSolidEntity"		"color_correction_volume"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		".\vbsp.exe"
+				"Vis"		".\vvis.exe"
+				"Light"		".\vrad.exe"
+				"GameExeDir"		".\..\"
+				"MapDir"		".\..\portalretract_part2\maps"
+				"BSPDir"		".\..\portalretract_part2\maps"
+				"PrefabDir"		".\..\bin\Prefabs"
+				"CordonTexture"		"BLACK"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Alien Swarm"
+		{
+			"GameDir"		"C:\SourceCode\portal-sandbox-idk\game\swarm"
+			"Hammer"
+			{
+				"GameData0"		"C:\SourceCode\portal-sandbox-idk\game\bin\swarm.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"C:\SourceCode\portal-sandbox-idk\game\swarm.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		"C:\SourceCode\portal-sandbox-idk\game\bin\vbsp.exe"
+				"Vis"		"C:\SourceCode\portal-sandbox-idk\game\bin\vvis.exe"
+				"Light"		"C:\SourceCode\portal-sandbox-idk\game\bin\vrad.exe"
+				"GameExeDir"		"C:\SourceCode\portal-sandbox-idk\game"
+				"MapDir"		"C:\SourceCode\portal-sandbox-idk\game\content\swarm\mapsrc"
+				"BSPDir"		"C:\SourceCode\portal-sandbox-idk\game\swarm\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+		"Enhanced Source Template"
+		{
+			"GameDir"		"C:\SourceCode\portal-sandbox-idk\game\template"
+			"Hammer"
+			{
+				"GameData0"		"C:\SourceCode\portal-sandbox-idk\game\bin\base.fgd"
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"GameExe"		"C:\SourceCode\portal-sandbox-idk\game\swarm.exe"
+				"DefaultSolidEntity"		"func_detail"
+				"DefaultPointEntity"		"info_player_start"
+				"BSP"		"C:\SourceCode\portal-sandbox-idk\game\bin\vbsp.exe"
+				"Vis"		"C:\SourceCode\portal-sandbox-idk\game\bin\vvis.exe"
+				"Light"		"C:\SourceCode\portal-sandbox-idk\game\bin\vrad.exe"
+				"GameExeDir"		"C:\SourceCode\portal-sandbox-idk\game"
+				"MapDir"		"C:\SourceCode\portal-sandbox-idk\game\content\template\mapsrc"
+				"BSPDir"		"C:\SourceCode\portal-sandbox-idk\game\template\maps"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+			}
+		}
+	}
+	"SDKVersion"		"5"
+}

@@ -1,0 +1,1450 @@
+///====== Copyright � 1996-2005, Valve Corporation, All rights reserved. =======
+//
+// Purpose: Portal game definition file (.fgd) 
+//
+///=============================================================================
+
+@include "halflife2.fgd"
+
+///=============================================================================
+//
+// Logical Entities
+//
+///=============================================================================
+
+@PointClass base(CombineBallSpawners, Parentname, Targetname) = point_energy_ball_launcher :
+	"Launches energy balls."
+[
+	BallLifetime(float) 	: "Ball Lifetime" : 12 : "The time in seconds the ball will live before self-destructing. A negative value will give infinite life."
+	MinLifeAfterPortal(float) : "Min life after portal transition" : 6 : "When energy balls created by this launcher pass through a portal and their life is refreshed to be this number at minimum."
+	
+	// Inputs
+	input LaunchBall(void) 	: "Launch a ball from the spawner."
+	input BallCaught(void)  : "Ball this launcher created was 'caught'."
+
+	// Outputs
+	output OnPostSpawnBall(void) : "Fired after the ball has spawned."
+	output OnBallCaught(void) : "Fired when a ball this entity has launched has been 'caught'."
+]
+
+@PointClass base(Parentname, Targetname, Angles) studio( "models/props_bts/rocket_sentry.mdl" ) = npc_rocket_turret: "Aims a rocket at a target."
+[
+	spawnflags(Flags) =
+	[
+		1:  "Disabled" : 0
+	]
+
+	TripwireMode(choices) : "Tripwire Mode" : 0 : "Makes this sentry aim in a fixed direction and not follow the player. Still fires rockets when beam is crossed." =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
+	
+	TripwireAimTarget(target_destination) : "Tripwire Aim Target" : : "(tripwire mode only) An info target this sentry will aim it's beam at. If not specified, will aim down world angles." 
+	RocketSpeed(float) : "Rocket Speed" : 450 : "Speed the rocket will travel at."
+	RocketLifetime(float) : "Rocket Lifetime" : 20 : "The rocket will automatically detonate after this number of seconds."
+	
+	input Toggle(void) : "Toggles activity."
+	input Enable(void) : "Enables activity."
+	input Disable(void) : "Disables activity."
+	input SetTarget(string) : "Sets the target for this turret to attack."
+	input Destroy(void) : "Sets this turret to it's destroyed state."
+
+	output OnFoundTarget(void) 	: 	"Fired when the rocket turret finds an unobstructed target."
+	output OnLostTarget(void) 	: 	"Fired when turret's target is blocked."
+	output OnDeath(void)		:	"Fired after this turret finishes it's destroy think and begins it's death think."
+]
+
+@PointClass base(Targetname, Parentname, Angles) cylinder(255 255 255, targetname, target, radius, targetname, targetname, radius) color(255 192 0) size(16 16 16) = env_portal_path_track : 
+	"An entity used to build paths for other entities to follow. Each path_track is a node on the path, each holding the name of the next path_track in the path."
+[
+	spawnflags(Flags) =
+	[
+		1:  "Disabled" : 0
+		2:  "Fire once" : 0
+		4:  "Branch Reverse" : 0
+		8:  "Disable train" : 0
+		16: "Teleport to THIS path track" : 0
+	]
+	
+	Track_beam_scale(float):"Scale Track FX": 0 :"The amount to scale the track FX size"
+	End_point_scale(float) : "Scale Endpoint FX" : 0 : "The amount to scale the endpoint FX size."
+	End_point_fadeout(float):"Fade Out Endpoint": 0 :"Amount of time to fade out the endpoint FX"
+	End_point_fadein(float):"Fade In Endpoint": 0 :"Amount of time to fade in the endpoint FX"
+	target(target_destination) : "Next Stop Target" :  : "The next path_track in the path."
+	altpath(target_destination) : "Branch Path" : : "An alternative path_track to be the next node in the path. Useful for making branching paths. Use the ToggleAlternatePath / EnableAlternatePath inputs to make the alternative path active."
+	speed(float) : "New Train Speed" : 0 : "When the train reaches this path_track, it will set its speed to this speed. "+
+		"This speed must be a positive value that is less than the train's max speed. A value of 0 will cause no change in the train's speed."
+	radius(float) : "Path radius" : 0 : "Used by NPCs who follow track paths (attack chopper/gunship). This tells them the maximum distance they're allowed to be from the path at this node."
+
+	orientationtype(choices) : "Orientation Type" : 1 : "The way that the path follower faces as it moves through this path track." =
+	[
+		0 : "No change"
+		1 : "Face direction of motion"
+		2 : "Face this path_track's angles"
+	]
+
+	// Inputs
+	input ToggleAlternatePath(void) : "Cause the track to toggle to/from its alternate path."
+	input EnableAlternatePath(void) : "Enable the alternate path of the track."
+	input DisableAlternatePath(void) : "Disable the alternate path of the track."
+
+	input TogglePath(void) : "Cause the track to toggle on/off/"
+	input EnablePath(void) : "Enable the track."
+	input DisablePath(void) : "Disable the track."
+
+	input ActivateTrackFX(void) : "Turn on the track's fx beam"
+	input ActivateEndPointFX(void) : "Turn on the endpoint's fx"
+	input DeactivateTrackFX(void) : "Turn off the track's fx beam"
+	input DeactivateEndPointFX(void) : "Turn off the endpoint's fx"
+
+	// Outputs
+	output OnPass(void) : "Fired when any entity following this path passes this path_track node."
+]
+
+///=============================================================================
+//
+// Brush Entities
+//
+///=============================================================================
+
+@SolidClass base(Trigger, Targetname) = trigger_portal_cleanser : 
+	"A trigger volume that disolves any entities that touch it and fizzles active portals when the player touches it."
+[
+	input FizzleTouchingPortals(void) : "Cause any portals in our volume to immediately fizzle."
+	
+	Visible(boolean) : "Visible" : "0" : "If the fizzler is visible."
+	UseScanline(boolean) : "Use Scanline" : "1" : "If the field uses a scanline."	
+
+	// Outputs
+	output OnDissolve(void) : "Fired whenever an entity is dissolved."
+	output OnFizzle(void) : "Fired whenever an portals are fizzled."
+	output OnDissolveBox(void) : "This cleanser disolved an entity with targetname=Box."
+]
+
+@SolidClass base(Targetname, Parentname, EnableDisable ) = func_portal_orientation : 
+	"Adjusts a portal's rotation to match a specified angle. The 'Bottom' of the portal points in the specified diretion."
+[
+	AnglesToFace(angle) : "Angles to face" : "0 0 0" : "The 'floor' of the portal pair linkage will be in this direction."
+	MatchLinkedAngles(choices) : "Match linked angles." : 0 : "If set, portals placed in this volume will have their angles match their linked portals. This only works for floor or ceiling portals with a currently linked partner."=
+	[
+		0 : "False"
+		1 : "True"
+	]
+]
+
+@SolidClass base(Targetname) = func_weight_button : "A button which activates after a specified amount of weight is applied"
+[
+	WeightToActivate(float) 	: "Amount of weight required before this button activates."
+
+	//Outputs
+	output OnPressed(void)		: "Fired when the button is touching enough weight."
+	output OnReleased(void)		: "Fired when the button was pressed, but weight was removed."
+]
+
+@SolidClass base(Targetname, Parentname) = func_noportal_volume : "A region in which no portal can be placed"
+[	
+	//Inputs
+	input Deactivate(void)		: "Turn off blocking functionality"
+	input Activate(void)		: "Turn on blocking functionality"
+	input Toggle(void)		: "Toggle blocking functionality"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+]
+
+@SolidClass base(Targetname, Parentname) = func_portal_bumper : "A region that portals trace to fit outside of but can be place on"
+[	
+	//Inputs
+	input Deactivate(void)		: "Turn off bumping functionality"
+	input Activate(void)		: "Turn on bumping functionality"
+	input Toggle(void)		: "Toggle bumping functionality"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+]
+
+
+@SolidClass base(Targetname, Parentname) = func_portal_detector : "A region that fires an output if a portal is placed in it"
+[	
+	//Inputs
+	input Disable(void)		: "Turn off detecting functionality"
+	input Enable(void)		: "Turn on detecting functionality"
+	input Toggle(void)		: "Toggle detecting functionality"
+
+	output OnStartTouchPortal(void) 			: "Fired when any portal touches the detector."	
+	output OnEndTouchPortal(void) 				: "Fired when any portal leaves the detector bounds."
+	output OnStartTouchPortal1(void)			: "Fired when portal 1 is placed intersecting the portal detector."
+	output OnStartTouchPortal2(void)			: "Fired when portal 2 is placed intersecting the portal detector."
+	output OnStartTouchLinkedPortal(void)		: "Fired when linked portal is placed intersecting the portal detector."
+	output OnStartTouchBothLinkedPortals(void)	: "Fired when both of a pair of portals is placed intersecting the portal detector."
+	output OnEndTouchPortal1(void)				: "Fired when portal 1 has left the volume of the detector"
+	output OnEndTouchPortal2(void)				: "Fired when portal 2 has left the volume of the detector"
+	output OnEndTouchLinkedPortal(void)			: "Fired when a portal with a linked partner has left the volume of the detector"
+	output OnEndTouchBothLinkedPortals(void)	: "Fired when both portals have left the volume of the detector"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+	LinkageGroupID(integer) : "Portal pair ID that it detects" : 0
+	CheckAllIDs(boolean) : "Check all portals" : 0 : "Ignore the Group ID and check for all portals."
+]
+
+
+///=============================================================================
+//
+// Model Entities
+//
+///=============================================================================
+
+@BaseClass = PortalBase
+[ 
+	output OnPlacedSuccessfully(void)	: "When a portal is placed without failure, this output is fired."
+	output OnEntityTeleportFromMe(void)		: "When any entity is teleported from this portal to the linked partner."
+	output OnPlayerTeleportFromMe(void)		: "When the player is teleported from this portal to the linked partner."
+	output OnEntityTeleportToMe(void)		: "When any entity is teleported from this linked partner to the portal."
+	output OnPlayerTeleportToMe(void)		: "When the player is teleported from this linked partner to the portal."
+	
+	Activated(choices)			: "Start Activated" : 1 : "An inactive portal will not be drawn and will not teleport entites"	=
+	[
+		0 : "Inactive"
+		1 : "Active"
+	]
+	PortalTwo(choices)			: "Portal Number" : 0 : "A portal has to logically be either portal 1 or portal 2" =
+	[
+		0 : "Portal 1"
+		1 : "Portal 2"
+	]
+	
+	HalfWidth(float)			: "Half-Width of the Portal." : 0
+	HalfHeight(float)			: "Half-Height of the Portal." : 0
+]
+
+
+@PointClass base(Targetname, Angles, PortalBase) studio("models/editor/axis_helper_thick.mdl") = prop_portal : "A portal"
+[
+	LinkageGroupID(integer)		: "Portal pair ID that it belongs to" : 0
+
+	input SetName(string)			: "Naming your portals is fun"
+	input SetActivatedState(bool)	: "An inactive portal will not be drawn and will not teleport entites"
+	input Fizzle(void)				: "Makes a cool visual fizzle and properly shuts down the portal"
+	input NewLocation(string)		: "Sets this portals location and angles. This expects 6 floats with space delimiters, the format is 'x y z pitch yaw roll'"
+	input Resize(string)			: "Resizes the portal. Format is 'halfwidth halfheight'"
+	input SetLinkageGroupId(integer): "Sets the portal linkage ID.  If portal is open it will close and reopen with new portal linked."	
+]
+
+@PointClass base(Weapon,Targetname, Parentname) studio("models/weapons/w_portalgun.mdl") = weapon_portalgun : "Portalgun"
+[
+	CanFirePortal1(boolean)			: "Can Fire Portal 1" : 1 : "Can this portalgun create blue portals?"
+	CanFirePortal2(boolean)			: "Can Fire Portal 2" : 1 : "Can this portalgun create red portals?"
+	ShowingPotatos(boolean)			: "Show Potatos" : 0 : "Show potatos."
+
+	StartingTeamNum(choices) : "Starting Team" : 0 : "Which team this gun originally belongs to.  Will decide which portals it fires before being picked up." =
+	[
+		0 : "Single Player"
+		2 : "Orange"
+		3 : "Blue"
+	]
+
+	input ChargePortal1(void)		: "Does charge up effect for mounted portalgun."
+	input ChargePortal2(void)		: "Does charge up effect for mounted portalgun."
+
+	input FirePortal1(void)			: "Projects portal 1 onto a wall in the facing direction of the gun."
+	input FirePortal2(void)			: "Projects portal 2 onto a wall in the facing direction of the gun."
+
+	input FirePortalDirection1(vector)	: "Fires portal 1 in the specified direction."
+	input FirePortalDirection2(vector)	: "Fires portal 1 in the specified direction."
+
+	output OnFiredPortal1(void)		: "Fires when the first (blue) portal is fired."
+	output OnFiredPortal2(void)		: "Fires when the second (red) portal is fired."
+]
+
+@PointClass base(npc_turret_ground) studio( "models/combine_turrets/ground_turret.mdl" ) = npc_portal_turret_ground : "Combine (Portal) ground turret"
+[
+	ConeOfFire(float) 	: "Cone of Fire" : 60 : "Cone of fire in degrees."
+]
+
+// Cores of GlaDOS computer. Resemble little eyeballs with handles. These play lines and look around when near the player.
+@PointClass base(BasePropPhysics) studioprop() studio( "models/npcs/personality_sphere/personality_sphere.mdl" ) = prop_glados_core : "Core of GlaDOS computer."
+[
+	CoreType(choices) : "Core Personality" : 1 : "Which personality VO set the core is set to." =
+	[
+		0 : "Curious"
+		1 : "Aggressive"
+		2 : "Crazy"
+		3 : "None"
+	]
+	
+	DelayBetweenLines(float) : "Pause (in secs) between VO Lines." : "0.4" : "When the core is talking, this is the number of seconds delay between it's spoken lines."
+
+	input Panic(void)	: "Core is near death, panic."
+	input StartTalking(void)	: "Start playing lines, play looking animations."
+	
+	output OnPlayerPickup(void)		: "Player picked up core."
+]
+
+@PointClass base(npc_turret_floor) studio( "models/props/turret_01.mdl" ) = npc_portal_turret_floor : "Combine (Portal) Floor Turret"
+[
+	Gagged(boolean) : "Turret is Gagged" : 0 : "Turret will not speak any lines."
+	UsedAsActor(boolean) : "Used As Actor" : 0 : "Turret will not run the standard floor turret code so it can be used as an actor."
+	PickupEnabled(boolean) : "Turret can be picked up by player" : 1 : "Disables pickup by player."
+	DisableMotion(boolean) : "Disable Motion" : 0 : "Set for turrets that can't move in the world."
+	AllowShootThroughPortals(boolean) : "Allow Shooting through portals" : 0 : "Turrets will not try to shoot through portals unless this is set."
+	TurretRange(float) : "Maximum Range" : 1024 : "How far the turret will be able to see targets."
+	LoadAlternativeModels(boolean) : "Load Defective Models" : 0 : "Should this turret precache the defective models? Needed for late switching."
+	UseSuperDamageScale(boolean) : "Use Super Damage" : 0 : "Setting this to true will scale the turret's damage by a very large amount."
+	
+	CollisionType(choices) : "Collision Type" : 0 : "Allow collision with the player to be turned off for very special cases." =
+	[
+		0 : "Normal"
+		1 : "Debris"
+	]
+
+	ModelIndex(choices) : "Model" : 0 : "Which model the turret uses. The skeleton turret is still functional." =
+	[
+		0 : "Normal"
+		1 : "Unused"
+		2 : "Box"
+		3 : "Backwards"
+		4 : "Skeleton"
+	]
+
+	DamageForce(boolean) : "Damage pushes player" : 0 : "Being hit by this turret will push the player back."
+
+	input FireBullet(string)	: "Causes the turret to instantly fire at the specified entity."
+
+	input EnableGagging(string)	: "Prevents the turret from speaking any lines."
+	input DisableGagging(string): "Allows the turret to speak again."
+	input EnablePickup(string)	: "Enables player pickup of the turret."
+	input DisablePickup(string): "Disables player pickup of the turret."
+	input SelfDestructImmediately(void) : "Cause the turret to explode immediately."
+	input SetAsBouncePainted(void) : "Force this turret to be painted with bounce paint."
+	
+	output OnPainted(void)		: "Fires when the turret is first painted or if repainted by a different type."
+]
+
+@PointClass base(Targetname, Angles, Studiomodel) studio( "models/props/security_camera.mdl" ) = npc_security_camera : "Security Camera"
+[
+	spawnflags(Flags) = 
+	[
+		32 : "Autostart" : 1
+	]	
+	
+	LookAtPlayerPings(boolean) : "Look at co-op player's pings instead" : "0" : "Instead of tracking the player, looks at the location of where a playing in co-op mode has placed his look marker. (co-op mode only)"
+	TeamToLookAt(choices) : "Team Pings to Observe" : 2 : "Which team's pings to look at." =
+	[
+		1 : "Both"
+		2 : "Orange"
+		3 : "Blue"
+	]
+	
+	TeamPlayerToLookAt(choices) : "Which team to follow" : 0 : "Which team the camera should follow." =
+	[
+		0 : "Both"
+		2 : "Orange"
+		3 : "Blue"
+	]
+	
+	// Inputs
+	input Enable(void) : "If closed, open."
+	input Disable(void) : "If open, close."
+	input Toggle(void) : "Toggle - If open, close. If closed, open."
+	input Ragdoll(void) : "Disable and fall off the wall."
+	
+	input LookAtBlue(void) : "Make the camera only follow players on the blue team."
+	input LookAtOrange(void) : "Make the camera only follow players on the orange team."
+	input LookAllTeams(void) : "Make the camera follow all players."
+
+	// Outputs
+	output OnDeploy(void) : "Camera is becoming active and dangerous."
+	output OnRetire(void) : "Camera is becoming inactive and harmless."
+	output OnTaunted(void) : "This output will fire when any co-op player STARTS taunting the camera."
+	output OnTauntedBlue(void) : "This output will fire when a co-op player on the BLUE team STARTS taunting the camera."
+	output OnTauntedOrange(void) : "This output will fire when a co-op player on the ORANGE team STARTS taunting the camera."
+	output OnTauntedFinished(void) : "This output will fire when any co-op player FINISHES taunting the camera."
+	output OnTauntedBlueFinished(void) : "This output will fire when a co-op player on the BLUE team FINISHES taunting the camera."
+	output OnTauntedOrangeFinished(void) : "This output will fire when a co-op player on the ORANGE team FINISHES taunting the camera."
+]
+
+@PointClass base(Targetname, Angles, Studiomodel) studio( "models/props/telescopic_arm.mdl" ) = prop_telescopic_arm : "Telescopic Arm"
+[
+	input Enable(void) : "Enable Thumper"
+	input Disable(void) : "Disable Thumper"
+
+	input SetTarget(string) : "Set the entity to target."
+	input TargetPlayer(void) : "Set the player as the entity to target."
+
+	output OnFoundTarget(void)  : "Arm has direct LOS to target entity."
+	output OnLostTarget(void)   : "Arm has lost direct LOS to target entity."
+]
+
+@PointClass base(Targetname, Angles, Parentname, Global) studio( "models/props/Round_elevator_body.mdl" ) = prop_portal_stats_display : "Portal Stats Display"
+[
+	input Enable(void) : "Turn on and display the current stats"
+	input Disable(void) : "Turn off stats display"
+
+	input UpdateStats(void) : "Updates the stats to the player's current level stats"
+	input ResetPlayerStats(void) : "Resets the curret level stats of the player"
+
+	output OnMetPortalObjective(void)  : "Fired when enabled and player met the number of portal placements."
+	output OnMetStepsObjective(void)  : "Fired when enabled and player met the number of foot steps."
+	output OnMetSecondsObjective(void)  : "Fired when enabled and player met the number of seconds."
+	output OnFailedAllObjectives(void)  : "Fired when enabled and player met no objectives."
+]
+
+@PointClass base(Targetname, Angles, Parentname) studio("models/editor/axis_helper_thick.mdl") = vgui_neurotoxin_countdown : "Neurotoxin Countdown"
+[
+	width(integer) : "Panel width" : 256 : "Width of the panel in units."
+	height(integer) : "Panel height" : 128 : "Height of the panel in units."
+	countdown(integer) : "Countdown time" : 60 : "Countdown time in seconds."
+
+	input Enable(void) : "Make slideshow visible."
+	input Disable(void) : "Make slideshow invisible."
+]
+
+
+///=============================================================================
+//
+// Special Effects
+//
+///=============================================================================
+
+@PointClass base(Angles,Targetname,Parentname) = env_lightrail_endpoint : "Special effects for the endpoints of the lightrail."
+[
+	spawnflags(Flags) = 
+	[
+		1 : "Start On (w/ Small FX)" : 0
+		//2 : "Start With Large FX" : 0
+	]
+
+	small_fx_scale(float) : "Scale Small FX" : 1 : "Scale of the small effect.  1 is the default size, 2 is twice that, etc."
+
+	large_fx_scale(float) : "Scale Large FX" : 1 : "Scale of the large effect.  1 is the default size, 2 is twice that, etc."
+
+	// Inputs
+	input StartCharge(float) : "Start charging the endpoint from the small to large state over a specified amount of seconds."
+	input StartSmallFX(void) : "Start discharging particles at the small effects state over specified number of seconds."
+	input StartLargeFX(void) : "Start discharging particles at the large effects state over specified number of seconds."	
+	input Stop(float) : "Stops the effect at any point."
+]
+
+
+///=============================================================================
+//
+// Credits
+//
+///=============================================================================
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = env_portal_credits : 
+	"An entity to control the rolling credits for portal."
+[
+	// Inputs
+	input RollCredits(void) : "Start the intro credits rolling."
+	input RollOutroCredits(void) : "Start the outro credits rolling."
+	input ShowLogo(void) : "Show the HL2 logo."
+	input RollPortalOutroCredits(void) : "Start the Portal greenscreen outro credits."
+	
+	// Outputs
+	output OnCreditsDone(void)  : "Fired when the credits having finished rolling."
+]
+
+
+
+///=============================================================================
+//
+// Normally Obsolete..
+//
+///=============================================================================
+
+@PointClass base(Targetname, Parentname) iconsprite("editor/info_lighting.vmt") = info_lighting_relative
+[
+	LightingLandmark(target_destination) : "Lighting Landmark" :  : "Entity at which the reference origin is contained. " +
+									" If empty, the info_lighting_relative's origin will" +
+									" be used."
+]
+
+
+
+@PointClass base(Targetname, Parentname, Studiomodel, Angles) studioprop() = prop_mirror : "A basic mirror model"
+[
+	Width(float) : "Width" : "64.0" : "The width of the mirror when there's no model"
+	Height(float) : "Height" : "108.0" : "The height of the mirror when there's no model"
+	PhysicsEnabled(boolean) : "Physics" : 0 : "Move physically"
+] 
+
+@NPCClass base(Parentname, BaseNPC) iconsprite("editor/bullseye.vmt") color(255 0 0) = npc_bullseye : "Bullseye"
+[
+	// Unlike other NPCs level designers are allowed to set the health on bullseyes
+	health(Integer) : "Health" : 35
+
+	minangle(string) : "Minimum Angle" : "360" : "Angle from the bullseye required for bullseye to be a valid enemy"
+	mindist(string) : "Minimum Distance" : "0" : "Distance from the bullseye required for bullseye to be a valid enemy"
+
+	autoaimradius(float) : "Autoaim Radius" : "0" : "Radius of autoaim influence. Use ent_autoaim <picker> to visualize."
+
+	spawnflags(Flags) = 
+	[
+		65536   : "Not Solid" : 0
+		131072  : "Take No Damage" : 0
+		262144  : "Enemy Damage Only" : 0
+		524288  : "Bleed" : 0
+		1048576 : "Perfect Accuracy" : 0
+		2097152 : "Collide against physics objects (Creates VPhysics Shadow)" : 0
+	]
+	output OnTargeted(void) : "Fires when targeted"
+	output OnReleased(void) : "Fires when no longer targeted"
+]
+
+
+///=============================================================================
+//
+// Paint Related Entities
+//
+///=============================================================================
+
+@SolidClass base(Targetname, worldbase, ResponseContext) = worldspawn : 
+	"This is the world entity. Each map can only contain one, and it's automatically created for you."
+[
+	paintinmap(choices) : "Paint in map" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	maxblobcount(integer) : "Max number of blobs" : 250 : "Max number of blobs should NOT be exceed 250"
+]
+
+@PointClass base(Targetname, Parentname, Angles) studio("models/editor/cone_helper.mdl") = info_paint_sprayer : "An entity that sprays paint."
+[
+	//Paint sprayer
+	maxblobcount(integer) : "Max number of blobs" : 250 : "Max number of blobs that sprayer can spawn in the world (1-250)."
+	light_position_name(string) : "Light Position Name" : : "Name of the entity we want to use as blobs light position."
+	start_active(boolean) : "Start Active?" : 0
+	silent(boolean) : "Silent?" : "0" : "If this flag is true, blobs will only paint (no render, effect, or sound)"
+	DrawOnly(boolean) : "DrawOnly?" : "0" : "If this flag is true, blobs will only render (no paint, effect, or sound)"
+	PaintType(choices) : "Paint Type" : 0 :
+	"The type of paint sprayed." = 
+	[
+		0 : "Bounce"
+		1 : "Stick"
+		2 : "Speed"
+		3 : "Portal"
+		4 : "Erase"
+	]
+	
+	RenderMode(choices) : "Render Mode" : 0 :
+	"The mode to render blobs." = 
+	[
+		0 : "Blobulator"
+		1 : "Fast Sphere"
+	]
+	
+	AmbientSound(choices) : "Ambient Sound" : 0 :
+	"The sound to play when paint is flowing." =
+	[
+		0 : "None (silent)"
+		1 : "Drip"
+		2 : "Medium Flow"
+		3 : "Heavy Flow"
+	]
+	
+	blobs_per_second(float) : "Blobs per second" : "1" : "The number of paint blobs sprayed per second."
+	min_speed(float) : "Min blob speed" : "100" : "The minimum speed of the sprayed blobs."
+	max_speed(float) : "Max blob speed" : "100" : "The maximum speed of the sprayed blobs."
+	blob_spread_radius(float) : "Blob spread radius" : "0" : "The starting radius of the spread of the blobs."
+	blob_spread_angle(float) : "Blob spread angle" : "0" : "The spread of the blobs along its direction vector (in degrees)."
+	blob_streak_percentage(float) : "Blob streak percentage" : "0" : "The percentage of blobs that will streak (0 - 100)."
+	min_streak_time(float) : "Blob min streak time" : "0.2" : "The minimum time that the blobs will streak for."
+	max_streak_time(float) : "Blob max streak time" : "0.5" : "The maximum time that the blobs will streak for."
+	min_streak_speed_dampen(float) : "Blob min streak speed dampen" : "500" : "The minimum speed dampening while streaking."
+	max_streak_speed_dampen(float) : "Blob max streak speed dampen" : "1000" : "The maximum speed dampening while streaking."
+
+	input Start(void) : "Tell the paint sprayer to start spraying."
+	input Stop(void) : "Tell the paint sprayer to stop spraying."
+	input ChangePaintType(integer) : "Change the type of paint being sprayed."
+]
+
+@PointClass base(Targetname,Angles) studio("models/props/futbol.mdl") = prop_paint_bomb : "Paint bomb that explodes on impact."
+[
+	//Paint bomb
+	PaintType(choices) : "Paint Type" : 4 :
+	"The type of paint to explode." = 
+	[
+		0 : "Bounce"
+		1 : "Stick"
+		2 : "Speed"
+		3 : "Portal"
+		4 : "Erase"
+	]
+	
+	BombType(choices) : "Bomb Type" : 0 :
+	"The type of explosion." = 
+	[
+		0 : "Dry Bomb"
+		1 : "Wet Bomb"
+	]
+
+	allowfunnel(boolean) : "Allow Portal Funneling" : 1 : "Whether or not this object should auto-funnel into a portal."
+	AllowSilentDissolve(boolean) : "Allow SilentDissolve input" : 0 : "Allow the SilentDissolve input to dissolve this bomb."
+	
+	playspawnsound(boolean) : "Play Spawn Sound" : 1 : "Whether or not this bomb should play a sound on spawn."
+
+	input  Dissolve(void) : "Dissolves the paint bomb."
+	input  SilentDissolve(void) : "Kills the paint bomb and fires its OnFizzled output."
+	input  EnablePortalFunnel(void) : "Enable portal funneling behavior."
+	input  DisablePortalFunnel(void) : "Disable portal funneling behavior."
+	
+	output OnFizzled(void) : "Fired when a paint bomb is fizzled."
+	output OnExploded(void) : "Fired when a paint bomb explodes."
+]
+
+
+@PointClass base(Item, Parentname) studio("models/items/healthkit.mdl") = item_paint_power_pickup : "Paint Ammo"
+[
+	// Paint power pickup
+	PaintType(choices) : "Paint Type" : 0 :
+	"The paint power of the pickup." =
+	[
+		0 : "Bounce"
+		1 : "Stick"
+		2 : "Speed"
+		3 : "Portal"
+	]
+]
+
+@SolidClass base(Trigger, Targetname) = trigger_paint_cleanser : 
+	"A trigger volume that fizzles paint powers from the gun when the player touches it."
+[
+]
+
+
+@SolidClass base(Targetname) = func_paint_savedeletor_volume : 
+	"A volume that removes saved paint data within this entity."
+[
+	input  ClearSaveTraces(void) : "Clears saved paint data inside this volume."
+]
+
+@PointClass base(Weapon, Parentname) studio("models/weapons/w_models/w_weaponizer/w_weaponizer.mdl") = weapon_paintgun : "Paintgun" []
+
+///=============================================================================
+//
+// Credits
+//
+///=============================================================================
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = point_paint_detector : 
+	"An entity to fix paint disappearing randomly, but face and be near a painted surface."
+[
+	// Inputs
+	//input Enable(void) : "Enables the paint detector."
+	//input Disable(void) : "Disables the paint detector."
+]
+
+///=============================================================================
+//
+// Logical Entities
+//
+///=============================================================================
+
+@PointClass base(CombineBallSpawners, Parentname, Targetname) = point_energy_ball_launcher :
+	"Launches energy balls."
+[
+	BallLifetime(float) 	: "Ball Lifetime" : 12 : "The time in seconds the ball will live before self-destructing. A negative value will give infinite life."
+	MinLifeAfterPortal(float) : "Min life after portal transition" : 6 : "When energy balls created by this launcher pass through a portal and their life is refreshed to be this number at minimum."
+	// Inputs
+	input LaunchBall(void) 	: "Launch a ball from the spawner."
+
+	// Outputs
+	output OnPostSpawnBall(void) : "Fired after the ball has spawned."
+]
+
+@PointClass base(Parentname, Targetname, Angles) studio( "models/props_bts/rocket_sentry.mdl" ) = npc_rocket_turret: "Aims a rocket at a target."
+[
+	spawnflags(Flags) =
+	[
+		1:  "Disabled" : 0
+	]
+
+	input Toggle(void) : "Toggles activity."
+	input Enable(void) : "Enables activity."
+	input Disable(void) : "Disables activity."
+	input SetTarget(string) : "Sets the target for this turret to attack."
+	input Destroy(void) : "Sets this turret to it's destroyed state."
+
+	output OnFoundTarget(void) 	: 	"Fired when the rocket turret finds an unobstructed target."
+	output OnLostTarget(void) 	: 	"Fired when turret's target is blocked."
+	output OnDeath(void)		:	"Fired after this turret finishes it's destroy think and begins it's death think."
+]
+
+@PointClass base(Targetname, Parentname, Angles) cylinder(255 255 255, targetname, target, radius, targetname, targetname, radius) color(255 192 0) size(16 16 16) = env_portal_path_track : 
+	"An entity used to build paths for other entities to follow. Each path_track is a node on the path, each holding the name of the next path_track in the path."
+[
+	spawnflags(Flags) =
+	[
+		1:  "Disabled" : 0
+		2:  "Fire once" : 0
+		4:  "Branch Reverse" : 0
+		8:  "Disable train" : 0
+		16: "Teleport to THIS path track" : 0
+	]
+	
+	Track_beam_scale(float):"Scale Track FX": 0 :"The amount to scale the track FX size"
+	End_point_scale(float) : "Scale Endpoint FX" : 0 : "The amount to scale the endpoint FX size."
+	End_point_fadeout(float):"Fade Out Endpoint": 0 :"Amount of time to fade out the endpoint FX"
+	End_point_fadein(float):"Fade In Endpoint": 0 :"Amount of time to fade in the endpoint FX"
+	target(target_destination) : "Next Stop Target" :  : "The next path_track in the path."
+	altpath(target_destination) : "Branch Path" : : "An alternative path_track to be the next node in the path. Useful for making branching paths. Use the ToggleAlternatePath / EnableAlternatePath inputs to make the alternative path active."
+	speed(float) : "New Train Speed" : 0 : "When the train reaches this path_track, it will set its speed to this speed. "+
+		"This speed must be a positive value that is less than the train's max speed. A value of 0 will cause no change in the train's speed."
+	radius(float) : "Path radius" : 0 : "Used by NPCs who follow track paths (attack chopper/gunship). This tells them the maximum distance they're allowed to be from the path at this node."
+
+	orientationtype(choices) : "Orientation Type" : 1 : "The way that the path follower faces as it moves through this path track." =
+	[
+		0 : "No change"
+		1 : "Face direction of motion"
+		2 : "Face this path_track's angles"
+	]
+
+	// Inputs
+	input ToggleAlternatePath(void) : "Cause the track to toggle to/from its alternate path."
+	input EnableAlternatePath(void) : "Enable the alternate path of the track."
+	input DisableAlternatePath(void) : "Disable the alternate path of the track."
+
+	input TogglePath(void) : "Cause the track to toggle on/off/"
+	input EnablePath(void) : "Enable the track."
+	input DisablePath(void) : "Disable the track."
+
+	input ActivateTrackFX(void) : "Turn on the track's fx beam"
+	input ActivateEndPointFX(void) : "Turn on the endpoint's fx"
+	input DeactivateTrackFX(void) : "Turn off the track's fx beam"
+	input DeactivateEndPointFX(void) : "Turn off the endpoint's fx"
+
+	// Outputs
+	output OnPass(void) : "Fired when any entity following this path passes this path_track node."
+]
+
+///=============================================================================
+//
+// Brush Entities
+//
+///=============================================================================
+
+@SolidClass base(Trigger, Targetname) = trigger_portal_cleanser : 
+	"A trigger volume that disolves any entities that touch it and fizzles active portals when the player touches it."
+[
+	// Outputs
+	output OnDissolve(void) : "Fired whenever an entity is dissolved."
+	output OnFizzle(void) : "Fired whenever an portals are fizzled."
+	output OnDissolveBox(void) : "This cleanser disolved an entity with targetname=Box."
+]
+
+@SolidClass base(Targetname, Parentname, EnableDisable ) = func_portal_orientation : 
+	"Adjusts a portal's rotation to match a specified angle. The 'Bottom' of the portal points in the specified diretion."
+[
+	AnglesToFace(angle) : "Angles to face" : "0 0 0" : "The 'floor' of the portal pair linkage will be in this direction."
+	MatchLinkedAngles(choices) : "Match linked angles." : 0 : "If set, portals placed in this volume will have their angles match their linked portals. This only works for floor or ceiling portals with a currently linked partner."=
+	[
+		0 : "False"
+		1 : "True"
+	]
+]
+
+@SolidClass base(Targetname) = func_weight_button : "A button which activates after a specified amount of weight is applied"
+[
+	WeightToActivate(float) 	: "Amount of weight required before this button activates."
+
+	//Outputs
+	output OnPressed(void)		: "Fired when the button is touching enough weight."
+	output OnReleased(void)		: "Fired when the button was pressed, but weight was removed."
+]
+
+@SolidClass base(Targetname, Parentname) = func_noportal_volume : "A region in which no portal can be placed"
+[	
+	//Inputs
+	input Deactivate(void)		: "Turn off blocking functionality"
+	input Activate(void)		: "Turn on blocking functionality"
+	input Toggle(void)		: "Toggle blocking functionality"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+]
+
+@SolidClass base(Targetname, Parentname) = func_portal_bumper : "A region that portals trace to fit outside of but can be place on"
+[	
+	//Inputs
+	input Deactivate(void)		: "Turn off bumping functionality"
+	input Activate(void)		: "Turn on bumping functionality"
+	input Toggle(void)		: "Toggle bumping functionality"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+]
+
+
+@SolidClass base(Targetname, Parentname) = func_portal_detector : "A region that fires an output if a portal is placed in it"
+[	
+	//Inputs
+	input Disable(void)		: "Turn off detecting functionality"
+	input Enable(void)		: "Turn on detecting functionality"
+	input Toggle(void)		: "Toggle detecting functionality"
+
+	output OnStartTouchPortal1(void)		: "Fired when portal 1 is placed intersecting the portal detector."
+	output OnStartTouchPortal2(void)		: "Fired when portal 2 is placed intersecting the portal detector."
+	output OnStartTouchLinkedPortal(void)		: "Fired when linked portal is placed intersecting the portal detector."
+	output OnStartTouchBothLinkedPortals(void)	: "Fired when both of a pair of portals is placed intersecting the portal detector."
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+	LinkageGroupID(integer) : "Portal pair ID that it detects" : 0
+]
+
+
+@SolidClass base(Origin, Angles) = func_liquidportal : "A space that fills with portal liquid and teleports entities when done filling"
+[
+	InitialLinkedPortal(string)			: "Linked liquid portal."
+	FillTime(float)					: "Fill Time (sec)" : 10 : "How long the volume takes to fill in seconds."
+	
+	//Inputs
+	input SetLinkedLiquidPortal(string)		: "The liquid portal this should link to. Will update linked portal to point back."
+	input SetFillTime(float)			: "How long the area takes to fill."
+	input StartFilling(void)			: "Start filling NOW. Entities teleport when finished."
+
+	input AddActivatorToTeleportList(void)		: "Add the activator entity to the list of entities to teleport when filling is finished."
+	input RemoveActivatorFromTeleportList(void)	: "Remove the activator entity from the list of entities to teleport when filling is finished."
+]
+
+///=============================================================================
+//
+// Model Entities
+//
+///=============================================================================
+
+
+@PointClass base(Targetname, Angles) studio("models/portals/portal1.mdl") = prop_portal : "A portal"
+[
+	Activated(choices)			: "Start Activated" : 1 : "An inactive portal will not be drawn and will not teleport entites"	=
+	[
+		0 : "Inactive"
+		1 : "Active"
+	]
+	PortalTwo(choices)			: "Portal Number" : 0 : "A portal has to logically be either portal 1 or portal 2" =
+	[
+		0 : "Portal 1"
+		1 : "Portal 2"
+	]
+	LinkageGroupID(integer) : "Portal pair ID that it belongs to" : 0
+
+	input SetName(string)		: "Naming your portals is fun"
+	input SetActivatedState(bool)	: "An inactive portal will not be drawn and will not teleport entites"
+	input Fizzle(void)		: "Makes a cool visual fizzle and properly shuts down the portal"
+	input NewLocation(string) : "Sets this portals location and angles. This expects 6 floats with space delimiters, the format is 'x y z pitch yaw roll'"
+
+	output OnPlacedSuccessfully(void) : "When a portal is placed without failure, this output is fired."
+]
+
+@PointClass base(Weapon,Targetname, Parentname) studio("models/weapons/w_models/w_portalgun/w_portalgun.mdl") = weapon_portalgun : "Portalgun"
+[
+	CanFirePortal1(choices)			: "Can Fire Portal 1" : 1 : "Can this portalgun create blue portals?"	=
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	CanFirePortal2(choices)			: "Can Fire Portal 2" : 1 : "Can this portalgun create red portals?"	=
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	input ChargePortal1(void)		: "Does charge up effect for mounted portalgun."
+	input ChargePortal2(void)		: "Does charge up effect for mounted portalgun."
+
+	input FirePortal1(void)			: "Projects portal 1 onto a wall in the facing direction of the gun."
+	input FirePortal2(void)			: "Projects portal 2 onto a wall in the facing direction of the gun."
+
+	input FirePortalDirection1(vector)	: "Fires portal 1 in the specified direction."
+	input FirePortalDirection2(vector)	: "Fires portal 1 in the specified direction."
+
+	output OnFiredPortal1(void)		: "Fires when the first (blue) portal is fired."
+	output OnFiredPortal2(void)		: "Fires when the second (red) portal is fired."
+]
+
+@PointClass base(npc_turret_ground) studio( "models/combine_turrets/ground_turret.mdl" ) = npc_portal_turret_ground : "Combine (Portal) ground turret"
+[
+	ConeOfFire(float) 	: "Cone of Fire" : 60 : "Cone of fire in degrees."
+]
+
+// Cores of GlaDOS computer. Resemble little eyeballs with handles. These play lines and look around when near the player.
+@PointClass base(BasePropPhysics) studioprop() studio( "models/props_bts/glados_ball_reference.mdl" ) = prop_glados_core : "Core of GlaDOS computer."
+[
+	CoreType(choices) : "Core Personality" : 1 : "Which personality VO set the core is set to." =
+	[
+		0 : "Curious"
+		1 : "Aggressive"
+		2 : "Crazy"
+		3 : "None"
+	]
+	
+	DelayBetweenLines(float) : "Pause (in secs) between VO Lines." : "0.4" : "When the core is talking, this is the number of seconds delay between it's spoken lines."
+
+	input Panic(void)	: "Core is near death, panic."
+	input StartTalking(void)	: "Start playing lines, play looking animations."
+	
+	output OnPlayerPickup(void)		: "Player picked up core."
+]
+
+@PointClass base(npc_turret_floor) studio( "models/props/turret_01.mdl" ) = npc_portal_turret_floor : "Combine (Portal) Floor Turret"
+[
+	DamageForce(choices) : "Damage pushes player" : 1 : "Being hit by this turret will push the player back."	=
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	input FireBullet(string)	: "Causes the turret to instantly fire at the specified entity."
+]
+
+@PointClass base(Targetname, Angles, Studiomodel) studio( "models/props/security_camera.mdl" ) = npc_security_camera : "Security Camera"
+[
+	spawnflags(Flags) = 
+	[
+		32 : "Autostart" : 1
+	]	
+
+	// Inputs
+	input Enable(void) : "If closed, open."
+	input Disable(void) : "If open, close."
+	input Toggle(void) : "Toggle - If open, close. If closed, open."
+	input Ragdoll(void) : "Disable and fall off the wall."
+
+	// Outputs
+	output OnDeploy(void) : "Camera is becoming active and dangerous."
+	output OnRetire(void) : "Camera is becoming inactive and harmless."
+]
+
+@PointClass base(Targetname, Angles, Studiomodel) studio( "models/props/telescopic_arm.mdl" ) = prop_telescopic_arm : "Telescopic Arm"
+[
+	input Enable(void) : "Enable Thumper"
+	input Disable(void) : "Disable Thumper"
+
+	input SetTarget(string) : "Set the entity to target."
+	input TargetPlayer(void) : "Set the player as the entity to target."
+
+	output OnFoundTarget(void)  : "Arm has direct LOS to target entity."
+	output OnLostTarget(void)   : "Arm has lost direct LOS to target entity."
+]
+
+@PointClass base(Targetname, Angles, Parentname, Global) studio( "models/props/Round_elevator_body.mdl" ) = prop_portal_stats_display : "Portal Stats Display"
+[
+	input Enable(void) : "Turn on and display the current stats"
+	input Disable(void) : "Turn off stats display"
+
+	input UpdateStats(void) : "Updates the stats to the player's current level stats"
+	input ResetPlayerStats(void) : "Resets the curret level stats of the player"
+
+	output OnMetPortalObjective(void)  : "Fired when enabled and player met the number of portal placements."
+	output OnMetStepsObjective(void)  : "Fired when enabled and player met the number of foot steps."
+	output OnMetSecondsObjective(void)  : "Fired when enabled and player met the number of seconds."
+	output OnFailedAllObjectives(void)  : "Fired when enabled and player met no objectives."
+]
+
+@PointClass base(Targetname, Angles, Parentname, Global) studio( "models/props/metal_box.mdl" ) = prop_weighted_cube : "Weighted Cube"
+[
+	CubeType(choices) : "Cube Type" : 0 =
+	[
+		0 : "Standard"
+		1 : "Companion"
+		2 : "Reflective"
+		3 : "Sphere"
+		4 : "F-stop"
+	]
+	
+	input  Dissolve(void) : "Dissolves the cube."
+	
+	output OnFizzled(void) : "Fired when a cube is fizzled."
+]
+
+@PointClass base(Targetname, Parentname, Angles) studio("models/props/portal_door_combined.mdl") = prop_testchamber_door :
+"Test chamber door entity."
+[
+	lightingorigin(target_destination) : "Lighting Origin" : "" : "Select an info_lighting to specify a location to sample lighting from for all gibs spawned by this shooter, instead of their own origins."
+
+	AreaPortalWindow(target_destination) : "Area Portal Window Name" : "" : "The name of an area portal window that is controlled by the door."
+	UseAreaPortalFade(boolean) : "Fade Area Portal?" : 0 : "If the area portal should use the specified fade distances to fade out."
+	AreaPortalFadeStart(float) : "Fade Start Distance" : 0 : "The distance at which the area portal starts fading out."
+	AreaPortalFadeEnd(float) : "Fade End Distance" : 0 : "The distance at which the area portal turns completely opaque."
+
+	input Open(void) : "Open the door and cause the portal to activate."
+	input Close(void) : "Close the door and cause the portal to deactivate."
+	input Lock(void) : "Locking a door will prevent the Open or Close inputs from doing anything."
+	input Unlock(void) : "If locked, unocking a door will allow the Open or Close inputs to function."
+
+	output OnOpen(void) : "Called when the door has started its open animation."
+	output OnClose(void) : "Called when the door has started its close animation."
+	output OnFullyOpen(void) : "Called when the door has finished its open animation."
+	output OnFullyClosed(void) : "Called when the door has finished its close animation."
+]
+
+@PointClass base(Targetname, Parentname, Angles ) studio("models/props/switch001.mdl") = prop_button :
+"A button which is activated by player use or by game inputs."
+[
+	Delay(float) : "Delay Before Reset" : 1 : "Amount of time, in seconds, after the button has been pressed before it returns to the starting position. Once it has returned, it can be used again."
+	istimer(boolean) : "Play timer sound?" : 0 : "If set, this button will play timer sounds while button is depressed. This allows fast reset by default - use Prevent fast reset to stop this."
+	preventfastreset(boolean) : "Prevent fast reset?" : 0 : "Buttons that are timer's allow you to reset early - use this to make the button stick for the entire duration."
+	
+	skin(choices) : "Skin" : 0 =
+	[
+		0 : "Clean"
+		1 : "Shutter-Speed"
+	]
+
+	input Press(void) : "Cause the button to be pressed."
+	input Lock(void) : "Locks the button."
+	input UnLock(void) : "UnLocks the button."
+	input CancelPress(void) : "Causes the button to reset quietly and without firing OnButtonReset outputs."
+	
+	output OnPressed(void) : "Called when the button has been pressed."
+	output OnPressedBlue(void) : "Called in Coop when the button has been pressed by the Blue player."
+	output OnPressedOrange(void) : "Called in Coop when the button has been pressed by the Orange player."
+	output OnButtonReset(void) : "Called when the button has reset after being pressed."
+]
+
+@PointClass base(Targetname, Parentname, Angles ) studio() = prop_floor_button :
+"A floor button which is activated by a player or objects."
+[
+	model(studio) : "Button model" : "models/props/portal_button.mdl" : "Button model must have the correct sequences and attachments in order to work as a button."
+	input PressIn(void) : "Activate the button as if it was pressed, sending it to the bottom position."
+	input PressOut(void) : "Unpress the button, sending it to the top position."
+	output OnPressed(void) : "Called when the button has been pressed."
+	output OnPressedBlue(void) : "Called in Coop when the button has been pressed by the Blue player."
+	output OnPressedOrange(void) : "Called in Coop when the button has been pressed by the Orange player."
+	output OnUnPressed(void) : "Called when the button has been unpressed."
+]
+
+@PointClass base(Targetname, Angles, Parentname) studio("models/editor/axis_helper_thick.mdl") = vgui_neurotoxin_countdown : "Neurotoxin Countdown"
+[
+	width(integer) : "Panel width" : 256 : "Width of the panel in units."
+	height(integer) : "Panel height" : 128 : "Height of the panel in units."
+
+	input Enable(void) : "Make slideshow visible."
+	input Disable(void) : "Make slideshow invisible."
+]
+
+
+@SolidClass base(Targetname, Parentname) = func_paintbomb_control_volume : 
+	"Used to force attributes for paintbombs within the volume."
+[
+	// Inputs
+	ForcedRadius(float) : "Forced Radius" : "-1" : "The paint bomb's explosion radius."
+]
+
+///=============================================================================
+//
+// Special Effects
+//
+///=============================================================================
+
+@PointClass base(Angles,Targetname,Parentname) = env_lightrail_endpoint : "Special effects for the endpoints of the lightrail."
+[
+	spawnflags(Flags) = 
+	[
+		1 : "Start On (w/ Small FX)" : 0
+		//2 : "Start With Large FX" : 0
+	]
+
+	small_fx_scale(float) : "Scale Small FX" : 1 : "Scale of the small effect.  1 is the default size, 2 is twice that, etc."
+
+	large_fx_scale(float) : "Scale Large FX" : 1 : "Scale of the large effect.  1 is the default size, 2 is twice that, etc."
+
+	// Inputs
+	input StartCharge(float) : "Start charging the endpoint from the small to large state over a specified amount of seconds."
+	input StartSmallFX(void) : "Start discharging particles at the small effects state over specified number of seconds."
+	input StartLargeFX(void) : "Start discharging particles at the large effects state over specified number of seconds."	
+	input Stop(float) : "Stops the effect at any point."
+]
+
+
+///=============================================================================
+//
+// Credits
+//
+///=============================================================================
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = env_portal_credits : 
+	"An entity to control the rolling credits for portal."
+[
+	// Inputs
+	input RollCredits(void) : "Start the intro credits rolling."
+	input RollOutroCredits(void) : "Start the outro credits rolling."
+	input ShowLogo(void) : "Show the HL2 logo."
+	input RollPortalOutroCredits(void) : "Start the Portal greenscreen outro credits."
+	
+	// Outputs
+	output OnCreditsDone(void)  : "Fired when the credits having finished rolling."
+]
+
+
+
+///=============================================================================
+//
+// Normally Obsolete..
+//
+///=============================================================================
+
+@PointClass base(Targetname, Parentname) iconsprite("editor/info_lighting.vmt") = info_lighting_relative
+[
+	LightingLandmark(target_destination) : "Lighting Landmark" :  : "Entity at which the reference origin is contained. " +
+									" If empty, the info_lighting_relative's origin will" +
+									" be used."
+]
+
+///=============================================================================
+//
+// Portal 2's stuff
+//
+///=============================================================================
+
+@BaseClass = BaseProjector : "The base for all the different projectors (wall & tractor beam)."
+[
+	StartEnabled(boolean) : "Start Enabled" : 1 : "If the projector should start enabled."
+	
+	DisableHelper(boolean) : "Disable Placement Helper" : 0 : "Disable the automatically created placement helper to prevent it from fighting with a custom one."
+	
+	input Enable(void) : "Enables projection from this projector."
+	input Disable(void) : "Disables projection from this projector."
+]
+
+@PointClass base(Parentname, Targetname, Angles) studio() = env_portal_laser
+: "Laser beam that will move through portals and reflect off metal surfaces."
+[
+	model(studio) : "Laser model" : "models/props/laser_emitter_center.mdl"
+	
+	StartState(choices) : "Start off?" : 0 =
+	[
+		1 : "Yes"
+		0 : "No"
+	]
+	
+	LethalDamage(choices) : "Deal lethal damage" : 0 =
+	[
+		0 : "Non-lethal"
+		1 : "Lethal"
+	]
+	
+	AutoAimEnabled(boolean) : "Should auto aim" : 1 : "Default to enabled"
+
+	skin(choices) : "Skin Type" : 0 =
+	[
+		0 : "Clean"
+		1 : "Rusted"
+	]
+
+	input Toggle( void ) : "Toggle the laser on and off."
+	input TurnOn( void ) : "Turn the laser on."
+	input TurnOff( void ) : "Turn the laser off."
+]
+
+
+@PointClass base(Targetname) = point_laser_target
+: "Target for lasers to strike. The entity will fire outputs when struck and unstruck."
+[
+	terminalpoint(boolean) : "Terminal Point" : 1
+
+	output OnPowered(void) : "Fired when a laser hits the target."
+	output OnUnpowered(void) : "Fired when a laser has stopped hitting the target."
+]
+
+@PointClass base(Parentname, Targetname) studio() = prop_laser_catcher
+: "Laser catcher that has target for lasers to strike. The entity will fire outputs when struck and unstruck."
+[
+	SkinType(choices) : "Skin Type" : 0 =
+	[
+		0 : "Clean"
+		1 : "Rusted"
+	]
+	
+	model(studio) : "laser catcher model" : "models/props/laser_catcher.mdl"
+	output OnPowered(void) : "Fired when a laser hits the target."
+	output OnUnpowered(void) : "Fired when a laser has stopped hitting the target."
+]
+
+@PointClass base(Parentname, Targetname) studio() = prop_laser_relay
+: "Laser catcher that has target for lasers to strike. The entity will fire outputs when struck and unstruck."
+[
+	model(studio) : "laser relay model" : "models/props/laser_receptacle.mdl"
+	output OnPowered(void) : "Fired when a laser hits the target."
+	output OnUnpowered(void) : "Fired when a laser has stopped hitting the target."
+]
+
+@SolidClass base(Trigger) = trigger_catapult : "Catapult the player in a given diretion at a given velocity."
+[
+	playerSpeed(float) : "Player Speed" : 450 : "Speed at which to launch the players (u/sec)"
+	physicsSpeed(float) : "Physics Object Speed" : 450 : "Speed at which to launch physics objects (u/sec)"
+	useThresholdCheck(boolean) : "Use Threshold Check" : 0
+	entryAngleTolerance(float) : "Entry Angle Tolerance" : "0.0" : "Flung object's velocity must be pointing this much at the target. Specify a value between [-1...1] 1 means exactly, 0 means within 180 degrees -1 means any angle is accepted. This is only used if Use Threshold Check is set to yes."
+	useExactVelocity(boolean) : "Use Exact Velocity" : 0 : "Try to fling exactly at the speed specified - this prevents the added upward velocity from a launch target."
+	exactVelocityChoiceType(choices) : "Exact Solution Method" : 0 :
+	"Using exact velocity generates two correct solutions. Use this to force which one you choose." =
+	[
+		0 : "Best"
+		1 : "Solution One"
+		2 : "Solution Two"
+	]
+	lowerThreshold(float) : "Lower Threshold" : "0.15" : "Flung object must be within this percentage value in order to activate fling. Specify a value between [0...1] (default is .15) This is only used if Use Threshold Check is set to yes."
+	upperThreshold(float) : "Upper Threshold" : "0.30" : "Flung object must be within this percentage value in order to activate fling. Specify a value between [0...1] (default is .30) This is only used if Use Threshold Check is set to yes."
+	launchDirection(angle) : "Launch direction" : "0 0 0" : "Direction to launch the player in."
+	launchTarget(target_destination) : "Launch target" : "" : "Entity to try to 'hit' when we're launched."
+	onlyVelocityCheck(boolean) : "Only check velocity" : 0 : "Only check velocity of the touching object - don't actually catapult it.  Use in conjunction with OnCatapulted to create velocity checking triggers.  Only works when Use Threshhold Check is enabled."
+	applyAngularImpulse(boolean) : "Apply angular impulse" : 1 : "If a random angular impulse should be applied to physics objects being catapulted."
+	AirCtrlSupressionTime(float) : "Air Control SupressionTime" : "-1.0" : "[Launch by target only!]If greater than zero, supress player aircontrol for this number (in seconds). If less than zero use the default (quarter second)."
+
+	output OnCatapulted(void) : "The object has been launched."
+]
+
+// Projected entities
+
+@PointClass base(Targetname, Angles, BaseProjector) studio("models/props/wall_emitter.mdl") = prop_wall_projector : "Wall Projector"
+[
+]
+
+@PointClass base(Targetname, Parentname, Angles, BaseProjector) studio("models/props/tractor_beam_emitter.mdl") = prop_tractor_beam : "Emitter for a tractor beam."
+[
+	linearForce(float) : "Linear Force" : 250 : "Linear force to apply to objects in the beam."
+	noemitterparticles(boolean) : "Disable Emitter Particles" : 0 : "Disable the whirly particles on the emitter."
+	input SetLinearForce(float) : "Set the linear force applied to objects in the beam."
+	use128model(boolean) : "Use 128 model" : 0 : "Use the tbeam projector model that fits within a 128 unit square."
+	// input Enable(void) : "Turn the beam on."
+	// input Disable(void) : "Turn the beam off."
+]
+
+//punt 
+@PointClass base(Weapon) studio("models/weapons/w_models/w_puntgun/w_puntgun.mdl") = weapon_puntgun : "Puntgun" []
+
+@SolidClass base(Trigger, Parentname) = func_nopunt_volume : "A volumetric trigger that makes boxes unpuntable. Good for Water!"
+[	
+	//Inputs
+	input Enable( void ) : "Enable collisions with vehicles"
+	input Disable( void ) : "Disable collisions with vehicles"
+]
+
+@SolidClass base(Targetname, Parentname) = func_punt_blocker : "A region in which no portal can be placed"
+[	
+	//Inputs
+	input Enable( void ) : "Enable collisions with vehicles"
+	input Disable( void ) : "Disable collisions with vehicles"
+
+	spawnflags(Flags) = 
+	[
+		1: "Start inactive" : 0
+	]
+]
+
+@SolidClass base(Targetname, Parentname, EnableDisable) = func_punt_surface : "A Brush that the player launches off of."
+[	
+	//Inputs
+	input Enable( void ) : "Enable"
+	input Disable( void ) : "Disable"
+]
+
+@PointClass base(Targetname, Parentname, Angles, DamageFilter) studio("models/props_gameplay/puntbox.mdl") = prop_punt_box : ""
+[
+
+	BoxType(choices) : "Type of Box" : 0 : "" =
+	[
+		0 : "Standard"
+		1 : "Flip"
+		2 : "Pause"
+		3 : "Bomb"
+		4 : "Vapor"
+	]
+
+
+	enablepunt(choices) : "Enable Punting" : 1 : "Enable Punt on Spawn?" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	input Kill(void) : ""
+	input Activate(void) : ""
+	input Deactivate(void) : ""
+	input Dissolve(void) : ""
+	input SilentDissolve(void) : ""
+	input EnablePunt(void) : ""
+	input DisablePunt(void) : ""
+
+	output OnTakeDamage(void) : "Fired each time this breakable takes any damage."
+	output OnPlayerUse( void ) : ""
+	output OnPlayerPickup( void ) : ""
+	output OnPhysGunDrop( void ) : ""
+	output OnPhysGunPunt( void ) : ""
+	output OffPhysGunPunt( void ) : ""
+	output OnExplode( void ) : ""
+]
+
+@PointClass base(Targetname, Angles ) studio("models/props_signage/punt_panel.mdl") line(255 255 0, targetname, target) = prop_punt_panel : "" 
+[
+
+	target(target_destination) : "Indicator Lights" : "" : "If supplied, assumes this is a group of indicators lights to toggle when the indicator is toggled."
+	PanelType(choices) : "Panel Icon" : 0 : "" =
+	[
+		0 : "Target"
+		1 : "Arrow:Down"
+		2 : "Arrow:Up"
+	]
+	timed(choices) : "Timed?" : 0 : "If set to 'Yes', The panel will turn yellow." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	timeamount(float) : "Time Amount" : 1 : "If 'Timed?' is set, this will be the amount of time in seconds that it will be for it to reset."
+	// Inputs
+	input Reset(void) : "Resets Panel"
+
+	// Output
+	output OnActivate( void ) : ""
+	output OnDeactivate( void ) : ""
+]
+
+//-------------------------------------------------------------------------
+//
+// Other things
+//
+//-------------------------------------------------------------------------
+
+@PointClass base(Targetname, Angles ) studio("models/props_signage/indicator_panel.mdl") line(255 255 0, targetname, target) = prop_indicator_panel : "" 
+[
+
+	target(target_destination) : "Indicator Lights" : "" : "If supplied, assumes this is a group of indicators lights to toggle when the indicator is toggled."
+	timed(choices) : "Timed?" : 0 : "Does this reset after X amount of time?" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	timeamount(float) : "Time Amount" : 1 : "If 'Timed?' is set, this will be the amount of time in seconds that it will be for it to reset."
+	quiet(choices) : "Quiet?" : 0 : "If set to 'Yes' A clock sound will be not be played." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	// Inputs
+	input Activate(void) : "Activate"
+	input Dectivate(void) : "Deactivate"
+
+	// Output
+	output OnActivate( void ) : "Fired when the indicator is activated."
+	output OnDeactivate( void ) : "Fired when the indicator is deactivated."
+]
+
+
+@PointClass base(Targetname) iconsprite("editor/logic_puzzle_manager.vmt") = logic_puzzle_manager : "Puzzle Manager"
+[
+
+	gun(choices) : "Player Has Puntgun?" : 1 : "If set to 'Yes', the player will spawn with a Puntgun." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	allowsave(choices) : "Allow Saving?" : 1 : "If set to 'Yes', the game will save when the puzzle starts and ends." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	allowautosave(choices) : "Allow Autosaving?" : 0 : "If set to 'Yes', The game will automatically save. NOTE: ONLY USE THIS IF YOU'RE SURE THE PLAYER WILL NOT GET STUCK DYING IN A LOOP!" =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	autosavetime(float) : "Autosave Time Amount" : 120 : "If 'Allow Autosaving?' is set, this will be the refire rate in seconds of saving."
+	canlaunch(choices) : "Allow Puntgun to launch objects?" : 0 : "If set to 'Yes', the Puntgun will be gifted the ability to launch things." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	allowrecording(choices) : "Allow Demo Recording?" : 0 : "On StartPuzzle, the manager will record a demo. When the puzzle ends, it will stop, and save the file to the disk." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	input StartPuzzle(void) : "Start the Puzzle"
+	input EndPuzzle(void) : "End the Puzzle"
+	input SaveProgress(void) : "Save Progress"
+	input GivePuntgun(void) : "Give Puntgun"
+	input UpgradePuntgun(void) : "Upgrade Puntgun"
+	input Report(void) : "Reports settings to the console."
+
+	output OnPuzzleStart( void ) : "The Puzzle has Started."
+	output OnPuzzleEnd( void ) : "The Puzzle has Ended."
+]
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/logic_random_outputs.vmt") = logic_random_outputs :
+	"A message forwarder. Fires up to eight separate outputs, each with a different chance of firing."
+[
+	spawnflags(flags) =
+	[
+		1: "Only trigger once" : 0
+		2: "Allow fast retrigger" : 0
+	]
+	OnTriggerChance1(float) : "OnTrigger1 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger1 output firing when this entity is triggered."
+	OnTriggerChance2(float) : "OnTrigger2 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger2 output firing when this entity is triggered."
+	OnTriggerChance3(float) : "OnTrigger3 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger3 output firing when this entity is triggered."
+	OnTriggerChance4(float) : "OnTrigger4 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger4 output firing when this entity is triggered."
+	OnTriggerChance5(float) : "OnTrigger5 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger5 output firing when this entity is triggered."
+	OnTriggerChance6(float) : "OnTrigger6 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger6 output firing when this entity is triggered."
+	OnTriggerChance7(float) : "OnTrigger7 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger7 output firing when this entity is triggered."
+	OnTriggerChance8(float) : "OnTrigger8 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger8 output firing when this entity is triggered."
+
+	// Inputs
+	input Trigger(void) : "Trigger this entity, causing its OnTrigger outputs to fire if it is enabled."
+	input Toggle(void) : "Toggle this entity between enabled and disabled."
+	input CancelPending(void) : "Cancel any events fired by this entity that are currently pending in the I/O event queue."
+	
+	// Outputs
+	output OnSpawn(void) : "Fired when this entity is spawned. If this entity is set to only trigger once, it will "+
+		"delete itself after firing this output."
+	output OnTrigger1(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger2(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger3(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger4(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger5(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger6(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger7(void) : "This output has a chance to fire when the entity is triggered."
+	output OnTrigger8(void) : "This output has a chance to fire when the entity is triggered."
+]
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/logic_gravity_control.vmt") = logic_gravity_control : "Gravity Controller." //To Do: make sprite
+[
+	input FlipGravity(void) : "Flips the current gravity."
+	input ResetGravity(void) : "Reset gravity to normal."
+	input Toggle(void) : "Toggle the relay between enabled and disabled."
+	output OnGravityFlipped( void ) : "Fired When the gravity is flipped."
+	output OnGravityNormal( void ) : "Fired When the gravity is off flipped."
+//	output OnReset( void ) : "Fired When the gravity is reset."
+]
+
+//f-stop 
+
+
+@PointClass base(Weapon, Targetname, Parentname) studio("models/weapons/w_camera/w_camera.eramdl") = weapon_camera : "Camera"
+[
+	FieldOfView(float) : "Field of view" : "60" : "Field of view of the camera in degrees"
+]
+
+@PointClass base(Weapon, Targetname, Parentname) studio("models/weapons/w_models/w_photo/w_photo.mdl") = weapon_placement : "Placement"
+[
+	PhotoCapacity(integer) : "Photo capacity" : 3 : "Maximum number of photos at any one time"
+	MinScaleLevel(integer) : "Minimum scale level" : -3 : "Minimum power of two to scale objects to when placing"
+	MaxScaleLevel(integer) : "Maximum scale level" : 3 : "Maximum power of two to scale objects to when placing"
+]

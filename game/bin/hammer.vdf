@@ -1,0 +1,24 @@
+"UserConfigData"
+{
+	"resource"
+	{
+		"mdlpicker.res"
+		{
+			"FileBrowserSplitter"
+			{
+				"child1"
+				{
+					"PreviewSplitter"
+					{
+						"child1"
+						{
+						}
+					}
+				}
+				"child0"
+				{
+				}
+			}
+		}
+	}
+}
