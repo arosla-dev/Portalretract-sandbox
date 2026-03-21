@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+	$basetexture	"glass/glasswindow_frosted_003"
+	$translucent	1
+}

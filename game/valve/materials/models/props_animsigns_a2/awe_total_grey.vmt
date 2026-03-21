@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"Models/props_animsigns_a2/awe_total_grey"
+	"$surfaceprop" "metal"
+	
+	"$translucent" "1"
+	"$alpha" "1"
+
+}
