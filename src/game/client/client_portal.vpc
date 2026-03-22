@@ -38,11 +38,17 @@ $Project "Client (Portal)"
 			$Folder "Weapons"
 			{
 				$File "$SRCDIR\game\shared\new\weapon_physgun.cpp"
+				$File "new\weapons\c_weapon_sticklauncher.cpp"
 			} 
 			
 			$Folder "Entities"
 			{
 				
+			}	
+
+			$Folder "Npc"
+			{
+
 			}			
 			
 		}

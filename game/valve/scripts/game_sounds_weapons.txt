@@ -93,6 +93,55 @@
 // *******
 // WEAPONS
 
+// weapon_cguard.txt
+"Weapon_CombineGuard.Reload"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"weapons/sniper/sniper_reload.wav"
+}
+
+"Weapon_CombineGuard.NPC_Reload"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"weapons/sniper/sniper_reload.wav"
+}
+
+"Weapon_CombineGuard.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_GUNFIRE"
+	"pitch"			"98,102"
+
+	"wave"			"weapons/cguard/cguard_fire.wav"
+}
+
+"Weapon_CombineGuard.NPC_Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_GUNFIRE"
+	"pitch"			"98,102"
+
+	"wave"			"weapons/cguard/cguard_fire.wav"
+}
+
+"Weapon_CombineGuard.Special1"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"weapons/cguard/charging.wav"
+}
+
+
 // weapon_ar2.txt
 "Weapon_AR2.Empty"
 {

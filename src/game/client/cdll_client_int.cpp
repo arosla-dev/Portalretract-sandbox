@@ -1261,59 +1261,6 @@ int CHLClient::Init( CreateInterfaceFn appSystemFactory, CGlobalVarsBase *pGloba
 	return true;
 }
 
-bool HL2SFMIsMounted()
-{
-	// Check to see if SFM is even owned
-	//if ( !steamapicontext->SteamApps()->BIsSubscribedApp( 1840 ) )
-	//	return false;
-
-	// Check for various HL2 assets
-	static const char *s_FilesToTest[] =
-	{
-		// Materials & Textures
-		"materials/metal/metalwall061f.vmt",
-		"materials/metal/metalwall061f.vtf",
-		"materials/models/props_wasteland/throwswitch001a.vmt",
-		"materials/models/props_wasteland/throwswitch001a.vtf",
-		"materials/models/props_c17/fence_alpha.vmt",
-		"materials/models/props_c17/fence_alpha.vtf",
-		"materials/models/props_c17/fence_composite01.vmt",
-		"materials/models/props_c17/fence_composite01.vtf",
-		"materials/models/props_wasteland/fence_sheet01.vmt",
-		"materials/models/props_wasteland/fence_sheet01.vtf",
-		"materials/models/props_wasteland/fence_sheet02.vmt",
-		"materials/models/props_wasteland/fence_sheet02.vtf",
-		"materials/models/props_lab/walllight_sheet.vmt",
-		"materials/models/props_lab/walllight_sheet.vtf",
-
-		// Models
-		"models/props_pipes/pipe02_straight01_long.mdl",
-		"models/props_pipes/pipeset08d_64_001a.mdl",
-		"models/props_wasteland/tram_leverbase01.mdl",
-		"models/props_wasteland/interior_fence003b.mdl",
-		"models/props_wasteland/interior_fence003d.mdl",
-		"models/props_wasteland/interior_fence003e.mdl",
-		"models/props_wasteland/interior_fence001g.mdl",
-		"models/props_wasteland/prison_padlock001a.mdl",
-		"models/props_lab/walllight001a.mdl",
-
-		// Sounds
-		"sound/doors/door_metal_thin_close2.wav",
-		"sound/doors/doormove1.wav",
-		"sound/doors/doormove2.wav"
-	};
-
-	for ( int i = 0; i < ARRAYSIZE( s_FilesToTest ); ++i )
-	{
-		if ( !filesystem->FileExists( s_FilesToTest[i], "GAME" ) )
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-#ifdef PORTAL
 //-----------------------------------------------------------------------------
 // Purpose: returns true if the background level should be loaded on startup
 //-----------------------------------------------------------------------------
@@ -1383,7 +1330,7 @@ bool CL_ShouldLoadBackgroundLevel( const CCommand &args )
 
 	return true;
 }
-#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: Called after client & server DLL are loaded and all systems initialized
 //-----------------------------------------------------------------------------

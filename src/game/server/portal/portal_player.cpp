@@ -415,6 +415,7 @@ void CPortal_Player::GiveAllItems( void )
 
 	CBasePlayer::GiveAmmo( 3,	"rpg_round");
 	CBasePlayer::GiveAmmo( 6,	"grenade" );
+	CBasePlayer::GiveAmmo( 6,	"FlareRound");
 
 	GiveNamedItem( "weapon_crowbar" );
 	GiveNamedItem( "weapon_physcannon" );
@@ -432,6 +433,14 @@ void CPortal_Player::GiveAllItems( void )
 	GiveNamedItem( "weapon_frag" );
 
 	GiveNamedItem( "weapon_bugbait" );
+
+	//p1llowguy - new
+	GiveNamedItem("weapon_cguard");
+	GiveNamedItem("weapon_stickylauncher");
+	GiveNamedItem("weapon_physgun");
+	GiveNamedItem("weapon_paintgun");
+	GiveNamedItem("weapon_binoculars");
+	GiveNamedItem("weapon_flaregun");
 
 	//GiveNamedItem( "weapon_physcannon" );
 	CWeaponPortalgun *pPortalGun = static_cast<CWeaponPortalgun*>( GiveNamedItem( "weapon_portalgun" ) );

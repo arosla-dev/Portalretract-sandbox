@@ -58,12 +58,19 @@ $Project "Server (Portal)"
 			$Folder "Weapons"
 			{
 				$File "$SRCDIR\game\shared\new\weapon_physgun.cpp"
+				$File "new\weapons\weapon_binoculars.cpp"
+				$File "new\weapons\weapon_cguard.cpp"
+				$File "new\weapons\weapon_stickylauncher.cpp"
 			} 
 			
 			$Folder "Entities"
 			{
 
-			}			
+			}
+
+			$Folder "Npc"
+			{
+			}		
 			
 		}
 

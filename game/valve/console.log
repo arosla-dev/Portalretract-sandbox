@@ -1094,3 +1094,2019 @@ Stopping All Sounds...
 CreateEvent: event 'server_pre_shutdown' not registered.
 CreateEvent: event 'server_shutdown' not registered.
 Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = 
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = 
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 0.87
+Datacenter::RequestStop, time 0.87, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+weapons/v_portalgun.mdl : material "models/weapons/v_models/v_portalgun/v_hands" not found.
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+PrecacheScriptSound 'NPC_CScanner.DiveBombFlyby' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+************************************************
+*  Unable to load Steam support library.       *
+*  This server will operate in LAN mode only.  *
+************************************************
+Heartbeat is disabled (usually developer or cheats is on).
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 17.706 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+gustavo unpaused the game
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+gustavo unpaused the game
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.232177
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.244168
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.379792
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Catapult "" ignoring object "prop_paint_bomb" because its velocity is outside of the threshold. (Object Velocity: 1882.2 -- Object needed to be between 538.4 and 1013.5 
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.401641
+noclip ON
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.029611
+Soundscape: portal_testchmb.fling
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.074260
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.112441
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.136625
+noclip ON
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+gustavo unpaused the game
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+noclip ON
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 157.1 -- Object needed to be between 651.5 and 1349.6 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 169.4 -- Object needed to be between 651.9 and 1350.4 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 222.5 -- Object needed to be between 655.3 and 1357.3 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 222.5 -- Object needed to be between 655.1 and 1357.1 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 461.5 -- Object needed to be between 652.4 and 1351.5 
+Soundscape: portal_testchmb.fling
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.274146
+CreateEvent: event 'portal_player_touchedground' not registered.
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.376250
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+noclip ON
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.044647
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.fling
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_suppressed_bounce' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+gustavo unpaused the game
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+noclip ON
+Soundscape: portal_testchmb.explore_space
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.730696
+noclip ON
+Can't find the world
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.323750
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+gustavo unpaused the game
+EmitSound: player/futureshoes1.wav volume out of bounds = -0.585240
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.301250
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Can't find the world
+noclip OFF
+noclip ON
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+noclip ON
+noclip OFF
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 190.6 -- Object needed to be between 651.5 and 1349.5 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 161.4 -- Object needed to be between 651.7 and 1350.0 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 206.2 -- Object needed to be between 657.6 and 1362.2 
+Catapult "" ignoring object "player" because its velocity is outside of the threshold. (Object Velocity: 267.2 -- Object needed to be between 662.6 and 1372.5 
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.fling
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+noclip ON
+noclip OFF
+Catapult "" is adjusting velocity of "player" so it will hit the target. (Object Velocity: 1253.1 -- Object needed to be between 651.1 and 1348.7 
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+noclip ON
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:66 ambient\atmosphere\ambience_base.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 1035.89, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = 
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = 
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 0.92
+Datacenter::RequestStop, time 0.92, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+weapons/v_portalgun.mdl : material "models/weapons/v_models/v_portalgun/v_hands" not found.
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+PrecacheScriptSound 'NPC_CScanner.DiveBombFlyby' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Immolator.Start' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Run' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Off' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_iceaxe
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_extinguisher
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_cguard
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+************************************************
+*  Unable to load Steam support library.       *
+*  This server will operate in LAN mode only.  *
+************************************************
+Heartbeat is disabled (usually developer or cheats is on).
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+Attempted to precache unknown particle system "Fire_EX1"!
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+Missing RecvProp for DT_WeaponIceAxe - DT_BaseEntity/AnimTimeMustBeFirst
+Host_EndGame: CL_ParseClassInfo_EndClasses: CreateDecoders failed.
+
+Stopping All Sounds...
+Dropped gustavo from server (Disconnect by user.)
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 46.49, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = 
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = 
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 1.09
+Datacenter::RequestStop, time 1.10, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+weapons/v_portalgun.mdl : material "models/weapons/v_models/v_portalgun/v_hands" not found.
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+PrecacheScriptSound 'NPC_CScanner.DiveBombFlyby' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Immolator.Start' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Run' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Off' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_extinguisher
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_cguard
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+************************************************
+*  Unable to load Steam support library.       *
+*  This server will operate in LAN mode only.  *
+************************************************
+Heartbeat is disabled (usually developer or cheats is on).
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+Attempted to precache unknown particle system "Fire_EX1"!
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 17.678 msec!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:67 ambient\atmosphere\ambience_base.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 69.59, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+Particles: Missing 'particles/glados.pcf'
+Particles: Missing 'particles/neurotoxins.pcf'
+Particles: Missing 'particles/finale_fx.pcf'
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = 
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = 
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 1.05
+Datacenter::RequestStop, time 1.05, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+weapons/v_portalgun.mdl : material "models/weapons/v_models/v_portalgun/v_hands" not found.
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+PrecacheScriptSound 'NPC_CScanner.DiveBombFlyby' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Immolator.Start' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Run' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Immolator.Off' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_extinguisher
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_cguard
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+************************************************
+*  Unable to load Steam support library.       *
+*  This server will operate in LAN mode only.  *
+************************************************
+Heartbeat is disabled (usually developer or cheats is on).
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+Attempted to precache unknown particle system "Fire_EX1"!
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_screen"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain_storm_outer"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "rain_outer"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "ash_outer"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "snow_outer"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 17.950 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_extinguisher
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_cguard
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Error reading weapon data file for: weapon_extinguisher
+Attempted to precache unknown particle system "weapon_tracers"!
+Error reading weapon data file for: weapon_cguard
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Failed to load models/Weapons/glueblob.mdl!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'deployed_paintgun' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'holstered_paintgun' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound Weapon_Immolator.Start
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound Weapon_Immolator.Run
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound Weapon_Immolator.Off
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.392502
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_visible' not registered.
+noclip OFF
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Bad pstudiohdr in GetSequenceLinearMotion()!
