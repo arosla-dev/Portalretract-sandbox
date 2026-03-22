@@ -13,7 +13,7 @@
 
 #include "paint_color_manager.h"
 #include "c_weapon_paintgun.h"
-//#include "weapon_paintgun_shared.h"
+#include "weapon_paintgun_shared.h"
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -111,7 +111,7 @@ void CHUDPaintAmmo::OnTick( void )
 				DevMsg( "Max: %d, Ammo: %d, Percent: %f\n",  paintgun_max_ammo, pPaintGun->GetPaintAmmo(), flAmmo );
 			}
 
-			//GetHud().DrawProgressBar( 300, 300, 10, 100, flAmmo, Color( 255, 0, 255, 255 ), CHud::HUDPB_VERTICAL );
+			GetHud().DrawProgressBar( 300, 300, 10, 100, flAmmo, Color( 255, 0, 255, 255 ), CHud::HUDPB_VERTICAL );
 		}
 	}
 }

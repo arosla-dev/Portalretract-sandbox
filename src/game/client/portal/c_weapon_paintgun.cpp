@@ -210,11 +210,13 @@ void C_WeaponPaintGun::OnDataChanged( DataUpdateType_t updateType )
 
 void C_WeaponPaintGun::ChangeRenderColor( bool bForce )
 {
+	/*
 	C_BasePlayer *pPlayer = ToBasePlayer( GetOwner() );
 	Color color = MapPowerToColor( m_nCurrentColor );
-	if ( !HasAnyPaintPower() && !bForce )
+	
+	if (!HasAnyPaintPower() && !bForce)
 		color = Color( 255, 255, 255, 255 );
-
+	
 	if( pPlayer && pPlayer->IsLocalPlayer() )
 	{
 		C_BaseViewModel *pGunModel = GetEffectViewModel();
@@ -225,6 +227,7 @@ void C_WeaponPaintGun::ChangeRenderColor( bool bForce )
 		}
 	}
 	SetRenderColor( color.r(), color.g(), color.b() );
+	*/
 }
 
 

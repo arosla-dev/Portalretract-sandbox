@@ -1,3 +1,4 @@
 /src/.vs
 /src/materialsystem/shaderlib/Release
 *.pdb
+/game/valve/SAVE

@@ -757,4 +757,63 @@
 		"bgcolor_override"	"0 0 0 0"
 		"PaintBackgroundType"	"0" // rounded corners
 	}
+
+	//p1llowguy - NEW
+	PaintIcon	
+	{
+		"fieldName"				"PaintIcon"
+		"visible"				"0"
+		"enabled"				"0"
+		"xpos"					"50"
+		"ypos"					"r200"
+		"wide"					"50"
+		"tall"					"150"
+		"bgcolor_override"		"0 0 0 0"
+	}
+	
+	PaintGunPowersIndicator
+	{
+		"fieldName"				"PaintGunPowersIndicator"
+		"visible"				"1"
+		"enabled"				"1"
+		"xpos"					"c-90"
+		"ypos"					"r25"
+		"wide"					"150"
+		"tall"					"20"
+		"bgcolor_override"		"0 0 0 0"
+	}
+	
+	PaintSwapGuns
+	{
+		"fieldName"				"PaintSwapGuns"
+		"visible"				"1"
+		"enabled"				"1"
+		"xpos"					"c-25"
+		"ypos"					"c-25"
+		"wide"					"50"
+		"tall"					"50"
+		"bgcolor_override"		"0 0 0 0"
+	}
+	
+	PaintIndicator
+	{
+		"fieldName"				"PaintIndicator"
+		"visible"				"1"
+		"enabled"				"1"
+		"xpos"					"c-50"
+		"ypos"					"c-50"
+		"wide"					"100"
+		"tall"					"100"
+	}
+
+	PaintAmmo
+	{
+		"fieldName"				"PaintAmmo"
+		"visible"				"1"
+		"enabled"				"1"
+		"xpos"					"c-75"
+		"ypos"					"c-75"
+		"wide"					"100"
+		"tall"					"100"
+	}
 }

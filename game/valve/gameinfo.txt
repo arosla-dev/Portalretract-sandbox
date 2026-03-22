@@ -1,7 +1,7 @@
 "GameInfo"
 {
-	"game"		"Portal: Retract Part 2"
-	"title"		"Portal: Retract Part 2"
+	"game"		"Valve"
+	"title"		"Valve"
 	"type"		"singleplayer_only"
 	GameData	"portalretract_part2.fgd"
 	InstancePath "tilegen/instances/"

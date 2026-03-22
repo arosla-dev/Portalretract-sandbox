@@ -94,12 +94,29 @@ void CWeaponPaintGun::ItemPostFrame()
 		// Attack!
 		SecondaryAttack();
 	}
+	else if (pPlayer->m_afButtonPressed & IN_RELOAD)
+	{
+#ifndef CLIENT_DLL
+		if (gpGlobals->curtime < m_fNextPaintDelay)
+			return;
+
+		EmitSound("Player.WeaponSelectionMoveSlot");
+
+		CWeaponPaintGun* pPaintGun = dynamic_cast<CWeaponPaintGun*>(pPlayer->GetActiveWeapon());
+		if (pPaintGun)
+		{
+			pPaintGun->CyclePaintPower(true);
+		}
+
+		m_fNextPaintDelay = gpGlobals->curtime + 0.55f;
+#endif
+	}
 	else if( pPlayer->GetUseEntity() == NULL )
 	{
 		BaseClass::ItemPostFrame();
 	}
 
-	// Was shooting neither and is now shooting either
+	// Was shooting neither and is now shooting either!
 	if( !bWasFiringPaint && !bWasFiringErase && 
 	   ( m_bFiringPaint || m_bFiringErase ) )
 	{
@@ -298,7 +315,7 @@ void CWeaponPaintGun::Drop( const Vector &vecVelocity )
 	}
 #endif
 
-	SetRenderColor( color.r(), color.g(), color.b() );
+//	SetRenderColor( color.r(), color.g(), color.b() );
 
 	BaseClass::Drop( vecVelocity );
 }
@@ -341,7 +358,7 @@ PaintPowerType CWeaponPaintGun::GetCurrentPaint()
 //Paint Ammo!
 bool CWeaponPaintGun::HasPaintAmmo( unsigned paintType ) const
 {
-	/*
+	
 	switch( paintgun_ammo_type.GetInt() )
 	{
 		case PAINT_AMMO_NONE:
@@ -356,7 +373,7 @@ bool CWeaponPaintGun::HasPaintAmmo( unsigned paintType ) const
 
 		default:
 			return true;
-	}*/
+	}
 
 	return true;
 }

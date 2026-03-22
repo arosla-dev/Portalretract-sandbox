@@ -33,6 +33,7 @@ public:
 	virtual bool	Deploy();
 	virtual void	Drop( const Vector &vecVelocity );
 	virtual bool	Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
+	virtual bool	Reload(void);
 	virtual bool	SendWeaponAnim( int iActivity );
 	virtual void	WeaponIdle();
 	void			PaintGunThink();
@@ -53,6 +54,8 @@ public:
 
 	bool			HasPaintPower( PaintPowerType nIndex );
 	bool			HasAnyPaintPower();
+
+	float			m_fNextPaintDelay;
 
 	bool			HasPaintAmmo( unsigned paintType ) const;
 	void			DecrementPaintAmmo( unsigned paintType );
@@ -79,6 +82,7 @@ private:
 	CNetworkArray( int, m_PaintAmmoPerType, PAINT_POWER_TYPE_COUNT );
 
 	float m_flAccumulatedTime;
+	float m_flReloadTime;
 	CNetworkVar( int, m_nCurrentColor );
 	CNetworkVar( int, m_nPaintAmmo );
 	CNetworkVar( bool, m_bFiringPaint );

@@ -13,4 +13,5 @@ enum PaintAmmoType
 	PAINT_AMMO_PER_TYPE
 };
 
+
 #endif // ifndef WEAPON_PAINTGUN_SHARED_H

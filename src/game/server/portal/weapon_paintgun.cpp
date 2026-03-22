@@ -79,12 +79,12 @@ LINK_ENTITY_TO_CLASS( weapon_paintgun, CWeaponPaintGun );
 PRECACHE_WEAPON_REGISTER( weapon_paintgun );
 
 
-CWeaponPaintGun::CWeaponPaintGun()
-	: m_nCurrentColor( NO_POWER ),
+CWeaponPaintGun::CWeaponPaintGun():
+	  m_nCurrentColor( NO_POWER ),
 	  m_bFiringPaint( false ),
 	  m_bFiringErase( false ),
 	  m_nPaintAmmo( 0 ),
-	  m_flAccumulatedTime( 0.0f )
+	  m_flAccumulatedTime(0.0f) 
 {
 	m_bFireOnEmpty = true;
 	m_bReloadsSingly = false;
@@ -143,6 +143,11 @@ void CWeaponPaintGun::Spawn()
 	ResetAmmo();
 }
 
+bool CWeaponPaintGun::Reload(void)
+{
+	return false;
+}
+
 void CWeaponPaintGun::CreatePaintStreams()
 {
 	for ( int i=0; i<PAINT_POWER_TYPE_COUNT_PLUS_NO_POWER; ++i )
@@ -175,13 +180,12 @@ void CWeaponPaintGun::UpdateOnRemove()
 void CWeaponPaintGun::Precache()
 {
 	PrecacheScriptSound( "Paintgun.FireLoop" );
-	PrecacheScriptSound( "NPC_CScanner.DiveBombFlyby" );
+	PrecacheScriptSound("NPC_CScanner.DiveBombFlyby");
 
 	PrecacheParticleSystem( "paint_splat_bounce_01" );
-	// FIXME: Bring this back for DLC2
-	//PrecacheParticleSystem( "paint_splat_reflect_01" );
 	PrecacheParticleSystem( "paint_splat_speed_01" );
 	PrecacheParticleSystem( "paint_splat_erase_01" );
+	PrecacheSound("vehicles/airboat/pontoon_fast_water_loop2.wav");
 
 	BaseClass::Precache();
 }
@@ -222,7 +226,7 @@ void CWeaponPaintGun::StartShootingSound()
 	if( m_pLiquidLoop == NULL )
 	{
 		CPASAttenuationFilter filter( this );
-		m_pLiquidLoop = controller.SoundCreate( filter, entindex(), "Paintgun.FireLoop" );
+		m_pLiquidLoop = controller.SoundCreate( filter, entindex(), "vehicles/airboat/pontoon_fast_water_loop2.wav" );
 		controller.Play( m_pLiquidLoop, 0.0, 100 );
 		controller.SoundChangeVolume( m_pLiquidLoop, 1.0, 1.f );
 	}
@@ -451,23 +455,7 @@ static void GiveAllPaintPowers()
 	}
 }
 
-static ConCommand giveallpaintpowers( "giveallpaintpowers", GiveAllPaintPowers );
-
-
-static void NextPaint()
-{
-	CBasePlayer *pPlayer = UTIL_GetCommandClient();
-	if ( !pPlayer )
-		return;
-
-	CWeaponPaintGun *pPaintGun = dynamic_cast< CWeaponPaintGun* >( pPlayer->GetActiveWeapon() );
-	if ( pPaintGun )
-	{
-		pPaintGun->CyclePaintPower( true );
-	}
-}
-
-static ConCommand nextpaint( "nextpaint", NextPaint );
+static ConCommand giveallpaintpowers( "upgrade_paintgun", GiveAllPaintPowers );
 
 
 static void PrevPaint()
@@ -490,7 +478,7 @@ static void ChangePaintTo( const CCommand& args )
 {
 	if ( args.ArgC() != 2 )
 	{
-		DevMsg("changepaintto bounce,speed,portal");// FIXME: Bring back for DLC2 ,reflect");
+		DevMsg("change paint to bounce,speed,portal");// FIXME: Bring back for DLC2 ,reflect");
 		return;
 	}
 
