@@ -146,7 +146,7 @@
 "Weapon_AR2.Empty"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
 	"wave"			"weapons/ar2/ar2_empty.wav"
@@ -155,46 +155,31 @@
 "Weapon_AR2.Reload"
 {
 	"channel"		"CHAN_ITEM"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
-	"wave"			"weapons/ar2/ar2_reload.wav"
+	"wave"			"weapons/ar2/npc_ar2_reload.wav"
 }
 
-"Weapon_AR2.Reload_Rotate"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"0.9"
-	"soundlevel"	"SNDLVL_NORM"
-
-	"wave"			"weapons/ar2/ar2_reload_rotate.wav"
-} 
-
-"Weapon_AR2.Reload_Push"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"0.9"
-	"soundlevel"	"SNDLVL_NORM"
-
-	"wave"			"weapons/ar2/ar2_reload_push.wav"
-}
 "Weapon_AR2.Single"
 {
-	"channel"	"CHAN_WEAPON"
-	"volume"	"0.8"
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_GUNFIRE"
-	"pitch"		"85,95"
+	"pitch"			"95,105"
 
 	"rndwave"
 	{
-		"wave"	"weapons/ar2/fire1.wav"
+		"wave"			"weapons/ar2/ar2_fire1.wav"
+		"wave"			"weapons/ar2/ar2_fire2.wav"
+		"wave"			"weapons/ar2/ar2_fire3.wav"
 	}
 }
 
 "Weapon_AR2.Special1"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
 	"wave"				"weapons/sniper/sniper_zoomin.wav"
@@ -203,7 +188,7 @@
 "Weapon_AR2.Special2"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
 	"wave"			"weapons/sniper/sniper_zoomout.wav"
@@ -212,16 +197,17 @@
 "Weapon_AR2.Double"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_GUNFIRE"
 
-	"wave"			"weapons/ar2/ar2_altfire.wav"
+//	"wave"			"weapons/ar2/ar2_altfire.wav"
+	"wave"			"weapons/ar2/npc_ar2_altfire.wav"
 }
 
 "Weapon_AR2.NPC_Reload"
 {
 	"channel"		"CHAN_ITEM"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
 	"wave"			"weapons/ar2/npc_ar2_reload.wav"
@@ -230,7 +216,7 @@
 "Weapon_AR2.NPC_Double"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_GUNFIRE"
 
 	"wave"			"weapons/ar2/npc_ar2_altfire.wav"
@@ -239,13 +225,29 @@
 "Weapon_AR2.NPC_Single"
 {
 	"channel"		"CHAN_WEAPON"
-	"volume"		"0.7"
+	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_GUNFIRE"
 	"pitch"			"95,105"
 
-//	"wave"			"^weapons/ar2/npc_ar2_fire1.wav"
-	"wave"			"^weapons/ar1/ar1_dist1.wav"
+	"wave"			"^weapons/ar2/npc_ar2_fire1.wav"
+}
 
+"Weapon_AR2.ZoomMode"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"weapons/smg1/switch_single.wav"
+}
+
+"Weapon_AR2.GrenadeMode"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"weapons/smg1/switch_burst.wav"
 }
 
 "Weapon_functank.Single"

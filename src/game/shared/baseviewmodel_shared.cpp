@@ -15,6 +15,8 @@
 #include "vguiscreen.h"
 #endif
 
+extern ConVar cl_oldvmbob;
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -431,6 +433,11 @@ float g_fMaxViewModelLag = 1.5f;
 
 void CBaseViewModel::CalcViewModelLag( Vector& origin, QAngle& angles, QAngle& original_angles )
 {
+	#if defined( CLIENT_DLL )
+		if (cl_oldvmbob.GetBool())
+			return;
+	#endif
+
 	Vector vOriginalOrigin = origin;
 	QAngle vOriginalAngles = angles;
 

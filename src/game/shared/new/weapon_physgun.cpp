@@ -857,7 +857,10 @@ void CWeaponGravityGun::EffectUpdate(void)
 			{
 				m_distance = Approach(40, m_distance, m_distance * 0.1);
 			}
-
+			if (pOwner->m_afButtonPressed & IN_RELOAD)
+			{
+				
+			}
 			IPhysicsObject* pPhys = GetPhysObjFromPhysicsBone(pObject, m_physicsBone);
 			if (pPhys)
 			{
