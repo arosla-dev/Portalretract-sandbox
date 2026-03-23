@@ -14,7 +14,7 @@
 #ifdef CLIENT_DLL
 #include "New/Other/ClientEffectPrecacheSystem.h"
 #endif
-#include "weapon_portalbasecombatweapon.h"
+#include "basehlcombatweapon_shared.h"
 #ifndef CLIENT_DLL
 #include "baseviewmodel.h"
 #endif
@@ -329,12 +329,12 @@ IMotionEvent::simresult_e CGravControllerPoint::Simulate( IPhysicsMotionControll
 #define CWeaponGravityGun C_WeaponGravityGun
 #endif
 
-class CWeaponGravityGun : public CBasePortalCombatWeapon
+class CWeaponGravityGun : public CBaseHLCombatWeapon
 {
 	DECLARE_DATADESC();
 
 public:
-	DECLARE_CLASS( CWeaponGravityGun, CBasePortalCombatWeapon);
+	DECLARE_CLASS( CWeaponGravityGun, CBaseHLCombatWeapon);
 
 	DECLARE_NETWORKCLASS();
 	DECLARE_PREDICTABLE();

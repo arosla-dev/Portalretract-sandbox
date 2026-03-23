@@ -225,9 +225,15 @@ void CBasePortalCombatWeapon::WeaponIdle( void )
 #define	HL2_BOB			0.002f
 #define	HL2_BOB_UP		0.5f
 
+#define	HL2_BOB_OLD				0.01f
+#define	HL2_BOB_CYCLE_MAX_OLD	0.8f
+
+
+
 extern float	g_lateralBob;
 extern float	g_verticalBob;
 
+extern ConVar	cl_oldvmbob;
 static ConVar	cl_bobcycle( "cl_bobcycle","0.8" );
 static ConVar	cl_bob( "cl_bob","0.002" );
 static ConVar	cl_bobup( "cl_bobup","0.5" );
@@ -259,6 +265,39 @@ float CBasePortalCombatWeapon::CalcViewmodelBob( void )
 	{
 		//NOTENOTE: We don't use this return value in our case (need to restructure the calculation function setup!)
 		return 0.0f;// just use old value
+	}
+
+	// HL1-like viewmodel bob calculation
+	if (cl_oldvmbob.GetBool())
+	{
+		Vector vel;
+
+		lastbobtime = gpGlobals->curtime;
+		bobtime += gpGlobals->frametime;
+
+		cycle = bobtime - (int)(bobtime / HL2_BOB_CYCLE_MAX_OLD) * HL2_BOB_CYCLE_MAX_OLD;
+		cycle /= HL2_BOB_CYCLE_MAX_OLD;
+
+		if (cycle < HL2_BOB_UP)
+		{
+			cycle = M_PI * cycle / HL2_BOB_UP;
+		}
+		else
+		{
+			cycle = M_PI + M_PI * (cycle - HL2_BOB_UP) / (1.0 - HL2_BOB_UP);
+		}
+
+		// bob is proportional to simulated velocity in the xy plane
+		// (don't count Z, or jumping messes it up)
+		VectorCopy(player->GetLocalVelocity(), vel);
+		vel[2] = 0;
+
+		g_lateralBob = sqrt(vel[0] * vel[0] + vel[1] * vel[1]) * HL2_BOB_OLD;
+		g_lateralBob = g_lateralBob * 0.3 + g_lateralBob * 0.7 * sin(cycle);
+		g_lateralBob = clamp(g_lateralBob, -7.0f, 4.0f);
+
+		//NOTENOTE: We don't use this return value in our case (need to restructure the calculation function setup!)
+		return 0.0f;
 	}
 
 	//Find the speed of the player
@@ -325,6 +364,23 @@ void CBasePortalCombatWeapon::AddViewmodelBob( CBaseViewModel *viewmodel, Vector
 	AngleVectors( angles, &forward, &right, NULL );
 
 	CalcViewmodelBob();
+
+	if (cl_oldvmbob.GetBool())
+	{
+		// Z bob a bit more
+		origin[2] += (g_lateralBob * 0.1f);
+
+		for (int i = 0; i < 3; i++)
+		{
+			origin[i] += g_lateralBob * 0.4 * forward[i];
+		}
+
+		// bob the angles
+		angles[YAW] -= g_lateralBob * 0.5;
+		angles[ROLL] -= g_lateralBob * 1;
+		angles[PITCH] -= g_lateralBob * 0.3;
+		return;
+	}
 
 	// Apply bob, but scaled down to 40%
 	VectorMA( origin, g_verticalBob * 0.1f, forward, origin );

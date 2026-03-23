@@ -38,9 +38,6 @@ public:
 
 	C_BaseViewModel* GetEffectViewModel();
 
-	virtual void	AddViewmodelBob( CBaseViewModel *viewmodel, Vector &origin, QAngle &angles );
-	virtual	float	CalcViewmodelBob( void );
-
 	void SetPaintPower( PaintPowerType type );
 	void CyclePaintPower( bool bForward );
 	PaintPowerType GetCurrentPaint( void );
