@@ -87,4 +87,6 @@ enum PortalEvent_t // Not all of these events will be implemented in Retract
 
 extern char *g_ppszPortalPassThroughMaterials[];
 
+#define DMG_MISSILEDEFENSE	(DMG_LASTGENERICFLAG<<2)	// The only kind of damage missiles take. (special missile defense)
+
 #endif // PORTAL_SHAREDDEFS_H

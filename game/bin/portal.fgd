@@ -1227,224 +1227,30 @@
 	// input Disable(void) : "Turn the beam off."
 ]
 
-//punt 
-@PointClass base(Weapon) studio("models/weapons/w_models/w_puntgun/w_puntgun.mdl") = weapon_puntgun : "Puntgun" []
-
-@SolidClass base(Trigger, Parentname) = func_nopunt_volume : "A volumetric trigger that makes boxes unpuntable. Good for Water!"
-[	
-	//Inputs
-	input Enable( void ) : "Enable collisions with vehicles"
-	input Disable( void ) : "Disable collisions with vehicles"
-]
-
-@SolidClass base(Targetname, Parentname) = func_punt_blocker : "A region in which no portal can be placed"
-[	
-	//Inputs
-	input Enable( void ) : "Enable collisions with vehicles"
-	input Disable( void ) : "Disable collisions with vehicles"
-
-	spawnflags(Flags) = 
-	[
-		1: "Start inactive" : 0
-	]
-]
-
-@SolidClass base(Targetname, Parentname, EnableDisable) = func_punt_surface : "A Brush that the player launches off of."
-[	
-	//Inputs
-	input Enable( void ) : "Enable"
-	input Disable( void ) : "Disable"
-]
-
-@PointClass base(Targetname, Parentname, Angles, DamageFilter) studio("models/props_gameplay/puntbox.mdl") = prop_punt_box : ""
-[
-
-	BoxType(choices) : "Type of Box" : 0 : "" =
-	[
-		0 : "Standard"
-		1 : "Flip"
-		2 : "Pause"
-		3 : "Bomb"
-		4 : "Vapor"
-	]
-
-
-	enablepunt(choices) : "Enable Punting" : 1 : "Enable Punt on Spawn?" =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	input Kill(void) : ""
-	input Activate(void) : ""
-	input Deactivate(void) : ""
-	input Dissolve(void) : ""
-	input SilentDissolve(void) : ""
-	input EnablePunt(void) : ""
-	input DisablePunt(void) : ""
-
-	output OnTakeDamage(void) : "Fired each time this breakable takes any damage."
-	output OnPlayerUse( void ) : ""
-	output OnPlayerPickup( void ) : ""
-	output OnPhysGunDrop( void ) : ""
-	output OnPhysGunPunt( void ) : ""
-	output OffPhysGunPunt( void ) : ""
-	output OnExplode( void ) : ""
-]
-
-@PointClass base(Targetname, Angles ) studio("models/props_signage/punt_panel.mdl") line(255 255 0, targetname, target) = prop_punt_panel : "" 
-[
-
-	target(target_destination) : "Indicator Lights" : "" : "If supplied, assumes this is a group of indicators lights to toggle when the indicator is toggled."
-	PanelType(choices) : "Panel Icon" : 0 : "" =
-	[
-		0 : "Target"
-		1 : "Arrow:Down"
-		2 : "Arrow:Up"
-	]
-	timed(choices) : "Timed?" : 0 : "If set to 'Yes', The panel will turn yellow." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	timeamount(float) : "Time Amount" : 1 : "If 'Timed?' is set, this will be the amount of time in seconds that it will be for it to reset."
-	// Inputs
-	input Reset(void) : "Resets Panel"
-
-	// Output
-	output OnActivate( void ) : ""
-	output OnDeactivate( void ) : ""
-]
-
 //-------------------------------------------------------------------------
 //
-// Other things
+// Player Control Entities
 //
 //-------------------------------------------------------------------------
-
-@PointClass base(Targetname, Angles ) studio("models/props_signage/indicator_panel.mdl") line(255 255 0, targetname, target) = prop_indicator_panel : "" 
+@BaseClass base(Targetname) size(-10 -10 -10, 10 10 10) color(255 0 255) = player_control
 [
-
-	target(target_destination) : "Indicator Lights" : "" : "If supplied, assumes this is a group of indicators lights to toggle when the indicator is toggled."
-	timed(choices) : "Timed?" : 0 : "Does this reset after X amount of time?" =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	timeamount(float) : "Time Amount" : 1 : "If 'Timed?' is set, this will be the amount of time in seconds that it will be for it to reset."
-	quiet(choices) : "Quiet?" : 0 : "If set to 'Yes' A clock sound will be not be played." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
 	// Inputs
-	input Activate(void) : "Activate"
-	input Dectivate(void) : "Deactivate"
+	input Activate(void)		: "Turns on"
+	input Deactivate(void)		: "Turns off"
+	input SetThrust(string)		: "Set Thrust"
+	input SetSideThrust(string)  : "Set Side Thrust"
+]
 
-	// Output
-	output OnActivate( void ) : "Fired when the indicator is activated."
-	output OnDeactivate( void ) : "Fired when the indicator is deactivated."
+ 
+@PointClass base(player_control) = player_manhack : "Manhack flown by player"
+[
 ]
 
 
-@PointClass base(Targetname) iconsprite("editor/logic_puzzle_manager.vmt") = logic_puzzle_manager : "Puzzle Manager"
+@PointClass base(player_control) = player_missile : "Missile flown by player"
 [
-
-	gun(choices) : "Player Has Puntgun?" : 1 : "If set to 'Yes', the player will spawn with a Puntgun." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	allowsave(choices) : "Allow Saving?" : 1 : "If set to 'Yes', the game will save when the puzzle starts and ends." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	allowautosave(choices) : "Allow Autosaving?" : 0 : "If set to 'Yes', The game will automatically save. NOTE: ONLY USE THIS IF YOU'RE SURE THE PLAYER WILL NOT GET STUCK DYING IN A LOOP!" =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	autosavetime(float) : "Autosave Time Amount" : 120 : "If 'Allow Autosaving?' is set, this will be the refire rate in seconds of saving."
-	canlaunch(choices) : "Allow Puntgun to launch objects?" : 0 : "If set to 'Yes', the Puntgun will be gifted the ability to launch things." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	allowrecording(choices) : "Allow Demo Recording?" : 0 : "On StartPuzzle, the manager will record a demo. When the puzzle ends, it will stop, and save the file to the disk." =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	input StartPuzzle(void) : "Start the Puzzle"
-	input EndPuzzle(void) : "End the Puzzle"
-	input SaveProgress(void) : "Save Progress"
-	input GivePuntgun(void) : "Give Puntgun"
-	input UpgradePuntgun(void) : "Upgrade Puntgun"
-	input Report(void) : "Reports settings to the console."
-
-	output OnPuzzleStart( void ) : "The Puzzle has Started."
-	output OnPuzzleEnd( void ) : "The Puzzle has Ended."
-]
-
-@PointClass base(Targetname, EnableDisable) iconsprite("editor/logic_random_outputs.vmt") = logic_random_outputs :
-	"A message forwarder. Fires up to eight separate outputs, each with a different chance of firing."
-[
-	spawnflags(flags) =
-	[
-		1: "Only trigger once" : 0
-		2: "Allow fast retrigger" : 0
-	]
-	OnTriggerChance1(float) : "OnTrigger1 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger1 output firing when this entity is triggered."
-	OnTriggerChance2(float) : "OnTrigger2 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger2 output firing when this entity is triggered."
-	OnTriggerChance3(float) : "OnTrigger3 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger3 output firing when this entity is triggered."
-	OnTriggerChance4(float) : "OnTrigger4 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger4 output firing when this entity is triggered."
-	OnTriggerChance5(float) : "OnTrigger5 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger5 output firing when this entity is triggered."
-	OnTriggerChance6(float) : "OnTrigger6 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger6 output firing when this entity is triggered."
-	OnTriggerChance7(float) : "OnTrigger7 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger7 output firing when this entity is triggered."
-	OnTriggerChance8(float) : "OnTrigger8 Chance" : "1.0" : "Chance (from 0 to 1) of the OnTrigger8 output firing when this entity is triggered."
-
-	// Inputs
-	input Trigger(void) : "Trigger this entity, causing its OnTrigger outputs to fire if it is enabled."
-	input Toggle(void) : "Toggle this entity between enabled and disabled."
-	input CancelPending(void) : "Cancel any events fired by this entity that are currently pending in the I/O event queue."
-	
-	// Outputs
-	output OnSpawn(void) : "Fired when this entity is spawned. If this entity is set to only trigger once, it will "+
-		"delete itself after firing this output."
-	output OnTrigger1(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger2(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger3(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger4(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger5(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger6(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger7(void) : "This output has a chance to fire when the entity is triggered."
-	output OnTrigger8(void) : "This output has a chance to fire when the entity is triggered."
-]
-
-@PointClass base(Targetname, EnableDisable) iconsprite("editor/logic_gravity_control.vmt") = logic_gravity_control : "Gravity Controller." //To Do: make sprite
-[
-	input FlipGravity(void) : "Flips the current gravity."
-	input ResetGravity(void) : "Reset gravity to normal."
-	input Toggle(void) : "Toggle the relay between enabled and disabled."
-	output OnGravityFlipped( void ) : "Fired When the gravity is flipped."
-	output OnGravityNormal( void ) : "Fired When the gravity is off flipped."
-//	output OnReset( void ) : "Fired When the gravity is reset."
-]
-
-//f-stop 
-
-
-@PointClass base(Weapon, Targetname, Parentname) studio("models/weapons/w_camera/w_camera.eramdl") = weapon_camera : "Camera"
-[
-	FieldOfView(float) : "Field of view" : "60" : "Field of view of the camera in degrees"
-]
-
-@PointClass base(Weapon, Targetname, Parentname) studio("models/weapons/w_models/w_photo/w_photo.mdl") = weapon_placement : "Placement"
-[
-	PhotoCapacity(integer) : "Photo capacity" : 3 : "Maximum number of photos at any one time"
-	MinScaleLevel(integer) : "Minimum scale level" : -3 : "Minimum power of two to scale objects to when placing"
-	MaxScaleLevel(integer) : "Maximum scale level" : 3 : "Maximum power of two to scale objects to when placing"
+	health(Integer)		 : "Health"			: 200
+	LaunchDelay(string)  : "Launch Delay"	: 0		: "How long to wait before launching after view is switched"
+	Damage(string)		 : "Damage"			: 3500	: "How much damage do I do"
+	DamageRadius(string) : "Damage Radius"	: 250	: "How far away do I do damage"
 ]

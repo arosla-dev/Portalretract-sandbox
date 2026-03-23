@@ -65,7 +65,10 @@ $Project "Server (Portal)"
 			
 			$Folder "Entities"
 			{
-
+				$File "new\entities\player_control.cpp"
+				$File "new\entities\player_control.h"
+				$File "new\entities\player_missile.cpp"
+				$File "new\entities\player_manhack.cpp"
 			}
 
 			$Folder "Npc"

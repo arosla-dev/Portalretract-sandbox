@@ -31,6 +31,7 @@
 #define	CONTENTS_WATER			0x20
 #define	CONTENTS_BLOCKLOS		0x40	// block AI line of sight
 #define CONTENTS_OPAQUE			0x80	// things that cannot be seen through (may be non-solid though)
+#define	CONTENTS_MIST			0x160
 #define	LAST_VISIBLE_CONTENTS	CONTENTS_OPAQUE
 
 #define ALL_VISIBLE_CONTENTS (LAST_VISIBLE_CONTENTS | (LAST_VISIBLE_CONTENTS-1))

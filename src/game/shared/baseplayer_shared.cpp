@@ -266,11 +266,13 @@ const QAngle &CBasePlayer::EyeAngles( )
 
 	if ( !pMoveParent )
 	{
+		/* //p1llowguy - why this is exist?
 		// if in camera mode, use that
 		if ( GetViewEntity() != NULL )
 		{
 			return GetViewEntity()->EyeAngles();
 		}
+		*/
 		return pl.v_angle;
 	}
 
@@ -315,11 +317,13 @@ Vector CBasePlayer::EyePosition( )
 			}
 		}
 #endif
+		/* //p1llowguy - why this is exist?
 		// if in camera mode, use that
 		if ( GetViewEntity() != NULL )
 		{
-			return GetViewEntity()->EyePosition();
+			return GetViewEntity()->EyeAngles();
 		}
+		*/
 
 		return BaseClass::EyePosition();
 	}
