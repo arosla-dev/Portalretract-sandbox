@@ -586,7 +586,7 @@ void CWeaponImmolator::ImmolationDamage( const CTakeDamageInfo &info, const Vect
 	// iterate on all entities in the vicinity.
 	for ( sphere; sphere.GetCurrentEntity(); sphere.NextEntity())
 	{
-		CBaseCombatCharacter* pBCC = MyCombatCharacterPointer();
+		CBaseCombatCharacter* pBCC = pEntity->MyCombatCharacterPointer();
 		pEntity = sphere.GetCurrentEntity();
 
 		if (pBCC && pBCC->IsAlive() && !pBCC->IsOnFire())

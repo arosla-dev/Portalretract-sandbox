@@ -853,32 +853,6 @@
 	output OnPlacedSuccessfully(void) : "When a portal is placed without failure, this output is fired."
 ]
 
-@PointClass base(Weapon,Targetname, Parentname) studio("models/weapons/w_models/w_portalgun/w_portalgun.mdl") = weapon_portalgun : "Portalgun"
-[
-	CanFirePortal1(choices)			: "Can Fire Portal 1" : 1 : "Can this portalgun create blue portals?"	=
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	CanFirePortal2(choices)			: "Can Fire Portal 2" : 1 : "Can this portalgun create red portals?"	=
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-
-	input ChargePortal1(void)		: "Does charge up effect for mounted portalgun."
-	input ChargePortal2(void)		: "Does charge up effect for mounted portalgun."
-
-	input FirePortal1(void)			: "Projects portal 1 onto a wall in the facing direction of the gun."
-	input FirePortal2(void)			: "Projects portal 2 onto a wall in the facing direction of the gun."
-
-	input FirePortalDirection1(vector)	: "Fires portal 1 in the specified direction."
-	input FirePortalDirection2(vector)	: "Fires portal 1 in the specified direction."
-
-	output OnFiredPortal1(void)		: "Fires when the first (blue) portal is fired."
-	output OnFiredPortal2(void)		: "Fires when the second (red) portal is fired."
-]
-
 @PointClass base(npc_turret_ground) studio( "models/combine_turrets/ground_turret.mdl" ) = npc_portal_turret_ground : "Combine (Portal) ground turret"
 [
 	ConeOfFire(float) 	: "Cone of Fire" : 60 : "Cone of fire in degrees."
@@ -966,7 +940,6 @@
 		1 : "Companion"
 		2 : "Reflective"
 		3 : "Sphere"
-		4 : "F-stop"
 	]
 	
 	input  Dissolve(void) : "Dissolves the cube."
@@ -1253,4 +1226,23 @@
 	LaunchDelay(string)  : "Launch Delay"	: 0		: "How long to wait before launching after view is switched"
 	Damage(string)		 : "Damage"			: 3500	: "How much damage do I do"
 	DamageRadius(string) : "Damage Radius"	: 250	: "How far away do I do damage"
+]
+
+
+@PointClass base(Weapon) studio("models/weapons/w_iceaxe.mdl") = weapon_iceaxe : "Ice axe" []
+@PointClass base(Weapon) studio("models/weapons/w_binoculars.mdl") = weapon_binoculars : "Binoculars" []
+@PointClass base(Weapon) studio("models/weapons/w_molotov.mdl") = weapon_molotov : "Molotov" []
+@PointClass base(Weapon) studio("models/weapons/w_flaregun.mdl") = weapon_flaregun : "Flare Gun" []
+@PointClass base(Weapon) studio("models/weapons/w_guardgun.mdl") = weapon_cguard: "Combine Guard Gun" []
+@PointClass base(Weapon) studio("models/weapons/w_ar2.mdl") = weapon_gauss : "Gauss Gun" []
+
+@NPCClass base(BaseNPC) studio("models/cremator.mdl") = npc_cremator : "Cremator"
+[
+	hosemaxrange(integer)		: "HoseMaxRange"			: 300
+	hoseburnduration(integer)	: "HoseBurnDuration"		: 3
+	hosereloadduration(integer)	: "HoseReloadDuration"		: 2
+	hosearcscale(integer)		: "HoseArcScale"			: 25
+	
+	// Outputs
+	output AtLastBurnTarget(void) : "Fires when the cremator reaces the last burn target"
 ]
