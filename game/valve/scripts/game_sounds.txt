@@ -209,8 +209,3 @@
 
 	"wave"		"ui/hint.wav"
 }
-
-
-
-
-

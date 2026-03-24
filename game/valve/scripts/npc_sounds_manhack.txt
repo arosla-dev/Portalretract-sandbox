@@ -157,3 +157,24 @@
 	"wave"			"npc/scanner/scanner_siren2.wav"
 }
 
+"Player_Manhack.Fly"
+{
+	"channel"		"CHAN_VOICE"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"npc/manhack/stinger_flyloop1.wav"
+}
+
+"Player_Manhack.Fire"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"			"npc/manhack/stinger_fire1.wav"
+}

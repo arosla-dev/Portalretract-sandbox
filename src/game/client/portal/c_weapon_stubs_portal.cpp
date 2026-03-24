@@ -39,3 +39,9 @@ STUB_WEAPON_CLASS( weapon_hopwire, WeaponHopwire, C_BaseHLCombatWeapon );
 STUB_WEAPON_CLASS(weapon_flaregun, Flaregun, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_binoculars, WeaponBinoculars, C_BaseHLCombatWeapon)
 STUB_WEAPON_CLASS(weapon_cguard, WeaponCGuard, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_molotov, WeaponMolotov, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_iceaxe, WeaponIceAxe, C_BaseHLBludgeonWeapon);
+STUB_WEAPON_CLASS(weapon_manhack, WeaponManhack, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_immolator, WeaponImmolator, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_Gauss, WeaponGauss, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_brickbat, WeaponBrickbat, C_BaseHLCombatWeapon);

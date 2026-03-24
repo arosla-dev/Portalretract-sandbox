@@ -7,7 +7,7 @@ WeaponData
 	"viewmodel"			"models/weapons/v_guardgun.mdl"
 	"playermodel"		"models/weapons/w_guardgun.mdl"
 	"anim_prefix"			"guardgun"
-	"bucket"			"5"
+	"bucket"			"4"
 	"bucket_position"		"3"
 	"bucket_position_360"	"2"
 	"clip_size"			"1"

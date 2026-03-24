@@ -123,3 +123,43 @@
 
 	"wave"			"npc/turret_floor/ping.wav"
 }
+
+
+"NPC_MissileDefense.Attack"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_100dB"
+
+	"rndwave"
+	{
+		"wave"	"weapons/ar2/ar2_fire1.wav"
+		"wave"	"weapons/ar2/ar2_fire2.wav"
+		"wave"	"weapons/ar2/ar2_fire3.wav"
+	}
+}
+
+"NPC_MissileDefense.Reload"
+{
+	"channel"		"CHAN_BODY"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_100dB"
+
+	"wave"			"weapons/ar2/ar2_reload_push.wav"
+	"wave"			"weapons/ar2/ar2_reload_rotate.wav"
+}
+
+"NPC_MissileDefense.Turn"
+{
+	"channel"		"CHAN_VOICE"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_100dB"
+
+	"wave"			"npc/entity/turret/turret_loop1.wav"
+}

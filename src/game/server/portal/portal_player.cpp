@@ -441,6 +441,11 @@ void CPortal_Player::GiveAllItems( void )
 	GiveNamedItem("weapon_paintgun");
 	GiveNamedItem("weapon_binoculars");
 	GiveNamedItem("weapon_flaregun");
+	GiveNamedItem("weapon_immolator");
+	GiveNamedItem("weapon_iceaxe");
+	GiveNamedItem("weapon_stunstick");
+	GiveNamedItem("weapon_brickbat");
+	GiveNamedItem("weapon_molotov");
 
 	//GiveNamedItem( "weapon_physcannon" );
 	CWeaponPortalgun *pPortalGun = static_cast<CWeaponPortalgun*>( GiveNamedItem( "weapon_portalgun" ) );

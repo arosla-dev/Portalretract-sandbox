@@ -1,37 +1,29 @@
-// Pistol
+// Flare Gun
 
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_Flaregun"
-	"viewmodel"			"models/weapons/v_flaregun.mdl"
-	"playermodel"		"models/weapons/w_flaregun.mdl"
-	"anim_prefix"		"pistol"
-	"bucket"			"1"
-	"bucket_position"	"3"
-	"bucket_360"			"0"
-	"bucket_position_360"	"0"
+	"printname"	"Flaregun"
+	"viewmodel"				"models/weapons/v_flaregun.mdl"
+	"playermodel"			"models/weapons/w_flaregun.mdl"
+	"anim_prefix"			"flaregun"
+	"bucket"				"1"
+	"bucket_position"		"2"
 
-	"clip_size"			"1"
-	"primary_ammo"		"FlareRound"
-	"secondary_ammo"	"None"
+	"clip_size"				"1"
+	"primary_ammo"			"FlareRound"
+	"secondary_ammo"		"None"
 
-	"weight"		"2"
-	"rumble"		"1"
-	"item_flags"		"0"
+	"default_clip"			"20"
+
+	"weight"				"0"
+	"item_flags"			"0"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
-
-		"reload"			"Weapon_FlareGun.Reload"
-		"reload_npc"		"Weapon_FlareGun.Reload"
-		"empty"				"Weapon_Pistol.Empty"
 		"single_shot"		"Weapon_FlareGun.Single"
-		"single_shot_npc"	"Weapon_FlareGun.Single"
-		"special1"			"Weapon_Pistol.Special1"
-		"special2"			"Weapon_Pistol.Special2"
-		"burst"				"Weapon_Pistol.Burst"
+		"reload"			"Weapon_FlareGun.Reload"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
@@ -39,28 +31,35 @@ WeaponData
 	{
 		"weapon"
 		{
-				"font"		"WeaponIcons"
-				"character"	"d"
+				"file"		"sprites/w_icons1"
+				"x"			"128"
+				"y"			"64"
+				"width"		"128"
+				"height"	"64"
 		}
 		"weapon_s"
-		{	
-				"font"		"WeaponIconsSelected"
-				"character"	"d"
-		}
-		"weapon_small"
 		{
-				"font"		"WeaponIconsSmall"
-				"character"	"d"
+				"file"		"sprites/w_icons1b"
+				"x"			"128"
+				"y"			"64"
+				"width"		"128"
+				"height"	"64"
 		}
 		"ammo"
 		{
-				"font"		"WeaponIconsSmall"
-				"character"	"p"
+				"file"		"sprites/a_icons1"
+				"x"			"55"
+				"y"			"130"
+				"width"		"73"
+				"height"	"20"
 		}
 		"crosshair"
 		{
-				"font"		"Crosshairs"
-				"character"	"Q"
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
 		}
 		"autoaim"
 		{

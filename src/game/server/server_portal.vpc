@@ -60,7 +60,15 @@ $Project "Server (Portal)"
 				$File "$SRCDIR\game\shared\new\weapons\weapon_physgun.cpp"
 				$File "new\weapons\weapon_binoculars.cpp"
 				$File "new\weapons\weapon_cguard.cpp"
+				$File "new\weapons\weapon_immolator.cpp"
+				$File "new\weapons\weapon_gauss.cpp"
 				$File "new\weapons\weapon_stickylauncher.cpp"
+				$File "new\weapons\weapon_molotov.cpp"
+				$File "new\weapons\weapon_molotov.h"
+				$File "new\weapons\weapon_iceaxe.cpp"
+				$File "new\weapons\weapon_manhack.cpp"
+				$File "new\weapons\weapon_brickbat.cpp"
+				$File "new\weapons\weapon_brickbat.h"
 			} 
 			
 			$Folder "Entities"
@@ -69,10 +77,16 @@ $Project "Server (Portal)"
 				$File "new\entities\player_control.h"
 				$File "new\entities\player_missile.cpp"
 				$File "new\entities\player_manhack.cpp"
+				$File "new\entities\grenade_molotov.cpp"
+				$File "new\entities\grenade_molotov.h"
+				$File "new\entities\grenade_brickbat.cpp"
+				$File "new\entities\grenade_brickbat.h"
 			}
 
 			$Folder "Npc"
 			{
+				$File "new\npc\npc_cremator.h"
+				$File "new\npc\npc_cremator.cpp"
 			}		
 			
 		}

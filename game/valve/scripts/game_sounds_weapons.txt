@@ -93,6 +93,98 @@
 // *******
 // WEAPONS
 
+//weaponi_immolator
+"Weapon_Immolator.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"wave"			"weapons/punch_miss1.wav"
+}
+
+"Weapon_Immolator.Start"
+{
+//	"channel"		"CHAN_WEAPON"
+	"channel"		"CHAN_VOICE"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"wave"			"weapons/mtov_flame1.wav"
+}
+
+"Weapon_Immolator.Run"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"wave"			"ambient/fire_big_loop1.wav"
+}
+
+"Weapon_Immolator.Off"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+//	"wave"			"weapons/mtov_flame2.wav"
+	"wave"			"weapons/mtov_flame3.wav"
+}
+
+// weapon_iceaxe.txt
+"Weapon_IceAxe.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_105dB"
+	"pitch"			"95,100"
+
+//	"wave"			"weapons/iceaxe/iceaxe_swing1.wav"
+	"rndwave"
+	{
+		"wave"		"weapons/iceaxe/iceaxe_swing1.wav"
+		"wave"		"weapons/iceaxe/iceaxe_swing2.wav"
+	}
+}
+
+"Weapon_IceAxe.Melee_Hit"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_105dB"
+	"pitch"			"98,102"
+
+	"rndwave"
+	{
+		"wave"		"impact/bullets/flesh/flesh1.wav"
+		"wave"		"impact/bullets/flesh/flesh2.wav"
+		"wave"		"impact/bullets/flesh/flesh3.wav"
+	}
+}
+
+"Weapon_IceAxe.Melee_HitWorld"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_105dB"
+	"pitch"			"98,102"
+
+	"rndwave"
+	{
+	//	"wave"		"weapons/crowbar/crowbar_impact1.wav"
+	//	"wave"		"weapons/crowbar/crowbar_impact2.wav"
+		"wave"		"weapons/iceaxe/iceaxe_impact1.wav"
+		"wave"		"weapons/iceaxe/iceaxe_impact2.wav"
+	}
+}
+
+// weapon_molotov.txt
+"Weapon_Molotov.Special1"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"	"SNDLVL_NORM"
+
+	"wave"		"debris/wood1.wav"
+}
+
 // weapon_cguard.txt
 "Weapon_CombineGuard.Reload"
 {
@@ -100,7 +192,7 @@
 	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
-	"wave"			"weapons/sniper/sniper_reload.wav"
+	"wave"			"weapons/cguard_reload.wav"
 }
 
 "Weapon_CombineGuard.NPC_Reload"
@@ -109,7 +201,7 @@
 	"volume"		"1.0"
 	"soundlevel"	"SNDLVL_NORM"
 
-	"wave"			"weapons/sniper/sniper_reload.wav"
+	"wave"			"weapons/cguard_reload.wav"
 }
 
 "Weapon_CombineGuard.Single"
@@ -1482,6 +1574,14 @@
 	{
 		"wave"	"physics/glass/glass_bottle_break2.wav"
 	}
+}
+
+"Grenade_Molotov.Flame"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"soundlevel"		"SNDLVL_GUNFIRE"
+	"wave"			"ambient/fire_med_loop1.wav"
 }
 
 "GrenadePathfollower.StopSounds"
