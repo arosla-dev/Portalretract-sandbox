@@ -8,6 +8,8 @@ $bodygroup "studio"
 }
 
 
+$surfaceprop "default"
+
 $contents "solid"
 
 $illumposition -6.869 -13.269 -12.096
@@ -19,45 +21,46 @@ $cbox 0 0 0 0 0 0
 
 $bbox -5.232 -14.305 -20.735 31.771 0.567 -3.457
 
-$definebone "Bip01" "" 0.134138 2.728104 43.181469 0 -89.999927 0 0 0 0 0 0 0
-$definebone "Bip01 Pelvis" "Bip01" 0 0 0 -89.980215 -89.999927 0 0 0 0 0 0 0
-$definebone "Bip01 Spine" "Bip01 Pelvis" 4.443617 -0.009642 0.000006 -0.000057 0.045607 -0.000229 0 0 0 0 0 0
-$definebone "Bip01 Neck" "Bip01 Spine" 12.111415 -0.011446 0 0 0 0 0 0 0 0 0 0
-$definebone "Bip01 R Clavicle" "Bip01 Neck" 0.000011 0.011449 -1.352403 78.540823 179.953614 -0.000802 0 0 0 0 0 0
-$definebone "Bip01 R UpperArm" "Bip01 R Clavicle" 6.078086 0 0.000002 -2.569601 -88.156548 72.743762 0 0 0 0 0 0
-$definebone "Bip01 R Forearm" "Bip01 R UpperArm" 13.446753 -0.000002 -0.000001 0 -3.959138 -0.000002 0 0 0 0 0 0
-$definebone "Bip01 R Hand" "Bip01 R Forearm" 15.996999 -0.000001 0 0 0 96.454354 0 0 0 0 0 0
-$definebone "Bip01 R Finger0" "Bip01 R Hand" 1.885325 0.833277 2.177876 -33.196936 41.21136 66.221833 0 0 0 0 0 0
-$definebone "Bip01 R Finger01" "Bip01 R Finger0" 1.506965 0 0 -0.000004 -7.999987 -0.000009 0 0 0 0 0 0
-$definebone "Bip01 R Finger02" "Bip01 R Finger01" 0.798348 -0.000004 0 -0.000004 -8.500005 -0.000008 0 0 0 0 0 0
-$definebone "Bip01 R Finger1" "Bip01 R Hand" 3.9503 -0.539876 2.10887 -8.639569 16.687679 -2.531441 0 0 0 0 0 0
-$definebone "Bip01 R Finger11" "Bip01 R Finger1" 1.5458 -0.000001 0.000004 0.000003 24.500015 0.000004 0 0 0 0 0 0
-$definebone "Bip01 R Finger12" "Bip01 R Finger11" 1.667396 0.000001 -0.000002 0.000001 17.999983 0.000005 0 0 0 0 0 0
+$definebone "Bip01" "" 0.134138 2.728104 43.181469 0 -89.999921 0 0 0 0 0 0 0
+$definebone "Bip01 Pelvis" "Bip01" 0 0 0 -89.980215 -89.999921 0 0 0 0 0 0 0
+$definebone "Bip01 Spine" "Bip01 Pelvis" 4.443615 -0.009642 0.000006 -0.000057 0.045607 -0.000229 0 0 0 0 0 0
+$definebone "Bip01 Neck" "Bip01 Spine" 12.111408 -0.011446 0 0 0 0 0 0 0 0 0 0
+$definebone "Bip01 R Clavicle" "Bip01 Neck" 0.000008 0.011449 -1.352403 78.540823 179.953614 -0.000802 0 0 0 0 0 0
+$definebone "Bip01 R UpperArm" "Bip01 R Clavicle" 6.078086 0 0 -2.569601 -88.156548 72.743762 0 0 0 0 0 0
+$definebone "Bip01 R Forearm" "Bip01 R UpperArm" 13.446753 0 -0.000001 0 -3.959138 -0.000002 0 0 0 0 0 0
+$definebone "Bip01 R Hand" "Bip01 R Forearm" 15.997001 0 0.000001 0 0 96.454354 0 0 0 0 0 0
+$definebone "Bip01 R Finger0" "Bip01 R Hand" 1.885324 0.833277 2.177876 -33.196932 41.21135 66.221833 0 0 0 0 0 0
+$definebone "Bip01 R Finger01" "Bip01 R Finger0" 1.506969 0.000006 0.000004 -0.000009 -7.999999 -0.000013 0 0 0 0 0 0
+$definebone "Bip01 R Finger02" "Bip01 R Finger01" 0.798347 -0.000004 0 -0.000005 -8.500015 -0.000012 0 0 0 0 0 0
+$definebone "Bip01 R Finger1" "Bip01 R Hand" 3.950298 -0.539876 2.108868 -8.639566 16.687672 -2.531441 0 0 0 0 0 0
+$definebone "Bip01 R Finger11" "Bip01 R Finger1" 1.545803 -0.000002 0.000004 0.000006 24.500003 0.000006 0 0 0 0 0 0
+$definebone "Bip01 R Finger12" "Bip01 R Finger11" 1.667397 0 0 0.000004 17.999968 0.000008 0 0 0 0 0 0
 $definebone "Bip01 R Finger2" "Bip01 R Hand" 3.899458 -0.475376 1.170891 0 0 0.045609 0 0 0 0 0 0
-$definebone "Bip01 R Finger21" "Bip01 R Finger2" 1.528215 0 -0.000001 0 13.999992 0.000002 0 0 0 0 0 0
-$definebone "Bip01 R Finger22" "Bip01 R Finger21" 1.528214 0.000001 0.000001 -0.000001 27.500022 0.000001 0 0 0 0 0 0
-$definebone "Bip01 R Finger3" "Bip01 R Hand" 3.899459 -0.431804 -0.168225 0 0 0.045609 0 0 0 0 0 0
-$definebone "Bip01 R Finger31" "Bip01 R Finger3" 1.506964 0 0 0 15.499996 0.000002 0 0 0 0 0 0
-$definebone "Bip01 R Finger32" "Bip01 R Finger31" 1.506964 0 0.000001 0 -2.000026 0.000002 0 0 0 0 0 0
-$definebone "Bip01 R Finger4" "Bip01 R Hand" 3.915631 -0.27802 -1.402609 0 0 0.045609 0 0 0 0 0 0
-$definebone "Bip01 R Finger41" "Bip01 R Finger4" 1.333082 0 -0.000004 0 4.999973 0.000001 0 0 0 0 0 0
-$definebone "Bip01 R Finger42" "Bip01 R Finger41" 1.159206 0 0.000004 0 12.499991 0.000002 0 0 0 0 0 0
-$definebone "Dummy14" "Bip01 R Hand" 4.150423 4.791651 -1.605117 14.488667 105.506868 -42.485447 0 0 0 0 0 0
+$definebone "Bip01 R Finger21" "Bip01 R Finger2" 1.528219 0 0.000004 0 13.999988 0.000002 0 0 0 0 0 0
+$definebone "Bip01 R Finger22" "Bip01 R Finger21" 1.528217 0.000001 0 -0.000001 27.500017 0.000001 0 0 0 0 0 0
+$definebone "Bip01 R Finger3" "Bip01 R Hand" 3.89946 -0.431804 -0.168228 0 0 0.045609 0 0 0 0 0 0
+$definebone "Bip01 R Finger31" "Bip01 R Finger3" 1.506962 0 -0.000004 0 15.499992 0.000002 0 0 0 0 0 0
+$definebone "Bip01 R Finger32" "Bip01 R Finger31" 1.506964 0.000001 0.000004 0 -2.00003 0.000002 0 0 0 0 0 0
+$definebone "Bip01 R Finger4" "Bip01 R Hand" 3.91563 -0.27802 -1.402607 0 0 0.045609 0 0 0 0 0 0
+$definebone "Bip01 R Finger41" "Bip01 R Finger4" 1.333084 -0.000001 0 0 4.999972 0.000001 0 0 0 0 0 0
+$definebone "Bip01 R Finger42" "Bip01 R Finger41" 1.15921 -0.000001 0 0 12.499986 0.000002 0 0 0 0 0 0
+$definebone "Dummy14" "Bip01 R Hand" 4.150425 4.791649 -1.605122 14.488667 105.506875 -42.485447 0 0 0 0 0 0
 
-$animation "a_HC_idle" "v_BB_CrematorHead_anims\HC_idle.smd" {
+
+$animation "a_HC_idle" "v_bb_crematorhead_anims\a_HC_idle.smd" {
 	fps 30
 	loop
 }
 
-$animation "a_HC_draw" "v_BB_CrematorHead_anims\HC_draw.smd" {
+$animation "a_HC_draw" "v_bb_crematorhead_anims\a_HC_draw.smd" {
 	fps 30
 }
 
-$animation "a_HC_pullback" "v_BB_CrematorHead_anims\HC_pullback.smd" {
+$animation "a_HC_pullback" "v_bb_crematorhead_anims\a_HC_pullback.smd" {
 	fps 30
 }
 
-$animation "a_HC_throw" "v_BB_CrematorHead_anims\HC_throw.smd" {
+$animation "a_HC_throw" "v_bb_crematorhead_anims\a_HC_throw.smd" {
 	fps 30
 }
 
@@ -89,4 +92,3 @@ $sequence "HC_throw" {
 	fadein 0.2
 	fadeout 0.2
 }
-

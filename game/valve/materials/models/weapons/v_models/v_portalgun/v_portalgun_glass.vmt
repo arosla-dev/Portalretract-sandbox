@@ -13,7 +13,7 @@
 //	"$phongexponent" "1"
 	
 	"$phongboost" "1"	
-	"$lightwarptexture" "models\weapons\v_models\v_portalgun\v_portalgun_lightwarp"
+	"$lightwarptexture" "models\props\model_lightwarp"
 	"$phongfresnelranges"	"[1 1.5 2]"
 //	"$phongfresnelranges"	"[0 .5 1]"
 //	"$halflambert" "1"

@@ -1,0 +1,41 @@
+"Refract"
+{
+//	"$basetexture" "models\weapons\portalblast\portalblast2"
+ 	"$model" 1
+	"$selfillum" 0
+	"$refractamount" "1"
+ 	"$bluramount" "0"
+	"$REFRACTTINT" "{255 255 255}"
+	"$scale" "[1 1]"
+//	"$dudvmap" "models\weapons\portalblast\water_normal"
+ 	"$normalmap" "models\weapons\portalblast\water_normal"
+ 	"$surfaceprop" "water"
+	"$bumpframe" "0"
+//	"$nocull" 0
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.5 .5 .5]"
+	"$REFRACTTINTTEXTURE" "models\weapons\portalblast\portalblast"
+	$REFRACTTINTTEXTUREFRAME 0
+	$translucent 1
+//	$additive 1
+	$alphatest 1
+//	$VERTEXCOLORMODULATE 1
+
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedTextureVar" "$normalmap"
+			"animatedTextureFrameNumVar" "$bumpframe"
+			"animatedTextureFrameRate" "30"
+		}
+		"AnimatedTexture"
+		{
+			"animatedTextureVar" "$REFRACTTINTTEXTURE"
+			"animatedTextureFrameNumVar" "$REFRACTTINTTEXTUREFRAME"
+			"animatedTextureFrameRate" "30"
+		}
+	}
+}
+
+

@@ -1,29 +1,26 @@
-"PortalRefract"
+"Portal"
 {
-	"$Stage" "1"
-	"$PortalOpenAmount" "0.0"
-	"$PortalStatic" "0.0"
+$alphamasktexture "models/portals/portals_mask"
+$alphamasktextureframe "0"
+"$staticamount" "1"
+"$nocolorwrite" "0"
 
-	"<DX90"
-	{
-		"$PortalMaskTexture" "models/portals/portal-mask-dx8"
-		"$PortalColorTexture" "models/portals/portal-mask-dx8"
-	}
-
-	"$time" "0.0"
 	"Proxies"
 	{
-		"CurrentTime"
+		"PortalPickAlphaMask"
 		{
-			"resultVar" "$time"
+			maskTextureVar $alphamasktexture
+			maskFrameVar $alphamasktextureframe
+			openingTexture "models/portals/august_real_open"
+			idleTexture "models/portals/portals_mask"
 		}
-		"PortalOpenAmount"
+		"AnimateSpecificTexture" 						//animates a texture like "AnimatedTexture", but *ONLY* if "onlyAnimateOnTexture" is the current texture used by "animatedtexturevar"s variable
 		{
-			"resultVar" "$PortalOpenAmount"
+		"onlyAnimateOnTexture" "models/portals/portals_mask"
+		"animatedtexturevar" "$alphamasktexture"
+		"animatedtextureframenumvar" "$alphamasktextureframe"
+		"animatedtextureframerate" 30
 		}
-		"PortalStatic"
-		{
-			"resultVar" "$PortalStatic"
-		}
+
 	}
 }

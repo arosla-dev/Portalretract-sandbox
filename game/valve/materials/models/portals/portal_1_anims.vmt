@@ -1,8 +1,18 @@
-"writez"
+"unlitgeneric"
+//"PortalStaticOverlay"
 {
-	"$alphamasktexture" "models/portals/portal_mask"
-	"$bluramount" "1"
-	"$bumpframe" 0
-	"$translucent" 1
+	"$model" "1"
+	"$basetexture" "models/portals/portal_cyan"
+	"$frame" 0
 	"$additive" 1
+	"$hdrcolorscale" "1.00"
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$basetexture"
+			"animatedtextureframenumvar" "$frame"
+			"animatedtextureframerate" 30
+		}
+	}
 }

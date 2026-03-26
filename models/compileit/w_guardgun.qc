@@ -23,6 +23,7 @@ $bbox -27.38 -9.005 -9.032 31.072 8.951 7.202
 
 $definebone "smdimport" "" 0 0 0 0 0 0 0 0 0 0 0 0
 
+
 $animation "a_idle1" "w_guardgun_anims\a_idle1.smd" {
 	fps 30
 	loop
@@ -44,15 +45,4 @@ $sequence "fire" {
 	activity "ACT_RANGE_ATTACK_AR2" 1
 	fadein 0.2
 	fadeout 0.2
-}
-
-
-$collisionmodel "w_guardgun_physics.smd"
-{
-	$mass 8
-	$inertia 1
-	$damping 0
-	$rotdamping 0
-	$rootbone " "
-
 }

@@ -1,0 +1,7 @@
+UnlitGeneric
+{
+$basetexture "none"
+$translucent 1
+$frame 0
+$alpha 0
+}

@@ -27,7 +27,7 @@
 extern void AddPaintDataToSave( CBaseEntity* pBrushEntity, const Vector& contactPoint, PaintPowerType power, float flPaintRadius, float flAlphaPercent, Vector vContactNormal );
 bool g_bAllowForcePortalTrace = false;
 bool g_bForcePortalTrace = false;
-bool g_bBulletPortalTrace = false;
+bool g_bBulletPortalTrace = true;
 
 // paint convars
 ConVar sv_paint_detection_sphere_radius( "sv_paint_detection_sphere_radius", "16.f", FCVAR_REPLICATED | FCVAR_CHEAT, "The radius of the query sphere used to find the color of a light map at a contact point in world space." );
@@ -157,11 +157,11 @@ Color UTIL_Portal_Color( int iPortal )
 
 		case 1:
 			// PORTAL 1
-			return Color( 64, 160, 255, 255 );
+			return Color(96, 155, 200, 255 );
 
 		case 2:
 			// PORTAL 2
-			return Color( 255, 160, 32, 255 );
+			return Color(179, 34, 142, 255 );
 	}
 
 	return Color( 255, 255, 255, 255 );
@@ -285,6 +285,80 @@ bool UTIL_Portal_TraceRay_Bullets( const CProp_Portal *pPortal, const Ray_t &ray
 	//trPostPortal.startpos = ray.m_Start;
 	UTIL_Portal_PointTransform( matThisToLinked, ray.m_Start, trPostPortal.startpos );
 	trPostPortal.fraction = trPostPortal.fraction * ( 1.0f - fPortalFraction ) + fPortalFraction;
+
+	*pTrace = trPostPortal;
+
+	return true;
+}
+
+//added this overload to use in void CBaseHLBludgeonWeapon::Swing( int bIsSecondary )
+bool UTIL_Portal_TraceRay_Bullets(const CProp_Portal* pPortal, const Ray_t& ray, unsigned int fMask, const IHandleEntity* ignore, int collisionGroup, trace_t* pTrace, bool bTraceHolyWall)
+{
+	CTraceFilterSimple traceFilter(ignore, collisionGroup);
+	if (!pPortal || !pPortal->IsActivedAndLinked())
+	{
+		//not in a portal environment, use regular traces
+		enginetrace->TraceRay(ray, fMask, &traceFilter, pTrace);
+		return false;
+	}
+
+	trace_t trReal;
+
+	enginetrace->TraceRay(ray, fMask, &traceFilter, &trReal);
+
+	Vector vRayNormal = ray.m_Delta;
+	VectorNormalize(vRayNormal);
+
+	Vector vPortalForward;
+	pPortal->GetVectors(&vPortalForward, 0, 0);
+
+	// If the ray isn't going into the front of the portal, just use the real trace
+	if (vPortalForward.Dot(vRayNormal) > 0.0f)
+	{
+		*pTrace = trReal;
+		return false;
+	}
+
+	// If the real trace collides before the portal plane, just use the real trace
+	float fPortalFraction = UTIL_IntersectRayWithPortal(ray, pPortal);
+
+	if (fPortalFraction == -1.0f || trReal.fraction + 0.0001f < fPortalFraction)
+	{
+		// Didn't intersect or the real trace intersected closer
+		*pTrace = trReal;
+		return false;
+	}
+
+	Ray_t rayPostPortal;
+	rayPostPortal = ray;
+	rayPostPortal.m_Start = ray.m_Start + ray.m_Delta * fPortalFraction;
+	rayPostPortal.m_Delta = ray.m_Delta * (1.0f - fPortalFraction);
+
+	VMatrix matThisToLinked = pPortal->MatrixThisToLinked();
+
+	Ray_t rayTransformed;
+	UTIL_Portal_RayTransform(matThisToLinked, rayPostPortal, rayTransformed);
+
+	// After a bullet traces through a portal it can hit the player that fired it
+	CTraceFilterSimple* pSimpleFilter = dynamic_cast<CTraceFilterSimple*>(&traceFilter);
+	const IHandleEntity* pPassEntity = NULL;
+	if (pSimpleFilter)
+	{
+		pPassEntity = pSimpleFilter->GetPassEntity();
+		pSimpleFilter->SetPassEntity(0);
+	}
+
+	trace_t trPostPortal;
+	enginetrace->TraceRay(rayTransformed, fMask, &traceFilter, &trPostPortal);
+
+	if (pSimpleFilter)
+	{
+		pSimpleFilter->SetPassEntity(pPassEntity);
+	}
+
+	//trPostPortal.startpos = ray.m_Start;
+	UTIL_Portal_PointTransform(matThisToLinked, ray.m_Start, trPostPortal.startpos);
+	trPostPortal.fraction = trPostPortal.fraction * (1.0f - fPortalFraction) + fPortalFraction;
 
 	*pTrace = trPostPortal;
 

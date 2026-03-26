@@ -64,6 +64,10 @@ void CWeaponPortalgun::Precache()
 
 	PrecacheModel( "models/portals/portal1.mdl" );
 	PrecacheModel( "models/portals/portal2.mdl" );
+	PrecacheModel("models/portals/portal1_alpha.mdl");
+	PrecacheModel("models/portals/portal2_alpha.mdl");
+	PrecacheModel("models/portals/portal1_beta.mdl");
+	PrecacheModel("models/portals/portal2_beta.mdl");
 
 	PrecacheScriptSound( "Portal.ambient_loop" );
 

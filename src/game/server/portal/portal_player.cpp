@@ -260,7 +260,7 @@ BEGIN_DATADESC( CPortal_Player )
 
 END_DATADESC()
 
-const char *g_pszChellModel = "models/player/chell.mdl";
+const char *g_pszChellModel = "models/player/male_portal_player.mdl";
 const char *g_pszPlayerModel = g_pszChellModel;
 
 

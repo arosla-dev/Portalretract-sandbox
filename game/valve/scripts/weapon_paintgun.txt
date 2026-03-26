@@ -3,9 +3,9 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"			"#Portal_Portalgun"
-	"viewmodel"			"models/weapons/v_portalgun.mdl"
-	"playermodel"			"models/weapons/w_portalgun.mdl"
+	"printname"			"Paint Gun"
+	"viewmodel"			"models/weapons/v_paintgun.mdl"
+	"playermodel"			"models/weapons/w_paintgun.mdl"
 	"anim_prefix"			"portalgun"
 	"bucket"			"5"
 	"bucket_position"		"1"

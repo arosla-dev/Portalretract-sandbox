@@ -28,6 +28,8 @@ $bodygroup "cap"
 }
 
 
+$surfaceprop "default"
+
 $contents "solid"
 
 $illumposition 0 -0.008 28.235
@@ -52,7 +54,8 @@ $definebone "R_Gun_AtchPnt" "R_Gun" 0.301132 -27.43288 1.425652 0 -179.999978 0 
 $definebone "L_Gun" "Guns_Base" 7.098359 -0.00514 -0.000002 0 0 0 0 0 0 0 0 0
 $definebone "L_Gun_AtchPnt" "L_Gun" -0.06864 -27.421444 1.425652 0 -179.999978 0 0 0 0 0 0 0
 
-$animation "a_idle" "Missile_Defense_anims\idle.smd" {
+
+$animation "a_idle" "missile_defense_anims\a_idle.smd" {
 	fps 30
 	loop
 }
@@ -63,4 +66,3 @@ $sequence "idle" {
 	fadein 0.2
 	fadeout 0.2
 }
-

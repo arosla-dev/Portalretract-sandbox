@@ -343717,3 +343717,3553 @@ Warning: COND_NOT_FACING_ATTACK set but FInAimCone is true
 Creating ragdoll at tick 1732
 Creating ragdoll at tick 1732
 Warning: NULL Return from GetBestSound
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196685 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131150 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Unknown command "cl_portal_style"
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Unknown command "cl_portal_style"
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 6.16
+Datacenter::RequestStop, time 6.19, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/weapons/w_portalgun.mdl!
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+"materials/models/weapons/v_models/v_portalgun/v_portalgun2.vtf": can't be found on disk
+weapons\w_paintgun.mdl : material "models/weapons/v_models/v_portalgun/v_portalgun2" not found.
+weapons\w_paintgun.mdl : material "v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 36.643 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Connection to Steam servers successful.
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'deployed_paintgun' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'holstered_paintgun' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Late precache of models/portals_alpha/portal1.mdl
+Failed to load models/portals_alpha/portal1.mdl!
+Late precache of models/portals_alpha/portal2.mdl
+Failed to load models/portals_alpha/portal2.mdl!
+material "" not found.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+gustavo unpaused the game
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+gustavo unpaused the game
+gustavo unpaused the game
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'deployed_paintgun' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:67 ambient\atmosphere\ambience_base.wav
+Stopping: Channel:66 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel: 3 ambient\water\water_splash3.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 187.98, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196689 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131154 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 3.34
+Datacenter::RequestStop, time 3.35, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/weapons/w_portalgun.mdl!
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+"materials/models/weapons/v_models/v_portalgun/v_portalgun2.vtf": can't be found on disk
+weapons\w_paintgun.mdl : material "models/weapons/v_models/v_portalgun/v_portalgun2" not found.
+weapons\w_paintgun.mdl : material "v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 23.880 msec!
+Connection to Steam servers successful.
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'deployed_paintgun' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'player_erased' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'holstered_paintgun' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Late precache of models/portals_alpha/portal1.mdl
+Failed to load models/portals_alpha/portal1.mdl!
+Late precache of models/portals_alpha/portal2.mdl
+Failed to load models/portals_alpha/portal2.mdl!
+material "" not found.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+CreateEvent: event 'player_touch_paint_cleanser' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'deployed_paintgun' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_erased' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_erased' not registered.
+CreateEvent: event 'player_erased' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:67 ambient\atmosphere\ambience_base.wav
+Stopping: Channel:69 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:68 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel: 0 vehicles\airboat\pontoon_fast_water_loop2.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 147.28, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 131159 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 196696 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 2.46
+Datacenter::RequestStop, time 2.47, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/weapons/w_portalgun.mdl!
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+"materials/models/weapons/v_models/v_portalgun/v_portalgun2.vtf": can't be found on disk
+weapons\w_paintgun.mdl : material "models/weapons/v_models/v_portalgun/v_portalgun2" not found.
+weapons\w_paintgun.mdl : material "v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 18.612 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+Connection to Steam servers successful.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'deployed_paintgun' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+Queued Material System: DISABLED!
+Queued Material System: ENABLED!
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 21.937 msec!
+gustavo unpaused the game
+Soundscape: portal_testchmb.explore_space
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'player_erased' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'player_erased' not registered.
+CreateEvent: event 'picked_up_paint' not registered.
+CreateEvent: event 'picked_up_paint' not registered.
+CreateEvent: event 'picked_up_paint' not registered.
+CreateEvent: event 'picked_up_paint' not registered.
+gustavo unpaused the game
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'player_painted' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+CreateEvent: event 'holstered_paintgun' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+noclip OFF
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+Late precache of models/portals_alpha/portal1.mdl
+Failed to load models/portals_alpha/portal1.mdl!
+Late precache of models/portals_alpha/portal2.mdl
+Failed to load models/portals_alpha/portal2.mdl!
+material "" not found.
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_portaled' not registered.
+Soundscape: portal_testchmb.fling
+Catapult "" is adjusting velocity of "player" so it will hit the target. (Object Velocity: 980.1 -- Object needed to be between 666.0 and 1379.5 
+Soundscape: portal_testchmb.fling
+Soundscape: portal_testchmb.fling
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'portal_player_touchedground' not registered.
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:67 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:66 ambient\atmosphere\tone_alley.wav
+Stopping: Channel:69 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:72 ambient\atmosphere\ambience_base.wav
+Stopping: Channel: 1 doors\doormove1.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 149.04, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196705 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131170 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 2.29
+Datacenter::RequestStop, time 2.30, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+weapons\w_portalgun.mdl : material "models/weapons/gun" not found.
+weapons\w_portalgun.mdl : material "gun" not found.
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 19.762 msec!
+Connection to Steam servers successful.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+noclip ON
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+Soundscape: portal_testchmb.explore_space
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Soundscape: portal_testchmb.fling
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+material "" not found.
+Player in solid behind behind portal 1's plane, Adding to it's environment to run find closest passable space.
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+Bad sequence (1 out of 1 max) in GetSequenceLinearMotion() for model 'weapons\w_portalgun.mdl'!
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:70 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:66 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:69 ambient\atmosphere\tone_alley.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 50.45, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196721 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131186 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 2.45
+Datacenter::RequestStop, time 2.47, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+player\Quinton.mdl : material "models/player/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/humans/male/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/player/quinton_facemap" not found.
+player\Quinton.mdl : material "models/humans/male/quinton_facemap" not found.
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 131187 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 196724 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 7.08
+Datacenter::RequestStop, time 7.10, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+player\Quinton.mdl : material "models/player/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/humans/male/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/player/quinton_facemap" not found.
+player\Quinton.mdl : material "models/humans/male/quinton_facemap" not found.
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196729 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131194 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 3.23
+Datacenter::RequestStop, time 3.24, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+player\Quinton.mdl : material "models/player/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/humans/male/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/player/quinton_facemap" not found.
+player\Quinton.mdl : material "models/humans/male/quinton_facemap" not found.
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 131195 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 196732 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 6.76
+Datacenter::RequestStop, time 6.77, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+player\Quinton.mdl : material "models/player/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/humans/male/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/player/quinton_facemap" not found.
+player\Quinton.mdl : material "models/humans/male/quinton_facemap" not found.
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196733 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131198 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 6.09
+Datacenter::RequestStop, time 6.10, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/player/chell.mdl!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 24.590 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+Connection to Steam servers successful.
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+CreateEvent: event 'paint_cleanser_visible' not registered.
+Soundscape: portal_testchmb.fling
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+material "" not found.
+Player in solid behind behind portal 1's plane, Adding to it's environment to run find closest passable space.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'portal_player_portaled' not registered.
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+[STEAM] [S_API WARN] No game server found with IP 177410380 or port 0, skipping removing any server.
+
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:69 weapons\portalgun\portal_ambient_loop1.wav
+Stopping: Channel:66 ambient\atmosphere\tone_alley.wav
+Stopping: Channel:68 ambient\levels\streetwar\city_chant1.wav
+Stopping: Channel:70 weapons\portalgun\portal_ambient_loop1.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 33.28, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 131199 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 196736 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 2.91
+Datacenter::RequestStop, time 2.92, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+weapons/v_paintgun.mdl : material "models/weapons/v_paintgun/v_portalgun2" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+player\Quinton.mdl : material "models/player/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/humans/male/portal_player_sheet" not found.
+player\Quinton.mdl : material "models/player/quinton_facemap" not found.
+player\Quinton.mdl : material "models/humans/male/quinton_facemap" not found.
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196737 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131202 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 2.76
+Datacenter::RequestStop, time 2.77, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/weapons/v_portalgun.mdl!
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Failed to load models/weapons/v_paintgun.mdl!
+Failed to load models/weapons/w_paintgun.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/v_molotov.mdl!
+Failed to load models/Weapons/w_molotov.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/v_manhack.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Failed to load models/weapons/v_cremator.mdl!
+Failed to load models/weapons/w_immolator.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/v_iceaxe.mdl!
+Failed to load models/weapons/w_iceaxe.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/v_gauss.mdl!
+Failed to load models/weapons/w_gauss.mdl!
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/v_bb_rock.mdl!
+Failed to load models/weapons/w_bb_bottle.mdl!
+Failed to load models/weapons/v_bb_bottle.mdl!
+Failed to load models/weapons/v_bb_headcrab.mdl!
+Failed to load models/cremator_head.mdl!
+Failed to load models/weapons/v_bb_crematorhead.mdl!
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Failed to load models/weapons/w_binoculars.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_flaregun.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_guardgun.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+MDLCache: Failed load of .VVD data for player\male_portal_player.mdl
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CreateEvent: event 'portal_player_touchedground' not registered.
+Soundscape: portal_testchmb.explore_space
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 22.468 msec!
+Allocated 1 todo lists
+Allocated 2 todo lists
+Allocated 3 todo lists
+Allocated 1 slice corner arrays
+Allocated 1 slice corner info arrays
+Allocated 2 slice corner arrays
+Allocated 2 slice corner info arrays
+Allocated 4 todo lists
+Allocated 3 slice corner arrays
+Allocated 3 slice corner info arrays
+UTIL_TranslateSoundName directly referenced wave ambient/water/water_spray1.wav (should use game_sounds.txt system instead)
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+S_StartSound: Failed to load sound 'null.wav', file probably missing from disk/repository
+Connection to Steam servers successful.
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+material "" not found.
+Soundscape: portal_testchmb.explore_space
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+gustavo unpaused the game
+material "paintblobs/blob_surface_stick" not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+noclip OFF
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+CreateEvent: event 'paint_cleanser_visible' not registered.
+noclip ON
+CreateEvent: event 'paint_cleanser_visible' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip OFF
+CreateEvent: event 'paint_cleanser_not_visible' not registered.
+noclip ON
+Soundscape: portal_testchmb.fling
+noclip OFF
+CreateEvent: event 'portal_player_touchedground' not registered.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+gustavo unpaused the game
+gustavo unpaused the game
+CreateEvent: event 'portal_player_touchedground' not registered.
+gustavo unpaused the game
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+Bad sequence (5 out of 2 max) in GetSequenceLinearMotion() for model 'weapons/W_crowbar.mdl'!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+noclip ON
+noclip OFF
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+CreateEvent: event 'portal_player_touchedground' not registered.
+noclip ON
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Soundscape: portal_testchmb.explore_space
+noclip OFF
+Soundscape: portal_testchmb.explore_space
+EmitSound: player/futureshoes2.wav volume out of bounds = -0.591643
+Dropped gustavo from server (Server shutting down)
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Stopping: Channel:64 player\fling_whoosh.wav
+Stopping: Channel:65 weapons\physcannon\hold_loop.wav
+Stopping: Channel:66 ambient\atmosphere\tone_alley.wav
+Stopping: Channel:69 ambient\atmosphere\ambience_base.wav
+Queued Material System: DISABLED!
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 42.30, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 196785 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 131250 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 8.57
+Datacenter::RequestStop, time 8.60, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map pr2_03 missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+Failed to load models/portals/portal1_alpha.mdl!
+Failed to load models/portals/portal2_alpha.mdl!
+Failed to load models/portals/portal1_beta.mdl!
+Failed to load models/portals/portal2_beta.mdl!
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+PrecacheScriptSound 'PaintBlob.Inception' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+PrecacheScriptSound 'Paintblob.Inception' failed, no such sound script entry
+PrecacheScriptSound 'Paint.MediumFlow' failed, no such sound script entry
+PrecacheScriptSound 'Paint.HeavyFlow' failed, no such sound script entry
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+material "particle/particle_glow_05_add_15ob" not found.
+material "overlays/coop_ping_decal" not found.
+"materials/models/blob/blob_fresnel_warp.vtf": can't be found on disk
+Missing RecvProp for DT_WeaponPortalgun - DT_WeaponPortalgun/m_fCanPlacePortal2OnThisSurface
+Host_EndGame: CL_ParseClassInfo_EndClasses: CreateDecoders failed.
+
+[STEAM] [S_API WARN] No game server found with IP 177410380 or port 0, skipping removing any server.
+
+Stopping All Sounds...
+Dropped gustavo from server (Disconnect by user.)
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound default.null
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Connection to Steam servers successful.
+   VAC secure mode disabled.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+ConVarRef mm_max_players doesn't point to an existing ConVar
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Datacenter::RequestStart, time 128.65
+Datacenter::RequestStop, time 128.66, state 1
+Datacenter::RequestUpdate failed
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Datacenter::RequestStart, time 248.71
+Datacenter::RequestStop, time 248.71, state 1
+Datacenter::RequestUpdate failed
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Host_NewGame on map pr2_03
+Set Gravity 600.0 (0.250 tolerance)
+CreateEvent: event 'picked_up_paint' not registered.
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 27 classes, 3866 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+0.468:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: pr2_03
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 2
+
+Missing RecvProp for DT_WeaponPortalgun - DT_WeaponPortalgun/m_fCanPlacePortal2OnThisSurface
+Host_EndGame: CL_ParseClassInfo_EndClasses: CreateDecoders failed.
+
+[STEAM] [S_API WARN] No game server found with IP 177410380 or port 0, skipping removing any server.
+
+Stopping All Sounds...
+Dropped gustavo from server (Disconnect by user.)
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Connection to Steam servers successful.
+   VAC secure mode disabled.
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+prop_paint_bomb at (2048.000, -1088.000, 736.000) has no model name!
+Host_WriteConfiguration: Wrote cfg/config.cfg
+Stopping All Sounds...
+Datacenter::EnableUpdate( 0 ), current state = 0
+Datacenter::RequestStop, time 315.41, state 0
+Unable to remove c:\sourcecode\portalretract-sandbox\game\valve\textwindow_temp.html!
+Stopping All Sounds...
+CreateEvent: event 'server_pre_shutdown' not registered.
+CreateEvent: event 'server_shutdown' not registered.
+Shutdown function ShutdownMixerControls() not in list!!!

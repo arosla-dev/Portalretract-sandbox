@@ -119,6 +119,10 @@ void ClientGamePrecache( void )
 
 	CBaseEntity::PrecacheModel( "models/portals/portal1.mdl" );
 	CBaseEntity::PrecacheModel( "models/portals/portal2.mdl" );
+	CBaseEntity::PrecacheModel("models/portals/portal1_alpha.mdl");
+	CBaseEntity::PrecacheModel("models/portals/portal2_alpha.mdl");
+	CBaseEntity::PrecacheModel("models/portals/portal1_beta.mdl");
+	CBaseEntity::PrecacheModel("models/portals/portal2_beta.mdl");
 }
 
 

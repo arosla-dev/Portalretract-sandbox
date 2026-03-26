@@ -96,6 +96,7 @@ ConVar	spec_freeze_traveltime( "spec_freeze_traveltime", "0.4", FCVAR_CHEAT | FC
 ConVar sv_bonus_challenge( "sv_bonus_challenge", "0", FCVAR_REPLICATED, "Set to values other than 0 to select a bonus map challenge type." );
 
 ConVar sv_regeneration_wait_time ("sv_regeneration_wait_time", "1.0", FCVAR_REPLICATED );
+ConVar sv_regeneration_enable("sv_regeneration_enable", "0", FCVAR_REPLICATED | FCVAR_ARCHIVE);
 
 static ConVar old_armor( "player_old_armor", "0" );
 
@@ -4614,7 +4615,7 @@ void CBasePlayer::PostThink()
 #endif
 
 	// Regenerate heath
-	if ( IsAlive() && GetHealth() < GetMaxHealth() && (GlobalEntity_GetState("player_regenerates_health") != GLOBAL_OFF) )
+	if (IsAlive() && GetHealth() < GetMaxHealth() && sv_regeneration_enable.GetBool())
 	{
 		// Color to overlay on the screen while the player is taking damage
 		color32 hurtScreenOverlay = {64,0,0,64};
@@ -4625,7 +4626,10 @@ void CBasePlayer::PostThink()
 		}
 		else
 		{
-			UTIL_ScreenFade( this, hurtScreenOverlay, 1.0f, 0.1f, FFADE_IN|FFADE_PURGE );
+			if (gpGlobals->curtime < m_fTimeLastHurt + 1.0)
+			{
+				UTIL_ScreenFade(this, hurtScreenOverlay, 1.0f, 0.1f, FFADE_IN | FFADE_PURGE);
+			}
 		}
 	}
 }
