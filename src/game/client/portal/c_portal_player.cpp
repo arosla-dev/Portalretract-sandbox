@@ -1503,9 +1503,8 @@ void C_Portal_Player::CalcView( Vector &eyeOrigin, QAngle &eyeAngles, float &zNe
 		if ( pRagdoll )
 		{
 			origin = pRagdoll->GetAbsOrigin();
-#if !PORTAL_HIDE_PLAYER_RAGDOLL
+
 			origin.z += VEC_DEAD_VIEWHEIGHT_SCALED( this ).z; // look over ragdoll, not through
-#endif //PORTAL_HIDE_PLAYER_RAGDOLL
 		}
 
 		BaseClass::CalcView( eyeOrigin, eyeAngles, zNear, zFar, fov );
@@ -1516,9 +1515,7 @@ void C_Portal_Player::CalcView( Vector &eyeOrigin, QAngle &eyeAngles, float &zNe
 		AngleVectors( eyeAngles, &vForward );
 
 		VectorNormalize( vForward );
-#if !PORTAL_HIDE_PLAYER_RAGDOLL
 		VectorMA( origin, -CHASE_CAM_DISTANCE, vForward, eyeOrigin );
-#endif //PORTAL_HIDE_PLAYER_RAGDOLL
 
 		Vector WALL_MIN( -WALL_OFFSET, -WALL_OFFSET, -WALL_OFFSET );
 		Vector WALL_MAX( WALL_OFFSET, WALL_OFFSET, WALL_OFFSET );

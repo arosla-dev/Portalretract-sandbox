@@ -29,6 +29,9 @@ COptionsSubPortal::COptionsSubPortal(vgui::Panel *parent) : PropertyPage(parent,
 		"#GameUI_PortalFunnel", 
 		"sv_player_funnel_into_portals" );
 
+	m_pAltPortalgunCheckBox = new CCvarToggleCheckButton(this, "SwtichPortalGunModel", "Toggle Alt Portal gun", "cl_portalgun_altmodel");
+	m_pRegenerationCheckBox = new CCvarToggleCheckButton(this, "Regeneration", "Toggle Regeneration", "sv_regeneration_enable");
+
 	m_pPortalDepthCombo = new ComboBox( this, "PortalDepth", 6, false );
 	m_pPortalDepthCombo->AddItem( "#GameUI_PortalDepth0", new KeyValues("PortalDepth", "depth", 0) );
 	m_pPortalDepthCombo->AddItem( "#GameUI_PortalDepth1", new KeyValues("PortalDepth", "depth", 1) );
@@ -57,6 +60,8 @@ COptionsSubPortal::~COptionsSubPortal()
 void COptionsSubPortal::OnResetData()
 {
 	m_pPortalFunnelCheckBox->Reset();
+	m_pAltPortalgunCheckBox->Reset();
+	m_pRegenerationCheckBox->Reset();
 
 	// Portal render depth
 	ConVarRef r_portal_stencil_depth("r_portal_stencil_depth");
@@ -72,6 +77,8 @@ void COptionsSubPortal::OnResetData()
 void COptionsSubPortal::OnApplyChanges()
 {
 	m_pPortalFunnelCheckBox->ApplyChanges();
+	m_pAltPortalgunCheckBox->ApplyChanges();
+	m_pRegenerationCheckBox->ApplyChanges();
 
 	// Portal render depth
 	if ( m_pPortalDepthCombo->IsEnabled() )

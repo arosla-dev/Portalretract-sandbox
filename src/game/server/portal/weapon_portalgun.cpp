@@ -21,10 +21,14 @@
 #include "weapon_portalgun_shared.h"
 #include "physicsshadowclone.h"
 #include "particle_parse.h"
-
+#include "rumble_shared.h"
 
 #define BLAST_SPEED_NON_PLAYER 1000.0f
 #define BLAST_SPEED 3000.0f
+
+#define PORTALGUN_DEFAULT "models/weapons/v_portalgun.mdl"
+#define PORTALGUN_ALT "models/weapons/v_portalgun_alt.mdl"
+ConVar cl_portalgun_altmodel("cl_portalgun_altmodel", "0", FCVAR_ARCHIVE);
 
 
 IMPLEMENT_NETWORKCLASS_ALIASED( WeaponPortalgun, DT_WeaponPortalgun )
@@ -743,3 +747,93 @@ static void change_portalgun_linkage_id_f( const CCommand &args )
 }
 
 ConCommand change_portalgun_linkage_id( "change_portalgun_linkage_id", change_portalgun_linkage_id_f, "Changes the portal linkage ID for the portal gun held by the commanding player.", FCVAR_CHEAT );
+
+//-----------------------------------------------------------------------------
+// Purpose: Fizzle active portals
+// Input  :
+// Output :
+//-----------------------------------------------------------------------------
+bool CWeaponPortalgun::Reload(void)
+{
+	bool bFizzledPortal = false;
+
+	if (CanFirePortal1())
+	{
+		CProp_Portal* pPortal = CProp_Portal::FindPortal(m_iPortalLinkageGroupID, false);
+
+		if (pPortal && pPortal->m_bActivated)
+		{
+			pPortal->DoFizzleEffect(PORTAL_FIZZLE_KILLED, false);
+			pPortal->Fizzle();
+			// HACK HACK! Used to make the gun visually change when going through a cleanser!
+			m_fEffectsMaxSize1 = 50.0f;
+
+			bFizzledPortal = true;
+		}
+
+		// Cancel portals that are still mid flight
+		if (pPortal && pPortal->GetNextThink(s_pDelayedPlacementContext) > gpGlobals->curtime)
+		{
+			pPortal->SetContextThink(NULL, gpGlobals->curtime, s_pDelayedPlacementContext);
+			m_fEffectsMaxSize2 = 50.0f;
+			bFizzledPortal = true;
+		}
+	}
+
+	if (CanFirePortal2())
+	{
+		CProp_Portal* pPortal = CProp_Portal::FindPortal(m_iPortalLinkageGroupID, true);
+
+		if (pPortal && pPortal->m_bActivated)
+		{
+			pPortal->DoFizzleEffect(PORTAL_FIZZLE_KILLED, false);
+			pPortal->Fizzle();
+			// HACK HACK! Used to make the gun visually change when going through a cleanser!
+			m_fEffectsMaxSize2 = 50.0f;
+
+			bFizzledPortal = true;
+		}
+
+		// Cancel portals that are still mid flight
+		if (pPortal && pPortal->GetNextThink(s_pDelayedPlacementContext) > gpGlobals->curtime)
+		{
+			pPortal->SetContextThink(NULL, gpGlobals->curtime, s_pDelayedPlacementContext);
+			m_fEffectsMaxSize2 = 50.0f;
+			bFizzledPortal = true;
+		}
+	}
+
+	if (bFizzledPortal)
+	{
+		CBasePlayer* pPlayer = AI_GetSinglePlayer();
+		SendWeaponAnim(ACT_VM_FIZZLE);
+		SetLastFiredPortal(0);
+		pPlayer->RumbleEffect(RUMBLE_RPG_MISSILE, 0, RUMBLE_FLAG_RESTART);
+		return bFizzledPortal;
+	}
+
+	return bFizzledPortal;
+}
+
+
+void CWeaponPortalgun::SetViewModel(void)
+{
+	CBasePlayer* pOwner = ToBasePlayer(GetOwner());
+	if (pOwner == NULL)
+		return;
+
+	CBaseViewModel* vm = pOwner->GetViewModel(m_nViewModelIndex);
+	if (vm == NULL)
+		return;
+
+	if (cl_portalgun_altmodel.GetBool())
+	{
+		vm->SetWeaponModel(PORTALGUN_ALT, this);
+	}
+	else
+	{
+		vm->SetWeaponModel(PORTALGUN_DEFAULT, this);
+	}
+	
+
+}

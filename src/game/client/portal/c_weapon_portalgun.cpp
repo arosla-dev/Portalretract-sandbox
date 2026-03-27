@@ -1104,3 +1104,8 @@ void C_WeaponPortalgun::DoEffectIdle( void )
 		m_Parameters[i].SetColor( colorMagSprites );
 	}
 }
+
+bool C_WeaponPortalgun::Reload(void)
+{
+	return true;
+}

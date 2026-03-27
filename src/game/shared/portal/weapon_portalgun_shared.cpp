@@ -68,6 +68,7 @@ void CWeaponPortalgun::Precache()
 	PrecacheModel("models/portals/portal2_alpha.mdl");
 	PrecacheModel("models/portals/portal1_beta.mdl");
 	PrecacheModel("models/portals/portal2_beta.mdl");
+	PrecacheModel("models/weapons/v_portalgun_alt.mdl");
 
 	PrecacheScriptSound( "Portal.ambient_loop" );
 
@@ -97,16 +98,6 @@ PRECACHE_WEAPON_REGISTER(weapon_portalgun);
 bool CWeaponPortalgun::ShouldDrawCrosshair( void )
 {
 	return true;//( m_fCanPlacePortal1OnThisSurface > 0.5f || m_fCanPlacePortal2OnThisSurface > 0.5f );
-}
-
-//-----------------------------------------------------------------------------
-// Purpose: Override so only reload one shell at a time
-// Input  :
-// Output :
-//-----------------------------------------------------------------------------
-bool CWeaponPortalgun::Reload( void )
-{
-	return true;
 }
 
 //-----------------------------------------------------------------------------

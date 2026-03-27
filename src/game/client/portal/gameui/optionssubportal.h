@@ -51,6 +51,8 @@ private:
 	}
 
 	CCvarToggleCheckButton		*m_pPortalFunnelCheckBox;
+	CCvarToggleCheckButton		*m_pAltPortalgunCheckBox;
+	CCvarToggleCheckButton		*m_pRegenerationCheckBox;
 	vgui::ComboBox				*m_pPortalDepthCombo;
 };
 

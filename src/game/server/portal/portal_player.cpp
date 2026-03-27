@@ -467,7 +467,7 @@ void CPortal_Player::GiveDefaultItems( void )
 	castable_string_t st( "suit_no_sprint" );
 	GlobalEntity_SetState( st, GLOBAL_OFF );
 	inputdata_t in;
-	InputDisableFlashlight( in );
+	//InputDisableFlashlight( in );
 }
 
 
@@ -1711,11 +1711,13 @@ void CPortal_Player::CreateRagdollEntity( const CTakeDamageInfo &info )
 		m_hRagdoll = NULL;
 	}
 
+	/*
 #if PORTAL_HIDE_PLAYER_RAGDOLL
 	AddSolidFlags( FSOLID_NOT_SOLID );
 	AddEffects( EF_NODRAW | EF_NOSHADOW );
 	AddEFlags( EFL_NO_DISSOLVE );
 #endif // PORTAL_HIDE_PLAYER_RAGDOLL
+*/
 	CBaseEntity *pRagdoll = CreateServerRagdoll( this, m_nForceBone, info, COLLISION_GROUP_INTERACTIVE_DEBRIS, true );
 	pRagdoll->m_takedamage = DAMAGE_NO;
 	m_hRagdoll = pRagdoll;
@@ -1812,6 +1814,8 @@ void CPortal_Player::Event_Killed( const CTakeDamageInfo &info )
 
 	BaseClass::Event_Killed( subinfo );
 
+	//p1llowguy - lol what
+/*
 #if PORTAL_HIDE_PLAYER_RAGDOLL
 	// Fizzle all portals so they don't see the player disappear
 	int iPortalCount = CProp_Portal_Shared::AllPortals.Count();
@@ -1826,7 +1830,7 @@ void CPortal_Player::Event_Killed( const CTakeDamageInfo &info )
 		}
 	}
 #endif // PORTAL_HIDE_PLAYER_RAGDOLL
-
+*/
 	if ( (info.GetDamageType() & DMG_DISSOLVE) && !(m_hRagdoll.Get()->GetEFlags() & EFL_NO_DISSOLVE) )
 	{
 		if ( m_hRagdoll )

@@ -6,7 +6,7 @@
 	"volume"		"0.7"
 	"soundlevel"		"SNDLVL_GUNFIRE"
 	"pitch"			"95,105"
-	"wave"			"weapons/portalgun/portalgun_shoot_blue1.wav"
+	"wave"			"weapons\ar2\ar2_altfire.wav"
 }
 
 "Weapon_Portalgun.fire_blue_npc"
@@ -15,7 +15,7 @@
 	"volume"		"0.7"
 	"soundlevel"		"SNDLVL_GUNFIRE"
 	"pitch"			"95,105"
-	"wave"			"^weapons/portalgun/portalgun_shoot_blue1.wav"
+	"wave"			"weapons\ar2\npc_ar2_altfire.wav"
 }
 
 "Weapon_Portalgun.fire_red"
@@ -24,7 +24,7 @@
 	"volume"		"0.7"
 	"soundlevel"		"SNDLVL_GUNFIRE"
 	"pitch"			"95,105"
-	"wave"			"weapons/portalgun/portalgun_shoot_red1.wav"
+	"wave"			"weapons\ar2\ar2_altfire.wav"
 }
 
 "Weapon_Portalgun.fire_red_npc"
@@ -33,8 +33,19 @@
 	"volume"		"0.7"
 	"soundlevel"		"SNDLVL_GUNFIRE"
 	"pitch"			"95,105"
-	"wave"			"^weapons/portalgun/portalgun_shoot_red1.wav"
+	"wave"			"weapons\ar2\npc_ar2_altfire.wav"
 }
+
+
+"Weapon_Portalgun.invalid_surface"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"0.7"
+	"soundlevel"		"SNDLVL_NORM"
+	"pitch"			"95,105"
+	"wave"			"weapons/portalgun/portalgun_invalidsurface1.wav"
+}
+
 
 "Weapon_Portalgun.powerup"
 {
@@ -62,11 +73,7 @@
 	"volume"		"0.6"
 	"soundlevel"		"SNDLVL_80db"
 	"pitch"			"95,105"
-	"rndwave"
-	{
-		"wave"			"weapons/portalgun/portal_open2.wav"
-		"wave"			"weapons/portalgun/portal_open3.wav"
-	}
+	"wave"			"npc/vort/attack_shoot.wav"
 }
 
 "Portal.open_blue"
@@ -76,7 +83,7 @@
 	"soundlevel"		"SNDLVL_80db"
 	"pitch"			"95,105"
 
-	"wave"			"weapons/portalgun/portal_open1.wav"
+	"wave"			"npc/vort/attack_shoot.wav"
 }
 
 "Portal.close_red"

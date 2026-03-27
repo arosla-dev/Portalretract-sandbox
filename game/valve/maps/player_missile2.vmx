@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "410"
+	"mapversion" "412"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "10068"
-	"mapversion" "410"
+	"mapversion" "412"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -39,7 +39,7 @@ world
 	"maxblobcount" "250"
 	"maxpropscreenwidth" "-1"
 	"MaxRange" "4096"
-	"skyname" "sky_wasteland04"
+	"skyname" "sky_day01_08"
 	"sounds" "1"
 	hidden
 	{
@@ -950,7 +950,7 @@ world
 		{
 			"id" "60"
 			"plane" "(4519.14 7615.48 11.3104) (4471.44 -579.638 11.3104) (-246.518 -517.935 11.3104)"
-			"material" "DEV/DEV_MEASUREGENERIC01B"
+			"material" "NATURE/SNOWFLOOR001A"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -34547,31 +34547,6 @@ hidden
 {
 	entity
 	{
-		"id" "533777"
-		"classname" "light_environment"
-		"_ambient" "140 167 174 500"
-		"_ambientHDR" "-1 -1 -1 1"
-		"_AmbientScaleHDR" "1"
-		"_light" "248 233 186 800"
-		"_lightHDR" "-1 -1 -1 1"
-		"_lightscaleHDR" "1"
-		"angles" "0 347 0"
-		"pitch" "-30"
-		"origin" "4344 3256 204"
-		editor
-		{
-			"color" "220 30 220"
-			"visgroupid" "2"
-			"visgroupshown" "0"
-			"visgroupautoshown" "1"
-			"logicalpos" "[1000 -12768]"
-		}
-	}
-}
-hidden
-{
-	entity
-	{
 		"id" "533779"
 		"classname" "sky_camera"
 		"angles" "0 0 0"
@@ -34606,14 +34581,14 @@ entity
 {
 	"id" "534045"
 	"classname" "light_environment"
-	"_ambient" "140 167 174 250"
+	"_ambient" "105 142 165 120"
 	"_ambientHDR" "-1 -1 -1 1"
 	"_AmbientScaleHDR" "1"
-	"_light" "248 233 186 400"
+	"_light" "235 155 71 1000"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" "1"
-	"angles" "0 347 0"
-	"pitch" "-30"
+	"angles" "0 108 0"
+	"pitch" "-35"
 	"origin" "0 -192 264"
 	editor
 	{
@@ -35790,6 +35765,60 @@ entity
 		"logicalpos" "[1500 -9768]"
 	}
 }
+entity
+{
+	"id" "539005"
+	"classname" "prop_vehicle_jeep"
+	"actionScale" "1"
+	"angles" "0 0 0"
+	"CargoVisible" "0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"ignorenormals" "0"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/buggy.mdl"
+	"origin" "515.84 -344 20"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"VehicleLocked" "0"
+	"vehiclescript" "scripts/vehicles/jeep_test.txt"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "539061"
+	"classname" "weapon_portalgun"
+	"angles" "0 0 0"
+	"CanFirePortal1" "1"
+	"CanFirePortal2" "1"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"ShowingPotatos" "0"
+	"StartingTeamNum" "0"
+	"origin" "407.835 -340 20"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
 cameras
 {
 	"activecamera" "3"
@@ -35810,8 +35839,8 @@ cameras
 	}
 	camera
 	{
-		"position" "[580.737 -257.501 117.731]"
-		"look" "[502.646 -682.983 -165.347]"
+		"position" "[428.4 -171.18 42.5053]"
+		"look" "[660.676 -631.009 -0.753761]"
 	}
 }
 cordons
