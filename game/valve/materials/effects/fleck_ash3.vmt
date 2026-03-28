@@ -1,7 +1,7 @@
-UnlitGeneric
+"UnlitGeneric"
 {
-$basetexture "effects/fleck_ash3"
-$translucent 1
-$vertexalpha 1
-$vertexcolor 1
+	"$basetexture" "effects/fleck_ash3"
+	"$translucent" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
 }

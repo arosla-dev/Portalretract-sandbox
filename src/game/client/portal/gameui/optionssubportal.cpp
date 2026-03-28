@@ -29,7 +29,7 @@ COptionsSubPortal::COptionsSubPortal(vgui::Panel *parent) : PropertyPage(parent,
 		"#GameUI_PortalFunnel", 
 		"sv_player_funnel_into_portals" );
 
-	m_pAltPortalgunCheckBox = new CCvarToggleCheckButton(this, "SwtichPortalGunModel", "Toggle Alt Portal gun", "cl_portalgun_altmodel");
+	m_pAltPortalgunCheckBox = new CCvarToggleCheckButton(this, "SwtichPortalGunModel", "Toggle Alt Portal gun", "cl_portalgun_earlymodel");
 	m_pRegenerationCheckBox = new CCvarToggleCheckButton(this, "Regeneration", "Toggle Regeneration", "sv_regeneration_enable");
 
 	m_pPortalDepthCombo = new ComboBox( this, "PortalDepth", 6, false );

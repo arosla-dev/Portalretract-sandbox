@@ -9,21 +9,21 @@
 	"$envmaptint" "[ .05 .05 .05 ]"
 
 //	"$bumpmap" "tile/observation_tilefloor001a_normal"
-//	"$bumpmap" "tile/observation_tilefloor001a_height-ssbump"
-//	"$ssbump" "1"
+//	"$bumpmap" "tile/observation_tilefloor001a_normal"
+//	"$ssbump" "0"
 
 
 
 //	"LightmappedGeneric_HDR_DX9"
 //	{
-//		"$bumpmap" "tile/observation_tilefloor001a_height-ssbump"
-//		"$ssbump" "1"
+//		"$bumpmap" "tile/observation_tilefloor001a_normal"
+//		"$ssbump" "0"
 //	}
 //
 //	"LightmappedGeneric_DX9"
 //	{
-//		"$bumpmap" "tile/observation_tilefloor001a_height-ssbump"
-//		"$ssbump" "1"
+//		"$bumpmap" "tile/observation_tilefloor001a_normal"
+//		"$ssbump" "0"
 //	}
 //
 //	"LightmappedGeneric_DX8"

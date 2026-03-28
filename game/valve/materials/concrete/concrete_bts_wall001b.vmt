@@ -1,0 +1,6 @@
+"LightMappedGeneric"
+{
+	"$basetexture"	"concrete/concrete_bts_wall001b"
+	"$surfaceprop" "concrete"
+	"%keywords" "portal"
+}

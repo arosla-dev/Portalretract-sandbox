@@ -1,8 +1,8 @@
 "LightmappedGeneric"
 {
 	"$basetexture"	"plastic/plasticwall004a"
-	"$bumpmap" "plastic/plasticwall004a_height-ssbump"
-	"$ssbump" "1"
+	"$bumpmap" "plastic/plasticwall004a_normal"
+	"$ssbump" "0"
 	"%keywords" "portal"
 
 	// NOTE: Even though env_cubemap is here, it will turned off for DX6

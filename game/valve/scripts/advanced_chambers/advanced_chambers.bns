@@ -1,49 +1,53 @@
+// 08 Advanced
+"#Bonus_Map_TC13Advanced"
+{
+	"map"		"testchmb_a_08_advanced"
+	"chapter"	"chapter5.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_08_advanced"
+	"comment"	"#Bonus_Map_TC13AdvancedComment"
+}
+
 // 09 Advanced
-"#Bonus_Map_A2TC04Advanced"
+"#Bonus_Map_TC14Advanced"
 {
-	"map"		"pr_09_advanced"
-	"chapter"	"chapter3.cfg"	[$X360]
-	"image"		"bonusmaps/pr_09_advanced"
-	"comment"	"#Bonus_Map_A2TC04AdvancedComment"
-	"lock"		"1"
+	"map"		"testchmb_a_09_advanced"
+	"chapter"	"chapter6.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_09_advanced"
+	"comment"	"#Bonus_Map_TC14AdvancedComment"
 }
 
-// 18 Advanced
-"#Bonus_Map_A2TC13Advanced"
+// 10 Advanced
+"#Bonus_Map_TC15Advanced"
 {
-	"map"		"pr_18_advanced"
-	"chapter"	"chapter3.cfg"	[$X360]
-	"image"		"bonusmaps/pr_18_advanced"
-	"comment"	"#Bonus_Map_A2TC13AdvancedComment"
-	"lock"		"1"
+	"map"		"testchmb_a_10_advanced"
+	"chapter"	"chapter7.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_10_advanced"
+	"comment"	"#Bonus_Map_TC15AdvancedComment"
 }
 
-// 20 Advanced
-"#Bonus_Map_A2TC15Advanced"
+// 11 Advanced
+"#Bonus_Map_TC16Advanced"
 {
-	"map"		"pr_20_advanced"
-	"chapter"	"chapter3.cfg"	[$X360]
-	"image"		"bonusmaps/pr_20_advanced"
-	"comment"	"#Bonus_Map_A2TC15AdvancedComment"
-	"lock"		"1"
+	"map"		"testchmb_a_11_advanced"
+	"chapter"	"chapter8.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_11_advanced"
+	"comment"	"#Bonus_Map_TC16AdvancedComment"
 }
 
-// 22 Advanced
-"#Bonus_Map_A2TC17Advanced"
+// 13 Advanced
+"#Bonus_Map_TC17Advanced"
 {
-	"map"		"pr_22_advanced"
-	"chapter"	"chapter3.cfg"	[$X360]
-	"image"		"bonusmaps/pr_22_advanced"
-	"comment"	"#Bonus_Map_A2TC17AdvancedComment"
-	"lock"		"1"
+	"map"		"testchmb_a_13_advanced"
+	"chapter"	"chapter9.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_13_advanced"
+	"comment"	"#Bonus_Map_TC17AdvancedComment"
 }
 
-// 22 Advanced
-"#Bonus_Map_A2TC19Advanced"
+// 14 Advanced
+"#Bonus_Map_TC18Advanced"
 {
-	"map"		"pr_24_advanced"
-	"chapter"	"chapter3.cfg"	[$X360]
-	"image"		"bonusmaps/pr_24_advanced"
-	"comment"	"#Bonus_Map_A2TC19AdvancedComment"
-	"lock"		"1"
+	"map"		"testchmb_a_14_advanced"
+	"chapter"	"chapter10.cfg"	[$X360]
+	"image"		"bonusmaps/testchmb_a_14_advanced"
+	"comment"	"#Bonus_Map_TC18AdvancedComment"
 }

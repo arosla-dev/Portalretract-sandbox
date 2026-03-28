@@ -1,0 +1,26 @@
+"PortalStaticOverlay"
+{
+$alphamasktexture "models/portals_early/portals_mask"
+$alphamasktextureframe "0"
+"$staticamount" "1"
+"$nocolorwrite" "0"
+
+	"Proxies"
+	{
+		"PortalPickAlphaMask"
+		{
+		maskTextureVar $alphamasktexture
+		maskFrameVar $alphamasktextureframe
+		openingTexture "models/portals_early/august_real_open"
+		idleTexture "models/portals_early/portals_mask"
+		}
+		"AnimateSpecificTexture" 						//animates a texture like "AnimatedTexture", but *ONLY* if "onlyAnimateOnTexture" is the current texture used by "animatedtexturevar"s variable
+		{
+		"onlyAnimateOnTexture" "models/portals_early/portals_mask"
+		"animatedtexturevar" "$alphamasktexture"
+		"animatedtextureframenumvar" "$alphamasktextureframe"
+		"animatedtextureframerate" 30
+		}
+
+	}
+}

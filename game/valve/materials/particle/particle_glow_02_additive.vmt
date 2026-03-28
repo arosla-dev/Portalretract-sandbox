@@ -1,5 +1,4 @@
-"SpriteCard"
-//"UnlitGeneric"
+"UnlitGeneric"
 {
 	"$basetexture" "particle\particle_glow_02"
 	$vertexcolor 1

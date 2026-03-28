@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-	"$baseTexture" "models\props/Turret_01"
+	"$baseTexture" "models\props/turret_01"
 
 	"$bumpmap" "models\props\turret_01_normal"
 	"$phong" "1"
@@ -8,7 +8,7 @@
 //	"$phongexponent" "25"
 	
 	"$phongboost" "10"	
-	//"$lightwarptexture" "models\props\turret_01_lightwarp"
+	"$lightwarptexture" "models\props\model_lightwarp"
 	"$phongfresnelranges"	"[5 1 2]"
 //	"$halflambert" "1"
 

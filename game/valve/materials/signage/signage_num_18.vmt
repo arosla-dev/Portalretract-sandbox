@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "signage/signage_num_18"
+	$selfillum 1
+}

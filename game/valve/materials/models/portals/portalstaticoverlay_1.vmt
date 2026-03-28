@@ -4,7 +4,7 @@
 	"$staticblendtexture" "models/portals/portal_static" 			//texture that occludes viewing through a portal when unlinked
 	"$staticblendtextureframe" "0"
 //	"$alphamasktexture" "models/portals/vines1" 					//alpha mask for defining the portal's edges
-	"$alphamasktexture" "models/portals/august_real_open" 			//alpha mask for defining the portal's edges
+	"$alphamasktexture" "models/portals/vines_opening" 			//alpha mask for defining the portal's edges
 	"$alphamasktextureframe" "0"
 	"$staticamount" "0" 									//amount of $staticblendtexture to mix in, designed to be controlled by "PortalStatic" proxy
 	"Proxies"
@@ -26,13 +26,13 @@
 		{
 			"maskTextureVar" "$alphamasktexture"
 			"maskFrameVar" "$alphamasktextureframe"
-			"openingTexture" "models/portals/august_real_open"
-			"idleTexture" "models/portals/portals_mask"
+			"openingTexture" "models/portals/vines_opening"
+			"idleTexture" "models/portals/vines_mask"
 		}
 
 		"AnimateSpecificTexture" 							//animates a texture like "AnimatedTexture", but *ONLY* if "onlyAnimateOnTexture" is the current texture used by "animatedtexturevar"s variable
 		{
-			"onlyAnimateOnTexture" "models/portals/portals_mask"
+			"onlyAnimateOnTexture" "models/portals/vines_mask"
 			"animatedtexturevar" "$alphamasktexture"
 			"animatedtextureframenumvar" "$alphamasktextureframe"
 			"animatedtextureframerate" 30

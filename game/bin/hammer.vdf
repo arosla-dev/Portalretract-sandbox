@@ -10,9 +10,6 @@
 				{
 					"AssetSplitter"
 					{
-						"child1"
-						{
-						}
 					}
 				}
 				"child1"
@@ -23,18 +20,6 @@
 						{
 							"ViewsSheet"
 							{
-								"SequencesPage"
-								{
-								}
-								"ActivitiesPage"
-								{
-								}
-								"SkinsPage"
-								{
-								}
-								"InfoPage"
-								{
-								}
 							}
 						}
 					}

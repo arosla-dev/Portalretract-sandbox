@@ -49,6 +49,8 @@ ConVar sv_portal_debug_touch("sv_portal_debug_touch", "0", FCVAR_REPLICATED );
 ConVar sv_portal_placement_never_fail("sv_portal_placement_never_fail", "0", FCVAR_REPLICATED | FCVAR_CHEAT );
 ConVar sv_portal_new_velocity_check("sv_portal_new_velocity_check", "1", FCVAR_CHEAT );
 
+extern ConVar cl_portalgun_earlymodel;
+
 static CUtlVector<CProp_Portal *> s_PortalLinkageGroups[256];
 
 
@@ -208,6 +210,8 @@ void CProp_Portal::Precache( void )
 
 	PrecacheModel( "models/portals/portal1.mdl" );
 	PrecacheModel( "models/portals/portal2.mdl" );
+	PrecacheModel("models/portals_early/portal1.mdl");
+	PrecacheModel("models/portals_early/portal2.mdl");
 
 	PrecacheParticleSystem( "portal_1_particles" );
 	PrecacheParticleSystem( "portal_2_particles" );
@@ -452,10 +456,22 @@ bool CProp_Portal::IsActivedAndLinked( void ) const
 
 void CProp_Portal::ResetModel( void )
 {
-	if( !m_bIsPortal2 )
-		SetModel( "models/portals/portal1.mdl" );
+	if (cl_portalgun_earlymodel.GetBool())
+	{
+		if (!m_bIsPortal2)
+			SetModel("models/portals_early/portal1.mdl");
+		else
+			SetModel("models/portals_early/portal2.mdl");
+
+	}
 	else
-		SetModel( "models/portals/portal2.mdl" );
+	{
+		if (!m_bIsPortal2)
+			SetModel("models/portals/portal1.mdl");
+		else
+			SetModel("models/portals/portal2.mdl");
+
+	}
 
 	SetSize( CProp_Portal_Shared::vLocalMins, CProp_Portal_Shared::vLocalMaxs );
 

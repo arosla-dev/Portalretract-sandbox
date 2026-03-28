@@ -1,0 +1,19 @@
+"unlitgeneric"
+//"PortalStaticOverlay"
+{
+	"$model" "1"
+	"$basetexture" "models/portals_early/portal_magenta"
+	"$frame" 0
+	"$additive" 1
+	"$hdrcolorscale" "1.00"
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$basetexture"
+			"animatedtextureframenumvar" "$frame"
+			"animatedtextureframerate" 30
+		}
+	}
+}
+

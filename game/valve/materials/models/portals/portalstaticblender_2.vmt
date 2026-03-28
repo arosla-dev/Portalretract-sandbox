@@ -1,6 +1,0 @@
-UnlitGeneric
-{
-$basetexture "models/portals/blending_mask"
-$translucent 1
-$alpha 0
-}

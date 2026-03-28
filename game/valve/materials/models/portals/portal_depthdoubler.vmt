@@ -2,7 +2,7 @@
 "Portal"
 {
 	"$basetexture" "_rt_DepthDoubler" 					//what we rendered to the screen last frame, except the view model/hud
-	"$alphamasktexture" "models/portals/portals_mask" 	//alpha mask for defining the portal's edges
+	"$alphamasktexture" "models/portals/august_mask_loop" 	//alpha mask for defining the portal's edges
 	$alphamasktextureframe "0"
 	
 	"$usealternateviewmatrix" "1"
@@ -15,11 +15,11 @@
 			maskTextureVar $alphamasktexture
 			maskFrameVar $alphamasktextureframe
 			openingTexture "models/portals/august_real_open"
-			idleTexture "models/portals/portals_mask"
+			idleTexture "models/portals/august_mask_loop"
 		}
 		"AnimateSpecificTexture" 						//animates a texture like "AnimatedTexture", but *ONLY* if "onlyAnimateOnTexture" is the current texture used by "animatedtexturevar"s variable
 		{
-		"onlyAnimateOnTexture" "models/portals/portals_mask"
+		"onlyAnimateOnTexture" "models/portals/august_mask_loop"
 		"animatedtexturevar" "$alphamasktexture"
 		"animatedtextureframenumvar" "$alphamasktextureframe"
 		"animatedtextureframerate" 30

@@ -1,0 +1,41 @@
+//used in stencil mode to occlude viewing through a portal. Stencil views can't just mix in portal static like texture mode, so this overlays the static texture using alpha blending over the portal hole
+"PortalStaticOverlay"
+{
+	"$staticblendtexture" "models/portals_early/portal_static" 			//texture that occludes viewing through a portal when unlinked
+	"$staticblendtextureframe" "0"
+//	"$alphamasktexture" "models/portals_early/vines1" 					//alpha mask for defining the portal's edges
+	"$alphamasktexture" "models/portals_early/august_real_open" 			//alpha mask for defining the portal's edges
+	"$alphamasktextureframe" "0"
+	"$staticamount" "0" 									//amount of $staticblendtexture to mix in, designed to be controlled by "PortalStatic" proxy
+	"Proxies"
+	{
+		"PortalStatic" 									//copies portal static from CPortalRender::m_fStaticAmount
+		{
+			"resultVar" "$staticamount"
+		}
+		"AnimatedTexture" 								//animate occlusion texture to look like a pool
+		{
+			"animatedtexturevar" "$staticblendtexture"
+			"animatedtextureframenumvar" "$staticblendtextureframe"
+			"animatedtextureframerate" 30
+		}
+
+
+
+		"PortalPickAlphaMask" 								//uses CPortalRender::m_fOpenAmount to animate a texture. Switches to idletexture when fully open
+		{
+			"maskTextureVar" "$alphamasktexture"
+			"maskFrameVar" "$alphamasktextureframe"
+			"openingTexture" "models/portals_early/august_real_open"
+			"idleTexture" "models/portals_early/portals_mask"
+		}
+
+		"AnimateSpecificTexture" 							//animates a texture like "AnimatedTexture", but *ONLY* if "onlyAnimateOnTexture" is the current texture used by "animatedtexturevar"s variable
+		{
+			"onlyAnimateOnTexture" "models/portals_early/portals_mask"
+			"animatedtexturevar" "$alphamasktexture"
+			"animatedtextureframenumvar" "$alphamasktextureframe"
+			"animatedtextureframerate" 30
+		}
+	}
+}

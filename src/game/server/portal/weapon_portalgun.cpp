@@ -27,8 +27,9 @@
 #define BLAST_SPEED 3000.0f
 
 #define PORTALGUN_DEFAULT "models/weapons/v_portalgun.mdl"
-#define PORTALGUN_ALT "models/weapons/v_portalgun_alt.mdl"
-ConVar cl_portalgun_altmodel("cl_portalgun_altmodel", "0", FCVAR_ARCHIVE);
+#define PORTALGUN_EARLY "models/weapons/v_portalgun_early.mdl"
+
+ConVar cl_portalgun_earlymodel("cl_portalgun_earlymodel", "0", FCVAR_ARCHIVE);
 
 
 IMPLEMENT_NETWORKCLASS_ALIASED( WeaponPortalgun, DT_WeaponPortalgun )
@@ -826,9 +827,9 @@ void CWeaponPortalgun::SetViewModel(void)
 	if (vm == NULL)
 		return;
 
-	if (cl_portalgun_altmodel.GetBool())
+	if (cl_portalgun_earlymodel.GetBool())
 	{
-		vm->SetWeaponModel(PORTALGUN_ALT, this);
+		vm->SetWeaponModel(PORTALGUN_EARLY, this);
 	}
 	else
 	{

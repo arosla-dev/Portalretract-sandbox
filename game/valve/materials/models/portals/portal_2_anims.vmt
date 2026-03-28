@@ -1,19 +1,29 @@
-"unlitgeneric"
-//"PortalStaticOverlay"
+"Refract"
 {
-	"$model" "1"
-	"$basetexture" "models/portals/portal_magenta"
-	"$frame" 0
-	"$additive" 1
-	"$hdrcolorscale" "1.00"
+//	"$basetexture""models/portals/test2"
+	"$model"	1
+	"$selfillum"	1
+	"$refractamount"	"0.1"
+	"$bluramount"	"1"
+	"$REFRACTTINT"	"{255 255 255}"
+	"$normalmap"	"models/portals/vines_normal"
+	"$bumpframe"	"0"
+	"$REFRACTTINTTEXTURE"	"models/portals/vines_red"
+	"$REFRACTTINTTEXTUREFRAME"	"0"
+	"$translucent"	1
 	"Proxies"
 	{
 		"AnimatedTexture"
 		{
-			"animatedtexturevar" "$basetexture"
-			"animatedtextureframenumvar" "$frame"
-			"animatedtextureframerate" 30
+			"animatedTextureVar"	"$normalmap"
+			"animatedTextureFrameNumVar"	"$bumpframe"
+			"animatedTextureFrameRate"	"30"
+		}
+		"AnimatedTexture"
+		{
+			"animatedTextureVar"	"$REFRACTTINTTEXTURE"
+			"animatedTextureFrameNumVar"	"$REFRACTTINTTEXTUREFRAME"
+			"animatedTextureFrameRate"	"29"
 		}
 	}
 }
-

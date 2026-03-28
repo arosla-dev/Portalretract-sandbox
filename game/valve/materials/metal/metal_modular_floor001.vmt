@@ -9,9 +9,8 @@
 	"$normalmapalphaenvmapmask" 1
 	"$envmapcontrast" 1
 	"$envmapsaturation" 1
-	"$envmaptint" "[0.6 0.5 0.5]"
-	"$bumpmap" "metal/metal_modular_floor001_height-ssbump"
-	"$ssbump" "1"
+	"$envmaptint" "[1.0 0.8 0.8]"
+	"$bumpmap" "metal/metal_modular_floor001_normal"
 
 	"$reflectivity" "[ .35 .30 .27 ]" //this is a artificial radiosity boost
 

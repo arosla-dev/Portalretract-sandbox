@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/props_animsigns/signage_num07_frame"
+	"$frame" "0"
+	"$selfillum" 1
+"Proxies" 
+	{
+	"MaterialModifyAnimated"
+		{
+		"AnimatedTextureVar" "$basetexture"
+		"AnimatedTextureFrameNumVar" "$frame"
+		"AnimatedTextureFramerate" "15"
+		}
+	}
+}

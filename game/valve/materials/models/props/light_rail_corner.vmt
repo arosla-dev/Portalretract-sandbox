@@ -9,7 +9,7 @@
 //	"$phongexponent" "25"
 	
 	"$phongboost" "10"	
-	"$lightwarptexture" "models\props\Light_Rail_Corner_lightwarp"
+	"$lightwarptexture" "models\props\model_lightwarp"
 	"$phongfresnelranges"	"[5 1 2]"
 //	"$halflambert" "1"
 

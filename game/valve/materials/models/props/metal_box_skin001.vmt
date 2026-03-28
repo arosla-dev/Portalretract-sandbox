@@ -9,7 +9,7 @@
 
 	
 	"$phongboost" "10"	
-	"$lightwarptexture" "models\props\Metal_box_lightwarp"
+	"$lightwarptexture" "models\props\model_lightwarp"
 	"$phongfresnelranges"	"[5 1 2]"
 
 //	"$envmap" "env_cubemap"

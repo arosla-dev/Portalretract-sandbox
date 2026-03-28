@@ -1,0 +1,76 @@
+// Created by Crowbar 0.74
+version 1
+nodes
+  0 "ValveBiped.Bip01" -1
+  1 "ValveBiped.Bip01_Spine" 0
+  2 "ValveBiped.Bip01_Spine1" 1
+  3 "ValveBiped.Bip01_Spine2" 2
+  4 "ValveBiped.Bip01_Spine4" 3
+  5 "ValveBiped.Bip01_L_Clavicle" 4
+  6 "ValveBiped.Bip01_L_UpperArm" 5
+  7 "ValveBiped.Bip01_L_Forearm" 6
+  8 "ValveBiped.Bip01_L_Hand" 7
+  9 "ValveBiped.Bip01_L_Finger4" 8
+  10 "ValveBiped.Bip01_L_Finger41" 9
+  11 "ValveBiped.Bip01_L_Finger42" 10
+  12 "ValveBiped.Bip01_L_Finger3" 8
+  13 "ValveBiped.Bip01_L_Finger31" 12
+  14 "ValveBiped.Bip01_L_Finger32" 13
+  15 "ValveBiped.Bip01_L_Finger2" 8
+  16 "ValveBiped.Bip01_L_Finger21" 15
+  17 "ValveBiped.Bip01_L_Finger22" 16
+  18 "ValveBiped.Bip01_L_Finger1" 8
+  19 "ValveBiped.Bip01_L_Finger11" 18
+  20 "ValveBiped.Bip01_L_Finger12" 19
+  21 "ValveBiped.Bip01_L_Finger0" 8
+  22 "ValveBiped.Bip01_L_Finger01" 21
+  23 "ValveBiped.Bip01_L_Finger02" 22
+  24 "ValveBiped.Bip01_R_Clavicle" 4
+  25 "ValveBiped.Bip01_R_UpperArm" 24
+  26 "ValveBiped.Bip01_R_Forearm" 25
+  27 "ValveBiped.Bip01_R_Hand" 26
+  28 "ValveBiped.Bip01_R_Finger4" 27
+  29 "ValveBiped.Bip01_R_Finger41" 28
+  30 "ValveBiped.Bip01_R_Finger42" 29
+  31 "ValveBiped.Bip01_R_Finger3" 27
+  32 "ValveBiped.Bip01_R_Finger31" 31
+  33 "ValveBiped.Bip01_R_Finger32" 32
+  34 "ValveBiped.Bip01_R_Finger2" 27
+  35 "ValveBiped.Bip01_R_Finger21" 34
+  36 "ValveBiped.Bip01_R_Finger22" 35
+  37 "ValveBiped.Bip01_R_Finger1" 27
+  38 "ValveBiped.Bip01_R_Finger11" 37
+  39 "ValveBiped.Bip01_R_Finger12" 38
+  40 "ValveBiped.Bip01_R_Finger0" 27
+  41 "ValveBiped.Bip01_R_Finger01" 40
+  42 "ValveBiped.Bip01_R_Finger02" 41
+  43 "ValveBiped.Base" 27
+  44 "ValveBiped.Casing_RotZ" 43
+  45 "ValveBiped.Gyro1_RotX" 43
+  46 "ValveBiped.Gyro2_RotY" 45
+  47 "ValveBiped.Gyro3_RotX" 46
+  48 "ValveBiped.Mag1_RotZ" 43
+  49 "ValveBiped.Mag2_RotZ" 43
+  50 "ValveBiped.Mag3_RotZ" 43
+  51 "ValveBiped.Mag4_RotZ" 43
+  52 "ValveBiped.Mag5_RotZ" 43
+  53 "ValveBiped.Mag6_RotZ" 43
+  54 "ValveBiped.Mag7_RotZ" 43
+  55 "ValveBiped.Mag8_RotZ" 43
+  56 "ValveBiped.Arm1_A" 43
+  57 "ValveBiped.Arm1_B" 56
+  58 "ValveBiped.Arm2_A" 43
+  59 "ValveBiped.Arm2_B" 58
+  60 "ValveBiped.Arm3_A" 43
+  61 "ValveBiped.Arm3_B" 60
+  62 "ValveBiped.Arm4_A" 43
+  63 "ValveBiped.Arm4_B" 62
+  64 "ValveBiped.Dial" 43
+  65 "ValveBiped.Mag9_RotZ" 43
+  66 "Root" -1
+end
+skeleton
+  time 0
+    0 0.000000 0.000000 0.000000 0.000000 0.000000 -1.570796
+    66 0.000000 0.000000 0.000000 0.000000 0.000000 -1.570796
+end
