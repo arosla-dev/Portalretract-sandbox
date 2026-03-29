@@ -7,8 +7,8 @@
  	"$bluramount" "0"
 	"$REFRACTTINT" "{255 255 255}"
 	"$scale" "[1 1]"
-//	"$dudvmap" "models\weapons\portalblast\water_normal"
- 	"$normalmap" "models\weapons\portalblast\water_normal"
+//	"$dudvmap" "x06/pinkball_normal"
+ 	"$normalmap" "dev/water_normal"
  	"$surfaceprop" "water"
 	"$bumpframe" "0"
 //	"$nocull" 0
@@ -16,9 +16,9 @@
 	"$envmaptint" "[.5 .5 .5]"
 	"$REFRACTTINTTEXTURE" "models\weapons\portalblast\portalblast"
 	$REFRACTTINTTEXTUREFRAME 0
-	$translucent 1
+	$translucent 0
 //	$additive 1
-	$alphatest 1
+//	$alphatest 1
 //	$VERTEXCOLORMODULATE 1
 
 	"Proxies"

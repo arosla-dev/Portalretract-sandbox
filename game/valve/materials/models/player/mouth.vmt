@@ -1,6 +1,6 @@
 "Teeth"
 {
-	"$basetexture" "models/player/mouth"
+	"$basetexture" "models/Humans/Male/mouth"
 	"$model" 1
 	"$clientshader" "MouthShader"
 	"$halflambert" 1

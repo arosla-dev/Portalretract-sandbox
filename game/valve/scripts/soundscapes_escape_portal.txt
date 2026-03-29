@@ -21,14 +21,6 @@
 		"pitch"		"100"
 		"attenuation"	"0"
 	}
-
-	"playlooping"
-	{
-		"volume"	"0.8"
-		"wave"		"ambient/wind/tube_suck.wav"
-		"pitch"		"100"
-		"attenuation"	"0"
-	}
 }
 
 "portal_escape.intro"
@@ -339,11 +331,11 @@
 
 "portal_escape.final_boss"
 {
-	"dsp"	"103"
+	"dsp"	"1"
 
 	"playlooping"
 	{
-		"volume"	"0.9"
+		"volume"	"1.0"
 		"wave"		"ambient/levels/citadel/field_loop1.wav"
 		"pitch"		"100"
 		"attenuation"	"0"
@@ -351,7 +343,7 @@
 
 	"playlooping"
 	{
-		"volume"	"0.2"
+		"volume"	"0.35"
 		"wave"		"ambient/atmosphere/cargo_hold1.wav"
 		"pitch"		"100"
 		"attenuation"	"0"
@@ -371,55 +363,30 @@
 			"wave"	"ambient/atmosphere/cave_hit3.wav"
 		}
 	}
-}
-
-"portal_escape.final_boss2"
-{
-	"dsp"	"103"
 
 	"playrandom"
 	{
-		"volume"	"0.25,0.5"
-		"pitch"		"70, 120"
-		"time"		"9.0, 12.0"
+		"volume"	"0.45,0.9"
+		"pitch"		"80,90"
+		"time"		"2.0, 2.0"
 		"position"	"random"
-		"soundlevel"	"SNDLVL_45dB"
+		"soundlevel"	"SNDLVL_50dB"
 		"rndwave"
 		{
-			"wave"	"ambient/atmosphere/cave_hit1.wav"
-			"wave"	"ambient/atmosphere/cave_hit2.wav"
-			"wave"	"ambient/atmosphere/cave_hit3.wav"
+			"wave"	"plats/hall_elev_stop.wav"
 		}
 	}
-}
-
-"portal_escape.hazard_liquid_tunnel"
-{
-	"dsp"	"1"
-
-	"playlooping"
-	{
-		"volume"	"0.5"
-		"pitch"		"60"
-		"soundlevel" "SNDLVL_40dB"
-		"attenuation"	"0"
-		"wave"		"ambient/levels/canals/water_rivulet_loop2.wav"
-	}
-
 
 	"playrandom"
 	{
-		"volume"	"0.2,0.5"
-		"pitch"		"90,120"
-		"time"		"0.5, 5.0"
+		"volume"	"0.45,0.9"
+		"pitch"		"60, 70"
+		"time"		"1.0, 1.0"
 		"position"	"random"
-		"soundlevel"	"SNDLVL_140db"
+		"soundlevel"	"SNDLVL_50dB"
 		"rndwave"
 		{
-			"wave"	"ambient/water/distant_drip1.wav"
-			"wave"	"ambient/water/distant_drip2.wav"
-			"wave"	"ambient/water/distant_drip3.wav"
-			"wave"	"ambient/water/distant_drip4.wav"
+			"wave"	"plats/hall_elev_stop.wav"
 		}
 	}
 }
