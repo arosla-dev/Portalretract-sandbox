@@ -53,6 +53,7 @@ private:
 	CCvarToggleCheckButton		*m_pPortalFunnelCheckBox;
 	CCvarToggleCheckButton		*m_pAltPortalgunCheckBox;
 	CCvarToggleCheckButton		*m_pRegenerationCheckBox;
+	CCvarToggleCheckButton		*m_pOldVmBobCheckBox;
 	vgui::ComboBox				*m_pPortalDepthCombo;
 };
 

@@ -14,7 +14,7 @@
 		"InGameOrder" "40"
 		"notmulti" "1"
 	}
-	"3"	[$WIN32]
+	"3"	
 	{
 		"label" "#GameUI_GameMenu_BonusMaps"
 		"command" "OpenBonusMapsDialog"
