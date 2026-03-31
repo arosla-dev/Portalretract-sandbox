@@ -18,3 +18,4 @@ This is sandbox (no, not really sandbox mod, just mess with this) project
 + [theaperturecat's blobulator implementation](https://github.com/theaperturecat/csgo-branch-fixed)
 + [Alien Swarm: Reactive Drop's paint shader files](https://github.com/ReactiveDrop/reactivedrop_public_src)
 + [Portal Retract](https://https://www.moddb.com/mods/portal-retract)
++ [Mapbase](https://github.com/mapbase-source/source-sdk-2013)
