@@ -350848,3 +350848,236 @@ Stopping All Sounds...
 CreateEvent: event 'server_pre_shutdown' not registered.
 CreateEvent: event 'server_shutdown' not registered.
 Shutdown function ShutdownMixerControls() not in list!!!
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Opened Steam Socket NS_SERVER ( virtual port 27015 ) : listen socket handle( 41 )
+Opened Steam Socket NS_CLIENT ( virtual port 27005 ) : listen socket handle( 65578 )
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+WARNING: unable to link creditsdone and creditsdone because one or more is a ConCommand.
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+maxplayers set to 1
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_3_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'replay_status' unknown.
+CGameEventManager::AddListener: event 'spec_target_updated' unknown.
+KV Conditional: Unknown symbol OSX
+KV Conditional: Unknown symbol OSX
+Hud element 'CHUDPaintAmmo' doesn't have an entry 'PaintAmmo' in scripts/HudLayout.res
+CResponseSystem:  scripts\talker\response_rules.txt (2 rules, 2 criteria, and 2 responses)
+ILocalize::AddFile() failed to load file "resource/mp3player_russian.txt".
+cc_lang = english
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+cc_lang = english
+Legacy Surround disabled.
+Stopping All Sounds...
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/valve/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 14.42
+Datacenter::RequestStop, time 14.43, state 1
+Datacenter::RequestUpdate failed
+Stopping All Sounds...
+Stopping All Sounds...
+---- Host_NewGame ----
+Network: IP 10.147.17.76, mode SP, dedicated No, ports 0 SV / 0 CL
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+#######################################
+Map test_slideshowdisplay missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map test_slideshowdisplay
+Set Gravity 600.0 (0.250 tolerance)
+PrecacheScriptSound 'default.null' failed, no such sound script entry
+CreateEvent: event 'picked_up_paint' not registered.
+PrecacheScriptSound 'Paintgun.FireLoop' failed, no such sound script entry
+Direct precache of vehicles/airboat/pontoon_fast_water_loop2.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+SV_StartSound: ambient/fire_big_loop1.wav not precached (0)
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+PrecacheScriptSound 'Weapon_Gauss.Single' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special1' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_Gauss.Special2' failed, no such sound script entry
+Warning:  Can't add NULL string to table EffectDispatch
+"materials/models/junk/w_garb_beerbottle/w_garb_beerbottle(256x128).vtf": can't be found on disk
+ERROR: Weapon (weapon_beerbottle2) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_beerbottle) using undefined primary ammo type (brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+ERROR: Weapon (weapon_brickbat) using undefined primary ammo type (Brickbat)
+Warning:  Can't add NULL string to table EffectDispatch
+Direct precache of weapons/binoculars/buzz.wav
+Direct precache of weapons/binoculars/signal.wav
+Warning:  Can't add NULL string to table EffectDispatch
+Error reading weapon data file for: weapon_hopwire
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+weapons/w_guardgun.mdl : material "models/weapons/w_guardgun//w_guardgun" not found.
+weapons/w_guardgun.mdl : material "models/weapons/v_hand//w_guardgun" not found.
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Failed to load models/weapons/w_ar2.mdl!
+Warning:  Can't add NULL string to table EffectDispatch
+Warning:  Can't add NULL string to table EffectDispatch
+Script not found (scripts/vscripts/mapspawn.nut) 
+Failed to CRC cfg/cpu_level_0_pc.ekv
+Failed to CRC cfg/cpu_level_0_pc_ss.ekv
+Failed to CRC cfg/cpu_level_1_pc.ekv
+Failed to CRC cfg/cpu_level_1_pc_ss.ekv
+Failed to CRC cfg/cpu_level_2_pc.ekv
+Failed to CRC cfg/cpu_level_2_pc_ss.ekv
+Failed to CRC cfg/gpu_level_0_pc.ekv
+Failed to CRC cfg/gpu_level_1_pc.ekv
+Failed to CRC cfg/gpu_level_2_pc.ekv
+Failed to CRC cfg/gpu_level_3_pc.ekv
+Failed to CRC cfg/mem_level_0_pc.ekv
+Failed to CRC cfg/mem_level_1_pc.ekv
+Failed to CRC cfg/mem_level_2_pc.ekv
+Failed to CRC cfg/gpu_mem_level_0_pc.ekv
+Failed to CRC cfg/gpu_mem_level_1_pc.ekv
+Failed to CRC cfg/gpu_mem_level_2_pc.ekv
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+Invalid file size for motd.txt
+Invalid file size for host.txt
+Created class baseline: 9 classes, 1432 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+Stopping All Sounds...
+1.000:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Portal
+Map: test_slideshowdisplay
+Players: 1 (0 bots) / 1 humans
+Build: 6653
+Server Number: 1
+
+KeyValues Error: RecursiveLoadFromBuffer:  got } in key in file materials/vgui/screens/vgui_overlay.vmt
+Modulate, 
+KeyValues Error: LoadFromBuffer: missing { in file materials/vgui/screens/vgui_overlay.vmt
+(*TextureTransform*), 
+KeyValues Error: LoadFromBuffer: missing { in file materials/vgui/screens/vgui_overlay.vmt
+(*TextureTransform*), 
+Error! Variable "{" is multiply defined in material "vgui/screens/vgui_overlay"!
+Error! Variable "{" is multiply defined in material "vgui/screens/vgui_overlay"!
+material "overlays/coop_ping_decal" not found.
+material "effects/huntertracer" not found.
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "rtube_muzzle"!
+Attempted to precache unknown particle system "paint_hose"!
+Attempted to precache unknown particle system "paint_hose"!
+"materials/models/portals/august_real_open.vtf": can't be found on disk
+Texture 'models/portals/august_real_open' not found.
+"materials/models/portals/august_mask_loop.vtf": can't be found on disk
+Texture 'models/portals/august_mask_loop' not found.
+Attempted to precache unknown particle system "weapon_tracers"!
+Attempted to precache unknown particle system "weapon_tracers"!
+"materials/models/portals/rift_closed.vtf": can't be found on disk
+Script not found (scripts/vscripts/mapspawn.nut) 
+Sending full update to Client gustavo (gustavo can't find frame from tick -1)
+Receiving uncompressed update from server
+Set Gravity 600.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+CreateEvent: event 'portal_player_touchedground' not registered.
+DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h).
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 1.064 msec!
+Connection to Steam servers successful.
+   VAC secure mode disabled.
+"gustavo<2><STEAM_1:0:594052514><>" STEAM USERID validated
+CreateEvent: event 'portal_player_touchedground' not registered.

@@ -80,7 +80,8 @@ $Project "Server (Portal)"
 				$File "new\entities\grenade_molotov.h"
 				$File "new\entities\grenade_brickbat.cpp"
 				$File "new\entities\grenade_brickbat.h"
-
+				$File "new\entities\prop_button.cpp"
+				$File "new\entities\prop_button.h"
 				$File "$SRCDIR\game\shared\new\entities\game_timer.cpp"
 				$File "$SRCDIR\game\shared\new\entities\game_timer.h"
 			}
