@@ -6990,3 +6990,358 @@
 [
 	input ChangeLevel(string) : "Changes the level to the map name supplied as a parameter."
 ]
+
+//p1llowguy - NEW!!!
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/game_timer.vmt") = game_timer : 
+	"An entity that adds a generic timer to the player's HUD. Not to be confused with logic_timer." 
+[
+	timer_length(float) : "Timer length (in seconds)" : 60 : "Initial timer length."
+	max_length(float) : "Max timer length (in seconds)" : 0 : "Maximum timer length (0 = no max). This value is used to ensure the timer never goes above this value when SetTime and AddTime are used."
+	warn_time(float) : "Warn time (-1 default)" : -1 : "The time in seconds at which the timer will turn red to indicate it is almost finished. -1 uses default behavior, turning red when the timer is 75% complete."
+
+	timer_caption(string) : "Timer caption" : "" : "An optional line of text which can accompany the timer."
+
+	StartDisabled(choices) : "Start Disabled" : 1 : "If enabled, the timer will show up on the player's HUD as soon as the entity spawns." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	start_paused(choices) : "Start paused" : 0 : "Should the timer start paused? (will need to send a Resume input to start the timer if this is set)." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	show_time_remaining(choices) : "Show Time Remaining" : 1 : "Should we show how much time is remaining.  If no, this will display how much time has passed." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	show_in_hud(choices) : "Show timer in the HUD" : 1 : "Whether or not the timer actually appears on the player's HUD when enabled. Note: Outside of TF2, you can only show one timer in the HUD at a time." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	x(float) : "X (0 - 1.0 = left to right) (-1 default)" : "-1" : "Horizontal position on the player's screens to draw the timer. The value should be between 0 and 1, where 0 is the far left of the screen and 1 is the far right. -1 puts it in the game's default position. Note that a non-default value will stop the game from automatically moving or hiding the timer when it gets in the way of other HUD elements."
+	y(float) : "Y (0 - 1.0 = top to bottom) (-1 default)" : "-1" : "Vertical position on the player's screens to draw the timer. The value should be between 0 and 1, where 0 is the top of the screen and 1 is the bottom. -1 puts it in the game's default position. Note that a non-default value will stop the game from automatically moving or hiding the timer when it gets in the way of other HUD elements."
+
+	progress_bar_max(integer) : "Progress bar max segments (-1 default)" : -1 : "Overrides the progress bar's maximum segments. -1 uses the default based on the timer's length."
+	progress_bar_override(integer) : "Progress bar override (-1 default)" : -1 : "Overrides the progress bar's progress. -1 uses the default based on remaining time. Use this with the max segments value to make the progress bar represent a controlled variable (e.g. number of players at a checkpoint)."
+
+	PlayerFilter(filterclass) : "Player Filter" : : "Filter to use to determine who should see this timer. By default, all players will view the timer unless a team number is specified. See filter_activator_name for more explanation."
+
+	TeamNum(choices) : "Team" : 0 : "The team this timer should apply to unless a filter is specified. In TF2, timers are colored based on this value. Specifying a filter allows a team-colored timer to be shown to players not on that team. The Local Player option will appear to each player as their own team color." =
+	[
+		-2 : "Local Player [TF2]"
+		0 : "Any"
+		1 : "Spectator"
+		2 : "Red [TF2] / Combine [HL2MP]"
+		3 : "Blue [TF2] / Rebels [HL2MP]"
+	]
+	
+	// Inputs	
+	input Pause(void) : "Pause the timer."
+	input Resume(void) : "Resume the timer."
+	input SetTime(float) : "Set the timer to this value (in seconds)."
+	input AddTime(float) : "Add time to the timer (in seconds). Added time cannot excede the max timer length."
+	input RemoveTime(float) : "Remove time from the timer (in seconds)."
+	input Restart(void) : "Restart the timer."
+	//input ShowInHUD(integer) : "Show this timer in the HUD (0 no, 1 Yes)."
+	input SetMaxTime(integer) : "Set the max timer length to this value (in seconds). The timer's time will never excede this value."
+	input SetTimerCaption(string) : "Set the timer caption."
+	input SetProgressBarMaxSegments(integer) : "Set the progress bar's max segments."
+	input SetProgressBarOverride(integer) : "Set the progress bar's progress override."
+	input SetX(float) : "Set the X position override."
+	input SetY(float) : "Set the Y position override."
+	input GetTimeRemaining(void) : "Fire OnGetTimeRemaining with the remaining time."
+	input SetPlayerFilter(target_destination) : "Set the player filter."
+	input SetTeam(integer) : "Changes the entity's team."
+		
+	// Outputs
+	output OnFinished(void) : "Sent when the timer is finished."
+	output OnPaused(void) : "Sent when the timer is paused."
+	output OnResumed(void) : "Sent when the timer is resumed."
+	output OnWarned(void) : "Sent when timer passes its warn time."
+	output OnTick(integer) : "Sent for each second the timer ticks, with the remaining time as the parameter."
+	output OnGetTimeRemaining(float) : "Sent when GetTimeRemaining input is used, with the remaining time as the parameter."
+]
+
+@PointClass base(Targetname) iconsprite("editor/game_menu.vmt") = game_menu : 
+	"An entity that opens number menus." 
+[
+	spawnflags(flags) =
+	[
+		1: "[1] All Players" : 0
+	]
+	
+	holdtime(float) : "Hold Time" : "5.0" : "The time the menu should stay onscreen before it closes automatically. The OnTimeout output will be fired if the player doesn't select an option in time. Specify '-1' for infinite hold time."
+	
+	Title(string) : "Title" : : "If specified, this will be placed above all of the options. Localization is supported."
+	
+	Case01(string) : "Case 01" : : "If specified, this will be the 1st option in the menu. Localization is supported."
+	Case02(string) : "Case 02" : : "If specified, this will be the 2nd option in the menu. Localization is supported."
+	Case03(string) : "Case 03" : : "If specified, this will be the 3rd option in the menu. Localization is supported."
+	Case04(string) : "Case 04" : : "If specified, this will be the 4th option in the menu. Localization is supported."
+	Case05(string) : "Case 05" : : "If specified, this will be the 5th option in the menu. Localization is supported."
+	Case06(string) : "Case 06" : : "If specified, this will be the 6th option in the menu. Localization is supported."
+	Case07(string) : "Case 07" : : "If specified, this will be the 7th option in the menu. Localization is supported."
+	Case08(string) : "Case 08" : : "If specified, this will be the 8th option in the menu. Localization is supported."
+	Case09(string) : "Case 09" : : "If specified, this will be the 9th option in the menu. Localization is supported."
+	Case10(string) : "Case 10 (0)" : : "If specified, this will be the 0th option in the menu. This option will not have a visual effect when selected. Localization is supported."
+
+	// Inputs
+	input ShowMenu(void) : "Shows the menu to the player."
+	input HideMenu(void) : "Hides the menu from the player."
+	
+	// Outputs
+	output OnCase01(void) : "Fired when a player selects this option."
+	output OnCase02(void) : "Fired when a player selects this option."
+	output OnCase03(void) : "Fired when a player selects this option."
+	output OnCase04(void) : "Fired when a player selects this option."
+	output OnCase05(void) : "Fired when a player selects this option."
+	output OnCase06(void) : "Fired when a player selects this option."
+	output OnCase07(void) : "Fired when a player selects this option."
+	output OnCase08(void) : "Fired when a player selects this option."
+	output OnCase09(void) : "Fired when a player selects this option."
+	output OnCase10(void) : "Fired when a player selects this option."
+	output OutValue(integer) : "Fired when a player selects any option, using the selected option as a parameter."
+	
+	output OnTimeout(void) : "Fired when a player doesn't select an option in time."
+]
+
+@PointClass base(Targetname) iconsprite("editor/logic_console.vmt") = logic_console :
+	"Sends messages to the console. Not to be confused with point_clientcommand or point_servercommand."
+[
+	// Keys
+	SetDevLvl(integer) : "Developer Level" : 1 : "What level developer messages should appear at."
+	SetMsgColor(color255) : "Message Color" : "210 250 255 255" : "The color of standard messages."
+	SetWarningColor(color255) : "Warning Color" : "255 210 210 255" : "The color of warning messages."
+	
+	SetNewLineNotAuto(choices) : "Don't automatically append \n?" : 0 : "Prevents this logic_console from automatically appending a new line each time it prints." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	// Inputs
+	input SendMsg(string) : "Sends a message to the console."
+	input SendWarning(string) : "Sends a message to the console in red text."
+	input SendDevMsg(string) : "Sends a message to the console that can only be viewed in developer mode."
+	input SendDevWarning(string) : "Sends a red-colored message to the console that can only be viewed in developer mode."
+	input SetDevLvl(integer) : "Sets the level developer messages should appear at."
+	input SetMsgColor(color255) : "Sets the color of standard messages."
+	input SetWarningColor(color255) : "Sets the color of warning messages."
+	input SetNewLineNotAuto(bool) : "Enables or disables this logic_console's ability to append \n to each message."
+	input NewLine(void) : "Manually sends \n."
+	input DevNewLine(void) : "Manually sends \n in the specified developer level."
+	input ClearConsole(void) : "Clears the console of all output."
+	
+	// No way, you wacko!
+	//input SendError(string) : "Crashes the player's game and gives the parameter as an error message. Please handle with care."
+]
+
+@PointClass base(Targetname) iconsprite("editor/math_clamp.vmt") = math_clamp :
+	"Clamps a value between two values. Supports integers, floats, and vectors."
+[
+	// Keys
+	SetMax(string) : "Max" : : "The maximum value. Can be an integer, a float, or a vector."
+	SetMin(string) : "Min" : : "The minimum value. Can be an integer, a float, or a vector."
+	
+	// Inputs
+	input ClampValue(string) : "Clamps the specified value. Can be an integer, a float, or a vector."
+	input SetMax(string) : "Sets the max value. Can be an integer, a float, or a vector."
+	input SetMin(string) : "Sets the max value. Can be an integer, a float, or a vector."
+	
+	// Outputs
+	output OutValue(string) : "Outputs the clamped value."
+	output OnBeforeMin(string) : "Fires when a clamped value was before the minimum value. Outputs the clamped value."
+	output OnBeyondMax(string) : "Fires when a clamped value was beyond the maximum value. Outputs the clamped value."
+]
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/math_bits.vmt") = math_bits :
+	"A math_counter variant that specializes in bitwise operations."
+[
+	// Keys
+	startvalue(integer) : "Initial Value" : 0 : "The bits this entity should start with."
+
+	// Inputs
+	input Add(integer) : "Adds bit(s) to this entity's value and fires the OutValue output with the result."
+	input Subtract(integer): "Subtracts bit(s) to this entity's value and fires the OutValue output with the result."
+	input ShiftLeft(integer): "Shifts this entity's value to the left by the specified number and fires the OutValue output with the result."
+	input ShiftRight(integer): "Shifts this entity's value to the right by the specified number and fires the OutValue output with the result."
+	input SetValue(integer): "Changes this entity's value and fires the OutValue output with the result."
+	input SetValueNoFire(integer): "Changes this entity's value without firing any outputs."
+	input GetValue(void): "Causes this entity to fire its OnGetValue output with its current bits. Used for polling the current bits when you don't want constant updates from the OutValue output."
+	input ContainsBits(integer): "Tests whether this entity's current value contains at least one of the specified bit(s)."
+	input ContainsAllBits(integer): "Tests whether this entity's current value contains all of the specified bit(s)."
+
+	// Outputs
+	output OutValue(integer) : "Fired when the value changes."
+	output OnGetValue(integer) : "Fired in response to the GetValue input. Used for polling the current bits when you don't want constant updates from the OutValue output."
+	output OnTrue(void) : "Fired by ContainsBits when the current value contains the specified bit." 
+	output OnFalse(void) : "Fired by ContainsBits when the current value does not contain the specified bit." 
+]
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/math_vector.vmt") = math_vector :
+	"A math_counter variant that specializes in vector operations."
+[
+	// Keys
+	startvalue(vector) : "Initial Value" : "0 0 0" : "The vector this entity should start with."
+	
+	spawnflags(flags) =
+	[
+		1 : "[1] Disable X" : 0
+		2 : "[2] Disable Y" : 0
+		4 : "[4] Disable Z" : 0
+	]
+
+	// Inputs
+	input Add(vector) : "Adds a vector to this entity's current value and fires the OutValue output with the result."
+	input Divide(vector): "Divides a vector from this entity's current value and fire the OutValue output with the result."
+	input Multiply(vector): "Multiplies a vector from this entity's current value and fires the OutValue output with the result."
+	input SetValue(vector): "Sets this entity's current vector to a new value and fires the OutValue output with the result."
+	input SetValueNoFire(vector): "Sets this entity's current vector to a new value without firing any outputs."
+	input Subtract(vector): "Subtracts a vector from this entity's current value and fires the OutValue output with the result."
+	input GetValue(void): "Causes this entity to fire its OnGetValue output with its current vector. Used for polling the counter when you don't want constant updates from the OutValue output."
+	
+	input PointAtLocation(vector): "Creates an angle pointing from the entity's current vector to the specified point and fires the OutValue output with the result."
+	input PointAtEntity(target_destination): "Creates an angle pointing from the entity's current vector to the specified entity and fires the OutValue output with the result."
+	
+	input Normalize(void): "Normalizes this entity's vector and fires the OutValue output with the result."
+	input NormalizeAngles(void): "Normalizes this entity's vector as angles and fires the OutValue output with the result."
+	input VectorAngles(void): "Converts this entity's vector to an angle, assuming the current vector is a direction vector. Fires the OutValue output with the result."
+	input AngleVectorForward(void): "Converts this entity's vector angles to a vector in the forward direction. Fires the OutValue output with the result."
+	input AngleVectorRight(void): "Converts this entity's vector angles to a vector in the right direction. Fires the OutValue output with the result."
+	input AngleVectorUp(void): "Converts this entity's vector angles to a vector in the up direction. Fires the OutValue output with the result."
+	
+	input SetX(float) : "Sets this entity's X coordinate."
+	input SetY(float) : "Sets this entity's Y coordinate."
+	input SetZ(float) : "Sets this entity's Z coordinate."
+	input GetX(void) : "Gets this entity's X coordinate."
+	input GetY(void) : "Gets this entity's Y coordinate."
+	input GetZ(void) : "Gets this entity's Z coordinate."
+	input AddX(float) : "Adds to this entity's X coordinate."
+	input AddY(float) : "Adds to this entity's Y coordinate."
+	input AddZ(float) : "Adds to this entity's Z coordinate."
+	input SubtractX(float) : "Subtracts from this entity's X coordinate."
+	input SubtractY(float) : "Subtracts from this entity's Y coordinate."
+	input SubtractZ(float) : "Subtracts from this entity's Z coordinate."
+
+	// Outputs
+	output OutValue(vector) : "Fired when the value changes."
+	output OutX(float) : "Fired when the value changes, passing the resulting X coordinate."
+	output OutY(float) : "Fired when the value changes, passing the resulting Y coordinate."
+	output OutZ(float) : "Fired when the value changes, passing the resulting Z coordinate."
+	
+	output OnGetValue(vector) : "Fired in response to the GetValue input. Used for polling this entity's current value when you don't want constant updates from the OutValue output."
+	output OnGetX(float) : "Fired in response to the GetX input."
+	output OnGetY(float) : "Fired in response to the GetY input."
+	output OnGetZ(float) : "Fired in response to the GetZ input."
+]
+
+@PointClass base(Targetname, EnableDisable) size(-8 -8 -8, 8 8 8) = game_globalvars :
+	"Outputs a few global variables when requested."
+[
+	// Inputs
+	input GetCurtime(void) : "Gets curtime."
+	input GetFrameCount(void) : "Gets frame count."
+	input GetFrametime(void) : "Gets frame time."
+	input GetTickCount(void) : "Gets tick count."
+	input GetIntervalPerTick(void) : "Gets interval per tick."
+
+	// Outputs
+	output OutCurtime(float) : "Outputs curtime."
+	output OutFrameCount(integer) : "Outputs frame count."
+	output OutFrametime(float) : "Outputs frame time."
+	output OutTickCount(integer) : "Outputs tick count."
+	output OutIntervalPerTick(integer) : "Outputs interval per tick."
+]
+
+@PointClass base(Targetname, EnableDisable) iconsprite("editor/math_lightpattern.vmt") = math_lightpattern :
+	"A logic entity that attempts to replicate light patterns that can be used on named lights.\n\n" +
+	"WARNING: This is currently out of sync with default light patterns. TODO: Fix that!"
+[
+	// Keys
+	style(Choices) : "Appearance" : "" : "Which preset pattern to use." =
+	[
+		"" : "None"
+		0 : "Normal"
+		10: "Fluorescent flicker"
+		2 : "Slow, strong pulse"
+		11: "Slow pulse, noblack"
+		5 : "Gentle pulse"
+		1 : "Flicker A"
+		6 : "Flicker B"
+		3 : "Candle A"
+		7 : "Candle B"
+		8 : "Candle C"
+		4 : "Fast strobe"
+		9 : "Slow strobe"
+	]
+	
+	pattern(string) : "Custom Appearance" : : "A custom pattern to use. a = fully dark, z = fully bright. This should always contain lowercase letters for light patterns. Uppercase letters or other types of characters won't work with actual light patterns. (although they shouldn't break the whole entity either)"
+	
+	PatternSpeed(float) : "Pattern Speed" : "0.1" : "The speed of the pattern."
+	
+	// Inputs
+	input SetStyle(integer) : "Sets the pattern from the style presets."
+	input SetPattern(string) : "Sets the pattern directly."
+	input Enable(void) : "Enables this entity."
+	input Disable(void) : "Disables this entity."
+	input Toggle(void) : "Toggles this entity."
+	
+	// Outputs
+	output OutValue(float) : "Outputs with a brightness equivalent to the current letter."
+	output OutLetter(string) : "Outputs with the current letter itself."
+	output OnLightOn(void) : "Fires when the current letter is equivalnt to 'on' (greater than a)."
+	output OnLightOff(void) : "Fires when the current letter is equivalent to 'off' (equal to a)."
+]
+
+@PointClass base(Targetname) iconsprite("editor/math_generate.vmt") = math_generate :
+	"Continuously generates numbers using various generation modes based on material proxies."
+[
+	// Keys
+	StartDisabled(choices) : "Start Disabled" : 1 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	GenerateType(choices) : "Generation Type" : 1 =
+	[
+		0 : "Sine Wave (param 1 = time offset, param 2 = sine period)"
+		1 : "Linear Ramp (param 1 = rate)"
+		2 : "Uniform Noise"
+		3 : "Gaussian Noise (param 1 = mean, param 2 = half width)"
+		4 : "Exponential (param 1 = scale, param 2 = offset)"
+	]
+	
+	InitialValue(float) : "Initial Value" : 0 : "Starting value for the math_generate."
+	SetHitMin(float) : "Minimum Legal Value" : 0 : "Minimum legal value for generation."
+	SetHitMax(float) : "Maximum Legal Value" : 1 : "Maximum legal value for generation."
+	
+	SetParam1(float) : "Parameter 1" : 0 : "Multi-purpose parameter #1 for the generation algorithms to use for their own needs."
+	SetParam2(float) : "Parameter 2" : 0 : "Multi-purpose parameter #2 for the generation algorithms to use for their own needs."
+	
+	// Inputs
+	input SetValue(float): "Sets the math_generate to a new value and fires the OutValue output with the result, performing all generation from that value."
+	input SetValueNoFire(float): "Sets the math_generate to a new value without firing any outputs."
+	input GetValue(void): "Causes the math_generate to fire its OnGetValue output with the current value. Used for polling the value when you don't want constant updates from the OutValue output."
+	input SetGenerateType(integer) : "Sets the type of generation this math_generate should perform."
+	
+	input Enable(void) : "Enables this entity."
+	input Disable(void) : "Disables this entity."
+	input Toggle(void) : "Toggles whether this entity is disabled."
+	
+	// Outputs
+	output OutValue(string) : "Fires each tick while generation is active, passing the value continuously generated by the math_generate."
+	output OnHitMin(void) : "Fired when generation meets the min value. Generation must go back above the min value before the output will fire again."
+	output OnHitMax(void) : "Fired when generation meets the max value. Generation must go below the max value before the output will fire again."
+	output OnGetValue(float) : "Fired in response to the GetValue input. Used for polling the value when you don't want constant updates from the OutValue output."
+	output OnChangedFromMin(void) : "Fired when the current generation value changes from the minimum value."
+	output OnChangedFromMax(void) : "Fired when the current generation value changes from the maximum value."
+]

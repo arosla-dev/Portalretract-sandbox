@@ -342,8 +342,18 @@
 		"fieldName" "HudDeathNotice"
 		"visible" "1"
 		"enabled" "1"
-		"wide"	 "640"
-		"tall"	 "480"
+
+		// Below is ported from HL2:DM
+		"xpos"	 "r640"
+		"ypos"	 "12"
+		"wide"	 "628"
+		"tall"	 "468"
+
+		"MaxDeathNotices" "4"
+		"LineHeight"	  "22"
+		"RightJustify"	  "1"	// If 1, draw notices from the right
+
+		"TextFont"				"Default"
 	}
 
 	HudVehicle
@@ -398,6 +408,14 @@
 		"enabled" "1"
 		"wide"	 "640"
 		"tall"	 "480"
+		"zpos" "1"
+
+		"TextFont"				"HudHintTextLarge"
+		"ItemFont"				"HudHintTextSmall"
+		"ItemFontPulsing"		"HudHintTextSmall"
+		"MenuColor"				"FgColor"
+		"MenuItemColor"			"FgColor"
+		"MenuBoxColor"			"BgColor"
 	}
 
 	HudCloseCaption
@@ -759,61 +777,87 @@
 	}
 
 	//p1llowguy - NEW
-	PaintIcon	
+	//==============================
+	//
+	// Mapbase-specific
+	//
+	//==============================
+	HudGenericGameTimer
 	{
-		"fieldName"				"PaintIcon"
-		"visible"				"0"
-		"enabled"				"0"
-		"xpos"					"50"
-		"ypos"					"r200"
-		"wide"					"50"
-		"tall"					"150"
-		"bgcolor_override"		"0 0 0 0"
+		"fieldName" "HudGenericGameTimer"
+		"visible" "1"
+		"enabled" "1"
+		"wide"	 "640"
+		"tall"	 "480"
+		"zpos" "1"
 	}
 	
-	PaintGunPowersIndicator
+	//==============================
+	//
+	// Below is ported from HL2:DM
+	//
+	//==============================
+	TargetID
 	{
-		"fieldName"				"PaintGunPowersIndicator"
-		"visible"				"1"
-		"enabled"				"1"
-		"xpos"					"c-90"
-		"ypos"					"r25"
-		"wide"					"150"
-		"tall"					"20"
-		"bgcolor_override"		"0 0 0 0"
-	}
-	
-	PaintSwapGuns
-	{
-		"fieldName"				"PaintSwapGuns"
-		"visible"				"1"
-		"enabled"				"1"
-		"xpos"					"c-25"
-		"ypos"					"c-25"
-		"wide"					"50"
-		"tall"					"50"
-		"bgcolor_override"		"0 0 0 0"
-	}
-	
-	PaintIndicator
-	{
-		"fieldName"				"PaintIndicator"
-		"visible"				"1"
-		"enabled"				"1"
-		"xpos"					"c-50"
-		"ypos"					"c-50"
-		"wide"					"100"
-		"tall"					"100"
+		"fieldName" "TargetID"
+		"visible" "1"
+		"enabled" "1"
+		"wide"	 "640"
+		"tall"	 "480"
 	}
 
-	PaintAmmo
+	TeamDisplay
 	{
-		"fieldName"				"PaintAmmo"
-		"visible"				"1"
-		"enabled"				"1"
-		"xpos"					"c-75"
-		"ypos"					"c-75"
-		"wide"					"100"
-		"tall"					"100"
+		"fieldName" "TeamDisplay"
+	    "visible" "0"
+	    "enabled" "1"
+		"xpos"	"16"
+		"ypos"	"415"
+	    "wide" "200"
+	    "tall" "60"
+	    "text_xpos" "8"
+	    "text_ypos" "4"
 	}
+	
+	HudVoiceSelfStatus
+	{
+		"fieldName" "HudVoiceSelfStatus"
+		"visible" "1"
+		"enabled" "1"
+		"xpos" "r43"
+		"ypos" "355"
+		"wide" "24"
+		"tall" "24"
+	}
+
+	HudVoiceStatus
+	{
+		"fieldName" "HudVoiceStatus"
+		"visible" "1"
+		"enabled" "1"
+		"xpos" "r145"
+		"ypos" "0"
+		"wide" "145"
+		"tall" "400"
+
+		"item_wide"	"135"
+		
+		"show_avatar"		"0"
+		
+		"show_dead_icon"	"1"
+		"dead_xpos"			"1"
+		"dead_ypos"			"0"
+		"dead_wide"			"16"
+		"dead_tall"			"16"
+		
+		"show_voice_icon"	"1"
+		"icon_ypos"			"0"
+		"icon_xpos"			"15"
+		"icon_tall"			"16"
+		"icon_wide"			"16"
+		
+		"text_xpos"			"33"
+	}
+	//==============================
+	//==============================
 }

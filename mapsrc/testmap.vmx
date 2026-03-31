@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "24"
+	"mapversion" "23"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "24"
+	"mapversion" "23"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -1827,7 +1827,7 @@ entity
 	{
 		"OnCase01" "game_textDisplay0-1"
 		"OnCase02" "giveportalgunRunScriptFile0-1"
-		"OnCase03" "logicconsoleSendMsgTest!0-1"
+		"OnCase03" "logicconsoleSendMsg0-1"
 	}
 	"origin" "-469.982 -380 52"
 	editor

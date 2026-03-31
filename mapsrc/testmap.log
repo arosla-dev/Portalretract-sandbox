@@ -1,0 +1,625 @@
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (6568 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 32 texinfos to 24
+Reduced 8 texdatas to 8 (165 bytes to 165)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt
+  14 portalclusters
+  45 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 176
+Average clusters visible: 12
+Building PAS...
+Average clusters audible: 14
+visdatasize:172  compressed from 224
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+56 faces
+12741 square feet [1834810.50 square inches]
+1 Displacements
+1820 Square Feet [262144.00 Square Inches]
+56 patches before subdivision
+470 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 11868, max 133
+transfer lists:   0.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(368, 407, 452)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(91, 106, 131)
+Build Patch/Sample Hash Table(s).....Done<0.0001 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   3/1024          144/49152    ( 0.3%) 
+brushes                 17/8192          204/98304    ( 0.2%) 
+brushsides             103/65536         824/524288   ( 0.2%) 
+planes                 108/65536        2160/1310720  ( 0.2%) 
+vertexes                95/65536        1140/786432   ( 0.1%) 
+nodes                   43/65536        1376/2097152  ( 0.1%) 
+texinfos                24/12288        1728/884736   ( 0.2%) 
+texdata                  8/2048          256/65536    ( 0.4%) 
+dispinfos                1/0             176/0        ( 0.0%) 
+disp_verts              81/0            1620/0        ( 0.0%) 
+disp_tris              128/0             256/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples        4624/0            4624/0        ( 0.0%) 
+faces                   56/65536        3136/3670016  ( 0.1%) 
+hdr faces               56/65536        3136/3670016  ( 0.1%) 
+origfaces               52/65536        2912/3670016  ( 0.1%) 
+leaves                  47/65536        1504/2097152  ( 0.1%) 
+leaffaces               78/65536         156/131072   ( 0.1%) 
+leafbrushes             24/65536          48/131072   ( 0.0%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges              436/512000       1744/2048000  ( 0.1%) 
+edges                  237/256000        948/1024000  ( 0.1%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips              0/32768           0/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices             0/65536           0/131072   ( 0.0%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       15116/0        ( 0.0%) 
+visdata               [variable]         172/16777216 ( 0.0%) 
+entdata               [variable]        2340/393216   ( 0.6%) 
+LDR ambient table       47/65536         188/262144   ( 0.1%) 
+HDR ambient table       47/65536         188/262144   ( 0.1%) 
+LDR leaf ambient        47/65536        1316/1835008  ( 0.1%) 
+HDR leaf ambient       167/65536        4676/1835008  ( 0.3%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]       74426/0        ( 0.0%) 
+physics               [variable]        6568/4194304  ( 0.2%) 
+physics terrain       [variable]          69/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 118
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (6568 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 32 texinfos to 24
+Reduced 8 texdatas to 8 (165 bytes to 165)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt
+  14 portalclusters
+  45 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 176
+Average clusters visible: 12
+Building PAS...
+Average clusters audible: 14
+visdatasize:172  compressed from 224
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+56 faces
+12741 square feet [1834810.50 square inches]
+1 Displacements
+1820 Square Feet [262144.00 Square Inches]
+56 patches before subdivision
+470 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 11868, max 133
+transfer lists:   0.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(368, 407, 452)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(91, 106, 131)
+Build Patch/Sample Hash Table(s).....Done<0.0001 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   3/1024          144/49152    ( 0.3%) 
+brushes                 17/8192          204/98304    ( 0.2%) 
+brushsides             103/65536         824/524288   ( 0.2%) 
+planes                 108/65536        2160/1310720  ( 0.2%) 
+vertexes                95/65536        1140/786432   ( 0.1%) 
+nodes                   43/65536        1376/2097152  ( 0.1%) 
+texinfos                24/12288        1728/884736   ( 0.2%) 
+texdata                  8/2048          256/65536    ( 0.4%) 
+dispinfos                1/0             176/0        ( 0.0%) 
+disp_verts              81/0            1620/0        ( 0.0%) 
+disp_tris              128/0             256/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples        4624/0            4624/0        ( 0.0%) 
+faces                   56/65536        3136/3670016  ( 0.1%) 
+hdr faces               56/65536        3136/3670016  ( 0.1%) 
+origfaces               52/65536        2912/3670016  ( 0.1%) 
+leaves                  47/65536        1504/2097152  ( 0.1%) 
+leaffaces               78/65536         156/131072   ( 0.1%) 
+leafbrushes             24/65536          48/131072   ( 0.0%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges              436/512000       1744/2048000  ( 0.1%) 
+edges                  237/256000        948/1024000  ( 0.1%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips              0/32768           0/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices             0/65536           0/131072   ( 0.0%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       15116/0        ( 0.0%) 
+visdata               [variable]         172/16777216 ( 0.0%) 
+entdata               [variable]        2492/393216   ( 0.6%) 
+LDR ambient table       47/65536         188/262144   ( 0.1%) 
+HDR ambient table       47/65536         188/262144   ( 0.1%) 
+LDR leaf ambient        47/65536        1316/1835008  ( 0.1%) 
+HDR leaf ambient       167/65536        4676/1835008  ( 0.3%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]       74426/0        ( 0.0%) 
+physics               [variable]        6568/4194304  ( 0.2%) 
+physics terrain       [variable]          69/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 118
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (7409 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 35 texinfos to 26
+Reduced 8 texdatas to 8 (165 bytes to 165)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt
+  15 portalclusters
+  50 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 199
+Average clusters visible: 13
+Building PAS...
+Average clusters audible: 15
+visdatasize:184  compressed from 240
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+67 faces
+12747 square feet [1835637.00 square inches]
+1 Displacements
+1820 Square Feet [262144.00 Square Inches]
+67 patches before subdivision
+481 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 12713, max 133
+transfer lists:   0.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(389, 431, 479)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(96, 114, 140)
+Build Patch/Sample Hash Table(s).....Done<0.0001 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   4/1024          192/49152    ( 0.4%) 
+brushes                 19/8192          228/98304    ( 0.2%) 
+brushsides             116/65536         928/524288   ( 0.2%) 
+planes                 116/65536        2320/1310720  ( 0.2%) 
+vertexes               109/65536        1308/786432   ( 0.2%) 
+nodes                   50/65536        1600/2097152  ( 0.1%) 
+texinfos                26/12288        1872/884736   ( 0.2%) 
+texdata                  8/2048          256/65536    ( 0.4%) 
+dispinfos                1/0             176/0        ( 0.0%) 
+disp_verts              81/0            1620/0        ( 0.0%) 
+disp_tris              128/0             256/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples        4624/0            4624/0        ( 0.0%) 
+faces                   67/65536        3752/3670016  ( 0.1%) 
+hdr faces               67/65536        3752/3670016  ( 0.1%) 
+origfaces               63/65536        3528/3670016  ( 0.1%) 
+leaves                  55/65536        1760/2097152  ( 0.1%) 
+leaffaces               88/65536         176/131072   ( 0.1%) 
+leafbrushes             26/65536          52/131072   ( 0.0%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges              520/512000       2080/2048000  ( 0.1%) 
+edges                  279/256000       1116/1024000  ( 0.1%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips              0/32768           0/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices             0/65536           0/131072   ( 0.0%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       15368/0        ( 0.0%) 
+visdata               [variable]         184/16777216 ( 0.0%) 
+entdata               [variable]        3427/393216   ( 0.9%) 
+LDR ambient table       55/65536         220/262144   ( 0.1%) 
+HDR ambient table       55/65536         220/262144   ( 0.1%) 
+LDR leaf ambient        55/65536        1540/1835008  ( 0.1%) 
+HDR leaf ambient       188/65536        5264/1835008  ( 0.3%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]       74426/0        ( 0.0%) 
+physics               [variable]        7409/4194304  ( 0.2%) 
+physics terrain       [variable]          69/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 138
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (7409 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 35 texinfos to 26
+Reduced 8 texdatas to 8 (165 bytes to 165)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt
+  15 portalclusters
+  50 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 199
+Average clusters visible: 13
+Building PAS...
+Average clusters audible: 15
+visdatasize:184  compressed from 240
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+67 faces
+12747 square feet [1835637.00 square inches]
+1 Displacements
+1820 Square Feet [262144.00 Square Inches]
+67 patches before subdivision
+481 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 12713, max 133
+transfer lists:   0.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(389, 431, 479)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(96, 114, 140)
+Build Patch/Sample Hash Table(s).....Done<0.0002 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   4/1024          192/49152    ( 0.4%) 
+brushes                 19/8192          228/98304    ( 0.2%) 
+brushsides             116/65536         928/524288   ( 0.2%) 
+planes                 116/65536        2320/1310720  ( 0.2%) 
+vertexes               109/65536        1308/786432   ( 0.2%) 
+nodes                   50/65536        1600/2097152  ( 0.1%) 
+texinfos                26/12288        1872/884736   ( 0.2%) 
+texdata                  8/2048          256/65536    ( 0.4%) 
+dispinfos                1/0             176/0        ( 0.0%) 
+disp_verts              81/0            1620/0        ( 0.0%) 
+disp_tris              128/0             256/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples        4624/0            4624/0        ( 0.0%) 
+faces                   67/65536        3752/3670016  ( 0.1%) 
+hdr faces               67/65536        3752/3670016  ( 0.1%) 
+origfaces               63/65536        3528/3670016  ( 0.1%) 
+leaves                  55/65536        1760/2097152  ( 0.1%) 
+leaffaces               88/65536         176/131072   ( 0.1%) 
+leafbrushes             26/65536          52/131072   ( 0.0%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges              520/512000       2080/2048000  ( 0.1%) 
+edges                  279/256000       1116/1024000  ( 0.1%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips              0/32768           0/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices             0/65536           0/131072   ( 0.0%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       15368/0        ( 0.0%) 
+visdata               [variable]         184/16777216 ( 0.0%) 
+entdata               [variable]        3987/393216   ( 1.0%) 
+LDR ambient table       55/65536         220/262144   ( 0.1%) 
+HDR ambient table       55/65536         220/262144   ( 0.1%) 
+LDR leaf ambient        55/65536        1540/1835008  ( 0.1%) 
+HDR leaf ambient       188/65536        5264/1835008  ( 0.3%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]       74426/0        ( 0.0%) 
+physics               [variable]        7409/4194304  ( 0.2%) 
+physics terrain       [variable]          69/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 138
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (7409 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 35 texinfos to 26
+Reduced 8 texdatas to 8 (165 bytes to 165)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.prt
+  15 portalclusters
+  50 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 199
+Average clusters visible: 13
+Building PAS...
+Average clusters audible: 15
+visdatasize:184  compressed from 240
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+67 faces
+12747 square feet [1835637.00 square inches]
+1 Displacements
+1820 Square Feet [262144.00 Square Inches]
+67 patches before subdivision
+481 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 12713, max 133
+transfer lists:   0.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(389, 431, 479)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(96, 114, 140)
+Build Patch/Sample Hash Table(s).....Done<0.0003 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   4/1024          192/49152    ( 0.4%) 
+brushes                 19/8192          228/98304    ( 0.2%) 
+brushsides             116/65536         928/524288   ( 0.2%) 
+planes                 116/65536        2320/1310720  ( 0.2%) 
+vertexes               109/65536        1308/786432   ( 0.2%) 
+nodes                   50/65536        1600/2097152  ( 0.1%) 
+texinfos                26/12288        1872/884736   ( 0.2%) 
+texdata                  8/2048          256/65536    ( 0.4%) 
+dispinfos                1/0             176/0        ( 0.0%) 
+disp_verts              81/0            1620/0        ( 0.0%) 
+disp_tris              128/0             256/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples        4624/0            4624/0        ( 0.0%) 
+faces                   67/65536        3752/3670016  ( 0.1%) 
+hdr faces               67/65536        3752/3670016  ( 0.1%) 
+origfaces               63/65536        3528/3670016  ( 0.1%) 
+leaves                  55/65536        1760/2097152  ( 0.1%) 
+leaffaces               88/65536         176/131072   ( 0.1%) 
+leafbrushes             26/65536          52/131072   ( 0.0%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges              520/512000       2080/2048000  ( 0.1%) 
+edges                  279/256000       1116/1024000  ( 0.1%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips              0/32768           0/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices             0/65536           0/131072   ( 0.0%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       15368/0        ( 0.0%) 
+visdata               [variable]         184/16777216 ( 0.0%) 
+entdata               [variable]        3992/393216   ( 1.0%) 
+LDR ambient table       55/65536         220/262144   ( 0.1%) 
+HDR ambient table       55/65536         220/262144   ( 0.1%) 
+LDR leaf ambient        55/65536        1540/1835008  ( 0.1%) 
+HDR leaf ambient       188/65536        5264/1835008  ( 0.3%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/12       ( 8.3%) 
+pakfile               [variable]       74426/0        ( 0.0%) 
+physics               [variable]        7409/4194304  ( 0.2%) 
+physics terrain       [variable]          69/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 138
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testmap.bsp
+2 seconds elapsed

@@ -1,0 +1,4 @@
+"AddonList"
+{
+	"zombie_town.vpk"		"1"
+}

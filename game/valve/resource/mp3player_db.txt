@@ -1,0 +1,665 @@
+// mp3 database, automatically generated
+songs
+{
+  file
+  {
+    filenumber 0
+    fromgame 1
+    subdirindex 0
+    short "citadel_hub_ambience1.mp3"
+    filename "ambient\levels\citadel\citadel_hub_ambience1.mp3"
+  }
+  file
+  {
+    filenumber 1
+    fromgame 1
+    subdirindex 0
+    short "hl1_song10.mp3"
+    filename "music\hl1_song10.mp3"
+  }
+  file
+  {
+    filenumber 2
+    fromgame 1
+    subdirindex 0
+    short "hl1_song11.mp3"
+    filename "music\hl1_song11.mp3"
+  }
+  file
+  {
+    filenumber 3
+    fromgame 1
+    subdirindex 0
+    short "hl1_song14.mp3"
+    filename "music\hl1_song14.mp3"
+  }
+  file
+  {
+    filenumber 4
+    fromgame 1
+    subdirindex 0
+    short "hl1_song15.mp3"
+    filename "music\hl1_song15.mp3"
+  }
+  file
+  {
+    filenumber 5
+    fromgame 1
+    subdirindex 0
+    short "hl1_song17.mp3"
+    filename "music\hl1_song17.mp3"
+  }
+  file
+  {
+    filenumber 6
+    fromgame 1
+    subdirindex 0
+    short "hl1_song19.mp3"
+    filename "music\hl1_song19.mp3"
+  }
+  file
+  {
+    filenumber 7
+    fromgame 1
+    subdirindex 0
+    short "hl1_song20.mp3"
+    filename "music\hl1_song20.mp3"
+  }
+  file
+  {
+    filenumber 8
+    fromgame 1
+    subdirindex 0
+    short "hl1_song21.mp3"
+    filename "music\hl1_song21.mp3"
+  }
+  file
+  {
+    filenumber 9
+    fromgame 1
+    subdirindex 0
+    short "hl1_song24.mp3"
+    filename "music\hl1_song24.mp3"
+  }
+  file
+  {
+    filenumber 10
+    fromgame 1
+    subdirindex 0
+    short "hl1_song25_remix3.mp3"
+    filename "music\hl1_song25_remix3.mp3"
+  }
+  file
+  {
+    filenumber 11
+    fromgame 1
+    subdirindex 0
+    short "hl1_song26.mp3"
+    filename "music\hl1_song26.mp3"
+  }
+  file
+  {
+    filenumber 12
+    fromgame 1
+    subdirindex 0
+    short "hl1_song3.mp3"
+    filename "music\hl1_song3.mp3"
+  }
+  file
+  {
+    filenumber 13
+    fromgame 1
+    subdirindex 0
+    short "hl1_song5.mp3"
+    filename "music\hl1_song5.mp3"
+  }
+  file
+  {
+    filenumber 14
+    fromgame 1
+    subdirindex 0
+    short "hl1_song6.mp3"
+    filename "music\hl1_song6.mp3"
+  }
+  file
+  {
+    filenumber 15
+    fromgame 1
+    subdirindex 0
+    short "hl1_song9.mp3"
+    filename "music\hl1_song9.mp3"
+  }
+  file
+  {
+    filenumber 16
+    fromgame 1
+    subdirindex 0
+    short "hl2_intro.mp3"
+    filename "music\hl2_intro.mp3"
+  }
+  file
+  {
+    filenumber 17
+    fromgame 1
+    subdirindex 0
+    short "hl2_song0.mp3"
+    filename "music\hl2_song0.mp3"
+  }
+  file
+  {
+    filenumber 18
+    fromgame 1
+    subdirindex 0
+    short "hl2_song1.mp3"
+    filename "music\hl2_song1.mp3"
+  }
+  file
+  {
+    filenumber 19
+    fromgame 1
+    subdirindex 0
+    short "hl2_song10.mp3"
+    filename "music\hl2_song10.mp3"
+  }
+  file
+  {
+    filenumber 20
+    fromgame 1
+    subdirindex 0
+    short "hl2_song11.mp3"
+    filename "music\hl2_song11.mp3"
+  }
+  file
+  {
+    filenumber 21
+    fromgame 1
+    subdirindex 0
+    short "hl2_song12_long.mp3"
+    filename "music\hl2_song12_long.mp3"
+  }
+  file
+  {
+    filenumber 22
+    fromgame 1
+    subdirindex 0
+    short "hl2_song13.mp3"
+    filename "music\hl2_song13.mp3"
+  }
+  file
+  {
+    filenumber 23
+    fromgame 1
+    subdirindex 0
+    short "hl2_song14.mp3"
+    filename "music\hl2_song14.mp3"
+  }
+  file
+  {
+    filenumber 24
+    fromgame 1
+    subdirindex 0
+    short "hl2_song15.mp3"
+    filename "music\hl2_song15.mp3"
+  }
+  file
+  {
+    filenumber 25
+    fromgame 1
+    subdirindex 0
+    short "hl2_song16.mp3"
+    filename "music\hl2_song16.mp3"
+  }
+  file
+  {
+    filenumber 26
+    fromgame 1
+    subdirindex 0
+    short "hl2_song17.mp3"
+    filename "music\hl2_song17.mp3"
+  }
+  file
+  {
+    filenumber 27
+    fromgame 1
+    subdirindex 0
+    short "hl2_song19.mp3"
+    filename "music\hl2_song19.mp3"
+  }
+  file
+  {
+    filenumber 28
+    fromgame 1
+    subdirindex 0
+    short "hl2_song2.mp3"
+    filename "music\hl2_song2.mp3"
+  }
+  file
+  {
+    filenumber 29
+    fromgame 1
+    subdirindex 0
+    short "hl2_song20_submix0.mp3"
+    filename "music\hl2_song20_submix0.mp3"
+  }
+  file
+  {
+    filenumber 30
+    fromgame 1
+    subdirindex 0
+    short "hl2_song20_submix4.mp3"
+    filename "music\hl2_song20_submix4.mp3"
+  }
+  file
+  {
+    filenumber 31
+    fromgame 1
+    subdirindex 0
+    short "hl2_song23_suitsong3.mp3"
+    filename "music\hl2_song23_suitsong3.mp3"
+  }
+  file
+  {
+    filenumber 32
+    fromgame 1
+    subdirindex 0
+    short "hl2_song25_teleporter.mp3"
+    filename "music\hl2_song25_teleporter.mp3"
+  }
+  file
+  {
+    filenumber 33
+    fromgame 1
+    subdirindex 0
+    short "hl2_song26.mp3"
+    filename "music\hl2_song26.mp3"
+  }
+  file
+  {
+    filenumber 34
+    fromgame 1
+    subdirindex 0
+    short "hl2_song26_trainstation1.mp3"
+    filename "music\hl2_song26_trainstation1.mp3"
+  }
+  file
+  {
+    filenumber 35
+    fromgame 1
+    subdirindex 0
+    short "hl2_song27_trainstation2.mp3"
+    filename "music\hl2_song27_trainstation2.mp3"
+  }
+  file
+  {
+    filenumber 36
+    fromgame 1
+    subdirindex 0
+    short "hl2_song28.mp3"
+    filename "music\hl2_song28.mp3"
+  }
+  file
+  {
+    filenumber 37
+    fromgame 1
+    subdirindex 0
+    short "hl2_song29.mp3"
+    filename "music\hl2_song29.mp3"
+  }
+  file
+  {
+    filenumber 38
+    fromgame 1
+    subdirindex 0
+    short "hl2_song3.mp3"
+    filename "music\hl2_song3.mp3"
+  }
+  file
+  {
+    filenumber 39
+    fromgame 1
+    subdirindex 0
+    short "hl2_song30.mp3"
+    filename "music\hl2_song30.mp3"
+  }
+  file
+  {
+    filenumber 40
+    fromgame 1
+    subdirindex 0
+    short "hl2_song31.mp3"
+    filename "music\hl2_song31.mp3"
+  }
+  file
+  {
+    filenumber 41
+    fromgame 1
+    subdirindex 0
+    short "hl2_song32.mp3"
+    filename "music\hl2_song32.mp3"
+  }
+  file
+  {
+    filenumber 42
+    fromgame 1
+    subdirindex 0
+    short "hl2_song33.mp3"
+    filename "music\hl2_song33.mp3"
+  }
+  file
+  {
+    filenumber 43
+    fromgame 1
+    subdirindex 0
+    short "hl2_song4.mp3"
+    filename "music\hl2_song4.mp3"
+  }
+  file
+  {
+    filenumber 44
+    fromgame 1
+    subdirindex 0
+    short "hl2_song6.mp3"
+    filename "music\hl2_song6.mp3"
+  }
+  file
+  {
+    filenumber 45
+    fromgame 1
+    subdirindex 0
+    short "hl2_song7.mp3"
+    filename "music\hl2_song7.mp3"
+  }
+  file
+  {
+    filenumber 46
+    fromgame 1
+    subdirindex 0
+    short "hl2_song8.mp3"
+    filename "music\hl2_song8.mp3"
+  }
+  file
+  {
+    filenumber 47
+    fromgame 1
+    subdirindex 0
+    short "portal_4000_degrees_kelvin.mp3"
+    filename "music\portal_4000_degrees_kelvin.mp3"
+  }
+  file
+  {
+    filenumber 48
+    fromgame 1
+    subdirindex 0
+    short "portal_ambient1.mp3"
+    filename "music\portal_ambient1.mp3"
+  }
+  file
+  {
+    filenumber 49
+    fromgame 1
+    subdirindex 0
+    short "portal_ambient2.mp3"
+    filename "music\portal_ambient2.mp3"
+  }
+  file
+  {
+    filenumber 50
+    fromgame 1
+    subdirindex 0
+    short "portal_ambient3.mp3"
+    filename "music\portal_ambient3.mp3"
+  }
+  file
+  {
+    filenumber 51
+    fromgame 1
+    subdirindex 0
+    short "portal_ambient4.mp3"
+    filename "music\portal_ambient4.mp3"
+  }
+  file
+  {
+    filenumber 52
+    fromgame 1
+    subdirindex 0
+    short "portal_ambient5.mp3"
+    filename "music\portal_ambient5.mp3"
+  }
+  file
+  {
+    filenumber 53
+    fromgame 1
+    subdirindex 0
+    short "portal_android_hell.mp3"
+    filename "music\portal_android_hell.mp3"
+  }
+  file
+  {
+    filenumber 54
+    fromgame 1
+    subdirindex 0
+    short "portal_firepit1.mp3"
+    filename "music\portal_firepit1.mp3"
+  }
+  file
+  {
+    filenumber 55
+    fromgame 1
+    subdirindex 0
+    short "portal_no_cake_for_you.mp3"
+    filename "music\portal_no_cake_for_you.mp3"
+  }
+  file
+  {
+    filenumber 56
+    fromgame 1
+    subdirindex 0
+    short "portal_party_escort.mp3"
+    filename "music\portal_party_escort.mp3"
+  }
+  file
+  {
+    filenumber 57
+    fromgame 1
+    subdirindex 0
+    short "portal_procedural_jiggle_bone.mp3"
+    filename "music\portal_procedural_jiggle_bone.mp3"
+  }
+  file
+  {
+    filenumber 58
+    fromgame 1
+    subdirindex 0
+    short "portal_self_esteem_fund.mp3"
+    filename "music\portal_self_esteem_fund.mp3"
+  }
+  file
+  {
+    filenumber 59
+    fromgame 1
+    subdirindex 0
+    short "portal_still_alive.mp3"
+    filename "music\portal_still_alive.mp3"
+  }
+  file
+  {
+    filenumber 60
+    fromgame 1
+    subdirindex 0
+    short "portal_stop_what_you_are_doing.mp3"
+    filename "music\portal_stop_what_you_are_doing.mp3"
+  }
+  file
+  {
+    filenumber 61
+    fromgame 1
+    subdirindex 0
+    short "portal_subject_name_here.mp3"
+    filename "music\portal_subject_name_here.mp3"
+  }
+  file
+  {
+    filenumber 62
+    fromgame 1
+    subdirindex 0
+    short "portal_taste_of_blood.mp3"
+    filename "music\portal_taste_of_blood.mp3"
+  }
+  file
+  {
+    filenumber 63
+    fromgame 1
+    subdirindex 0
+    short "portal_youre_not_a_good_person.mp3"
+    filename "music\portal_youre_not_a_good_person.mp3"
+  }
+  file
+  {
+    filenumber 64
+    fromgame 1
+    subdirindex 0
+    short "portal_you_cant_escape_you_know.mp3"
+    filename "music\portal_you_cant_escape_you_know.mp3"
+  }
+  file
+  {
+    filenumber 65
+    fromgame 1
+    subdirindex 0
+    short "radio1.mp3"
+    filename "music\radio1.mp3"
+  }
+  file
+  {
+    filenumber 66
+    fromgame 1
+    subdirindex 0
+    short "ravenholm_1.mp3"
+    filename "music\ravenholm_1.mp3"
+  }
+  file
+  {
+    filenumber 67
+    fromgame 1
+    subdirindex 0
+    short "hl1_stinger_song16.mp3"
+    filename "music\stingers\hl1_stinger_song16.mp3"
+  }
+  file
+  {
+    filenumber 68
+    fromgame 1
+    subdirindex 0
+    short "hl1_stinger_song27.mp3"
+    filename "music\stingers\hl1_stinger_song27.mp3"
+  }
+  file
+  {
+    filenumber 69
+    fromgame 1
+    subdirindex 0
+    short "hl1_stinger_song28.mp3"
+    filename "music\stingers\hl1_stinger_song28.mp3"
+  }
+  file
+  {
+    filenumber 70
+    fromgame 1
+    subdirindex 0
+    short "hl1_stinger_song7.mp3"
+    filename "music\stingers\hl1_stinger_song7.mp3"
+  }
+  file
+  {
+    filenumber 71
+    fromgame 1
+    subdirindex 0
+    short "hl1_stinger_song8.mp3"
+    filename "music\stingers\hl1_stinger_song8.mp3"
+  }
+}
+directories
+{
+  directory
+  {
+    gamesounds 1
+    name ""
+    dirname "Game Sounds"
+    fullpath ""
+    files
+    {
+      file 0
+      file 1
+      file 2
+      file 3
+      file 4
+      file 5
+      file 6
+      file 7
+      file 8
+      file 9
+      file 10
+      file 11
+      file 12
+      file 13
+      file 14
+      file 15
+      file 16
+      file 17
+      file 18
+      file 19
+      file 20
+      file 21
+      file 22
+      file 23
+      file 24
+      file 25
+      file 26
+      file 27
+      file 28
+      file 29
+      file 30
+      file 31
+      file 32
+      file 33
+      file 34
+      file 35
+      file 36
+      file 37
+      file 38
+      file 39
+      file 40
+      file 41
+      file 42
+      file 43
+      file 44
+      file 45
+      file 46
+      file 47
+      file 48
+      file 49
+      file 50
+      file 51
+      file 52
+      file 53
+      file 54
+      file 55
+      file 56
+      file 57
+      file 58
+      file 59
+      file 60
+      file 61
+      file 62
+      file 63
+      file 64
+      file 65
+      file 66
+      file 67
+      file 68
+      file 69
+      file 70
+      file 71
+    }
+  }
+}

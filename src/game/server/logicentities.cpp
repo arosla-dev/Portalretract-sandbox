@@ -2883,3 +2883,1903 @@ int CLogicBranchList::DrawDebugTextOverlays( void )
 
 	return text_offset;
 }
+
+
+//p1llowguy - mapbase ports
+
+//-----------------------------------------------------------------------------
+// Purpose: Prints messages to the console.
+//-----------------------------------------------------------------------------
+class CLogicConsole : public CLogicalEntity
+{
+public:
+
+	DECLARE_CLASS(CLogicConsole, CLogicalEntity);
+
+	// Keys
+	int m_iDevLevel = 1;
+	Color m_MsgColor = Color(210, 250, 255, 255);
+	Color m_WarningColor = Color(255, 210, 210, 255);
+	bool m_bNewLineNotAuto = false;
+
+	// TODO: Replace "append" with variable arguments?
+	inline void LCMsg(const char* msg, const char* append = NULL) { ConColorMsg(m_MsgColor, msg, append); }
+	inline void LCDevMsg(int lvl, const char* msg, const char* append = NULL) { developer.GetInt() >= lvl ? ConColorMsg(m_MsgColor, msg, append) : (void)0; }
+	inline void LCWarning(const char* msg, const char* append = NULL) { ConColorMsg(m_WarningColor, msg, append); }
+	inline void LCDevWarning(int lvl, const char* msg, const char* append = NULL) { developer.GetInt() >= lvl ? ConColorMsg(m_WarningColor, msg, append) : (void)0; }
+
+	//inline void LCMsg(const char *msg, const char *append = NULL) { ColorSpewMessage(SPEW_MESSAGE, &m_MsgColor, msg, append); }
+	//inline void LCDevMsg(int lvl, const char *msg, const char *append = NULL) { developer.GetInt() >= lvl ? ColorSpewMessage(SPEW_MESSAGE, &m_MsgColor, msg, append) : (void)0; }
+	//inline void LCWarning(const char *msg, const char *append = NULL) { ColorSpewMessage(SPEW_MESSAGE, &m_WarningColor, msg, append); }
+	//inline void LCDevWarning(int lvl, const char *msg, const char *append = NULL) { developer.GetInt() >= lvl ? ColorSpewMessage(SPEW_MESSAGE, &m_WarningColor, msg, append) : (void)0; }
+
+	// Inputs
+	void InputSendMsg(inputdata_t& inputdata) { !m_bNewLineNotAuto ? LCMsg("%s\n", inputdata.value.String()) : LCMsg("%s", inputdata.value.String()); }
+	void InputSendWarning(inputdata_t& inputdata) { !m_bNewLineNotAuto ? LCWarning("%s\n", inputdata.value.String()) : LCWarning("%s", inputdata.value.String()); }
+	void InputSendDevMsg(inputdata_t& inputdata) { !m_bNewLineNotAuto ? LCDevMsg(m_iDevLevel, "%s\n", inputdata.value.String()) : LCDevMsg(m_iDevLevel, "%s", inputdata.value.String()); }
+	void InputSendDevWarning(inputdata_t& inputdata) { !m_bNewLineNotAuto ? LCDevWarning(m_iDevLevel, "%s\n", inputdata.value.String()) : LCDevWarning(m_iDevLevel, "%s", inputdata.value.String()); }
+
+	void InputNewLine(inputdata_t& inputdata) { LCMsg("\n"); }
+	void InputDevNewLine(inputdata_t& inputdata) { LCDevMsg(m_iDevLevel, "\n"); }
+
+	// MAPBASE MP TODO: "ClearConsoleOnTarget"
+	// (and make this input broadcast to all players)
+	void InputClearConsole(inputdata_t& inputdata) { UTIL_GetLocalPlayer() ? engine->ClientCommand(UTIL_GetLocalPlayer()->edict(), "clear") : (void)0; }
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(logic_console, CLogicConsole);
+
+
+BEGIN_DATADESC(CLogicConsole)
+
+DEFINE_INPUT(m_iDevLevel, FIELD_INTEGER, "SetDevLvl"),
+DEFINE_INPUT(m_MsgColor, FIELD_COLOR32, "SetMsgColor"),
+DEFINE_INPUT(m_WarningColor, FIELD_COLOR32, "SetWarningColor"),
+DEFINE_INPUT(m_bNewLineNotAuto, FIELD_BOOLEAN, "SetNewLineNotAuto"),
+
+DEFINE_INPUTFUNC(FIELD_STRING, "SendMsg", InputSendMsg),
+DEFINE_INPUTFUNC(FIELD_STRING, "SendWarning", InputSendWarning),
+DEFINE_INPUTFUNC(FIELD_STRING, "SendDevMsg", InputSendDevMsg),
+DEFINE_INPUTFUNC(FIELD_STRING, "SendDevWarning", InputSendDevWarning),
+
+DEFINE_INPUTFUNC(FIELD_VOID, "NewLine", InputNewLine),
+DEFINE_INPUTFUNC(FIELD_VOID, "DevNewLine", InputDevNewLine),
+
+DEFINE_INPUTFUNC(FIELD_VOID, "ClearConsole", InputClearConsole),
+
+END_DATADESC()
+
+
+//-----------------------------------------------------------------------------
+// Purpose: Clamps the input value between two values
+//-----------------------------------------------------------------------------
+class CMathClamp : public CLogicalEntity
+{
+public:
+
+	DECLARE_CLASS(CMathClamp, CLogicalEntity);
+
+	// Keys
+	variant_t m_Max;
+	variant_t m_Min;
+
+	// Inputs
+	void InputClampValue(inputdata_t& inputdata);
+
+	float ClampValue(float input, float min, float max, int* bounds);
+	void ClampValue(variant_t var, inputdata_t* inputdata);
+
+	// Outputs
+	COutputVariant m_OutValue;
+	COutputVariant m_OnBeforeMin;
+	COutputVariant m_OnBeyondMax;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(math_clamp, CMathClamp);
+
+
+BEGIN_DATADESC(CMathClamp)
+
+DEFINE_INPUT(m_Max, FIELD_INPUT, "SetMax"),
+DEFINE_INPUT(m_Min, FIELD_INPUT, "SetMin"),
+
+DEFINE_INPUTFUNC(FIELD_INPUT, "ClampValue", InputClampValue),
+
+DEFINE_OUTPUT(m_OutValue, "OutValue"),
+DEFINE_OUTPUT(m_OnBeforeMin, "OnBeforeMin"),
+DEFINE_OUTPUT(m_OnBeyondMax, "OnBeyondMax"),
+
+END_DATADESC()
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathClamp::InputClampValue(inputdata_t& inputdata)
+{
+	ClampValue(inputdata.value, &inputdata);
+}
+
+//-----------------------------------------------------------------------------
+// "bounds" returns 1 if the number was less than min, 2 if more than max. Must not be NULL
+//-----------------------------------------------------------------------------
+inline float CMathClamp::ClampValue(float input, float min, float max, int* bounds)
+{
+	if (max < min)
+	{
+		Warning("WARNING: Max value (%f) less than min value (%f) in %s!\n", max, min, GetDebugName());
+		return max;
+	}
+	else if (input < min)
+	{
+		*bounds = 1;
+		return min;
+	}
+	else if (input > max)
+	{
+		*bounds = 2;
+		return max;
+	}
+	else
+		return input;
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathClamp::ClampValue(variant_t var, inputdata_t* inputdata)
+{
+	// Don't convert up here in case of invalid type
+
+	int nBounds = 0;
+
+	switch (var.FieldType())
+	{
+	case FIELD_FLOAT:
+	{
+		m_Max.Convert(var.FieldType());
+		m_Min.Convert(var.FieldType());
+
+		var.SetFloat(ClampValue(var.Float(), m_Max.Float(), m_Min.Float(), &nBounds));
+	} break;
+	case FIELD_INTEGER:
+	{
+		m_Max.Convert(var.FieldType());
+		m_Min.Convert(var.FieldType());
+
+		var.SetInt(ClampValue(var.Int(), m_Max.Int(), m_Min.Int(), &nBounds));
+	} break;
+	case FIELD_VECTOR:
+	{
+		m_Max.Convert(var.FieldType());
+		m_Min.Convert(var.FieldType());
+
+		Vector min;
+		Vector max;
+		m_Min.Vector3D(min);
+		m_Max.Vector3D(max);
+
+		Vector vec;
+		var.Vector3D(vec);
+
+		vec.x = ClampValue(vec.x, min.x, max.x, &nBounds);
+		vec.y = ClampValue(vec.y, min.y, max.y, &nBounds);
+		vec.z = ClampValue(vec.z, min.z, max.z, &nBounds);
+
+		var.SetVector3D(vec);
+	} break;
+	default:
+	{
+		Warning("Error: Unsupported value %s in math_clamp %s\n", STRING(GetEntityName()));
+		return;
+	}
+	}
+
+	if (inputdata)
+	{
+		m_OutValue.Set(var, inputdata->pActivator, this);
+		if (nBounds == 1)
+			m_OnBeforeMin.Set(var, inputdata->pActivator, this);
+		else if (nBounds == 2)
+			m_OnBeyondMax.Set(var, inputdata->pActivator, this);
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Bits calculations.
+//-----------------------------------------------------------------------------
+class CMathBits : public CLogicalEntity
+{
+	DECLARE_CLASS(CMathBits, CLogicalEntity);
+private:
+
+	bool m_bDisabled;
+
+	bool KeyValue(const char* szKeyName, const char* szValue);
+
+	void UpdateOutValue(CBaseEntity* pActivator, int iNewValue);
+
+	int DrawDebugTextOverlays(void);
+
+	// Inputs
+	void InputAdd(inputdata_t& inputdata);
+	void InputSubtract(inputdata_t& inputdata);
+	void InputShiftLeft(inputdata_t& inputdata);
+	void InputShiftRight(inputdata_t& inputdata);
+	void InputApplyAnd(inputdata_t& inputdata);
+	void InputApplyOr(inputdata_t& inputdata);
+	void InputSetValue(inputdata_t& inputdata);
+	void InputSetValueNoFire(inputdata_t& inputdata);
+	void InputGetValue(inputdata_t& inputdata);
+	void InputEnable(inputdata_t& inputdata);
+	void InputDisable(inputdata_t& inputdata);
+	void InputContainsBits(inputdata_t& inputdata);
+	void InputContainsAllBits(inputdata_t& inputdata);
+
+	// Outputs
+	COutputInt m_OutValue;
+	COutputInt m_OnGetValue;
+	COutputEvent m_OnTrue;
+	COutputEvent m_OnFalse;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(math_bits, CMathBits);
+
+
+BEGIN_DATADESC(CMathBits)
+
+// Keys
+DEFINE_KEYFIELD(m_bDisabled, FIELD_BOOLEAN, "StartDisabled"),
+
+// Inputs
+DEFINE_INPUTFUNC(FIELD_INTEGER, "Add", InputAdd),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "Subtract", InputSubtract),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ShiftLeft", InputShiftLeft),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ShiftRight", InputShiftRight),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ApplyAnd", InputApplyAnd),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ApplyOr", InputApplyOr),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "SetValue", InputSetValue),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "SetValueNoFire", InputSetValueNoFire),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetValue", InputGetValue),
+DEFINE_INPUTFUNC(FIELD_VOID, "Enable", InputEnable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Disable", InputDisable),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ContainsBits", InputContainsBits),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "ContainsAllBits", InputContainsAllBits),
+
+// Outputs
+DEFINE_OUTPUT(m_OutValue, "OutValue"),
+DEFINE_OUTPUT(m_OnGetValue, "OnGetValue"),
+DEFINE_OUTPUT(m_OnTrue, "OnTrue"),
+DEFINE_OUTPUT(m_OnFalse, "OnFalse"),
+
+END_DATADESC()
+
+//-----------------------------------------------------------------------------
+// Purpose: Handles key values from the BSP before spawn is called.
+//-----------------------------------------------------------------------------
+bool CMathBits::KeyValue(const char* szKeyName, const char* szValue)
+{
+	//
+	// Set the initial value of the counter.
+	//
+	if (!stricmp(szKeyName, "startvalue"))
+	{
+		m_OutValue.Init(atoi(szValue));
+		return(true);
+	}
+
+	return(BaseClass::KeyValue(szKeyName, szValue));
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for adding to the accumulator value.
+// Input  : Bit value to add.
+//-----------------------------------------------------------------------------
+void CMathBits::InputAdd(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring ADD because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() | inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for subtracting from the current value.
+// Input  : Bit value to subtract.
+//-----------------------------------------------------------------------------
+void CMathBits::InputSubtract(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring SUBTRACT because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() & ~inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for shifting from the current value.
+// Input  : Bit value to shift by.
+//-----------------------------------------------------------------------------
+void CMathBits::InputShiftLeft(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring SHIFTLEFT because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() << inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for shifting from the current value.
+// Input  : Bit value to shift by.
+//-----------------------------------------------------------------------------
+void CMathBits::InputShiftRight(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring SHIFTRIGHT because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() >> inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for applying & to the current value.
+// Input  : Bit value to shift by.
+//-----------------------------------------------------------------------------
+void CMathBits::InputApplyAnd(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring APPLYAND because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() & inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for applying | to the current value.
+// Input  : Bit value to shift by.
+//-----------------------------------------------------------------------------
+void CMathBits::InputApplyOr(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring APPLYOR because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	int iNewValue = m_OutValue.Get() | inputdata.value.Int();
+	UpdateOutValue(inputdata.pActivator, iNewValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for updating the value.
+// Input  : Bit value to set.
+//-----------------------------------------------------------------------------
+void CMathBits::InputSetValue(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring SETVALUE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	UpdateOutValue(inputdata.pActivator, inputdata.value.Int());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for updating the value.
+// Input  : Bit value to set.
+//-----------------------------------------------------------------------------
+void CMathBits::InputSetValueNoFire(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring SETVALUENOFIRE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	m_OutValue.Init(inputdata.value.Int());
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathBits::InputGetValue(inputdata_t& inputdata)
+{
+	int iOutValue = m_OutValue.Get();
+	m_OnGetValue.Set(iOutValue, inputdata.pActivator, inputdata.pCaller);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for checking whether a bit is stored.
+// Input  : Bit value to check.
+//-----------------------------------------------------------------------------
+void CMathBits::InputContainsBits(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring CONTAINS BITS because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	if (m_OutValue.Get() & inputdata.value.Int())
+		m_OnTrue.FireOutput(inputdata.pActivator, this);
+	else
+		m_OnFalse.FireOutput(inputdata.pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for checking whether all of the specified bits are stored.
+// Input  : Bit value to check.
+//-----------------------------------------------------------------------------
+void CMathBits::InputContainsAllBits(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Bits %s ignoring CONTAINS ALL BITS because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	bool bResult = false;
+	int iInput = inputdata.value.Int();
+	int iValue = m_OutValue.Get();
+
+	for (int i = 1, n = 0; n < 32; (i <<= 1), n++)
+	{
+		DevMsg("%i\n", i);
+		if (iInput & i)
+		{
+			if (!(iValue & i))
+			{
+				DevMsg("%i does not go into %i\n", i, iValue);
+				bResult = false;
+				break;
+			}
+			else if (!bResult)
+			{
+				bResult = true;
+			}
+		}
+	}
+
+	if (bResult)
+		m_OnTrue.FireOutput(inputdata.pActivator, this);
+	else
+		m_OnFalse.FireOutput(inputdata.pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathBits::InputEnable(inputdata_t& inputdata)
+{
+	m_bDisabled = false;
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathBits::InputDisable(inputdata_t& inputdata)
+{
+	m_bDisabled = true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Sets the value to the new value, firing the output value.
+// Input  : iNewValue - Value to set.
+//-----------------------------------------------------------------------------
+void CMathBits::UpdateOutValue(CBaseEntity* pActivator, int iNewValue)
+{
+	m_OutValue.Set(iNewValue, pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Draw any debug text overlays
+// Input  :
+// Output : Current text offset from the top
+//-----------------------------------------------------------------------------
+int CMathBits::DrawDebugTextOverlays(void)
+{
+	int text_offset = BaseClass::DrawDebugTextOverlays();
+
+	if (m_debugOverlays & OVERLAY_TEXT_BIT)
+	{
+		char tempstr[512];
+
+		Q_snprintf(tempstr, sizeof(tempstr), "current value: %i", m_OutValue.Get());
+		EntityText(text_offset, tempstr, 0);
+		text_offset++;
+
+		if (m_bDisabled)
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "*DISABLED*");
+		}
+		else
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "Enabled.");
+		}
+		EntityText(text_offset, tempstr, 0);
+		text_offset++;
+
+	}
+	return text_offset;
+}
+
+// These spawnflags control math_vector dimensions.
+#define SF_MATH_VECTOR_DISABLE_X ( 1 << 0 )
+#define SF_MATH_VECTOR_DISABLE_Y ( 1 << 1 )
+#define SF_MATH_VECTOR_DISABLE_Z ( 1 << 2 )
+
+//-----------------------------------------------------------------------------
+// Purpose: Vector calculations.
+//-----------------------------------------------------------------------------
+class CMathVector : public CLogicalEntity
+{
+	DECLARE_CLASS(CMathVector, CLogicalEntity);
+private:
+
+	bool m_bDisabled;
+
+	bool KeyValue(const char* szKeyName, const char* szValue);
+	bool KeyValue(const char* szKeyName, const Vector& vecValue);
+
+	void UpdateOutValue(CBaseEntity* pActivator, Vector vecNewValue);
+
+	int DrawDebugTextOverlays(void);
+
+	// Inputs
+	void InputAdd(inputdata_t& inputdata);
+	void InputSubtract(inputdata_t& inputdata);
+	void InputDivide(inputdata_t& inputdata);
+	void InputMultiply(inputdata_t& inputdata);
+	void InputSetValue(inputdata_t& inputdata);
+	void InputSetValueNoFire(inputdata_t& inputdata);
+	void InputGetValue(inputdata_t& inputdata);
+	void InputEnable(inputdata_t& inputdata);
+	void InputDisable(inputdata_t& inputdata);
+
+	void PointAt(Vector& origin, Vector& target, Vector& out);
+	void InputPointAtLocation(inputdata_t& inputdata);
+	void InputPointAtEntity(inputdata_t& inputdata);
+
+	void InputNormalize(inputdata_t& inputdata);
+	void InputNormalizeAngles(inputdata_t& inputdata);
+	void InputVectorAngles(inputdata_t& inputdata);
+	void InputAngleVectorForward(inputdata_t& inputdata);
+	void InputAngleVectorRight(inputdata_t& inputdata);
+	void InputAngleVectorUp(inputdata_t& inputdata);
+
+	void SetCoordinate(float value, char coord, CBaseEntity* pActivator);
+	void GetCoordinate(char coord, CBaseEntity* pActivator);
+	void AddCoordinate(float value, char coord, CBaseEntity* pActivator);
+	void SubtractCoordinate(float value, char coord, CBaseEntity* pActivator);
+
+	void InputSetX(inputdata_t& inputdata) { SetCoordinate(inputdata.value.Float(), 'X', inputdata.pActivator); }
+	void InputSetY(inputdata_t& inputdata) { SetCoordinate(inputdata.value.Float(), 'Y', inputdata.pActivator); }
+	void InputSetZ(inputdata_t& inputdata) { SetCoordinate(inputdata.value.Float(), 'Z', inputdata.pActivator); }
+	void InputGetX(inputdata_t& inputdata) { GetCoordinate('X', inputdata.pActivator); }
+	void InputGetY(inputdata_t& inputdata) { GetCoordinate('Y', inputdata.pActivator); }
+	void InputGetZ(inputdata_t& inputdata) { GetCoordinate('Z', inputdata.pActivator); }
+	void InputAddX(inputdata_t& inputdata) { AddCoordinate(inputdata.value.Float(), 'X', inputdata.pActivator); }
+	void InputAddY(inputdata_t& inputdata) { AddCoordinate(inputdata.value.Float(), 'Y', inputdata.pActivator); }
+	void InputAddZ(inputdata_t& inputdata) { AddCoordinate(inputdata.value.Float(), 'Z', inputdata.pActivator); }
+	void InputSubtractX(inputdata_t& inputdata) { SubtractCoordinate(inputdata.value.Float(), 'X', inputdata.pActivator); }
+	void InputSubtractY(inputdata_t& inputdata) { SubtractCoordinate(inputdata.value.Float(), 'Y', inputdata.pActivator); }
+	void InputSubtractZ(inputdata_t& inputdata) { SubtractCoordinate(inputdata.value.Float(), 'Z', inputdata.pActivator); }
+
+	// Outputs
+	COutputVector m_OutValue;
+	COutputFloat m_OutX;
+	COutputFloat m_OutY;
+	COutputFloat m_OutZ;
+
+	COutputVector m_OnGetValue;
+	COutputFloat m_OnGetX;
+	COutputFloat m_OnGetY;
+	COutputFloat m_OnGetZ;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(math_vector, CMathVector);
+
+
+BEGIN_DATADESC(CMathVector)
+
+// Keys
+DEFINE_KEYFIELD(m_bDisabled, FIELD_BOOLEAN, "StartDisabled"),
+
+// Inputs
+DEFINE_INPUTFUNC(FIELD_VECTOR, "Add", InputAdd),
+DEFINE_INPUTFUNC(FIELD_VECTOR, "Subtract", InputSubtract),
+DEFINE_INPUTFUNC(FIELD_VECTOR, "Divide", InputDivide),
+DEFINE_INPUTFUNC(FIELD_VECTOR, "Multiply", InputMultiply),
+DEFINE_INPUTFUNC(FIELD_VECTOR, "SetValue", InputSetValue),
+DEFINE_INPUTFUNC(FIELD_VECTOR, "SetValueNoFire", InputSetValueNoFire),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetValue", InputGetValue),
+DEFINE_INPUTFUNC(FIELD_VOID, "Enable", InputEnable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Disable", InputDisable),
+
+DEFINE_INPUTFUNC(FIELD_VECTOR, "PointAtLocation", InputPointAtLocation),
+DEFINE_INPUTFUNC(FIELD_EHANDLE, "PointAtEntity", InputPointAtEntity),
+
+DEFINE_INPUTFUNC(FIELD_VOID, "Normalize", InputNormalize),
+DEFINE_INPUTFUNC(FIELD_VOID, "NormalizeAngles", InputNormalizeAngles),
+DEFINE_INPUTFUNC(FIELD_VOID, "VectorAngles", InputVectorAngles),
+DEFINE_INPUTFUNC(FIELD_VOID, "AngleVectorForward", InputAngleVectorForward),
+DEFINE_INPUTFUNC(FIELD_VOID, "AngleVectorRight", InputAngleVectorRight),
+DEFINE_INPUTFUNC(FIELD_VOID, "AngleVectorUp", InputAngleVectorUp),
+
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SetX", InputSetX),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SetY", InputSetY),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SetZ", InputSetZ),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetX", InputGetX),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetY", InputGetY),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetZ", InputGetZ),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "AddX", InputAddX),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "AddY", InputAddY),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "AddZ", InputAddZ),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SubtractX", InputSubtractX),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SubtractY", InputSubtractY),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SubtractZ", InputSubtractZ),
+
+// Outputs
+DEFINE_OUTPUT(m_OutValue, "OutValue"),
+DEFINE_OUTPUT(m_OutX, "OutX"),
+DEFINE_OUTPUT(m_OutY, "OutY"),
+DEFINE_OUTPUT(m_OutZ, "OutZ"),
+
+DEFINE_OUTPUT(m_OnGetValue, "OnGetValue"),
+DEFINE_OUTPUT(m_OnGetX, "OnGetX"),
+DEFINE_OUTPUT(m_OnGetY, "OnGetY"),
+DEFINE_OUTPUT(m_OnGetZ, "OnGetZ"),
+
+END_DATADESC()
+
+//-----------------------------------------------------------------------------
+// Purpose: Handles key values from the BSP before spawn is called.
+//-----------------------------------------------------------------------------
+bool CMathVector::KeyValue(const char* szKeyName, const char* szValue)
+{
+	//
+	// Set the initial value of the counter.
+	//
+	if (!stricmp(szKeyName, "startvalue"))
+	{
+		Vector vec;
+		UTIL_StringToVector(vec.Base(), szValue);
+		m_OutValue.Init(vec);
+		return(true);
+	}
+
+	return(BaseClass::KeyValue(szKeyName, szValue));
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Handles key values from the BSP before spawn is called.
+//-----------------------------------------------------------------------------
+bool CMathVector::KeyValue(const char* szKeyName, const Vector& vecValue)
+{
+	//
+	// Set the initial value of the counter.
+	//
+	if (!stricmp(szKeyName, "startvalue"))
+	{
+		m_OutValue.Init(vecValue);
+		return true;
+	}
+
+	// So, CLogicalEntity descends from CBaseEntity...
+	// Yup.
+	// ...and CBaseEntity has a version of KeyValue that takes vectors.
+	// Yup.
+	// Since it's virtual, I could easily override it just like I could with a KeyValue that takes strings, right?
+	// Sounds right to me.
+	// So let me override it.
+	// *No suitable function exists*
+	return CBaseEntity::KeyValue(szKeyName, vecValue);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for adding to the accumulator value.
+// Input  : Bit value to add.
+//-----------------------------------------------------------------------------
+void CMathVector::InputAdd(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring ADD because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	Vector cur;
+	m_OutValue.Get(cur);
+	UpdateOutValue(inputdata.pActivator, cur + vec);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for subtracting from the current value.
+// Input  : Bit value to subtract.
+//-----------------------------------------------------------------------------
+void CMathVector::InputSubtract(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SUBTRACT because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	Vector cur;
+	m_OutValue.Get(cur);
+	UpdateOutValue(inputdata.pActivator, cur - vec);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for multiplying the current value.
+// Input  : Float value to multiply the value by.
+//-----------------------------------------------------------------------------
+void CMathVector::InputDivide(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring DIVIDE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	Vector cur;
+	m_OutValue.Get(cur);
+
+	if (vec.x != 0)
+		cur.x /= vec.x;
+	if (vec.y != 0)
+		cur.y /= vec.y;
+	if (vec.z != 0)
+		cur.z /= vec.z;
+
+	UpdateOutValue(inputdata.pActivator, cur);
+
+	//if (vec.x != 0 && vec.y != 0 && vec.z != 0)
+	//{
+	//	UpdateOutValue( inputdata.pActivator, cur / vec );
+	//}
+	//else
+	//{
+	//	DevMsg( 1, "LEVEL DESIGN ERROR: Divide by zero in math_vector\n" );
+	//	UpdateOutValue( inputdata.pActivator, cur );
+	//}
+}
+
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for multiplying the current value.
+// Input  : Float value to multiply the value by.
+//-----------------------------------------------------------------------------
+void CMathVector::InputMultiply(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring MULTIPLY because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	Vector cur;
+	m_OutValue.Get(cur);
+	UpdateOutValue(inputdata.pActivator, cur * vec);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for updating the value.
+// Input  : Bit value to set.
+//-----------------------------------------------------------------------------
+void CMathVector::InputSetValue(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SETVALUE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	UpdateOutValue(inputdata.pActivator, vec);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for updating the value.
+// Input  : Bit value to set.
+//-----------------------------------------------------------------------------
+void CMathVector::InputSetValueNoFire(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SETVALUENOFIRE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector vec;
+	inputdata.value.Vector3D(vec);
+	m_OutValue.Init(vec);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputGetValue(inputdata_t& inputdata)
+{
+	Vector cur;
+	m_OutValue.Get(cur);
+	m_OnGetValue.Set(cur, inputdata.pActivator, inputdata.pCaller);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputEnable(inputdata_t& inputdata)
+{
+	m_bDisabled = false;
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputDisable(inputdata_t& inputdata)
+{
+	m_bDisabled = true;
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::PointAt(Vector& origin, Vector& target, Vector& out)
+{
+	out = origin - target;
+	VectorNormalize(out);
+
+	QAngle ang;
+	VectorAngles(out, ang);
+
+	out[0] = ang[0];
+	out[1] = ang[1];
+	out[2] = ang[2];
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputPointAtLocation(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring POINTATLOCATION because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+
+	Vector location;
+	inputdata.value.Vector3D(location);
+
+	PointAt(cur, location, cur);
+
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputPointAtEntity(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring POINTATENTITY because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	if (!inputdata.value.Entity())
+	{
+		Warning("%s received no entity to point at\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+
+	Vector location = inputdata.value.Entity()->GetAbsOrigin();
+
+	PointAt(cur, location, cur);
+
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputNormalize(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring NORMALIZE because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+	VectorNormalize(cur);
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputNormalizeAngles(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring NORMALIZEANGLES because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+	cur.x = AngleNormalize(cur.x);
+	cur.y = AngleNormalize(cur.y);
+	cur.z = AngleNormalize(cur.z);
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputVectorAngles(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring VECTORANGLES because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	QAngle ang;
+	m_OutValue.Get(cur);
+	VectorAngles(cur, ang);
+	UpdateOutValue(inputdata.pActivator, Vector(ang.x, ang.y, ang.z));
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputAngleVectorForward(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring ANGLEVECTORFORWARD because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+	AngleVectors(QAngle(cur.x, cur.y, cur.z), &cur);
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputAngleVectorRight(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring ANGLEVECTORRIGHT because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+	AngleVectors(QAngle(cur.x, cur.y, cur.z), NULL, &cur, NULL);
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::InputAngleVectorUp(inputdata_t& inputdata)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring ANGLEVECTORUP because it is disabled\n", GetDebugName());
+		return;
+	}
+
+	Vector cur;
+	m_OutValue.Get(cur);
+	AngleVectors(QAngle(cur.x, cur.y, cur.z), NULL, NULL, &cur);
+	UpdateOutValue(inputdata.pActivator, cur);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::SetCoordinate(float value, char coord, CBaseEntity* pActivator)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SET%c because it is disabled\n", GetDebugName(), coord);
+		return;
+	}
+
+	Vector vec;
+	m_OutValue.Get(vec);
+	switch (coord)
+	{
+	case 'X':	vec.x = value; break;
+	case 'Y':	vec.y = value; break;
+	case 'Z':	vec.z = value; break;
+	}
+	UpdateOutValue(pActivator, vec);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::GetCoordinate(char coord, CBaseEntity* pActivator)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SET%c because it is disabled\n", GetDebugName(), coord);
+		return;
+	}
+
+	Vector vec;
+	m_OutValue.Get(vec);
+	switch (coord)
+	{
+	case 'X':	m_OnGetX.Set(vec.x, pActivator, this); break;
+	case 'Y':	m_OnGetY.Set(vec.y, pActivator, this); break;
+	case 'Z':	m_OnGetZ.Set(vec.z, pActivator, this); break;
+	}
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::AddCoordinate(float value, char coord, CBaseEntity* pActivator)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring ADD%c because it is disabled\n", GetDebugName(), coord);
+		return;
+	}
+
+	Vector vec;
+	m_OutValue.Get(vec);
+	switch (coord)
+	{
+	case 'X':	vec.x += value; break;
+	case 'Y':	vec.y += value; break;
+	case 'Z':	vec.z += value; break;
+	}
+	UpdateOutValue(pActivator, vec);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathVector::SubtractCoordinate(float value, char coord, CBaseEntity* pActivator)
+{
+	if (m_bDisabled)
+	{
+		DevMsg("Math Vector %s ignoring SUBTRACT%c because it is disabled\n", GetDebugName(), coord);
+		return;
+	}
+
+	Vector vec;
+	m_OutValue.Get(vec);
+	switch (coord)
+	{
+	case 'X':	vec.x += value; break;
+	case 'Y':	vec.y += value; break;
+	case 'Z':	vec.z += value; break;
+	}
+	UpdateOutValue(pActivator, vec);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Sets the value to the new value, firing the output value.
+// Input  : vecNewValue - Value to set.
+//-----------------------------------------------------------------------------
+void CMathVector::UpdateOutValue(CBaseEntity* pActivator, Vector vecNewValue)
+{
+	if (HasSpawnFlags(SF_MATH_VECTOR_DISABLE_X))
+		vecNewValue.x = 0;
+	if (HasSpawnFlags(SF_MATH_VECTOR_DISABLE_Y))
+		vecNewValue.y = 0;
+	if (HasSpawnFlags(SF_MATH_VECTOR_DISABLE_Z))
+		vecNewValue.z = 0;
+
+	m_OutValue.Set(vecNewValue, pActivator, this);
+
+	m_OutX.Set(vecNewValue.x, pActivator, this);
+	m_OutY.Set(vecNewValue.y, pActivator, this);
+	m_OutZ.Set(vecNewValue.z, pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Draw any debug text overlays
+// Input  :
+// Output : Current text offset from the top
+//-----------------------------------------------------------------------------
+int CMathVector::DrawDebugTextOverlays(void)
+{
+	int text_offset = BaseClass::DrawDebugTextOverlays();
+
+	if (m_debugOverlays & OVERLAY_TEXT_BIT)
+	{
+		char tempstr[512];
+		Vector cur;
+		m_OutValue.Get(cur);
+
+		Q_snprintf(tempstr, sizeof(tempstr), "current value: [%g %g %g]", (double)cur[0], (double)cur[1], (double)cur[2]);
+		EntityText(text_offset, tempstr, 0);
+		text_offset++;
+
+		if (m_bDisabled)
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "*DISABLED*");
+		}
+		else
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "Enabled.");
+		}
+		EntityText(text_offset, tempstr, 0);
+		text_offset++;
+
+	}
+	return text_offset;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Passes global variables, like curtime.
+//-----------------------------------------------------------------------------
+class CGameGlobalVars : public CLogicalEntity
+{
+	DECLARE_CLASS(CGameGlobalVars, CLogicalEntity);
+private:
+
+	// Inputs
+	void InputGetCurtime(inputdata_t& inputdata) { m_OutCurtime.Set(gpGlobals->curtime, inputdata.pActivator, this); }
+	void InputGetFrameCount(inputdata_t& inputdata) { m_OutFrameCount.Set(gpGlobals->framecount, inputdata.pActivator, this); }
+	void InputGetFrametime(inputdata_t& inputdata) { m_OutFrametime.Set(gpGlobals->frametime, inputdata.pActivator, this); }
+	void InputGetTickCount(inputdata_t& inputdata) { m_OutTickCount.Set(gpGlobals->tickcount, inputdata.pActivator, this); }
+	void InputGetIntervalPerTick(inputdata_t& inputdata) { m_OutIntervalPerTick.Set(gpGlobals->interval_per_tick, inputdata.pActivator, this); }
+
+	// Outputs
+	COutputFloat m_OutCurtime;
+	COutputInt m_OutFrameCount;
+	COutputFloat m_OutFrametime;
+	COutputInt m_OutTickCount;
+	COutputInt m_OutIntervalPerTick;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(game_globalvars, CGameGlobalVars);
+
+
+BEGIN_DATADESC(CGameGlobalVars)
+
+// Inputs
+DEFINE_INPUTFUNC(FIELD_VOID, "GetCurtime", InputGetCurtime),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetFrameCount", InputGetFrameCount),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetFrametime", InputGetFrametime),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetTickCount", InputGetTickCount),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetIntervalPerTick", InputGetIntervalPerTick),
+
+// Outputs
+DEFINE_OUTPUT(m_OutCurtime, "OutCurtime"),
+DEFINE_OUTPUT(m_OutFrameCount, "OutFrameCount"),
+DEFINE_OUTPUT(m_OutFrametime, "OutFrametime"),
+DEFINE_OUTPUT(m_OutTickCount, "OutTickCount"),
+DEFINE_OUTPUT(m_OutIntervalPerTick, "OutIntervalPerTick"),
+
+END_DATADESC()
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//void CGameGlobalVars::InputGetCurtime( inputdata_t &inputdata )
+//{
+//	m_OutCurtime.Set(gpGlobals->curtime, inputdata.pActivator, this);
+//}
+
+
+#define MathModCalc(val1, val2, op) \
+	switch (op) \
+	{ \
+		case '+':	val1 += val2; break; \
+		case '-':	val1 -= val2; break; \
+		case '*':	val1 *= val2; break; \
+		case '/':	val1 /= val2; break; \
+	} \
+
+
+
+//-----------------------------------------------------------------------------
+// Purpose: Replicates light pattern functionality.
+//-----------------------------------------------------------------------------
+class CMathLightPattern : public CLogicalEntity
+{
+	DECLARE_CLASS(CMathLightPattern, CLogicalEntity);
+private:
+
+
+	string_t m_iszPattern;
+
+	bool m_bDisabled;
+
+	void Spawn();
+	bool KeyValue(const char* szKeyName, const char* szValue);
+
+	void OutputCurPattern();
+
+	void StartPatternThink();
+	void PatternThink();
+	unsigned char m_NextLetter = 0;
+
+	// How fast the pattern should be
+	float m_flPatternSpeed = 0.1f;
+
+	inline bool VerifyPatternValid() { return (m_iszPattern != NULL_STRING && STRING(m_iszPattern)[0] != '\0'); }
+
+	// Inputs
+	void InputSetStyle(inputdata_t& inputdata);
+	void InputSetPattern(inputdata_t& inputdata);
+	void InputEnable(inputdata_t& inputdata);
+	void InputDisable(inputdata_t& inputdata);
+	void InputToggle(inputdata_t& inputdata);
+
+	// Outputs
+	COutputFloat m_OutValue;
+	COutputString m_OutLetter;
+	COutputEvent m_OnLightOn;
+	COutputEvent m_OnLightOff;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(math_lightpattern, CMathLightPattern);
+
+BEGIN_DATADESC(CMathLightPattern)
+
+// Keys
+DEFINE_KEYFIELD(m_iszPattern, FIELD_STRING, "pattern"),
+DEFINE_KEYFIELD(m_bDisabled, FIELD_BOOLEAN, "StartDisabled"),
+DEFINE_KEYFIELD(m_flPatternSpeed, FIELD_FLOAT, "PatternSpeed"),
+
+// Inputs
+DEFINE_INPUTFUNC(FIELD_INTEGER, "SetStyle", InputSetStyle),
+DEFINE_INPUTFUNC(FIELD_STRING, "SetPattern", InputSetPattern),
+DEFINE_INPUTFUNC(FIELD_VOID, "Enable", InputEnable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Disable", InputDisable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Toggle", InputToggle),
+
+// Outputs
+DEFINE_OUTPUT(m_OutValue, "OutValue"),
+DEFINE_OUTPUT(m_OutLetter, "OutLetter"),
+DEFINE_OUTPUT(m_OnLightOn, "OnLightOn"),
+DEFINE_OUTPUT(m_OnLightOff, "OnLightOff"),
+
+DEFINE_THINKFUNC(PatternThink),
+DEFINE_FIELD(m_NextLetter, FIELD_CHARACTER),
+
+END_DATADESC()
+
+extern const char* GetDefaultLightstyleString(int styleIndex);
+
+static const char* s_pLightPatternContext = "PatternContext";
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::Spawn()
+{
+	BaseClass::Spawn();
+
+	if (!m_bDisabled && VerifyPatternValid())
+		StartPatternThink();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::OutputCurPattern()
+{
+	// This code looks messy, but it does what it's supposed to and is safe enough.
+	// First, we get the next letter in the pattern sequence.
+	// Next, we calculate its integral proximity to the character 'a' (fully dark)
+	// and calculate its approximate brightness by dividing it by the number of letters in the alphabet other than a.
+	// We output that brightness value for things like projected textures and other custom intensity values
+	// so they could replicate the patterns of their corresponding vrad lights.
+	char cLetter = STRING(m_iszPattern)[m_NextLetter];
+	int iValue = (cLetter - 'a');
+	float flResult = iValue != 0 ? ((float)iValue / 25.0f) : 0.0f;
+	m_OutValue.Set(flResult, this, this);
+
+	// User-friendly "Light on, light off" outputs
+	if (flResult > 0)
+		m_OnLightOn.FireOutput(this, this);
+	else
+		m_OnLightOff.FireOutput(this, this);
+
+	// Create a string with cLetter and a null terminator.
+	char szLetter[2] = { cLetter, '\0' };
+	m_OutLetter.Set(AllocPooledString(szLetter), this, this);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::StartPatternThink()
+{
+	// Output our current/next one immediately.
+	OutputCurPattern();
+
+	// Start thinking now.
+	SetContextThink(&CMathLightPattern::PatternThink, gpGlobals->curtime, s_pLightPatternContext);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::PatternThink()
+{
+	// Output our current/next one
+	OutputCurPattern();
+
+	// Increment
+	m_NextLetter++;
+	if (STRING(m_iszPattern)[m_NextLetter] == '\0')
+		m_NextLetter = 0;
+
+	//m_OutLetter.Set(AllocPooledString(UTIL_VarArgs("%c", m_NextLetter)), this, this);
+
+	SetNextThink(gpGlobals->curtime + m_flPatternSpeed, s_pLightPatternContext);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+bool CMathLightPattern::KeyValue(const char* szKeyName, const char* szValue)
+{
+	if (FStrEq(szKeyName, "style"))
+	{
+		m_iszPattern = AllocPooledString(GetDefaultLightstyleString(atoi(szValue)));
+	}
+	else
+		return BaseClass::KeyValue(szKeyName, szValue);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::InputSetStyle(inputdata_t& inputdata)
+{
+	m_iszPattern = AllocPooledString(GetDefaultLightstyleString(inputdata.value.Int()));
+	m_NextLetter = 0;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::InputSetPattern(inputdata_t& inputdata)
+{
+	m_iszPattern = inputdata.value.StringID();
+	m_NextLetter = 0;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::InputEnable(inputdata_t& inputdata)
+{
+	if (VerifyPatternValid())
+		StartPatternThink();
+	else
+		Warning("%s tried to enable without valid pattern\n", GetDebugName());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::InputDisable(inputdata_t& inputdata)
+{
+	SetContextThink(NULL, TICK_NEVER_THINK, s_pLightPatternContext);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathLightPattern::InputToggle(inputdata_t& inputdata)
+{
+	if (GetNextThink(s_pLightPatternContext) != TICK_NEVER_THINK)
+		InputDisable(inputdata);
+	else
+		InputEnable(inputdata);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Generates various types of numbers based on existing material proxies
+//-----------------------------------------------------------------------------
+class CMathGenerate : public CLogicalEntity
+{
+public:
+	DECLARE_CLASS(CMathGenerate, CLogicalEntity);
+	CMathGenerate();
+
+	enum GenerateType_t
+	{
+		GENERATE_SINE_WAVE,
+		GENERATE_LINEAR_RAMP,
+		GENERATE_UNIFORM_NOISE,
+		GENERATE_GAUSSIAN_NOISE,
+		GENERATE_EXPONENTIAL,
+	};
+
+	// Keys
+	float m_flMax;
+	float m_flMin;
+
+	float m_flParam1;
+	float m_flParam2;
+
+	bool m_bDisabled;
+
+	GenerateType_t m_iGenerateType;
+
+	// Inputs
+	void InputSetValue(inputdata_t& inputdata);
+	void InputSetValueNoFire(inputdata_t& inputdata);
+	void InputGetValue(inputdata_t& inputdata);
+	void InputSetGenerateType(inputdata_t& inputdata);
+
+	void InputEnable(inputdata_t& inputdata);
+	void InputDisable(inputdata_t& inputdata);
+	void InputToggle(inputdata_t& inputdata);
+
+	void UpdateOutValue(float fNewValue, CBaseEntity* pActivator = NULL);
+	void UpdateOutValueSine(float fNewValue, CBaseEntity* pActivator = NULL);
+
+	// Basic functions
+	void Spawn();
+	bool KeyValue(const char* szKeyName, const char* szValue);
+
+	void StartGenerating();
+	void StopGenerating();
+
+	// Number generation functions
+	void GenerateSineWave();
+	void GenerateLinearRamp();
+	void GenerateUniformNoise();
+	void GenerateGaussianNoise();
+	void GenerateExponential();
+
+	// The gaussian stream normally only exists on the client, so we use our own.
+	static CGaussianRandomStream m_GaussianStream;
+
+	bool m_bHitMin;		// Set when we reach or go below our minimum value, cleared if we go above it again.
+	bool m_bHitMax;		// Set when we reach or exceed our maximum value, cleared if we fall below it again.
+
+	// Outputs
+	COutputFloat m_OutValue;
+	COutputFloat m_OnGetValue;	// Used for polling the counter value.
+	COutputEvent m_OnHitMin;
+	COutputEvent m_OnHitMax;
+	COutputEvent m_OnChangedFromMin;
+	COutputEvent m_OnChangedFromMax;
+
+	DECLARE_DATADESC();
+};
+
+LINK_ENTITY_TO_CLASS(math_generate, CMathGenerate);
+
+
+BEGIN_DATADESC(CMathGenerate)
+
+DEFINE_INPUT(m_flMax, FIELD_FLOAT, "SetHitMax"),
+DEFINE_INPUT(m_flMin, FIELD_FLOAT, "SetHitMin"),
+DEFINE_INPUT(m_flParam1, FIELD_FLOAT, "SetParam1"),
+DEFINE_INPUT(m_flParam2, FIELD_FLOAT, "SetParam2"),
+DEFINE_KEYFIELD(m_bDisabled, FIELD_BOOLEAN, "StartDisabled"),
+
+DEFINE_KEYFIELD(m_iGenerateType, FIELD_INTEGER, "GenerateType"),
+
+DEFINE_FIELD(m_bHitMax, FIELD_BOOLEAN),
+DEFINE_FIELD(m_bHitMin, FIELD_BOOLEAN),
+
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SetValue", InputSetValue),
+DEFINE_INPUTFUNC(FIELD_FLOAT, "SetValueNoFire", InputSetValueNoFire),
+DEFINE_INPUTFUNC(FIELD_VOID, "GetValue", InputGetValue),
+DEFINE_INPUTFUNC(FIELD_INTEGER, "SetGenerateType", InputSetGenerateType),
+
+DEFINE_INPUTFUNC(FIELD_VOID, "Enable", InputEnable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Disable", InputDisable),
+DEFINE_INPUTFUNC(FIELD_VOID, "Toggle", InputToggle),
+
+DEFINE_OUTPUT(m_OutValue, "OutValue"),
+DEFINE_OUTPUT(m_OnHitMin, "OnHitMin"),
+DEFINE_OUTPUT(m_OnHitMax, "OnHitMax"),
+DEFINE_OUTPUT(m_OnGetValue, "OnGetValue"),
+DEFINE_OUTPUT(m_OnChangedFromMin, "OnChangedFromMin"),
+DEFINE_OUTPUT(m_OnChangedFromMax, "OnChangedFromMax"),
+
+DEFINE_THINKFUNC(GenerateSineWave),
+DEFINE_THINKFUNC(GenerateLinearRamp),
+DEFINE_THINKFUNC(GenerateUniformNoise),
+DEFINE_THINKFUNC(GenerateGaussianNoise),
+DEFINE_THINKFUNC(GenerateExponential),
+
+END_DATADESC()
+
+CGaussianRandomStream CMathGenerate::m_GaussianStream;
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+CMathGenerate::CMathGenerate()
+{
+	m_GaussianStream.AttachToStream(random);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CMathGenerate::Spawn()
+{
+	BaseClass::Spawn();
+
+	if (!m_bDisabled)
+		StartGenerating();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+bool CMathGenerate::KeyValue(const char* szKeyName, const char* szValue)
+{
+	if (FStrEq(szKeyName, "InitialValue"))
+	{
+		m_OutValue.Init(atof(szValue));
+	}
+	else
+		return BaseClass::KeyValue(szKeyName, szValue);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputSetValue(inputdata_t& inputdata)
+{
+	UpdateOutValue(inputdata.value.Float(), inputdata.pActivator);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputSetValueNoFire(inputdata_t& inputdata)
+{
+	m_OutValue.Init(inputdata.value.Float());
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputGetValue(inputdata_t& inputdata)
+{
+	float flOutValue = m_OutValue.Get();
+	m_OnGetValue.Set(flOutValue, inputdata.pActivator, inputdata.pCaller);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputSetGenerateType(inputdata_t& inputdata)
+{
+	m_iGenerateType = (GenerateType_t)inputdata.value.Int();
+
+	if (GetNextThink() != TICK_NEVER_THINK)
+	{
+		// Change our generation function if we're already generating.
+		// StartGenerating() should set to the new function.
+		StartGenerating();
+	}
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputEnable(inputdata_t& inputdata)
+{
+	m_bDisabled = false;
+	StartGenerating();
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputDisable(inputdata_t& inputdata)
+{
+	m_bDisabled = true;
+	StopGenerating();
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::InputToggle(inputdata_t& inputdata)
+{
+	m_bDisabled ? InputEnable(inputdata) : InputDisable(inputdata);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Sets the value to the new value, clamping and firing the output value.
+// Input  : fNewValue - Value to set.
+//-----------------------------------------------------------------------------
+void CMathGenerate::UpdateOutValue(float fNewValue, CBaseEntity* pActivator)
+{
+	if ((m_flMin != 0) || (m_flMax != 0))
+	{
+		//
+		// Fire an output any time we reach or exceed our maximum value.
+		//
+		if (fNewValue >= m_flMax || (m_iGenerateType == GENERATE_SINE_WAVE && fNewValue >= (m_flMax * 0.995f)))
+		{
+			if (!m_bHitMax)
+			{
+				m_bHitMax = true;
+				m_OnHitMax.FireOutput(pActivator, this);
+			}
+		}
+		else
+		{
+			// Fire an output if we just changed from the maximum value
+			if (m_OutValue.Get() == m_flMax)
+			{
+				m_OnChangedFromMax.FireOutput(pActivator, this);
+			}
+
+			m_bHitMax = false;
+		}
+
+		//
+		// Fire an output any time we reach or go below our minimum value.
+		//
+		if (fNewValue <= m_flMin)
+		{
+			if (!m_bHitMin)
+			{
+				m_bHitMin = true;
+				m_OnHitMin.FireOutput(pActivator, this);
+			}
+		}
+		else
+		{
+			// Fire an output if we just changed from the maximum value
+			if (m_OutValue.Get() == m_flMin)
+			{
+				m_OnChangedFromMin.FireOutput(pActivator, this);
+			}
+
+			m_bHitMin = false;
+		}
+
+		fNewValue = clamp(fNewValue, m_flMin, m_flMax);
+	}
+
+	m_OutValue.Set(fNewValue, pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Sets the value to the new value, clamping and firing the output value.
+//			Sine generation needs to use a different function to account for skips and imprecision.
+// Input  : fNewValue - Value to set.
+//-----------------------------------------------------------------------------
+void CMathGenerate::UpdateOutValueSine(float fNewValue, CBaseEntity* pActivator)
+{
+	if ((m_flMin != 0) || (m_flMax != 0))
+	{
+		//
+		// Fire an output any time we reach or exceed our maximum value.
+		//
+		if (fNewValue >= (m_flMax * 0.995f))
+		{
+			if (!m_bHitMax)
+			{
+				m_bHitMax = true;
+				m_OnHitMax.FireOutput(pActivator, this);
+			}
+		}
+		else
+		{
+			// Fire an output if we just changed from the maximum value
+			if (m_bHitMax)
+			{
+				m_OnChangedFromMax.FireOutput(pActivator, this);
+			}
+
+			m_bHitMax = false;
+		}
+
+		//
+		// Fire an output any time we reach or go below our minimum value.
+		//
+		if (fNewValue <= (m_flMin * 1.005f))
+		{
+			if (!m_bHitMin)
+			{
+				m_bHitMin = true;
+				m_OnHitMin.FireOutput(pActivator, this);
+			}
+		}
+		else
+		{
+			// Fire an output if we just changed from the maximum value
+			if (m_bHitMin)
+			{
+				m_OnChangedFromMin.FireOutput(pActivator, this);
+			}
+
+			m_bHitMin = false;
+		}
+
+		//fNewValue = clamp(fNewValue, m_flMin, m_flMax);
+	}
+
+	m_OutValue.Set(fNewValue, pActivator, this);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::StartGenerating()
+{
+	// Correct any min/max quirks here
+	if (m_flMin > m_flMax)
+	{
+		float flTemp = m_flMin;
+		m_flMin = m_flMax;
+		m_flMax = flTemp;
+	}
+
+	switch (m_iGenerateType)
+	{
+	case GENERATE_SINE_WAVE:
+		SetThink(&CMathGenerate::GenerateSineWave);
+		break;
+	case GENERATE_LINEAR_RAMP:
+		SetThink(&CMathGenerate::GenerateLinearRamp);
+		break;
+	case GENERATE_UNIFORM_NOISE:
+		SetThink(&CMathGenerate::GenerateUniformNoise);
+		break;
+	case GENERATE_GAUSSIAN_NOISE:
+		SetThink(&CMathGenerate::GenerateGaussianNoise);
+		break;
+	case GENERATE_EXPONENTIAL:
+		SetThink(&CMathGenerate::GenerateExponential);
+		break;
+
+	default:
+		Warning("%s is set to invalid generation type %i! It won't do anything now.\n", GetDebugName(), m_iGenerateType);
+		StopGenerating();
+		return;
+	}
+
+	// All valid types should fall through to this
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::StopGenerating()
+{
+	SetThink(NULL);
+	SetNextThink(TICK_NEVER_THINK);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::GenerateSineWave()
+{
+	// CSineProxy in mathproxy.cpp
+	float flSineTimeOffset = m_flParam2;
+	float flSinePeriod = m_flParam1;
+	float flValue;
+
+	if (flSinePeriod == 0)
+		flSinePeriod = 1;
+
+	// get a value in [0,1]
+	flValue = (sin(2.0f * M_PI * (gpGlobals->curtime - flSineTimeOffset) / flSinePeriod) * 0.5f) + 0.5f;
+	// get a value in [min,max]	
+	flValue = (m_flMax - m_flMin) * flValue + m_flMin;
+
+	UpdateOutValueSine(flValue);
+
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::GenerateLinearRamp()
+{
+	// CLinearRampProxy in mathproxy.cpp
+
+	// Param1 = rate
+	float flVal = m_flParam1 * gpGlobals->curtime + m_OutValue.Get();
+
+	// clamp
+	if (flVal < m_flMin)
+		flVal = m_flMin;
+	else if (flVal > m_flMax)
+		flVal = m_flMax;
+
+	UpdateOutValue(flVal);
+
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::GenerateUniformNoise()
+{
+	// CUniformNoiseProxy in mathproxy.cpp
+
+	UpdateOutValue(random->RandomFloat(m_flMin, m_flMax));
+
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::GenerateGaussianNoise()
+{
+	// CGaussianNoiseProxy in mathproxy.cpp
+
+	float flMean = m_flParam1;
+	float flStdDev = m_flParam2;
+	float flVal = m_GaussianStream.RandomFloat(flMean, flStdDev);
+
+	// clamp
+	if (flVal < m_flMin)
+		flVal = m_flMin;
+	else if (flVal > m_flMax)
+		flVal = m_flMax;
+
+	UpdateOutValue(flVal);
+
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void CMathGenerate::GenerateExponential()
+{
+	// CExponentialProxy in mathproxy.cpp
+
+	// Param1 = scale
+	// Param2 = offset
+	float flVal = m_flParam1 * exp(m_OutValue.Get() + m_flParam2);
+
+	// clamp
+	if (flVal < m_flMin)
+		flVal = m_flMin;
+	else if (flVal > m_flMax)
+		flVal = m_flMax;
+
+	UpdateOutValue(flVal);
+
+	SetNextThink(gpGlobals->curtime + TICK_INTERVAL);
+}

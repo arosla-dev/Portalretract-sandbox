@@ -52,7 +52,6 @@ $Project "Server (Portal)"
 		{	
 			$Folder "Other"
 			{
-
 			}
 
 			$Folder "Weapons"
@@ -81,6 +80,9 @@ $Project "Server (Portal)"
 				$File "new\entities\grenade_molotov.h"
 				$File "new\entities\grenade_brickbat.cpp"
 				$File "new\entities\grenade_brickbat.h"
+
+				$File "$SRCDIR\game\shared\new\entities\game_timer.cpp"
+				$File "$SRCDIR\game\shared\new\entities\game_timer.h"
 			}
 
 			$Folder "Npc"

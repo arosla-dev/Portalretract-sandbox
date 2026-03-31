@@ -62,4 +62,5 @@ void RegisterUserMessages()
 	usermessages->Register( "RemoveAllPaint", 0 );
 	usermessages->Register( "PaintAllSurfaces", sizeof( BYTE ) );
 	usermessages->Register( "RemovePaint", sizeof( long ) );
+	usermessages->Register("ShowMenuComplex", -1); // CHudMenu
 }

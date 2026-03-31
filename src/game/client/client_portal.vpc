@@ -33,6 +33,7 @@ $Project "Client (Portal)"
 			{
 				$File "new\other\ClientEffectPrecacheSystem.h"
 				$File "new\other\ClientEffectPrecacheSystem.cpp"
+				$File "new\other\hud_generic_timer.cpp"
 			}
 
 			$Folder "Weapons"
@@ -43,7 +44,8 @@ $Project "Client (Portal)"
 			
 			$Folder "Entities"
 			{
-				
+				$File "$SRCDIR\game\shared\new\entities\game_timer.cpp"
+				$File "$SRCDIR\game\shared\new\entities\game_timer.h"
 			}	
 
 			$Folder "Npc"

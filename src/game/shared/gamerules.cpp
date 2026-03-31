@@ -11,12 +11,12 @@
 #include "KeyValues.h"
 #include "iachievementmgr.h"
 
+
 #ifdef CLIENT_DLL
 
 	#include "usermessages.h"
 
 #else
-
 	#include "player.h"
 	#include "teamplay_gamerules.h"
 	#include "game.h"
@@ -26,6 +26,7 @@
 	#include "globalstate.h"
 	#include "player_resource.h"
 	#include "GameStats.h"
+	#include "maprules.h"
 
 #ifdef PORTAL
 	#include "portal_player.h"
@@ -571,6 +572,25 @@ bool CGameRules::ClientCommand( CBaseEntity *pEdict, const CCommand &args )
 	{
 		if( GetVoiceGameMgr()->ClientCommand( static_cast<CBasePlayer*>(pEdict), args ) )
 			return true;
+
+		if (FStrEq(args[0], "menuselect"))
+		{
+			if (args.ArgC() >= 2)
+			{
+				int slot = atoi(args[1]);
+
+				// See if this is from a game_menu
+				for (int i = 0; i < IGameMenuAutoList::AutoList().Count(); i++)
+				{
+					CGameMenu* pMenu = static_cast<CGameMenu*>(IGameMenuAutoList::AutoList()[i]);
+					if (pMenu->IsActiveOnTarget(pEdict))
+					{
+						pMenu->MenuSelected(slot, pEdict);
+						return true;
+					}
+				}
+			}
+		}
 	}
 
 	return false;
