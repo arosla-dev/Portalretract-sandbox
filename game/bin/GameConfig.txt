@@ -22,7 +22,7 @@
 				"Light"		"C:\SourceCode\Portalretract-sandbox\game\bin\vrad.exe"
 				"GameExeDir"		"C:\SourceCode\Portalretract-sandbox\game"
 				"MapDir"		"C:\SourceCode\Portalretract-sandbox\game\content\template\mapsrc"
-				"BSPDir"		"C:\SourceCode\Portalretract-sandbox\game\template\maps"
+				"BSPDir"		"C:\SourceCode\Portalretract-sandbox\game\valve\maps"
 				"PrefabDir"		"C:\SourceCode\Portalretract-sandbox\game\bin\Prefabs"
 				"CordonTexture"		"tools\toolsskybox"
 				"MaterialExcludeCount"		"0"

@@ -84,6 +84,7 @@ $Project "Server (Portal)"
 				$File "new\entities\prop_button.h"
 				$File "$SRCDIR\game\shared\new\entities\game_timer.cpp"
 				$File "$SRCDIR\game\shared\new\entities\game_timer.h"
+				$File "new\entities\closecaption_entity.cpp"
 			}
 
 			$Folder "Npc"
