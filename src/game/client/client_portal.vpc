@@ -46,6 +46,7 @@ $Project "Client (Portal)"
 			{
 				$File "$SRCDIR\game\shared\new\entities\game_timer.cpp"
 				$File "$SRCDIR\game\shared\new\entities\game_timer.h"
+				$File "new\entities\c_prop_floor_button.cpp"
 			}	
 
 			$Folder "Npc"

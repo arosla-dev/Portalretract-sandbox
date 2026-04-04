@@ -1,4 +1,5 @@
 "AddonList"
 {
-	"zombie_town.vpk"		"1"
+	"x06.vpk"		"1"
+	"portal still alive.vpk"		"1"
 }

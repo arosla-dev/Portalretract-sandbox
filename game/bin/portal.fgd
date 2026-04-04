@@ -992,10 +992,9 @@
 	output OnButtonReset(void) : "Called when the button has reset after being pressed."
 ]
 
-@PointClass base(Targetname, Parentname, Angles ) studio() = prop_floor_button :
+@PointClass base(Targetname, Parentname, Angles ) studio("models/props/portal_button.mdl") = prop_floor_button :
 "A floor button which is activated by a player or objects."
 [
-	model(studio) : "Button model" : "models/props/portal_button.mdl" : "Button model must have the correct sequences and attachments in order to work as a button."
 	input PressIn(void) : "Activate the button as if it was pressed, sending it to the bottom position."
 	input PressOut(void) : "Unpress the button, sending it to the top position."
 	output OnPressed(void) : "Called when the button has been pressed."

@@ -13,7 +13,6 @@
 #include "tier0/memdbgon.h"
 
 #define PROP_BUTTON_MODEL_NAME "models/props/switch001.mdl"
-#define PROP_FSTOP_BUTTON_MODEL_NAME "models/props"
 
 ConVar sv_portal2_button_hint_range("sv_portal2_button_hint_range", "350.0", FCVAR_NONE);
 
@@ -481,41 +480,4 @@ int CPropButton::DrawDebugTextOverlays()
 	}
 
 	return text_offset;
-}
-
-
-//-----------------------------------------------------------------------------
-// Underground button
-//-----------------------------------------------------------------------------
-class CPropUnderButton : public CPropButton
-{
-	DECLARE_CLASS(CPropUnderButton, CPropButton);
-	DECLARE_DATADESC()
-
-public:
-	virtual const char* GetButtonModelName();
-
-protected:
-	virtual void LookUpAnimationSequences(void);
-};
-
-LINK_ENTITY_TO_CLASS(prop_under_button, CPropUnderButton);
-
-BEGIN_DATADESC(CPropUnderButton)
-
-END_DATADESC()
-
-
-const char* CPropUnderButton::GetButtonModelName()
-{
-	return PROP_FSTOP_BUTTON_MODEL_NAME;
-}
-
-void CPropUnderButton::LookUpAnimationSequences(void)
-{
-	// look up animation sequences
-	m_UpSequence = LookupSequence("release");
-	m_DownSequence = LookupSequence("press");
-	m_IdleUpSequence = LookupSequence("release_idle");
-	m_IdleDownSequence = LookupSequence("press_idle");
 }
