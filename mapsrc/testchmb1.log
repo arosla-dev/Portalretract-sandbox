@@ -1599,3 +1599,144 @@ Level flags = 0
 Total triangle count: 596
 Writing c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
 0 seconds elapsed
+
+
+
+materialPath: C:\SourceCode\Portalretract-sandbox\game\valve\materials
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.vmf
+Could not locate GameData file portalretract_part2.fgd
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 10 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.prt...Building visibility clusters...
+done (0)
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (21274 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 80 texinfos to 38
+Reduced 12 texdatas to 11 (322 bytes to 277)
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
+0 seconds elapsed
+
+
+
+8 threads
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
+reading c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.prt
+  17 portalclusters
+  29 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 0 visible clusters (0.00%)
+Total clusters visible: 265
+Average clusters visible: 15
+Building PAS...
+Average clusters audible: 17
+visdatasize:242  compressed from 272
+writing c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
+0 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[53 texlights parsed from 'lights.rad']
+
+Loading c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
+184 faces
+8325 square feet [1198832.13 square inches]
+0 Displacements
+0 Square Feet [0.00 Square Inches]
+184 patches before subdivision
+1560 patches after subdivision
+2 direct lights
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10transfers 140488, max 258
+transfer lists:   1.1 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(13908, 7328, 4754)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(4615, 1282, 507)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(1707, 230, 59)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(650, 42, 8)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(262, 8, 1)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(107, 2, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(47, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #8 added RGB(20, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #9 added RGB(10, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #10 added RGB(5, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #11 added RGB(3, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #12 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #13 added RGB(1, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #14 added RGB(1, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0003 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+0 of 0 (0% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                   4/1024          192/49152    ( 0.4%) 
+brushes                 56/8192          672/98304    ( 0.7%) 
+brushsides             455/65536        3640/524288   ( 0.7%) 
+planes                 620/65536       12400/1310720  ( 0.9%) 
+vertexes               316/65536        3792/786432   ( 0.5%) 
+nodes                  109/65536        3488/2097152  ( 0.2%) 
+texinfos                38/12288        2736/884736   ( 0.3%) 
+texdata                 11/2048          352/65536    ( 0.5%) 
+dispinfos                0/0               0/0        ( 0.0%) 
+disp_verts               0/0               0/0        ( 0.0%) 
+disp_tris                0/0               0/0        ( 0.0%) 
+disp_multiblend          0/0               0/0        ( 0.0%) 
+disp_lmsamples           0/0               0/0        ( 0.0%) 
+faces                  184/65536       10304/3670016  ( 0.3%) 
+hdr faces              184/65536       10304/3670016  ( 0.3%) 
+origfaces              140/65536        7840/3670016  ( 0.2%) 
+leaves                 114/65536        3648/2097152  ( 0.2%) 
+leaffaces              189/65536         378/131072   ( 0.3%) 
+leafbrushes             80/65536         160/131072   ( 0.1%) 
+areas                    2/256            16/2048     ( 0.8%) 
+surfedges             1404/512000       5616/2048000  ( 0.3%) 
+edges                  858/256000       3432/1024000  ( 0.3%) 
+LDR worldlights          0/8192            0/819200   ( 0.0%) 
+HDR worldlights          2/8192          200/819200   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips             14/32768         140/327680   ( 0.0%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices           246/65536         492/131072   ( 0.4%) 
+cubemapsamples           0/1024            0/16384    ( 0.0%) 
+overlays                 0/512             0/180224   ( 0.0%) 
+LDR lightdata         [variable]           0/0        ( 0.0%) 
+HDR lightdata         [variable]       43632/0        ( 0.0%) 
+visdata               [variable]         242/16777216 ( 0.0%) 
+entdata               [variable]        3178/393216   ( 0.8%) 
+LDR ambient table      114/65536         456/262144   ( 0.2%) 
+HDR ambient table      114/65536         456/262144   ( 0.2%) 
+LDR leaf ambient       114/65536        3192/1835008  ( 0.2%) 
+HDR leaf ambient       411/65536       11508/1835008  ( 0.6%) 
+occluders                0/0               0/0        ( 0.0%) 
+occluder polygons        0/0               0/0        ( 0.0%) 
+occluder vert ind        0/0               0/0        ( 0.0%) 
+Prop Hull Verts          0/0               0/0        ( 0.0%) 
+Prop Hull Blob           0/0               0/0        ( 0.0%) 
+Prop Hull Lists          0/0               0/0        ( 0.0%) 
+Prop Hulls               0/0               0/0        ( 0.0%) 
+Prop Hull trilist        0/0               0/0        ( 0.0%) 
+detail props          [variable]           1/12       ( 8.3%) 
+static props          [variable]           1/290      ( 0.3%) 
+pakfile               [variable]      149100/0        ( 0.0%) 
+physics               [variable]       21274/4194304  ( 0.5%) 
+physics terrain       [variable]           2/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 484
+Writing c:\sourcecode\portalretract-sandbox\mapsrc\testchmb1.bsp
+0 seconds elapsed
