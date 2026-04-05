@@ -1,5 +1,4 @@
 "AddonList"
 {
 	"x06.vpk"		"1"
-	"portal still alive.vpk"		"1"
 }

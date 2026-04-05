@@ -82,7 +82,6 @@ public:
 	virtual void UpdateOnRemove(void);
 	void PressingBoxHasSetteledThink(void);
 
-	virtual const char* GetButtonModelName();
 	virtual bool ShouldPlayerTouch();
 	virtual bool OnlyAcceptBall(void) { return false; }
 	virtual bool AcceptsBall(void) { return true; }
@@ -162,7 +161,7 @@ CPropFloorButton::CPropFloorButton() : m_bButtonState(false) // button is not pr
 //-----------------------------------------------------------------------------
 void CPropFloorButton::Precache(void)
 {
-	PrecacheModel(GetButtonModelName());
+	PrecacheModel("models/props/portal_button.mdl");
 
 	PrecacheScriptSound("Portal.button_down");
 	PrecacheScriptSound("Portal.button_up");
@@ -176,7 +175,7 @@ void CPropFloorButton::Precache(void)
 void CPropFloorButton::Spawn(void)
 {
 	Precache();
-	KeyValue("model", GetButtonModelName());
+	SetModel("models/props/portal_button.mdl");
 
 	BaseClass::Spawn();
 
@@ -268,18 +267,6 @@ void CPropFloorButton::UpdateOnRemove(void)
 		m_hButtonTrigger = NULL;
 	}
 	BaseClass::UpdateOnRemove();
-}
-
-
-//-----------------------------------------------------------------------------
-// Purpose: return floor button model name
-//-----------------------------------------------------------------------------
-const char* CPropFloorButton::GetButtonModelName()
-{
-	if (m_ModelName == NULL_STRING)
-		return PROP_FLOOR_BUTTON_DEFAULT_MODEL_NAME;
-
-	return STRING(m_ModelName);
 }
 
 //-----------------------------------------------------------------------------

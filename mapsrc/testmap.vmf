@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "34"
+	"mapversion" "36"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "34"
+	"mapversion" "36"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -2834,6 +2834,46 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "792"
+	"classname" "prop_testchamber_door"
+	"angles" "0 90.5 0"
+	"AreaPortalFadeEnd" "0"
+	"AreaPortalFadeStart" "0"
+	"targetname" "testchmbdoor"
+	"UseAreaPortalFade" "0"
+	"origin" "-264.185 -439.002 17"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "794"
+	"classname" "prop_button"
+	"angles" "0 90 0"
+	"Delay" "1"
+	"istimer" "0"
+	"preventfastreset" "0"
+	"skin" "0"
+	connections
+	{
+		"OnPressed" "testchmbdoorOpen0-1"
+	}
+	"origin" "-261.932 -382.726 17"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras

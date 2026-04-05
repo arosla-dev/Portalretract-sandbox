@@ -1280,6 +1280,7 @@ CAmmoDef *GetAmmoDef()
 		def.AddAmmoType("AR2AltFire",		DMG_DISSOLVE,				TRACER_NONE,			0, 0, "sk_max_ar2_altfire", 0, 0 );
 		def.AddAmmoType("Gasoline",			DMG_BURN,					TRACER_NONE,			"sk_plr_dmg_gasoline", 0, "sk_max_gasoline_round", 0, 0);
 		def.AddAmmoType("Molotov",			DMG_BURN,					TRACER_NONE,			"sk_plr_dmg_molotov", "sk_npc_dmg_molotov", "sk_max_molotov", 0, 0);
+		def.AddAmmoType("Extinguisher",		DMG_BURN,					TRACER_NONE,			0, 0, 100, 0, 0);
 #ifdef HL2_EPISODIC
 		def.AddAmmoType("Hopwire",			DMG_BLAST,					TRACER_NONE,			"sk_plr_dmg_grenade",		"sk_npc_dmg_grenade",		"sk_max_hopwire",		0, 0);
 		def.AddAmmoType("CombineHeavyCannon",	DMG_BULLET,				TRACER_LINE,			40,	40, NULL, 1.5 * 750 * 12, AMMO_FORCE_DROP_IF_CARRIED ); // hit like a 100 kg weight at 750 ft/s

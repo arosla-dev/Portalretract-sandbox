@@ -14,7 +14,7 @@
 				"MapFormat"		"4"
 				"DefaultTextureScale"		"0.250000"
 				"DefaultLightmapScale"		"16"
-				"GameExe"		"C:\SourceCode\Portalretract-sandbox\game\swarm.exe"
+				"GameExe"		"C:\SourceCode\Portalretract-sandbox\game\valve.exe"
 				"DefaultSolidEntity"		"func_detail"
 				"DefaultPointEntity"		"info_player_start"
 				"BSP"		"C:\SourceCode\Portalretract-sandbox\game\bin\vbsp.exe"

@@ -45,3 +45,4 @@ STUB_WEAPON_CLASS(weapon_manhack, WeaponManhack, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_immolator, WeaponImmolator, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_Gauss, WeaponGauss, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_brickbat, WeaponBrickbat, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_extinguisher, WeaponExtinguisher, C_HLSelectFireMachineGun);
