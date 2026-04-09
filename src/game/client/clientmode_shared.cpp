@@ -375,6 +375,25 @@ bool ClientModeShared::ShouldDrawParticles( )
 }
 
 //-----------------------------------------------------------------------------
+// Purpose: Allow weapons to override mouse input to view angles (for orbiting)
+//-----------------------------------------------------------------------------
+// adnan
+// control the mouse input in the grav gun through this
+bool ClientModeShared::OverrideViewAngles(void)
+{
+	C_BasePlayer* pPlayer = C_BasePlayer::GetLocalPlayer();
+	C_BaseCombatWeapon* pWeapon = pPlayer->GetActiveWeapon();
+	if (pWeapon)
+	{
+		// adnan
+		return pWeapon->OverrideViewAngles();
+	}
+
+	return false;
+}
+// end adnan
+
+//-----------------------------------------------------------------------------
 // Purpose: Allow weapons to override mouse input (for binoculars)
 //-----------------------------------------------------------------------------
 void ClientModeShared::OverrideMouseInput( float *x, float *y )

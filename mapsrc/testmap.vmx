@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "38"
+	"mapversion" "39"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "38"
+	"mapversion" "39"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -2738,13 +2738,10 @@ entity
 entity
 {
 	"id" "895"
-	"classname" "env_portal_laser"
-	"angles" "0 180 -179.5"
-	"AutoAimEnabled" "1"
-	"LethalDamage" "0"
+	"classname" "prop_laser_catcher"
+	"angles" "0 179.5 0"
 	"model" "models/props/laser_catcher_center.mdl"
-	"skin" "0"
-	"StartState" "0"
+	"SkinType" "0"
 	"origin" "-230 -38 32.0427"
 	editor
 	{
@@ -2757,13 +2754,10 @@ entity
 entity
 {
 	"id" "897"
-	"classname" "env_portal_laser"
-	"angles" "0 180 -179.5"
-	"AutoAimEnabled" "1"
-	"LethalDamage" "0"
+	"classname" "prop_laser_catcher"
+	"angles" "0 180 0"
 	"model" "models/props/laser_catcher_beta.mdl"
-	"skin" "0"
-	"StartState" "0"
+	"SkinType" "0"
 	"origin" "-230 -80.4391 31.8539"
 	editor
 	{

@@ -89,6 +89,11 @@ public:
 	virtual int		KeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding ) = 0;
 	virtual void	StartMessageMode( int iMessageModeType ) = 0;
 	virtual vgui::Panel *GetMessagePanel() = 0;
+
+	// adnan
+	// does this weapon need to override the view angles?
+	virtual bool OverrideViewAngles(void) = 0;
+	// end adnan
 	virtual void	OverrideMouseInput( float *x, float *y ) = 0;
 	virtual bool	CreateMove( float flInputSampleTime, CUserCmd *cmd ) = 0;
 

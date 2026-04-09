@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "39"
+	"mapversion" "40"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "39"
+	"mapversion" "35"
 	"classname" "worldspawn"
 	"coldworld" "1"
 	"detailmaterial" "detail/detailsprites"
@@ -2758,7 +2758,7 @@ entity
 	"angles" "0 180 0"
 	"model" "models/props/laser_catcher_beta.mdl"
 	"SkinType" "0"
-	"origin" "-230 -80.4391 31.8539"
+	"origin" "-230 -85 31.8539"
 	editor
 	{
 		"color" "220 30 220"

@@ -55,6 +55,7 @@ static int g_physgunGlow;
 #define PHYSGUN_BEAM_GLOW		"sprites/physglow.vmt"
 
 #define	PHYSGUN_SKIN	1
+#define ARGG
 
 class CWeaponGravityGun;
 
@@ -1414,7 +1415,7 @@ void CWeaponGravityGun::ItemPostFrame( void )
 
 	if ( pOwner->m_nButtons & IN_ATTACK )
 	{
-#if defined( ARGG )
+#if defined( CLIENT_DLL )
 		if( (pOwner->m_nButtons & IN_USE) ) {
 			pOwner->m_vecUseAngles = pOwner->pl.v_angle;
 		}
