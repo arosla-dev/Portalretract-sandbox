@@ -305,18 +305,6 @@ Vector CBasePlayer::EyePosition( )
 	}
 	else
 	{
-#ifdef CLIENT_DLL
-		if ( IsObserver() )
-		{
-			if ( m_iObserverMode == OBS_MODE_CHASE )
-			{
-				if ( IsLocalPlayer( this ) )
-				{
-					return MainViewOrigin(GetSplitScreenPlayerSlot());
-				}
-			}
-		}
-#endif
 		/* //p1llowguy - why this is exist?
 		// if in camera mode, use that
 		if ( GetViewEntity() != NULL )
@@ -337,11 +325,6 @@ Vector CBasePlayer::EyePosition( )
 //-----------------------------------------------------------------------------
 const Vector CBasePlayer::GetPlayerMins( void ) const
 {
-	if ( IsObserver() )
-	{
-		return VEC_OBS_HULL_MIN_SCALED( this );	
-	}
-	else
 	{
 		if ( GetFlags() & FL_DUCKING )
 		{
@@ -361,11 +344,6 @@ const Vector CBasePlayer::GetPlayerMins( void ) const
 //-----------------------------------------------------------------------------
 const Vector CBasePlayer::GetPlayerMaxs( void ) const
 {	
-	if ( IsObserver() )
-	{
-		return VEC_OBS_HULL_MAX_SCALED( this );	
-	}
-	else
 	{
 		if ( GetFlags() & FL_DUCKING )
 		{
@@ -1218,17 +1196,6 @@ void CBasePlayer::PlayerUse ( void )
 	if ( ! ((m_nButtons | m_afButtonPressed | m_afButtonReleased) & IN_USE) )
 		return;
 
-	if ( IsObserver() )
-	{
-		// do special use operation in oberserver mode
-		if ( m_afButtonPressed & IN_USE )
-			ObserverUse( true );
-		else if ( m_afButtonReleased & IN_USE )
-			ObserverUse( false );
-		
-		return;
-	}
-
 #if !defined(_XBOX)
 	// push objects in turbo physics mode
 	if ( (m_nButtons & IN_USE) && sv_turbophysics.GetBool() )
@@ -1481,11 +1448,6 @@ void CBasePlayer::CalcView( Vector &eyeOrigin, QAngle &eyeAngles, float &zNear, 
 
 	if ( !pVehicle )
 	{
-		if ( IsObserver() )
-		{
-			CalcObserverView( eyeOrigin, eyeAngles, fov );
-		}
-		else
 		{
 			CalcPlayerView( eyeOrigin, eyeAngles, fov );
 		}
@@ -1831,17 +1793,6 @@ void CBasePlayer::SharedSpawn()
 //-----------------------------------------------------------------------------
 int CBasePlayer::GetDefaultFOV( void ) const
 {
-#if defined( CLIENT_DLL )
-	if ( GetObserverMode() == OBS_MODE_IN_EYE )
-	{
-		C_BasePlayer *pTargetPlayer = ToBasePlayer( GetObserverTarget() );
-
-		if ( pTargetPlayer && !pTargetPlayer->IsObserver() )
-		{
-			return pTargetPlayer->GetDefaultFOV();
-		}
-	}
-#endif
 
 	int iFOV = ( m_iDefaultFOV == 0 ) ? g_pGameRules->DefaultFOV() : m_iDefaultFOV;
 

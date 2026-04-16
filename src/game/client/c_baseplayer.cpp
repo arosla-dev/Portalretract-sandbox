@@ -258,6 +258,11 @@ END_RECV_TABLE()
 		RecvPropFloat	(RECVINFO(m_flMaxspeed)),
 		RecvPropInt		(RECVINFO(m_fFlags)),
 
+		// adnan
+		// get the use angles
+		RecvPropVector(RECVINFO(m_vecUseAngles)),
+		// end adnan
+
 
 		RecvPropInt		(RECVINFO(m_iObserverMode), 0, C_BasePlayer::RecvProxy_ObserverMode ),
 		RecvPropEHandle	(RECVINFO(m_hObserverTarget), C_BasePlayer::RecvProxy_ObserverTarget ),

@@ -2,4 +2,11 @@
 {
 	// Original shader: VertexLitTexture
 	"$basetexture" "models/Weapons/V_flaregun/barrel_cyl"
+	"$bumpmap" "models/Weapons/V_flaregun/barrel_cyl_normal"
+	"$envmap" "env_cubemap"
+	
+	"$phong" "1"
+	"$phongexponent" "45"
+	"$phongboost"	"2"
+	"$phongfresnelranges"	"[.2 4 1]"
 }

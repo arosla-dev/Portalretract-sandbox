@@ -404,7 +404,7 @@ void CHL2_Player::CheckSuitZoom( void )
 {
 //#ifndef _XBOX 
 	//Adrian - No zooming without a suit!
-	if ( IsSuitEquipped() )
+	//if ( IsSuitEquipped() )
 	{
 		if ( m_afButtonReleased & IN_ZOOM )
 		{
@@ -827,6 +827,8 @@ void CHL2_Player::PreThink(void)
 	// Update weapon's ready status
 	UpdateWeaponPosture();
 
+
+	/*
 	// Disallow shooting while zooming
 	if ( IsX360() )
 	{
@@ -844,14 +846,13 @@ void CHL2_Player::PreThink(void)
 		if ( m_nButtons & IN_ZOOM )
 		{
 			//FIXME: Held weapons like the grenade get sad when this happens
-	#ifdef HL2_EPISODIC
 			// Episodic allows players to zoom while using a func_tank
 			CBaseCombatWeapon* pWep = GetActiveWeapon();
 			if ( !m_hUseEntity || ( pWep && pWep->IsWeaponVisible() ) )
-	#endif
 			m_nButtons &= ~(IN_ATTACK|IN_ATTACK2);
 		}
 	}
+	*/
 }
 
 void CHL2_Player::PostThink( void )

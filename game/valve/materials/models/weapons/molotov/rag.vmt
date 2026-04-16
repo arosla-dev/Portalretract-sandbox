@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	$baseTexture "models\Weapons\molotov\rag"
+	$nocull 1
+	//$selfillum 1
+	$bumpmap "models\Weapons\molotov\rag_normal"
+
+	//$phongexponent 10
+	//$phongfresnelranges "[0 .2 3]"
+	//$phongboost 0
+	//$phong 0
+
+}

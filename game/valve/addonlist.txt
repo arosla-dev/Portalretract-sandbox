@@ -1,4 +1,0 @@
-"AddonList"
-{
-	"x06.vpk"		"1"
-}

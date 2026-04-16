@@ -426,6 +426,7 @@ void CPortal_Player::GiveAllItems( void )
 	GiveNamedItem( "weapon_smg1" );
 	GiveNamedItem( "weapon_ar2" );
 
+
 	GiveNamedItem( "weapon_shotgun" );
 	GiveNamedItem( "weapon_crossbow" );
 
@@ -446,6 +447,7 @@ void CPortal_Player::GiveAllItems( void )
 	GiveNamedItem("weapon_stunstick");
 	GiveNamedItem("weapon_brickbat");
 	GiveNamedItem("weapon_molotov");
+	GiveNamedItem("weapon_ar1");
 
 	//GiveNamedItem( "weapon_physcannon" );
 	CWeaponPortalgun *pPortalGun = static_cast<CWeaponPortalgun*>( GiveNamedItem( "weapon_portalgun" ) );

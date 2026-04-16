@@ -1,0 +1,15 @@
+VertexLitGeneric
+{
+	$baseTexture "models\Weapons\molotov\petrol"
+	$bumpmap "models\Weapons\molotov\petrol_normal"
+	//$nocull 1
+	$translucent 1
+	//$envmap "env_cubemap"
+
+
+	$phong 1
+	$phongexponent 120
+	$phongfresnelranges "[1 0.5 8]"
+	$phongboost 70
+
+}

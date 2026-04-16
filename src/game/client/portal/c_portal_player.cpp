@@ -22,6 +22,7 @@
 #include "portal_shareddefs.h"
 #include "ivieweffects.h"		// for screenshake
 #include "prop_portal_shared.h"
+#include "iclientmode.h"
 
 
 // Don't alias here
@@ -1351,13 +1352,6 @@ void C_Portal_Player::ItemPreFrame( void )
 {
 	if ( GetFlags() & FL_FROZEN )
 		return;
-
-	// Disallow shooting while zooming
-	if ( m_nButtons & IN_ZOOM )
-	{
-		//FIXME: Held weapons like the grenade get sad when this happens
-		m_nButtons &= ~(IN_ATTACK|IN_ATTACK2);
-	}
 
 	BaseClass::ItemPreFrame();
 

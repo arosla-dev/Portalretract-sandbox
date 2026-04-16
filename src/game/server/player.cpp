@@ -398,7 +398,11 @@ BEGIN_DATADESC( CBasePlayer )
 	DEFINE_FIELD( m_flOldPlayerViewOffsetZ, FIELD_FLOAT ),
 	DEFINE_FIELD( m_bPlayerUnderwater, FIELD_BOOLEAN ),
 	DEFINE_FIELD( m_hViewEntity, FIELD_EHANDLE ),
-
+	// adnan
+		// set the use angles
+		// set when the player presses use
+		DEFINE_FIELD(m_vecUseAngles, FIELD_VECTOR),
+		// end adnan
 	DEFINE_FIELD( m_hConstraintEntity, FIELD_EHANDLE ),
 	DEFINE_FIELD( m_vecConstraintCenter, FIELD_POSITION_VECTOR ),
 	DEFINE_FIELD( m_flConstraintRadius, FIELD_FLOAT ),
@@ -6173,6 +6177,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 			GiveNamedItem( "weapon_crowbar" );
 			GiveNamedItem( "weapon_pistol" );
 			GiveNamedItem( "weapon_ar2" );
+			GiveNamedItem( "weapon_ar1" );
 			GiveNamedItem( "weapon_shotgun" );
 			GiveNamedItem( "weapon_physcannon" );
 
@@ -7958,6 +7963,12 @@ REGISTER_SEND_PROXY_NON_MODIFIED_POINTER( SendProxy_SendNonLocalDataTable );
 #else
 		SendPropVector		( SENDINFO( m_vecBaseVelocity ), 20, 0, -1000, 1000 ),
 #endif
+		// adnan
+		// send the use angles
+		// set when the player presses use
+		SendPropVector(	SENDINFO(m_vecUseAngles), 0, SPROP_NOSCALE),
+		// end adnan
+
 		SendPropEHandle		( SENDINFO( m_hConstraintEntity)),
 		SendPropVector		( SENDINFO( m_vecConstraintCenter), 0, SPROP_NOSCALE ),
 		SendPropFloat		( SENDINFO( m_flConstraintRadius ), 0, SPROP_NOSCALE ),

@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright Valve Corporation, All rights reserved. ============//
 //
 // Purpose:		Molotov grenades
 //
@@ -8,7 +8,7 @@
 //-----------------------------------------------------------------------------
 // $Log: $
 //
-// $NoKeywords: $
+// $NoKeywords: $FixedByTheMaster974
 //=============================================================================//
 
 #ifndef	GRENADEMOLOTOV_H
@@ -20,17 +20,17 @@
 class CGrenade_Molotov : public CBaseGrenade
 {
 public:
-	DECLARE_CLASS( CGrenade_Molotov, CBaseGrenade );
+	DECLARE_CLASS(CGrenade_Molotov, CBaseGrenade);
 
-	virtual void	Spawn( void );
-	virtual void	Precache( void );
-	virtual void	Detonate( void );
-	void			MolotovTouch( CBaseEntity *pOther );
-	void			MolotovThink( void );
+	virtual void	Spawn(void);
+	virtual void	Precache(void);
+	virtual void	Detonate(void);
+	void			MolotovTouch(CBaseEntity* pOther);
+	void			MolotovThink(void);
 
 protected:
 
-	SmokeTrail		*m_pFireTrail;
+	SmokeTrail* m_pFireTrail;
 
 	DECLARE_DATADESC();
 };
