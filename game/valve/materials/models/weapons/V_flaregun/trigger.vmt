@@ -2,5 +2,4 @@
 {
 	// Original shader: VertexLitTexture
 	"$basetexture" "models/Weapons/V_flaregun/trigger"
-	"$envmap" "env_cubemap"
 }

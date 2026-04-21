@@ -2,11 +2,4 @@
 {
 	// Original shader: VertexLitTexture
 	"$basetexture" "models/Weapons/V_flaregun/cap"
-	"$envmap" "env_cubemap"
-	"$bumpmap" "models/weapons/V_flaregun/cap_normal"
-	
-	"$phong" "1"
-	"$phongexponent" "45"
-	"$phongboost"	"2"
-	"$phongfresnelranges"	"[.2 4 1]"
 }

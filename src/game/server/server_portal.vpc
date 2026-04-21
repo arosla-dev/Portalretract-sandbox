@@ -67,8 +67,8 @@ $Project "Server (Portal)"
 				$File "new\weapons\weapon_molotov.h"
 				$File "new\weapons\weapon_iceaxe.cpp"
 				$File "new\weapons\weapon_manhack.cpp"
-				$File "new\weapons\weapon_brickbat.cpp"
-				$File "new\weapons\weapon_brickbat.h"
+				$File "new\weapons\weapon_icegun.cpp"
+				$File "new\weapons\weapon_icegun.h"
 			} 
 			
 			$Folder "Entities"

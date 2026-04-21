@@ -40,6 +40,7 @@ $Project "Client (Portal)"
 			{
 				$File "$SRCDIR\game\shared\new\weapons\weapon_physgun.cpp"
 				$File "new\weapons\c_weapon_sticklauncher.cpp"
+				$File "new\weapons\c_weapon_icegun.cpp"
 			} 
 			
 			$Folder "Entities"

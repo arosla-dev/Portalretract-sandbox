@@ -1,19 +1,5 @@
 "VertexLitGeneric"
 {
 	// Original shader: VertexLitTexture
-	"$basetexture" "models/weapons/V_ar2/clips2"
-	"$bumpmap" "models/weapons/V_ar2/clips2_normal"
-	"$envmaptint" "[.4 .4 .4]"
-	"$envmap" "env_cubemap"
-	//"$normalmapalphaenvmapmask" 1
-	//"$envmap" "Environment Maps/specular"
-	"$envmapcontrast" 1
-	
-	"$phong" "1"
-	"$phongexponent" "45"
-	"$phongboost"	"2"
-	"$phongfresnelranges"	"[.2 4 1]"
-
-	"360?$color2" "[ 0.4 0.4 0.4 ]"
+	"$basetexture" "models/Weapons/V_ar2/clips2"
 }
-

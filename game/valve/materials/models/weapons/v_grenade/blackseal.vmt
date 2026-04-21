@@ -1,6 +1,6 @@
 "vertexlitgeneric"
 {
-	"$bumpmap" "models/weapons/v_grenade/black seal_normal"
+	"$bumpmap" "models/weapons/v_grenade/blackseal_normal"
 	//"$envmap" "env_cubemap"
 	//"$envmapcontrast" 1
 	//"$envmaptint" "[ .5 .5 .5 ]"

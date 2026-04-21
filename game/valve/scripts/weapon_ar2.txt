@@ -3,16 +3,15 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_Pulse_Rifle"
-	"viewmodel"			"models/weapons/v_ar2.mdl"
+	"printname"				"#HL2_Pulse_Rifle"
+	"viewmodel"				"models/weapons/v_oicw.mdl"
 	"playermodel"			"models/weapons/w_ar2.mdl"
 	"anim_prefix"			"ar2"
-	"bucket"			"2"
+	"bucket"				"2"
 	"bucket_position"		"1"
 	"bucket_360"			"1"
-	"bucket_position_360"		"2"
 
-	"clip_size"			"30"
+	"clip_size"				"30"
 	"default_clip"			"30"
 
 	"clip2_size"			"-1"
@@ -22,7 +21,7 @@ WeaponData
 	"secondary_ammo"		"AR2AltFire"
 
 	"weight"				"5"
-	"rumble"			"4"
+	"rumble"				"4"
 	"item_flags"			"0"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)

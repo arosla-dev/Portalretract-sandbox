@@ -24,19 +24,19 @@ class C_EntityFreezing : public C_BaseEntity
 {
 public:
 	DECLARE_CLIENTCLASS();
-	DECLARE_CLASS( C_EntityFreezing, C_BaseEntity );
+	DECLARE_CLASS(C_EntityFreezing, C_BaseEntity);
 
-	virtual void	GetRenderBounds( Vector& theMins, Vector& theMaxs );
-	virtual RenderableTranslucencyType_t ComputeTranslucencyType( );
-	virtual int		DrawModel( int flags, const RenderableInstance_t &instance );
+	virtual void	GetRenderBounds(Vector& theMins, Vector& theMaxs);
+	virtual RenderableTranslucencyType_t ComputeTranslucencyType();
+	virtual int		DrawModel(int flags, const RenderableInstance_t& instance);
 	virtual bool	ShouldDraw() { return true; }
-	virtual void	OnDataChanged( DataUpdateType_t updateType );
+	virtual void	OnDataChanged(DataUpdateType_t updateType);
 
-	void			ClientThink( void );
+	void			ClientThink(void);
 
 private:
 	Vector	m_vFreezingOrigin;
-	float	m_flFrozenPerHitbox[ 50 ];
+	float	m_flFrozenPerHitbox[50];
 	float	m_flFrozen;
 	bool	m_bFinishFreezing;
 
@@ -44,4 +44,3 @@ private:
 };
 
 #endif // C_ENTITY_FREEZING_H
-

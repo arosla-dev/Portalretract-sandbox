@@ -67,7 +67,9 @@ void CEntityFreezing::Precache()
 		PrecacheModel( STRING( GetModelName() ) );
 	}
 
-
+#ifdef USE_BLOBULATOR
+	PrecacheMaterial("models/weapons/w_icegun/ice_surface");
+#endif
 }
 
 
