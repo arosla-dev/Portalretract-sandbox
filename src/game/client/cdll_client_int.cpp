@@ -108,12 +108,14 @@
 #endif
 #ifdef GAMEUI_EMBEDDED
 
+#ifdef PORTAL
 #if defined( SWARM_DLL )
 #include "swarm/gameui/swarm/basemodpanel.h"
 #elif defined ( PORTAL )
 #include "portal/gameui/basepanel.h"
 #else
 #error "GAMEUI_EMBEDDED"
+#endif
 #endif
 #endif
 
@@ -146,7 +148,9 @@
 #include "keybindinglistener.h"
 
 // p1llowguy - NEW
+#ifdef PORTAL
 #include "New/Other/ClientEffectPrecacheSystem.h"
+#endif
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -959,7 +963,9 @@ bool InitGameSystems( CreateInterfaceFn appSystemFactory )
 	IGameSystem::Add( ClientLeafSystem() );
 	IGameSystem::Add( DetailObjectSystem() );
 	IGameSystem::Add( ViewportClientSystem() );
+#ifdef PORTAL
 	IGameSystem::Add(ClientEffectPrecacheSystem()); // p1llowguy - NEW
+#endif
 	IGameSystem::Add( g_pClientShadowMgr );
 	IGameSystem::Add( g_pColorCorrectionMgr );
 #ifdef GAMEUI_UISYSTEM2_ENABLED

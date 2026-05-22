@@ -555,20 +555,21 @@ void CTeamplayRoundBasedRules::Think( void )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-bool CTeamplayRoundBasedRules::TimerMayExpire( void )
+bool CTeamplayRoundBasedRules::TimerMayExpire(void)
 {
+#ifndef TF_DLL
 	// team_train_watchers can also prevent timer expiring ( overtime )
-	CTeamTrainWatcher *pWatcher = dynamic_cast<CTeamTrainWatcher*>( gEntList.FindEntityByClassname( NULL, "team_train_watcher" ) );
-	while ( pWatcher )
+	CTeamTrainWatcher* pWatcher = dynamic_cast<CTeamTrainWatcher*>(gEntList.FindEntityByClassname(NULL, "team_train_watcher"));
+	while (pWatcher)
 	{
-		if ( !pWatcher->TimerMayExpire() )
+		if (!pWatcher->TimerMayExpire())
 		{
 			return false;
 		}
 
-		pWatcher = dynamic_cast<CTeamTrainWatcher*>( gEntList.FindEntityByClassname( pWatcher, "team_train_watcher" ) );
+		pWatcher = dynamic_cast<CTeamTrainWatcher*>(gEntList.FindEntityByClassname(pWatcher, "team_train_watcher"));
 	}
-
+#endif
 	return BaseClass::TimerMayExpire();
 }
 

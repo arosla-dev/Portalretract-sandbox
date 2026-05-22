@@ -2127,6 +2127,7 @@ void CBaseEntity::SetGroundEntity( CBaseEntity *ground )
 	if ( m_hGroundEntity.Get() == ground )
 		return;
 
+#ifdef PORTAL
 #ifdef GAME_DLL
 	// this can happen in-between updates to the held object controller (physcannon, +USE)
 	// so trap it here and release held objects when they become player ground
@@ -2150,6 +2151,7 @@ void CBaseEntity::SetGroundEntity( CBaseEntity *ground )
 			((CPortal_Player*)(this))->m_bCatapulted = false;
 		}
 	}
+#endif
 #endif
 
 	CBaseEntity *oldGround = m_hGroundEntity;
