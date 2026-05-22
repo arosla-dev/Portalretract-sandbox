@@ -19,8 +19,7 @@
 //  over and over again.
 static CDllDemandLoader g_GameUI( "client" );
 
-#ifdef PORTAL
-#ifndef CLIENT_DLL 
+#ifndef CLIENT_DLL
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -99,7 +98,6 @@ void CPointBonusMapsAccessor::InputSave( inputdata_t& inputdata )
 
 #endif
 
-
 void BonusMapChallengeUpdate( const char *pchFileName, const char *pchMapName, const char *pchChallengeName, int iBest )
 {
 	CreateInterfaceFn gameUIFactory = g_GameUI.GetFactory();
@@ -150,4 +148,3 @@ void BonusMapChallengeObjectives( int &iBronze, int &iSilver, int &iGold )
 		}
 	}
 }
-#endif

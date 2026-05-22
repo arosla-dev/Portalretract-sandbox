@@ -82,7 +82,7 @@ ConVar tv_delaymapchange( "tv_delaymapchange", "0", 0, "Delays map change until 
 ConVar mp_restartgame( "mp_restartgame", "0", FCVAR_GAMEDLL, "If non-zero, game will restart in the specified number of seconds" );
 
 
-ConVar mp_waitingforplayers_time("mp_waitingforplayers_time", (IsX360() ? "15" : "30"), FCVAR_GAMEDLL | FCVAR_DEVELOPMENTONLY, "WaitingForPlayers time length in seconds");
+ConVar mp_waitingforplayers_time( "mp_waitingforplayers_time", "0", FCVAR_GAMEDLL, "WaitingForPlayers time length in seconds" );
 
 
 ConVar mp_waitingforplayers_restart( "mp_waitingforplayers_restart", "0", FCVAR_GAMEDLL, "Set to 1 to start or restart the WaitingForPlayers period." );

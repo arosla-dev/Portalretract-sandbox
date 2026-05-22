@@ -2585,12 +2585,9 @@ bool CScriptedIconLesson::ProcessElementAction( int iAction, bool bNot, const ch
 {
 	// First try to let the mod act on the action
 	bool bModHandled = false;
-#ifdef TF_CLIENT_DLL
-	bool bModReturn = false;
-#else
-	bool bModReturn = Mod_ProcessElementAction(iAction, bNot, pchVarName, hVar, pchParamName, fParam, pParam, pchParam, bModHandled);
-#endif
-	if (bModHandled)
+	bool bModReturn = Mod_ProcessElementAction( iAction, bNot, pchVarName, hVar, pchParamName, fParam, pParam, pchParam, bModHandled );
+
+	if ( bModHandled )
 	{
 		return bModReturn;
 	}
@@ -3819,7 +3816,5 @@ void CScriptedIconLesson::PreReadLessonsFromFile()
 	CScriptedIconLesson::LessonActionMap.Insert( "get potential use target", LESSON_ACTION_GET_POTENTIAL_USE_TARGET );
 
 	// Add mod actions to the map
-#if !defined ( TF_CLIENT_DLL )
 	Mod_PreReadLessonsFromFile();
-#endif
 }

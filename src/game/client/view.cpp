@@ -46,14 +46,12 @@
 #endif
 #ifdef GAMEUI_EMBEDDED
 
-#ifdef PORTAL
 #if defined( SWARM_DLL )
 #include "swarm/gameui/swarm/basemodpanel.h"
 #elif defined ( PORTAL )
 #include "portal/gameui/basepanel.h"
 #else
 #error "GAMEUI_EMBEDDED"
-#endif
 #endif
 #endif
 #ifdef INFESTED_DLL

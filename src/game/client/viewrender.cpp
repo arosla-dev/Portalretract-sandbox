@@ -988,9 +988,9 @@ void CSimpleRenderExecutor::AddView( CRendering3dView *pView )
 }
 
 
-#if !defined( INFESTED_DLL ) && !defined ( TF_CLIENT_DLL )
+#if !defined( INFESTED_DLL )
 static CViewRender g_ViewRender;
-IViewRender* GetViewRenderInstance()
+IViewRender *GetViewRenderInstance()
 {
 	return &g_ViewRender;
 }

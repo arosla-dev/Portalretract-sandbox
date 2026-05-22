@@ -57,7 +57,6 @@ public:
 	float					m_flDucktime;
 	float					m_flDuckJumpTime;
 	float					m_flJumpTime;
-	int						m_nDuckJumpTimeMsecs;
 
 	float					m_flFallVelocity;
 	float					m_flStepSize;

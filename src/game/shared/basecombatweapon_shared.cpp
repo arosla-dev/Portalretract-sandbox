@@ -764,7 +764,7 @@ void CBaseCombatWeapon::MakeTracer( const Vector &vecTracerSrc, const trace_t &t
 		break;
 	}
 #else
-	UTIL_ParticleTracer(pszTracerName, vNewSrc, tr.endpos, iEntIndex, iAttachment, true);
+	UTIL_ParticleTracer( pszTracerName, vNewSrc, tr.endpos, iEntIndex, iAttachment, true )
 #endif
 }
 

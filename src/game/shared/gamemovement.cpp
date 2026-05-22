@@ -642,39 +642,6 @@ CGameMovement::~CGameMovement( void )
 {
 }
 
-//--------------------------------------------------------------------------------------------------------
-#ifndef PORTAL
-enum
-{
-	MAX_NESTING = 8
-};
-
-static CTraceFilterSkipTwoEntities s_TraceFilter[MAX_NESTING];
-static int s_nTraceFilterCount = 0;
-
-ITraceFilter* CGameMovement::LockTraceFilter(int collisionGroup)
-{
-	// If this assertion triggers, you forgot to call UnlockTraceFilter
-	Assert(s_nTraceFilterCount < MAX_NESTING);
-	if (s_nTraceFilterCount >= MAX_NESTING)
-		return NULL;
-
-	CTraceFilterSkipTwoEntities* pFilter = &s_TraceFilter[s_nTraceFilterCount++];
-	pFilter->SetPassEntity(mv->m_nPlayerHandle.Get());
-	pFilter->SetCollisionGroup(collisionGroup);
-
-	return pFilter;
-}
-
-void CGameMovement::UnlockTraceFilter(ITraceFilter*& pFilter)
-{
-	Assert(s_nTraceFilterCount > 0);
-	--s_nTraceFilterCount;
-	Assert(&s_TraceFilter[s_nTraceFilterCount] == pFilter);
-	pFilter = NULL;
-}
-#endif
-
 //-----------------------------------------------------------------------------
 // Purpose: Allow bots etc to use slightly different solid masks
 //-----------------------------------------------------------------------------
@@ -3678,20 +3645,6 @@ void CGameMovement::SetGroundEntity( trace_t *pm )
 	}
 }
 
-static inline void DoTrace(ITraceListData* pTraceListData, const Ray_t& ray, uint32 fMask, ITraceFilter* filter, trace_t* ptr, int* counter)
-{
-	++*counter;
-
-	if (pTraceListData && pTraceListData->CanTraceRay(ray))
-	{
-		enginetrace->TraceRayAgainstLeafAndEntityList(ray, pTraceListData, fMask, filter, ptr);
-	}
-	else
-	{
-		enginetrace->TraceRay(ray, fMask, filter, ptr);
-	}
-}
-
 //-----------------------------------------------------------------------------
 // Traces the player's collision bounds in quadrants, looking for a plane that
 // can be stood upon (normal's z >= 0.7f).  Regardless of success or failure,
@@ -3699,7 +3652,6 @@ static inline void DoTrace(ITraceListData* pTraceListData, const Ray_t& ray, uin
 // move the player down to the new floor and get stuck on a leaning wall that
 // the original trace hit first.
 //-----------------------------------------------------------------------------
-#ifdef PORTAL
 void TracePlayerBBoxForGround( const Vector& start, const Vector& end, const Vector& minsSrc,
 							  const Vector& maxsSrc, IHandleEntity *player, unsigned int fMask,
 							  int collisionGroup, trace_t& pm )
@@ -3763,86 +3715,6 @@ void TracePlayerBBoxForGround( const Vector& start, const Vector& end, const Vec
 	pm.fraction = fraction;
 	pm.endpos = endpos;
 }
-#else
-void TracePlayerBBoxForGround(ITraceListData* pTraceListData, const Vector& start, const Vector& end, const Vector& minsSrc,
-	const Vector& maxsSrc, unsigned int fMask,
-	ITraceFilter* filter, trace_t& pm, float minGroundNormalZ, bool overwriteEndpos, int* pCounter)
-{
-	VPROF("TracePlayerBBoxForGround");
-
-	Ray_t ray;
-	Vector mins, maxs;
-
-	float fraction = pm.fraction;
-	Vector endpos = pm.endpos;
-
-	// Check the -x, -y quadrant
-	mins = minsSrc;
-	maxs.Init(MIN(0, maxsSrc.x), MIN(0, maxsSrc.y), maxsSrc.z);
-	ray.Init(start, end, mins, maxs);
-	DoTrace(pTraceListData, ray, fMask, filter, &pm, pCounter);
-	if (pm.m_pEnt && pm.plane.normal[2] >= minGroundNormalZ)
-	{
-		if (overwriteEndpos)
-		{
-			pm.fraction = fraction;
-			pm.endpos = endpos;
-		}
-		return;
-	}
-
-	// Check the +x, +y quadrant
-	mins.Init(MAX(0, minsSrc.x), MAX(0, minsSrc.y), minsSrc.z);
-	maxs = maxsSrc;
-	ray.Init(start, end, mins, maxs);
-	DoTrace(pTraceListData, ray, fMask, filter, &pm, pCounter);
-	if (pm.m_pEnt && pm.plane.normal[2] >= minGroundNormalZ)
-	{
-		if (overwriteEndpos)
-		{
-			pm.fraction = fraction;
-			pm.endpos = endpos;
-		}
-		return;
-	}
-
-	// Check the -x, +y quadrant
-	mins.Init(minsSrc.x, MAX(0, minsSrc.y), minsSrc.z);
-	maxs.Init(MIN(0, maxsSrc.x), maxsSrc.y, maxsSrc.z);
-	ray.Init(start, end, mins, maxs);
-	DoTrace(pTraceListData, ray, fMask, filter, &pm, pCounter);
-	if (pm.m_pEnt && pm.plane.normal[2] >= 0.7)
-	{
-		if (overwriteEndpos)
-		{
-			pm.fraction = fraction;
-			pm.endpos = endpos;
-		}
-		return;
-	}
-
-	// Check the +x, -y quadrant
-	mins.Init(MAX(0, minsSrc.x), minsSrc.y, minsSrc.z);
-	maxs.Init(maxsSrc.x, MIN(0, maxsSrc.y), maxsSrc.z);
-	ray.Init(start, end, mins, maxs);
-	DoTrace(pTraceListData, ray, fMask, filter, &pm, pCounter);
-	if (pm.m_pEnt && pm.plane.normal[2] >= minGroundNormalZ)
-	{
-		if (overwriteEndpos)
-		{
-			pm.fraction = fraction;
-			pm.endpos = endpos;
-		}
-		return;
-	}
-
-	if (overwriteEndpos)
-	{
-		pm.fraction = fraction;
-		pm.endpos = endpos;
-	}
-}
-#endif
 
 //-----------------------------------------------------------------------------
 // Traces the player's collision bounds in quadrants, looking for a plane that
