@@ -79,6 +79,10 @@ public:
 #endif
 	}
 
+#if defined ( TF_DLL ) || defined ( TF_CLIENT_DLL )
+	class KeyValues;
+#endif
+
 	// Implement this if you support new format gamestats.
 	// Return true if you added data to KeyValues, false if you have no data to report
 	virtual bool AddDataForSend( KeyValues *pKV, StatSendType_t sendType ) { return false; }

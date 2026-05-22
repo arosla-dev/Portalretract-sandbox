@@ -2,6 +2,7 @@ $Games
 {
 	"SWARM"
 	"PORTAL"
+	"TF"
 }
 
 $Conditional	"SOURCESDK" "1"

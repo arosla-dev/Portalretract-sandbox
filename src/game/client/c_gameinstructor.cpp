@@ -197,7 +197,11 @@ void C_GameInstructor::Shutdown( void )
 
 void C_GameInstructor::UpdateHiddenByOtherElements( void )
 {
+#ifndef TF_CLIENT_DLL
 	bool bHidden = Mod_HiddenByOtherElements();
+#else
+	bool bHidden = false;
+#endif
 
 	if ( bHidden && !m_bHiddenDueToOtherElements )
 	{

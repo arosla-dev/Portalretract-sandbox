@@ -273,6 +273,9 @@ protected:
 
 	float			m_fFrameTime;
 
+#ifndef PORTAL
+	bool			m_bSpeedCropped;
+#endif // !PORTAL
 //private:
 	int				m_iSpeedCropped;
 
@@ -283,6 +286,15 @@ protected:
 public:
 	void			ForceDuck( void );
 
+#endif
+
+#ifndef PORTAL
+	ITraceListData* m_pTraceListData;
+	int				m_nTraceCount;
+
+	protected:
+	virtual ITraceFilter* LockTraceFilter(int collisionGroup);
+	virtual void UnlockTraceFilter(ITraceFilter*& pFilter);
 #endif
 };
 
