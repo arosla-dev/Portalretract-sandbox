@@ -28,6 +28,28 @@
 				"MaterialExcludeCount"		"0"
 			}
 		}
+		"tf"
+		{
+			"GameDir"		"C:\SourceCode\Portalretract-sandbox\game\tf_swarm"
+			"Hammer"
+			{
+				"TextureFormat"		"5"
+				"MapFormat"		"4"
+				"DefaultTextureScale"		"0.250000"
+				"DefaultLightmapScale"		"16"
+				"DefaultSolidEntity"		"func_detail"
+				"GameExeDir"		"C:\SourceCode\Portalretract-sandbox\game"
+				"MapDir"		"C:\SourceCode\Portalretract-sandbox\game\content\tf_swarm\mapsrc"
+				"CordonTexture"		"tools\toolsskybox"
+				"MaterialExcludeCount"		"0"
+				"GameExe"		"C:\SourceCode\Portalretract-sandbox\game\swarm.exe"
+				"BSP"		"C:\SourceCode\Portalretract-sandbox\game\bin\vbsp.exe"
+				"Vis"		"C:\SourceCode\Portalretract-sandbox\game\bin\vvis.exe"
+				"Light"		"C:\SourceCode\Portalretract-sandbox\game\bin\vrad.exe"
+				"BSPDir"		"C:\SourceCode\Portalretract-sandbox\game\tf_swarm\maps"
+				"GameData0"		"C:\SourceCode\Portalretract-sandbox\game\bin\swarm.fgd"
+			}
+		}
 	}
 	"SDKVersion"		"5"
 }

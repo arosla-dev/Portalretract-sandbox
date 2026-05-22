@@ -30,21 +30,22 @@
 #include "tier0/memdbgon.h"
 
 //Precahce the effects
-
-PRECACHE_REGISTER_BEGIN( GLOBAL, PrecacheMuzzleFlash )
-PRECACHE( MATERIAL, "effects/muzzleflash1" )
-PRECACHE( MATERIAL, "effects/muzzleflash2" )
-PRECACHE( MATERIAL, "effects/muzzleflash3" )
-PRECACHE( MATERIAL, "effects/muzzleflash4" )
-PRECACHE( MATERIAL, "effects/bluemuzzle" )
-PRECACHE( MATERIAL, "effects/gunshipmuzzle" )
-PRECACHE( MATERIAL, "effects/gunshiptracer" )
-PRECACHE( MATERIAL, "effects/huntertracer" )
-PRECACHE( MATERIAL, "sprites/physcannon_bluelight2" )
-PRECACHE( MATERIAL, "effects/combinemuzzle1" )
-PRECACHE( MATERIAL, "effects/combinemuzzle2" )
-PRECACHE( MATERIAL, "effects/combinemuzzle2_nocull" )
+#ifndef TF_CLIENT_DLL
+PRECACHE_REGISTER_BEGIN(GLOBAL, PrecacheMuzzleFlash)
+PRECACHE(MATERIAL, "effects/muzzleflash1")
+PRECACHE(MATERIAL, "effects/muzzleflash2")
+PRECACHE(MATERIAL, "effects/muzzleflash3")
+PRECACHE(MATERIAL, "effects/muzzleflash4")
+PRECACHE(MATERIAL, "effects/bluemuzzle")
+PRECACHE(MATERIAL, "effects/gunshipmuzzle")
+PRECACHE(MATERIAL, "effects/gunshiptracer")
+PRECACHE(MATERIAL, "effects/huntertracer")
+PRECACHE(MATERIAL, "sprites/physcannon_bluelight2")
+PRECACHE(MATERIAL, "effects/combinemuzzle1")
+PRECACHE(MATERIAL, "effects/combinemuzzle2")
+PRECACHE(MATERIAL, "effects/combinemuzzle2_nocull")
 PRECACHE_REGISTER_END()
+#endif
 
 
 //Whether or not we should emit a dynamic light

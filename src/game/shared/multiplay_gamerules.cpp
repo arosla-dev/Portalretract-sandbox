@@ -280,18 +280,18 @@ CMultiplayRules::CMultiplayRules()
 
 	//=========================================================
 	//=========================================================
-	void CMultiplayRules::RefreshSkillData( bool forceUpdate )
+	void CMultiplayRules::RefreshSkillData(bool forceUpdate)
 	{
-	// load all default values
-		BaseClass::RefreshSkillData( forceUpdate );
+		// load all default values
+		BaseClass::RefreshSkillData(forceUpdate);
 
-	// override some values for multiplay.
+		// override some values for multiplay.
 
-		// suitcharger
-
-		ConVarRef suitcharger( "sk_suitcharger" );
-		suitcharger.SetValue( 30 );
-
+			// suitcharger
+#ifndef TF_DLL
+		ConVarRef suitcharger("sk_suitcharger");
+		suitcharger.SetValue(30);
+#endif
 	}
 
 
