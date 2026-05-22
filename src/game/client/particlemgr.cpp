@@ -983,27 +983,7 @@ bool CParticleMgr::Init(unsigned long count, IMaterialSystem *pMaterials)
 	// Send true to load the sheets
 	ParseParticleEffects( true );
 
-#ifdef TF_CLIENT_DLL
-	if (IsX360())
-	{
-		//m_pThreadPool[0] = CreateNewThreadPool();
-		m_pThreadPool[1] = CreateNewThreadPool();
 
-		ThreadPoolStartParams_t startParams;
-		startParams.nThreads = 3;
-		startParams.nStackSize = 128 * 1024;
-		startParams.fDistribute = TRS_TRUE;
-		startParams.bUseAffinityTable = true;
-		startParams.iAffinityTable[0] = XBOX_PROCESSOR_1;
-		startParams.iAffinityTable[1] = XBOX_PROCESSOR_3;
-		startParams.iAffinityTable[2] = XBOX_PROCESSOR_5;
-		//m_pThreadPool[0]->Start( startParams );
-
-		startParams.nThreads = 2;
-		startParams.iAffinityTable[1] = CommandLine()->FindParm("-swapcores") ? XBOX_PROCESSOR_5 : XBOX_PROCESSOR_3;
-		m_pThreadPool[1]->Start(startParams);
-	}
-#endif
 
 	return true;
 }

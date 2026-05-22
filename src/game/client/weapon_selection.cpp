@@ -180,9 +180,8 @@ void CBaseHudWeaponSelection::ProcessInput()
 		if ( IsWeaponSelectable() )
 		{
 
-#ifndef TF_CLIENT_DLL
-			if (HUDTYPE_PLUS != hud_fastswitch.GetInt())
-#endif
+			if ( HUDTYPE_PLUS != hud_fastswitch.GetInt() )
+
 			{
 				// Swallow the button
 				GetHud().m_iKeyBits &= ~(IN_ATTACK | IN_ATTACK2);

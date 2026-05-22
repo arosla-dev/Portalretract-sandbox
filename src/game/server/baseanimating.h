@@ -557,11 +557,7 @@ EXTERN_SEND_TABLE(DT_BaseAnimating);
 #define ANIMATION_BODY_BITS				32	// body combinations
 #define ANIMATION_HITBOXSET_BITS		2	// hit box sets 
 
-#if defined( TF_DLL )
-#define ANIMATION_POSEPARAMETER_BITS	8	// pose parameter resolution
-#else
 #define ANIMATION_POSEPARAMETER_BITS	11	// pose parameter resolution
-#endif
 
 #define ANIMATION_PLAYBACKRATE_BITS		8	// default playback rate, only used on leading edge detect sequence changes
 

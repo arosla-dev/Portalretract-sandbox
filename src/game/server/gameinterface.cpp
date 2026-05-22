@@ -932,16 +932,17 @@ float CServerGameDLL::GetTickInterval( void ) const
 {
 	float tickinterval = DEFAULT_TICK_INTERVAL;
 
-	// Ignoring this for now, server ops are abusing it
-#if !defined( TF_DLL )
+
+
+
 	// override if tick rate specified in command line
-	if (CommandLine()->CheckParm("-tickrate"))
+	if ( CommandLine()->CheckParm( "-tickrate" ) )
 	{
-		float tickrate = CommandLine()->ParmValue("-tickrate", 0);
-		if (tickrate > 10)
+		float tickrate = CommandLine()->ParmValue( "-tickrate", 0 );
+		if ( tickrate > 10 )
 			tickinterval = 1.0f / tickrate;
 	}
-#endif
+
 
 	return tickinterval;
 }

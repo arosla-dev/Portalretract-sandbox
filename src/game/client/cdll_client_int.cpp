@@ -108,15 +108,14 @@
 #endif
 #ifdef GAMEUI_EMBEDDED
 
-
+#ifdef PORTAL
 #if defined( SWARM_DLL )
 #include "swarm/gameui/swarm/basemodpanel.h"
 #elif defined ( PORTAL )
 #include "portal/gameui/basepanel.h"
-#elif defined ( TF_CLIENT_DLL )
-#include "tf/gameui/tf/basemodpanel.h"
 #else
 #error "GAMEUI_EMBEDDED"
+#endif
 #endif
 #endif
 
@@ -1866,11 +1865,7 @@ void ConfigureCurrentSystemLevel()
 	{
 		nGPUMemLevel = 360;
 	}
-#if defined ( PORTAL )
 	char szModName[32] = "valve";
-#elif defined (TF_CLIENT_DLL)
-	char szModName[32] = "tf";
-#endif
 
 
 

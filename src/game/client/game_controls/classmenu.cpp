@@ -41,11 +41,7 @@ extern IGameUIFuncs *gameuifuncs; // for key binding details
 using namespace vgui;
 
 
-#ifdef TF_CLIENT_DLL
-#define HUD_CLASSAUTOKILL_FLAGS		( FCVAR_CLIENTDLL | FCVAR_ARCHIVE | FCVAR_USERINFO )
-#else
 #define HUD_CLASSAUTOKILL_FLAGS		( FCVAR_CLIENTDLL | FCVAR_ARCHIVE )
-#endif // !TF_CLIENT_DLL
 
 
 ConVar hud_classautokill( "hud_classautokill", "1", HUD_CLASSAUTOKILL_FLAGS, "Automatically kill player after choosing a new playerclass." );
@@ -168,18 +164,20 @@ void CClassMenu::Reset()
 //-----------------------------------------------------------------------------
 void CClassMenu::OnCommand( const char *command )
 {
-	if (Q_stricmp(command, "vguicancel"))
+	if ( Q_stricmp( command, "vguicancel" ) )
 	{
-		engine->ClientCmd(const_cast<char*>(command));
 
-#if !defined( CSTRIKE_DLL ) && !defined( TF_CLIENT_DLL )
+
+		engine->ClientCmd( const_cast<char *>( command ) );
+
+
 		// They entered a command to change their class, kill them so they spawn with 
 		// the new class right away
-		if (hud_classautokill.GetBool())
+		if ( hud_classautokill.GetBool() )
 		{
-			engine->ClientCmd("kill");
+            engine->ClientCmd( "kill" );
 		}
-#endif // !CSTRIKE_DLL && !TF_CLIENT_DLL
+
 	}
 
 	Close();

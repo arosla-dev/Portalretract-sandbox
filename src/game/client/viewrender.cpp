@@ -117,16 +117,9 @@ ConVar r_DrawDetailProps( "r_DrawDetailProps", "1", FCVAR_NONE, "0=Off, 1=Normal
 
 ConVar r_worldlistcache( "r_worldlistcache", "1" );
 
-// In TF Swarm, we don't want these because it makes the lighting look too bright and they are just causing too many problems
-#if defined ( TF_CLIENT_DLL )
-ConVar mat_ambient_light_r_forced("mat_ambient_light_r_forced", "-1.0", FCVAR_CHEAT | FCVAR_DEVELOPMENTONLY, "", true, -1.0, true, -1.0);
-ConVar mat_ambient_light_g_forced("mat_ambient_light_g_forced", "-1.0", FCVAR_CHEAT | FCVAR_DEVELOPMENTONLY, "", true, -1.0, true, -1.0);
-ConVar mat_ambient_light_b_forced("mat_ambient_light_b_forced", "-1.0", FCVAR_CHEAT | FCVAR_DEVELOPMENTONLY, "", true, -1.0, true, -1.0);
-#else
-ConVar mat_ambient_light_r_forced("mat_ambient_light_r_forced", "-1.0");
-ConVar mat_ambient_light_g_forced("mat_ambient_light_g_forced", "-1.0");
-ConVar mat_ambient_light_b_forced("mat_ambient_light_b_forced", "-1.0");
-#endif
+ConVar mat_ambient_light_r_forced( "mat_ambient_light_r_forced", "-1.0" );
+ConVar mat_ambient_light_g_forced( "mat_ambient_light_g_forced", "-1.0" );
+ConVar mat_ambient_light_b_forced( "mat_ambient_light_b_forced", "-1.0" );
 
 //-----------------------------------------------------------------------------
 // Convars related to fog color

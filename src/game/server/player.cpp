@@ -2722,20 +2722,13 @@ bool CBasePlayer::IsValidObserverTarget(CBaseEntity * target)
 	// check forcecamera settings for active players
 	if ( GetTeamNumber() != TEAM_SPECTATOR )
 	{
-		switch (mp_forcecamera.GetInt())
+		switch ( mp_forcecamera.GetInt() )	
 		{
-		case OBS_ALLOW_ALL:	break;
-#ifndef TF_DLL
-		case OBS_ALLOW_TEAM:	if (GetTeamNumber() != target->GetTeamNumber())
-			return false;
-			break;
-#else
-		case OBS_ALLOW_TEAM:
-		case OBS_ALLOW_TEAM_ALL:	if (GetTeamNumber() != target->GetTeamNumber())
-			return false;
-			break;
-#endif
-		case OBS_ALLOW_NONE:	return false;
+			case OBS_ALLOW_ALL	:	break;
+			case OBS_ALLOW_TEAM :	if ( GetTeamNumber() != target->GetTeamNumber() )
+										 return false;
+									break;
+			case OBS_ALLOW_NONE :	return false;
 		}
 	}
 
@@ -5119,11 +5112,10 @@ void CBasePlayer::Precache( void )
 	enginesound->PrecacheSentenceGroup( "HEV" );
 
 	// These are always needed
-#ifndef TF_DLL
-	PrecacheParticleSystem("slime_splash_01");
-	PrecacheParticleSystem("slime_splash_02");
-	PrecacheParticleSystem("slime_splash_03");
-#endif
+
+	PrecacheParticleSystem( "slime_splash_01" );
+	PrecacheParticleSystem( "slime_splash_02" );
+	PrecacheParticleSystem( "slime_splash_03" );
 
 
 	// in the event that the player JUST spawned, and the level node graph

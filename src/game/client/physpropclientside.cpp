@@ -480,10 +480,6 @@ void C_PhysPropClientside::Clone( Vector &velocity )
 	pEntity->SetSkin( GetSkin() );
 	pEntity->m_iHealth = m_iHealth;
 
-#ifdef TF_CLIENT_DLL
-	pEntity->SetCollisionGroup(COLLISION_GROUP_DEBRIS);
-#endif
-
 	if ( pEntity->m_iHealth == 0 )
 	{
 		// if  no health, don't collide with player anymore, don't take damage

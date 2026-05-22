@@ -22,11 +22,7 @@
 #define TICK_NEVER_THINK		(-1)
 
 
-#if defined( TF_DLL )
-#define ANIMATION_CYCLE_BITS		10
-#else
 #define ANIMATION_CYCLE_BITS		15
-#endif
 
 #define ANIMATION_CYCLE_MINFRAC		(1.0f / (1<<ANIMATION_CYCLE_BITS))
 
