@@ -35,6 +35,11 @@
 
 #include "networkstringtabledefs.h"
 
+// TF Swarm: CMultiplayRules doesn't have InitCustomResponseRulesDicts(), so we're going to cast CTFGameRules instead.
+#if defined ( TF_DLL ) || defined ( TF_CLIENT_DLL )
+#include "tf_gamerules.h"
+#endif
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -645,6 +650,15 @@ CON_COMMAND( rr_reloadresponsesystems, "Reload all response system scripts." )
 #endif
 
 	defaultresponsesytem.ReloadAllResponseSystems();
+
+#if defined( TF_DLL )
+	// This is kind of hacky, but I need to get it in for now!
+	if (g_pGameRules->IsMultiplayer())
+	{
+		CTFGameRules* pMultiplayRules = static_cast<CTFGameRules*>(g_pGameRules);
+		pMultiplayRules->InitCustomResponseRulesDicts();
+	}
+#endif
 }
 
 static short RESPONSESYSTEM_SAVE_RESTORE_VERSION = 1;

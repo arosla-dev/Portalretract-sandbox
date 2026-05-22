@@ -68,7 +68,9 @@ CBaseCombatWeapon::CBaseCombatWeapon()
 
 	m_hWeaponFileInfo = GetInvalidWeaponInfoHandle();
 
-
+#if defined( TF_DLL )
+	UseClientSideAnimation();
+#endif
 }
 
 //-----------------------------------------------------------------------------
@@ -2595,7 +2597,9 @@ BEGIN_NETWORK_TABLE_NOBASE( CBaseCombatWeapon, DT_LocalActiveWeaponData )
 	SendPropInt( SENDINFO( m_nNextThinkTick ) ),
 	SendPropTime( SENDINFO( m_flTimeWeaponIdle ) ),
 
-
+#if defined( TF_DLL )
+	SendPropExclude("DT_AnimTimeMustBeFirst", "m_flAnimTime"),
+#endif
 
 #else
 	RecvPropTime( RECVINFO( m_flNextPrimaryAttack ) ),

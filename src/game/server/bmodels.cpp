@@ -596,6 +596,9 @@ bool CFuncRotating::KeyValue( const char *szKeyName, const char *szValue )
 void CFuncRotating::Spawn( )
 {
 
+#ifdef TF_DLL
+	AddSpawnFlags(SF_BRUSH_ROTATE_CLIENTSIDE);
+#endif
 
 	//
 	// Maintain compatibility with previous maps.

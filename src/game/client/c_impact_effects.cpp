@@ -73,14 +73,16 @@ PRECACHE_REGISTER_BEGIN( GLOBAL, FX_CacheMaterialHandles )
 	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/blood", g_Mat_BloodPuff[0] )
 	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/blood2", g_Mat_BloodPuff[1] )
 
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/muzzleflash1", g_Mat_SMG_Muzzleflash[0] )
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/muzzleflash2", g_Mat_SMG_Muzzleflash[1] )
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/muzzleflash3", g_Mat_SMG_Muzzleflash[2] )
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/muzzleflash4", g_Mat_SMG_Muzzleflash[3] )
+#ifndef TF_CLIENT_DLL
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/muzzleflash1", g_Mat_SMG_Muzzleflash[0])
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/muzzleflash2", g_Mat_SMG_Muzzleflash[1])
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/muzzleflash3", g_Mat_SMG_Muzzleflash[2])
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/muzzleflash4", g_Mat_SMG_Muzzleflash[3])
 
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/combinemuzzle1", g_Mat_Combine_Muzzleflash[0] )
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/combinemuzzle2", g_Mat_Combine_Muzzleflash[1] )
-	PRECACHE_INDEX( PARTICLE_MATERIAL, "effects/strider_muzzle", g_Mat_Combine_Muzzleflash[2] )
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/combinemuzzle1", g_Mat_Combine_Muzzleflash[0])
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/combinemuzzle2", g_Mat_Combine_Muzzleflash[1])
+	PRECACHE_INDEX(PARTICLE_MATERIAL, "effects/strider_muzzle", g_Mat_Combine_Muzzleflash[2])
+#endif
 
 PRECACHE_REGISTER_END()
 

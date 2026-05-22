@@ -42,27 +42,30 @@ extern ConVar muzzleflash_light;
 #define TENT_WIND_ACCEL 50
 
 //Precache the effects
+#ifndef TF_CLIENT_DLL
+PRECACHE_REGISTER_BEGIN(GLOBAL, PrecacheEffectMuzzleFlash)
+PRECACHE(MATERIAL, "effects/combinemuzzle1")
+PRECACHE(MATERIAL, "effects/combinemuzzle2")
+PRECACHE(MATERIAL, "effects/combinemuzzle1_noz")
+PRECACHE(MATERIAL, "effects/combinemuzzle2_noz")
 
-PRECACHE_REGISTER_BEGIN( GLOBAL, PrecacheEffectMuzzleFlash )
-	PRECACHE( MATERIAL, "effects/combinemuzzle1" )
-	PRECACHE( MATERIAL, "effects/combinemuzzle2" )
-	PRECACHE( MATERIAL, "effects/combinemuzzle1_noz" )
-	PRECACHE( MATERIAL, "effects/combinemuzzle2_noz" )
+PRECACHE(MATERIAL, "effects/muzzleflash1")
+PRECACHE(MATERIAL, "effects/muzzleflash2")
+PRECACHE(MATERIAL, "effects/muzzleflash3")
+PRECACHE(MATERIAL, "effects/muzzleflash4")
+PRECACHE(MATERIAL, "effects/muzzleflash1_noz")
+PRECACHE(MATERIAL, "effects/muzzleflash2_noz")
+PRECACHE(MATERIAL, "effects/muzzleflash3_noz")
+PRECACHE(MATERIAL, "effects/muzzleflash4_noz")
 
-	PRECACHE( MATERIAL, "effects/muzzleflash1" )
-	PRECACHE( MATERIAL, "effects/muzzleflash2" )
-	PRECACHE( MATERIAL, "effects/muzzleflash3" )
-	PRECACHE( MATERIAL, "effects/muzzleflash4" )
-	PRECACHE( MATERIAL, "effects/muzzleflash1_noz" )
-	PRECACHE( MATERIAL, "effects/muzzleflash2_noz" )
-	PRECACHE( MATERIAL, "effects/muzzleflash3_noz" )
-	PRECACHE( MATERIAL, "effects/muzzleflash4_noz" )
-
-	PRECACHE( MATERIAL, "effects/strider_muzzle" )
+PRECACHE(MATERIAL, "effects/strider_muzzle")
 #ifdef PORTAL // RETRACT:
-	PRECACHE( MATERIAL, "effects/strider_muzzle_red" )
+PRECACHE(MATERIAL, "effects/strider_muzzle_red")
 #endif
 PRECACHE_REGISTER_END()
+#endif
+
+
 
 //Whether or not to eject brass from weapons
 ConVar cl_ejectbrass( "cl_ejectbrass", "1" );
@@ -2333,29 +2336,31 @@ void CTempEnts::Update(void)
 // Recache tempents which might have been flushed
 void CTempEnts::LevelInit()
 {
-	m_pSpriteMuzzleFlash[0] = (model_t *)engine->LoadModel( "sprites/ar2_muzzle1.vmt" );
-	m_pSpriteMuzzleFlash[1] = (model_t *)engine->LoadModel( "sprites/muzzleflash4.vmt" );
-	m_pSpriteMuzzleFlash[2] = (model_t *)engine->LoadModel( "sprites/muzzleflash4.vmt" );
+#ifndef TF_CLIENT_DLL
+	m_pSpriteMuzzleFlash[0] = (model_t*)engine->LoadModel("sprites/ar2_muzzle1.vmt");
+	m_pSpriteMuzzleFlash[1] = (model_t*)engine->LoadModel("sprites/muzzleflash4.vmt");
+	m_pSpriteMuzzleFlash[2] = (model_t*)engine->LoadModel("sprites/muzzleflash4.vmt");
 
-	m_pSpriteAR2Flash[0] = (model_t *)engine->LoadModel( "sprites/ar2_muzzle1b.vmt" );
-	m_pSpriteAR2Flash[1] = (model_t *)engine->LoadModel( "sprites/ar2_muzzle2b.vmt" );
-	m_pSpriteAR2Flash[2] = (model_t *)engine->LoadModel( "sprites/ar2_muzzle3b.vmt" );
-	m_pSpriteAR2Flash[3] = (model_t *)engine->LoadModel( "sprites/ar2_muzzle4b.vmt" );
+	m_pSpriteAR2Flash[0] = (model_t*)engine->LoadModel("sprites/ar2_muzzle1b.vmt");
+	m_pSpriteAR2Flash[1] = (model_t*)engine->LoadModel("sprites/ar2_muzzle2b.vmt");
+	m_pSpriteAR2Flash[2] = (model_t*)engine->LoadModel("sprites/ar2_muzzle3b.vmt");
+	m_pSpriteAR2Flash[3] = (model_t*)engine->LoadModel("sprites/ar2_muzzle4b.vmt");
 
-	m_pSpriteCombineFlash[0] = (model_t *)engine->LoadModel( "effects/combinemuzzle1.vmt" );
-	m_pSpriteCombineFlash[1] = (model_t *)engine->LoadModel( "effects/combinemuzzle2.vmt" );
+	m_pSpriteCombineFlash[0] = (model_t*)engine->LoadModel("effects/combinemuzzle1.vmt");
+	m_pSpriteCombineFlash[1] = (model_t*)engine->LoadModel("effects/combinemuzzle2.vmt");
 
-	m_pShells[0] = (model_t *) engine->LoadModel( "models/weapons/shell.mdl" );
-	m_pShells[1] = (model_t *) engine->LoadModel( "models/weapons/rifleshell.mdl" );
-	m_pShells[2] = (model_t *) engine->LoadModel( "models/weapons/shotgun_shell.mdl" );
+	m_pShells[0] = (model_t*)engine->LoadModel("models/weapons/shell.mdl");
+	m_pShells[1] = (model_t*)engine->LoadModel("models/weapons/rifleshell.mdl");
+	m_pShells[2] = (model_t*)engine->LoadModel("models/weapons/shotgun_shell.mdl");
+#endif
 
 #if defined ( SDK_DLL )
-	m_pCS_9MMShell		= (model_t *)engine->LoadModel( "models/Shells/shell_9mm.mdl" );
-	m_pCS_57Shell		= (model_t *)engine->LoadModel( "models/Shells/shell_57.mdl" );
-	m_pCS_12GaugeShell	= (model_t *)engine->LoadModel( "models/Shells/shell_12gauge.mdl" );
-	m_pCS_556Shell		= (model_t *)engine->LoadModel( "models/Shells/shell_556.mdl" );
-	m_pCS_762NATOShell	= (model_t *)engine->LoadModel( "models/Shells/shell_762nato.mdl" );
-	m_pCS_338MAGShell	= (model_t *)engine->LoadModel( "models/Shells/shell_338mag.mdl" );
+	m_pCS_9MMShell = (model_t*)engine->LoadModel("models/Shells/shell_9mm.mdl");
+	m_pCS_57Shell = (model_t*)engine->LoadModel("models/Shells/shell_57.mdl");
+	m_pCS_12GaugeShell = (model_t*)engine->LoadModel("models/Shells/shell_12gauge.mdl");
+	m_pCS_556Shell = (model_t*)engine->LoadModel("models/Shells/shell_556.mdl");
+	m_pCS_762NATOShell = (model_t*)engine->LoadModel("models/Shells/shell_762nato.mdl");
+	m_pCS_338MAGShell = (model_t*)engine->LoadModel("models/Shells/shell_338mag.mdl");
 #endif
 }
 

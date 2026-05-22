@@ -88,7 +88,9 @@ void CBaseViewModel::Spawn( void )
 }
 
 
-
+#if defined ( TF_DLL )
+#define VGUI_CONTROL_PANELS
+#endif
 
 
 

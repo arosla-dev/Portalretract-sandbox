@@ -414,6 +414,9 @@ CBaseEntity* CItem::Respawn( void )
 
 	UTIL_DropToFloor( this, MASK_SOLID );
 
+#if !defined( TF_DLL )
+	UTIL_DropToFloor(this, MASK_SOLID);
+#endif
 
 	RemoveAllDecals(); //remove any decals
 
