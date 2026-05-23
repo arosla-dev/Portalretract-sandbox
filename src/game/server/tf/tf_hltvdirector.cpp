@@ -11,18 +11,18 @@
 #include "team_control_point.h"
 
 
-CBaseEntity* GetCapturePointByIndex( int iCaptureIndex )
+CBaseEntity* GetCapturePointByIndex(int iCaptureIndex)
 {
-	CTeamControlPoint *pTeamControlPoint = (CTeamControlPoint *)gEntList.FindEntityByClassname( NULL, "team_control_point" );
+	CTeamControlPoint* pTeamControlPoint = (CTeamControlPoint*)gEntList.FindEntityByClassname(NULL, "team_control_point");
 
-	while ( pTeamControlPoint )
+	while (pTeamControlPoint)
 	{
-		if ( pTeamControlPoint->GetPointIndex() == iCaptureIndex )
+		if (pTeamControlPoint->GetPointIndex() == iCaptureIndex)
 		{
 			return pTeamControlPoint;
 		}
 
-		pTeamControlPoint = (CTeamControlPoint *)gEntList.FindEntityByClassname( pTeamControlPoint, "team_control_point" );
+		pTeamControlPoint = (CTeamControlPoint*)gEntList.FindEntityByClassname(pTeamControlPoint, "team_control_point");
 	}
 
 	return NULL;
@@ -31,64 +31,64 @@ CBaseEntity* GetCapturePointByIndex( int iCaptureIndex )
 class CTFHLTVDirector : public CHLTVDirector
 {
 public:
-	DECLARE_CLASS( CTFHLTVDirector, CHLTVDirector );
+	DECLARE_CLASS(CTFHLTVDirector, CHLTVDirector);
 
 	const char** GetModEvents();
-	void SetHLTVServer( IHLTVServer *hltv );
-	void CreateShotFromEvent( CHLTVGameEvent *event );
+	void SetHLTVServer(IHLTVServer* hltv);
+	void CreateShotFromEvent(CHLTVGameEvent* event);
 
-	virtual char	*GetFixedCameraEntityName( void ) { return "info_observer_point"; }
+	virtual char* GetFixedCameraEntityName(void) { return "info_observer_point"; }
 };
 
-void CTFHLTVDirector::SetHLTVServer( IHLTVServer *hltv )
+void CTFHLTVDirector::SetHLTVServer(IHLTVServer* hltv)
 {
-	BaseClass::SetHLTVServer( hltv );
+	BaseClass::SetHLTVServer(hltv);
 
-	if ( m_pHLTVServer )
+	if (m_pHLTVServer)
 	{
 		// mod specific events the director uses to find interesting shots
-		ListenForGameEvent( "teamplay_point_captured" );
-		ListenForGameEvent( "teamplay_capture_blocked" );
-		ListenForGameEvent( "teamplay_point_startcapture" );
-		ListenForGameEvent( "teamplay_flag_event" );
-		ListenForGameEvent( "ctf_flag_captured" );
+		ListenForGameEvent("teamplay_point_captured");
+		ListenForGameEvent("teamplay_capture_blocked");
+		ListenForGameEvent("teamplay_point_startcapture");
+		ListenForGameEvent("teamplay_flag_event");
+		ListenForGameEvent("ctf_flag_captured");
 	}
 }
 
-void CTFHLTVDirector::CreateShotFromEvent( CHLTVGameEvent *event )
+void CTFHLTVDirector::CreateShotFromEvent(CHLTVGameEvent* event)
 {
 	// show event at least for 2 more seconds after it occured
-	const char *name = event->m_Event->GetName();
+	const char* name = event->m_Event->GetName();
 
-	int thera = RandomFloat()>0.5?20:-20;
+	int thera = RandomFloat() > 0.5 ? 20 : -20;
 
-	if ( !Q_strcmp( "teamplay_point_startcapture", name ) || 
-		 !Q_strcmp( "teamplay_point_captured", name ) ||
-		 !Q_strcmp( "teamplay_capture_blocked", name ) )
+	if (!Q_strcmp("teamplay_point_startcapture", name) ||
+		!Q_strcmp("teamplay_point_captured", name) ||
+		!Q_strcmp("teamplay_capture_blocked", name))
 	{
-		CBaseEntity *pCapturePoint = GetCapturePointByIndex( event->m_Event->GetInt( "cp" ) );
+		CBaseEntity* pCapturePoint = GetCapturePointByIndex(event->m_Event->GetInt("cp"));
 
 		int iCameraIndex = -1;
 		float flClosest = 99999.9f;
-		
-		if ( pCapturePoint )
+
+		if (pCapturePoint)
 		{
 			// Does it have an associated viewpoint?
-			for ( int i = 0; i<m_nNumFixedCameras; i++ )
+			for (int i = 0; i < m_nNumFixedCameras; i++)
 			{
-				CBaseEntity *pCamera = m_pFixedCameras[ i ];
-		
-				if ( pCamera )
-				{
-					byte pvs[MAX_MAP_CLUSTERS/8];
-					int clusterIndex = engine->GetClusterForOrigin( pCamera->GetAbsOrigin() );
-					engine->GetPVSForCluster( clusterIndex, sizeof(pvs), pvs );
-					bool bCameraInPVS = engine->CheckOriginInPVS( pCapturePoint->GetAbsOrigin(), pvs, sizeof( pvs ) );
+				CBaseEntity* pCamera = m_pFixedCameras[i];
 
-					if ( bCameraInPVS == true )
+				if (pCamera)
+				{
+					byte pvs[MAX_MAP_CLUSTERS / 8];
+					int clusterIndex = engine->GetClusterForOrigin(pCamera->GetAbsOrigin());
+					engine->GetPVSForCluster(clusterIndex, sizeof(pvs), pvs);
+					bool bCameraInPVS = engine->CheckOriginInPVS(pCapturePoint->GetAbsOrigin(), pvs, sizeof(pvs));
+
+					if (bCameraInPVS == true)
 					{
 						float flDistance = (pCapturePoint->GetAbsOrigin() - pCamera->GetAbsOrigin()).Length();
-						if ( flDistance <= flClosest )
+						if (flDistance <= flClosest)
 						{
 							iCameraIndex = i;
 							flClosest = flDistance;
@@ -98,82 +98,82 @@ void CTFHLTVDirector::CreateShotFromEvent( CHLTVGameEvent *event )
 			}
 		}
 
-		CBasePlayer *pPlayer = NULL;
+		CBasePlayer* pPlayer = NULL;
 
-		if ( !Q_strcmp( "teamplay_point_captured", name ) )
+		if (!Q_strcmp("teamplay_point_captured", name))
 		{
-			const char *pszCappers = event->m_Event->GetString("cappers");
+			const char* pszCappers = event->m_Event->GetString("cappers");
 			int nLength = Q_strlen(pszCappers);
 
-			if ( nLength > 0 )
+			if (nLength > 0)
 			{
-				int iRandomCapper = pszCappers[ RandomInt(0,nLength-1) ];
-				pPlayer = UTIL_PlayerByIndex( iRandomCapper );
+				int iRandomCapper = pszCappers[RandomInt(0, nLength - 1)];
+				pPlayer = UTIL_PlayerByIndex(iRandomCapper);
 			}
 		}
-		else if ( !Q_strcmp( "teamplay_capture_blocked", name ) )
+		else if (!Q_strcmp("teamplay_capture_blocked", name))
 		{
 			int iBlocker = event->m_Event->GetInt("blocker");
-			pPlayer = UTIL_PlayerByIndex( iBlocker );
+			pPlayer = UTIL_PlayerByIndex(iBlocker);
 		}
 
-		if ( pPlayer )
+		if (pPlayer)
 		{
-			if ( iCameraIndex >= 0 && RandomFloat() > 0.66f )
+			if (iCameraIndex >= 0 && RandomFloat() > 0.66f)
 			{
-				StartFixedCameraShot( iCameraIndex, pPlayer->entindex() );
+				StartFixedCameraShot(iCameraIndex, pPlayer->entindex());
 			}
-			else if ( pCapturePoint )
+			else if (pCapturePoint)
 			{
-				StartChaseCameraShot( pPlayer->entindex(), pCapturePoint->entindex(), 96, 20, thera, false );
+				StartChaseCameraShot(pPlayer->entindex(), pCapturePoint->entindex(), 96, 20, thera, false);
 			}
 			else
 			{
-				StartChaseCameraShot( pPlayer->entindex(), 0, 96, 20, 0, false );
+				StartChaseCameraShot(pPlayer->entindex(), 0, 96, 20, 0, false);
 			}
 		}
-		else if ( iCameraIndex >= 0 && pCapturePoint )
+		else if (iCameraIndex >= 0 && pCapturePoint)
 		{
 			// no player known for this event
-			StartFixedCameraShot( iCameraIndex, pCapturePoint->entindex() );
+			StartFixedCameraShot(iCameraIndex, pCapturePoint->entindex());
 		}
 
 		// shot 2 seconds after event
-		m_nNextShotTick = MIN( m_nNextShotTick, (event->m_Tick+TIME_TO_TICKS(1.0)) );
+		m_nNextShotTick = MIN(m_nNextShotTick, (event->m_Tick + TIME_TO_TICKS(1.0)));
 	}
-	else if ( !Q_strcmp( "object_destroyed", name ) )
+	else if (!Q_strcmp("object_destroyed", name))
 	{
-		CBasePlayer *attacker = UTIL_PlayerByUserId( event->m_Event->GetInt("attacker") );
-		if ( attacker )
+		CBasePlayer* attacker = UTIL_PlayerByUserId(event->m_Event->GetInt("attacker"));
+		if (attacker)
 		{
 			int iObjectIndex = event->m_Event->GetInt("index");
-			StartChaseCameraShot( attacker->entindex(), iObjectIndex, 96, 20, thera, false );
+			StartChaseCameraShot(attacker->entindex(), iObjectIndex, 96, 20, thera, false);
 		}
 	}
-	else if ( !Q_strcmp( "ctf_flag_captured", name ) )
+	else if (!Q_strcmp("ctf_flag_captured", name))
 	{
-		CBasePlayer *capper = UTIL_PlayerByUserId( event->m_Event->GetInt("capper") );
-		if ( capper )
+		CBasePlayer* capper = UTIL_PlayerByUserId(event->m_Event->GetInt("capper"));
+		if (capper)
 		{
-			StartChaseCameraShot( capper->entindex(), 0, 96, 20, 0, false );
+			StartChaseCameraShot(capper->entindex(), 0, 96, 20, 0, false);
 		}
 	}
-	else if ( !Q_strcmp( "teamplay_flag_event", name ) )
+	else if (!Q_strcmp("teamplay_flag_event", name))
 	{
-		StartChaseCameraShot( event->m_Event->GetInt("player"), 0, 96, 20, 0, false );
+		StartChaseCameraShot(event->m_Event->GetInt("player"), 0, 96, 20, 0, false);
 	}
 	else
 	{
 
 		// let baseclass create a shot
-		BaseClass::CreateShotFromEvent( event );
+		BaseClass::CreateShotFromEvent(event);
 	}
 }
 
 const char** CTFHLTVDirector::GetModEvents()
 {
 	// game events relayed to spectator clients
-	static const char *s_modevents[] =
+	static const char* s_modevents[] =
 	{
 		"game_newmap",
 		"hltv_status",
@@ -190,7 +190,7 @@ const char** CTFHLTVDirector::GetModEvents()
 		"round_end",
 		"server_cvar",
 		"server_spawn",
-				
+
 		// additional TF events:
 		"controlpoint_starttouch",
 		"controlpoint_endtouch",
@@ -208,7 +208,7 @@ const char** CTFHLTVDirector::GetModEvents()
 		"teamplay_win_panel",
 		"tf_game_over",
 		"object_destroyed",
-			
+
 		NULL
 	};
 
@@ -217,7 +217,7 @@ const char** CTFHLTVDirector::GetModEvents()
 
 static CTFHLTVDirector s_HLTVDirector;	// singleton
 
-EXPOSE_SINGLE_INTERFACE_GLOBALVAR( CHLTVDirector, IHLTVDirector, INTERFACEVERSION_HLTVDIRECTOR, s_HLTVDirector );
+EXPOSE_SINGLE_INTERFACE_GLOBALVAR(CHLTVDirector, IHLTVDirector, INTERFACEVERSION_HLTVDIRECTOR, s_HLTVDirector);
 
 CHLTVDirector* HLTVDirector()
 {

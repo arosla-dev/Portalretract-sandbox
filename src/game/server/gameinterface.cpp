@@ -1228,7 +1228,9 @@ void CServerGameDLL::ServerActivate( edict_t *pEdictList, int edictCount, int cl
 	// load the Navigation Mesh for this map
 	TheNavMesh->Load();
 	TheNavMesh->OnServerActivate();
+#ifdef TF_DLL
 	TheNextBots().OnMapLoaded();
+#endif
 #endif
 #ifdef PORTAL
 	if ( gpGlobals->eLoadType == MapLoad_LoadGame )
@@ -1306,7 +1308,9 @@ void CServerGameDLL::GameFrame( bool simulating )
 
 
 	TheNavMesh->Update();
+#ifdef TF_DLL
 	TheNextBots().Update();
+#endif
 
 	{
 		VPROF( "gamestatsuploader->UpdateConnection" );
