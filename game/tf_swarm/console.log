@@ -1,0 +1,37 @@
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+Parent and child ConVars with different default values! mp_forcecamera child: 3 parent: 1 (parent wins)
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+material "effects/pyroflame1/flamethrowerfire" not found.
+CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
+maxplayers set to 24
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_0_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+CGameEventManager::AddListener: event 'campaign_changed' unknown.
+CGameEventManager::AddListener: event 'swarm_state_changed' unknown.
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+Missing cfg\cpu_level_2_pc.ekv
+Missing cfg\gpu_level_0_pc.ekv
+Missing cfg\mem_level_2_pc.ekv
+Missing cfg\gpu_mem_level_2_pc.ekv
+WARNING: unable to link join_class and join_class because one or more is a ConCommand.
+CGameEventManager::AddListener: event 'replay_status' unknown.
+UnserializeDMX: Unable to open file "tf2_playerstats.dmx"
+CUserMessages::HookMessage:  no such message ShowMenuComplex
+CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
+CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
+CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
