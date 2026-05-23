@@ -226,8 +226,10 @@ void CTFClassMenu::ShowPanel( bool bShow )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFClassMenu::OnKeyCodePressed( KeyCode code )
+/*void CTFClassMenu::OnKeyCodePressed( KeyCode code )
 {
+	m_KeyRepeat.KeyDown( code );
+
 	if ( ( m_iClassMenuKey != BUTTON_CODE_INVALID && m_iClassMenuKey == code ) ||
 		code == KEY_XBUTTON_BACK || 
 		code == KEY_XBUTTON_B )
@@ -310,21 +312,29 @@ void CTFClassMenu::OnKeyCodePressed( KeyCode code )
 	{
 		BaseClass::OnKeyCodePressed( code );
 	}
-}
+}*/
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFClassMenu::OnKeyCodeReleased( vgui::KeyCode code )
+/*void CTFClassMenu::OnKeyCodeReleased( vgui::KeyCode code )
 {
+	m_KeyRepeat.KeyUp( code );
+
 	BaseClass::OnKeyCodeReleased( code );
-}
+}*/
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
 void CTFClassMenu::OnThink()
 {
+/*	vgui::KeyCode code = m_KeyRepeat.KeyRepeated();
+	if ( code )
+	{
+		OnKeyCodePressed( code );
+	}
+*/
 	BaseClass::OnThink();
 }
 
@@ -435,6 +445,8 @@ void CTFClassMenu::OnClose()
 void CTFClassMenu::SetVisible( bool state )
 {
 	BaseClass::SetVisible( state );
+
+	//m_KeyRepeat.Reset();
 
 	if ( state )
 	{

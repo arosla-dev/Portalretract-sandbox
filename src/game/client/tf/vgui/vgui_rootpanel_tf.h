@@ -42,10 +42,6 @@ public:
 
 	// Run effects and let them decide whether to remove themselves
 	void				OnTick( void );
-	
-	virtual void		PaintTraverse( bool Repaint, bool allowForce = true );
-	
-	virtual void		OnThink();
 
 private:
 
@@ -54,7 +50,7 @@ private:
 
 	// List of current panel effects
 	CUtlVector< CPanelEffect *> m_Effects;
-	int			m_nSplitSlot;
+	int m_nSplitSlot;
 };
 
 

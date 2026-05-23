@@ -24,7 +24,9 @@ using namespace vgui;
 
 void __MsgFunc_UpdateRadar( bf_read &msg )
 {
-	if ( !g_pMapOverview )
+	IMapOverviewPanel *pMapOverview = GetMapOverView();
+
+	if ( !pMapOverview )
 		return;
 
 	int iPlayerEntity = msg.ReadByte();
@@ -38,7 +40,7 @@ void __MsgFunc_UpdateRadar( bf_read &msg )
 		Vector origin( x, y, 0 );
 		QAngle angles( 0, a, 0 );
 
-		g_pMapOverview->SetPlayerPositions( iPlayerEntity-1, origin, angles );
+		pMapOverview->SetPlayerPositions( iPlayerEntity-1, origin, angles );
 
 		iPlayerEntity = msg.ReadByte(); // read index for next player
 	}
@@ -51,7 +53,7 @@ ConVar _overview_mode( "_overview_mode", "1", FCVAR_ARCHIVE, "Overview mode - 0=
 
 CTFMapOverview *GetTFOverview( void )
 {
-	return dynamic_cast<CTFMapOverview *>( g_pMapOverview );
+	return dynamic_cast<CTFMapOverview *>( GetMapOverView() );
 }
 
 // overview_togglezoom rotates through 3 levels of zoom for the small map
@@ -351,14 +353,15 @@ void CTFMapOverview::ToggleZoom( void )
 
 	_cl_minimapzoom.SetValue( iZoomLevel );
 
+	IClientMode *pClientMode = GetClientMode();
 	switch( _cl_minimapzoom.GetInt() )
 	{
 	case 0:
-		g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel1" );
+		pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel1" );
 		break;
 	case 1:
 	default:
-		g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel2" );
+		pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel2" );
 		break;
 	}
 }
@@ -368,7 +371,9 @@ void CTFMapOverview::ToggleZoom( void )
 //-----------------------------------------------------------------------------
 void CTFMapOverview::SetMode(int mode)
 {
-	if ( IsDisabled() )
+	IClientMode *pClientMode = GetClientMode();
+
+	if ( IsDisabled() || !pClientMode )
 	{
 		return;
 	}
@@ -379,21 +384,21 @@ void CTFMapOverview::SetMode(int mode)
 	{
 		ShowPanel( false );
 
-		g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapOff" );
+		pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapOff" );
 	}
 	else if ( mode == MAP_MODE_INSET )
 	{
 		switch( _cl_minimapzoom.GetInt() )
 		{
 		case 0:
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel1" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel1" );
 			break;
 		case 1:
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel2" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel2" );
 			break;
 		case 2:
 		default:
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel3" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapZoomLevel3" );
 			break;
 		}
 
@@ -405,9 +410,9 @@ void CTFMapOverview::SetMode(int mode)
 		ShowPanel( true );
 
 		if ( m_nMode == MAP_MODE_FULL )
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapScaleToSmall" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "MapScaleToSmall" );
 		else
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "SnapToSmall" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "SnapToSmall" );
 	}
 	else if ( mode == MAP_MODE_FULL )
 	{
@@ -416,9 +421,9 @@ void CTFMapOverview::SetMode(int mode)
 		ShowPanel( true );
 
 		if ( m_nMode == MAP_MODE_INSET )
-			g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "ZoomToLarge" );
+			pClientMode->GetViewportAnimationController()->StartAnimationSequence( "ZoomToLarge" );
 		else
-            g_pClientMode->GetViewportAnimationController()->StartAnimationSequence( "SnapToLarge" );
+            pClientMode->GetViewportAnimationController()->StartAnimationSequence( "SnapToLarge" );
 	}
 
 	// finally set mode
@@ -638,7 +643,7 @@ bool CTFMapOverview::DrawCapturePoint( int iCP, MapObject_t *obj )
 
 		if ( requiredPlayers > 1 )
 		{
-			numPlayers = min( numPlayers, requiredPlayers );
+			numPlayers = MIN( numPlayers, requiredPlayers );
 
 			wchar_t wText[6];
 			_snwprintf( wText, sizeof(wText)/sizeof(wchar_t), L"%d", numPlayers );

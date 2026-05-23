@@ -43,28 +43,28 @@
 #include "tf_hud_menu_spy_disguise.h"
 #include "tf_statsummary.h"
 #include "tf_hud_freezepanel.h"
-#include "glow_outline_effect.h"
-#include "materialsystem/imaterialvar.h"
-#include "object_motion_blur_effect.h"
-#include "vgui_int.h"
-#include "game_controls/baseviewport.h"
 
 #if defined( _X360 )
 #include "tf_clientscoreboard.h"
 #endif
 
-extern ConVar mat_object_motion_blur_enable;
+ConVar default_fov("default_fov", "75", FCVAR_CHEAT);
+ConVar fov_desired("fov_desired", "75", FCVAR_ARCHIVE | FCVAR_USERINFO, "Sets the base field-of-view.", true, 75.0, true, 90.0);
 
-ConVar default_fov( "default_fov", "75", FCVAR_CHEAT );
-ConVar fov_desired( "fov_desired", "75", FCVAR_ARCHIVE | FCVAR_USERINFO, "Sets the base field-of-view.", true, 75.0, true, 90.0 );
-
-vgui::HScheme g_hVGuiCombineScheme = 0;
-
-void HUDMinModeChangedCallBack( IConVar *var, const char *pOldString, float flOldValue )
+void HUDMinModeChangedCallBack(IConVar* var, const char* pOldString, float flOldValue)
 {
-	engine->ExecuteClientCmd( "hud_reloadscheme" );
+	engine->ExecuteClientCmd("hud_reloadscheme");
 }
-ConVar cl_hud_minmode( "cl_hud_minmode", "0", FCVAR_ARCHIVE, "Set to 1 to turn on the advanced minimalist HUD mode.", HUDMinModeChangedCallBack );
+ConVar cl_hud_minmode("cl_hud_minmode", "0", FCVAR_ARCHIVE, "Set to 1 to turn on the advanced minimalist HUD mode.", HUDMinModeChangedCallBack);
+
+// IClientMode *g_pClientMode = NULL;
+
+static IClientMode* g_pClientMode[MAX_SPLITSCREEN_PLAYERS];
+IClientMode* GetClientMode()
+{
+	ASSERT_LOCAL_PLAYER_RESOLVABLE();
+	return g_pClientMode[GET_ACTIVE_SPLITSCREEN_SLOT()];
+}
 
 // --------------------------------------------------------------------------------- //
 // CTFModeManager.
@@ -74,23 +74,15 @@ class CTFModeManager : public IVModeManager
 {
 public:
 	virtual void	Init();
-	virtual void	SwitchMode( bool commander, bool force ) {}
-	virtual void	LevelInit( const char *newmap );
-	virtual void	LevelShutdown( void );
-	virtual void	ActivateMouse( bool isactive ) {}
+	virtual void	SwitchMode(bool commander, bool force) {}
+	virtual void	LevelInit(const char* newmap);
+	virtual void	LevelShutdown(void);
+	virtual void	ActivateMouse(bool isactive) {}
 };
 
 static CTFModeManager g_ModeManager;
-IVModeManager *modemanager = ( IVModeManager * )&g_ModeManager;
+IVModeManager* modemanager = (IVModeManager*)&g_ModeManager;
 
-
-static IClientMode *g_pClientMode[MAX_SPLITSCREEN_PLAYERS];
-
-IClientMode *GetClientMode()
-{
-	Assert(engine->IsLocalPlayerResolvable());
-	return g_pClientMode[engine->GetActiveSplitScreenPlayerSlot()];
-}
 
 // --------------------------------------------------------------------------------- //
 // CTFModeManager implementation.
@@ -100,41 +92,41 @@ IClientMode *GetClientMode()
 
 void CTFModeManager::Init()
 {
-	for( int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i )
+	for (int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i)
 	{
-		ACTIVE_SPLITSCREEN_PLAYER_GUARD( i );
-		g_pClientMode[ i ] = GetClientModeNormal();
+		ACTIVE_SPLITSCREEN_PLAYER_GUARD(i);
+		g_pClientMode[i] = GetClientModeNormal();
 	}
-	
-	PanelMetaClassMgr()->LoadMetaClassDefinitionFile( SCREEN_FILE );
+
+	PanelMetaClassMgr()->LoadMetaClassDefinitionFile(SCREEN_FILE);
 
 	// Load the objects.txt file.
-	LoadObjectInfos( ::filesystem );
+	LoadObjectInfos(::filesystem);
 
-	GetClientVoiceMgr()->SetHeadLabelOffset( 40 );
+	GetClientVoiceMgr()->SetHeadLabelOffset(40);
 }
 
-void CTFModeManager::LevelInit( const char *newmap )
+void CTFModeManager::LevelInit(const char* newmap)
 {
-	for( int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i )
+	for (int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i)
 	{
-		ACTIVE_SPLITSCREEN_PLAYER_GUARD( i );
-		GetClientMode()->LevelInit( newmap );
+		ACTIVE_SPLITSCREEN_PLAYER_GUARD(i);
+		g_pClientMode[i]->LevelInit(newmap);
 	}
 
-	ConVarRef voice_steal( "voice_steal" );
+	ConVarRef voice_steal("voice_steal");
 
-	if ( voice_steal.IsValid() )
+	if (voice_steal.IsValid())
 	{
-		voice_steal.SetValue( 1 );
+		voice_steal.SetValue(1);
 	}
 }
 
-void CTFModeManager::LevelShutdown( void )
+void CTFModeManager::LevelShutdown(void)
 {
-	for( int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i )
+	for (int i = 0; i < MAX_SPLITSCREEN_PLAYERS; ++i)
 	{
-		ACTIVE_SPLITSCREEN_PLAYER_GUARD( i );
+		ACTIVE_SPLITSCREEN_PLAYER_GUARD(i);
 		GetClientMode()->LevelShutdown();
 	}
 }
@@ -164,97 +156,43 @@ ClientModeTFNormal::~ClientModeTFNormal()
 
 // See interface.h/.cpp for specifics:  basically this ensures that we actually Sys_UnloadModule the dll and that we don't call Sys_LoadModule 
 //  over and over again.
-static CDllDemandLoader g_GameUI( "gameui" );
-
-class FullscreenTFViewport : public CHudViewport
-{
-private:
-	DECLARE_CLASS_SIMPLE( FullscreenTFViewport, CHudViewport );
-
-private:
-	virtual void InitViewportSingletons( void )
-	{
-		SetAsFullscreenViewportInterface();
-	}
-};
-
-class ClientModeTFNormalFullscreen : public	ClientModeTFNormal
-{
-	DECLARE_CLASS_SIMPLE( ClientModeTFNormalFullscreen, ClientModeTFNormal );
-public:
-	virtual void InitViewport()
-	{
-		// Skip over BaseClass!!!
-		BaseClass::BaseClass::InitViewport();
-		m_pViewport = new FullscreenTFViewport();
-		m_pViewport->Start( gameuifuncs, gameeventmanager );
-	}
-	virtual void Init()
-	{
-		// 
-		//CASW_VGUI_Debug_Panel *pDebugPanel = new CASW_VGUI_Debug_Panel( GetViewport(), "ASW Debug Panel" );
-		//g_hDebugPanel = pDebugPanel;
-
-		// Skip over BaseClass!!!
-		BaseClass::BaseClass::Init();
-
-		// Load up the combine control panel scheme
-		if ( !g_hVGuiCombineScheme )
-		{
-			g_hVGuiCombineScheme = vgui::scheme()->LoadSchemeFromFileEx( enginevgui->GetPanel( PANEL_CLIENTDLL ), IsXbox() ? "resource/ClientScheme.res" : "resource/CombinePanelScheme.res", "CombineScheme" );
-			if (!g_hVGuiCombineScheme)
-			{
-				Warning( "Couldn't load combine panel scheme!\n" );
-			}
-		}
-	}
-	void Shutdown()
-	{
-	}
-};
-
-//--------------------------------------------------------------------------------------------------------
-static ClientModeTFNormalFullscreen g_FullscreenClientMode;
-IClientMode *GetFullscreenClientMode( void )
-{
-	return &g_FullscreenClientMode;
-}
+static CDllDemandLoader g_GameUI("gameui");
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
 void ClientModeTFNormal::Init()
 {
-	m_pMenuEngyBuild = ( CHudMenuEngyBuild * )GET_HUDELEMENT( CHudMenuEngyBuild );
-	Assert( m_pMenuEngyBuild );
+	m_pMenuEngyBuild = (CHudMenuEngyBuild*)GET_HUDELEMENT(CHudMenuEngyBuild);
+	Assert(m_pMenuEngyBuild);
 
-	m_pMenuEngyDestroy = ( CHudMenuEngyDestroy * )GET_HUDELEMENT( CHudMenuEngyDestroy );
-	Assert( m_pMenuEngyDestroy );
+	m_pMenuEngyDestroy = (CHudMenuEngyDestroy*)GET_HUDELEMENT(CHudMenuEngyDestroy);
+	Assert(m_pMenuEngyDestroy);
 
-	m_pMenuSpyDisguise = ( CHudMenuSpyDisguise * )GET_HUDELEMENT( CHudMenuSpyDisguise );
-	Assert( m_pMenuSpyDisguise );
+	m_pMenuSpyDisguise = (CHudMenuSpyDisguise*)GET_HUDELEMENT(CHudMenuSpyDisguise);
+	Assert(m_pMenuSpyDisguise);
 
-	m_pFreezePanel = ( CTFFreezePanel * )GET_HUDELEMENT( CTFFreezePanel );
-	Assert( m_pFreezePanel );
+	m_pFreezePanel = (CTFFreezePanel*)GET_HUDELEMENT(CTFFreezePanel);
+	Assert(m_pFreezePanel);
 
 	CreateInterfaceFn gameUIFactory = g_GameUI.GetFactory();
-	if ( gameUIFactory )
+	if (gameUIFactory)
 	{
-		m_pGameUI = (IGameUI *) gameUIFactory(GAMEUI_INTERFACE_VERSION, NULL );
-		if ( NULL != m_pGameUI )
+		m_pGameUI = (IGameUI*)gameUIFactory(GAMEUI_INTERFACE_VERSION, NULL);
+		if (NULL != m_pGameUI)
 		{
 			// insert stats summary panel as the loading background dialog
-			CTFStatsSummaryPanel *pPanel = GStatsSummaryPanel();
-			pPanel->InvalidateLayout( false, true );
-			pPanel->SetVisible( false );
-			pPanel->MakePopup( false );
-			m_pGameUI->SetLoadingBackgroundDialog( pPanel->GetVPanel() );
-		}		
+			CTFStatsSummaryPanel* pPanel = GStatsSummaryPanel();
+			pPanel->InvalidateLayout(false, true);
+			pPanel->SetVisible(false);
+			pPanel->MakePopup(false);
+			m_pGameUI->SetLoadingBackgroundDialog(pPanel->GetVPanel());
+		}
 	}
 
 #if defined( _X360 )
-	m_pScoreboard = (CTFClientScoreBoardDialog *)( gViewPortInterface->FindPanelByName( PANEL_SCOREBOARD ) );
-	Assert( m_pScoreboard );
+	m_pScoreboard = (CTFClientScoreBoardDialog*)(gViewPortInterface->FindPanelByName(PANEL_SCOREBOARD));
+	Assert(m_pScoreboard);
 #endif
 
 	BaseClass::Init();
@@ -271,30 +209,63 @@ void ClientModeTFNormal::Shutdown()
 void ClientModeTFNormal::InitViewport()
 {
 	m_pViewport = new TFViewport();
-	m_pViewport->Start( gameuifuncs, gameeventmanager );
+	m_pViewport->Start(gameuifuncs, gameeventmanager);
 }
 
-ClientModeTFNormal g_ClientModeNormal;
+ClientModeTFNormal g_ClientModeNormal[MAX_SPLITSCREEN_PLAYERS];
 
-IClientMode *GetClientModeNormal()
+IClientMode* GetClientModeNormal()
 {
-	return &g_ClientModeNormal;
+	ASSERT_LOCAL_PLAYER_RESOLVABLE();
+	return &g_ClientModeNormal[GET_ACTIVE_SPLITSCREEN_SLOT()];
 }
 
 
 ClientModeTFNormal* GetClientModeTFNormal()
 {
-	Assert( dynamic_cast< ClientModeTFNormal* >( GetClientModeNormal() ) );
+	Assert(dynamic_cast<ClientModeTFNormal*>(GetClientModeNormal()));
 
-	return static_cast< ClientModeTFNormal* >( GetClientModeNormal() );
+	return static_cast<ClientModeTFNormal*>(GetClientModeNormal());
+}
+
+class FullscreenTFViewport : public TFViewport
+{
+private:
+	DECLARE_CLASS_SIMPLE(FullscreenTFViewport, TFViewport);
+
+private:
+	virtual void InitViewportSingletons(void)
+	{
+		SetAsFullscreenViewportInterface();
+	}
+};
+
+class ClientModeTFNormalFullscreen : public ClientModeTFNormal
+{
+	DECLARE_CLASS_SIMPLE(ClientModeTFNormalFullscreen, ClientModeTFNormal);
+public:
+	virtual void InitViewport()
+	{
+		// Skip over BaseClass!!!
+		BaseClass::BaseClass::InitViewport();
+		m_pViewport = new FullscreenTFViewport();
+		m_pViewport->Start(gameuifuncs, gameeventmanager);
+	}
+};
+
+//--------------------------------------------------------------------------------------------------------
+ClientModeTFNormalFullscreen g_FullscreenClientMode;
+IClientMode* GetFullscreenClientMode(void)
+{
+	return &g_FullscreenClientMode;
 }
 
 extern ConVar v_viewmodel_fov;
 float g_flViewModelFOV = 75;
-float ClientModeTFNormal::GetViewModelFOV( void )
+float ClientModeTFNormal::GetViewModelFOV(void)
 {
 	return v_viewmodel_fov.GetFloat();
-//	return g_flViewModelFOV;
+	//	return g_flViewModelFOV;
 }
 
 //-----------------------------------------------------------------------------
@@ -302,122 +273,36 @@ float ClientModeTFNormal::GetViewModelFOV( void )
 //-----------------------------------------------------------------------------
 bool ClientModeTFNormal::ShouldDrawViewModel()
 {
-	C_TFPlayer *pPlayer = C_TFPlayer::GetLocalTFPlayer();
-	if ( pPlayer )
+	C_TFPlayer* pPlayer = C_TFPlayer::GetLocalTFPlayer();
+	if (pPlayer)
 	{
-		if ( pPlayer->m_Shared.InCond( TF_COND_ZOOMED ) )
+		if (pPlayer->m_Shared.InCond(TF_COND_ZOOMED))
 			return false;
 	}
 
 	return true;
 }
 
-int ClientModeTFNormal::GetDeathMessageStartHeight( void )
+int ClientModeTFNormal::GetDeathMessageStartHeight(void)
 {
 	return m_pViewport->GetDeathMessageStartHeight();
 }
 
-void ClientModeTFNormal::FireGameEvent( IGameEvent *event )
+void ClientModeTFNormal::FireGameEvent(IGameEvent* event)
 {
-	const char *eventname = event->GetName();
+	const char* eventname = event->GetName();
 
-	if ( !eventname || !eventname[0] )
+	if (!eventname || !eventname[0])
 		return;
 
-	if ( Q_strcmp( "player_changename", eventname ) == 0 )
+	if (Q_strcmp("player_changename", eventname) == 0)
 	{
 		return; // server sends a colorized text string for this
 	}
 
-	BaseClass::FireGameEvent( event );
+	BaseClass::FireGameEvent(event);
 }
 
-void ClientModeTFNormal::DoObjectMotionBlur( const CViewSetup *pSetup )
-{
-	if ( g_ObjectMotionBlurManager.GetDrawableObjectCount() <= 0 )
-		return;
-
-	CMatRenderContextPtr pRenderContext( materials );
-
-	ITexture *pFullFrameFB1 = materials->FindTexture( "_rt_FullFrameFB1", TEXTURE_GROUP_RENDER_TARGET );
-
-	//
-	// Render Velocities into a full-frame FB1
-	//
-	IMaterial *pGlowColorMaterial = materials->FindMaterial( "dev/glow_color", TEXTURE_GROUP_OTHER, true );
-	
-	pRenderContext->PushRenderTargetAndViewport();
-	pRenderContext->SetRenderTarget( pFullFrameFB1 );
-	pRenderContext->Viewport( 0, 0, pSetup->width, pSetup->height );
-
-	// Red and Green are x- and y- screen-space velocities biased and packed into the [0,1] range.
-	// A value of 127 gets mapped to 0, a value of 0 gets mapped to -1, and a value of 255 gets mapped to 1.
-	//
-	// Blue is set to 1 within the object's bounds and 0 outside, and is used as a mask to ensure that
-	// motion blur samples only pull from the core object itself and not surrounding pixels (even though
-	// the area being blurred is larger than the core object).
-	//
-	// Alpha is not used
-	pRenderContext->ClearColor4ub( 127, 127, 0, 0 );
-	// Clear only color, not depth & stencil
-	pRenderContext->ClearBuffers( true, false, false );
-
-	// Save off state
-	Vector vOrigColor;
-	render->GetColorModulation( vOrigColor.Base() );
-
-	// Use a solid-color unlit material to render velocity into the buffer
-	g_pStudioRender->ForcedMaterialOverride( pGlowColorMaterial );
-	g_ObjectMotionBlurManager.DrawObjects();	
-	g_pStudioRender->ForcedMaterialOverride( NULL );
-
-	render->SetColorModulation( vOrigColor.Base() );
-	
-	pRenderContext->PopRenderTargetAndViewport();
-
-	//
-	// Render full-screen pass
-	//
-	IMaterial *pMotionBlurMaterial;
-	IMaterialVar *pFBTextureVariable;
-	IMaterialVar *pVelocityTextureVariable;
-	bool bFound1 = false, bFound2 = false;
-
-	// Make sure our render target of choice has the results of the engine post-process pass
-	ITexture *pFullFrameFB = materials->FindTexture( "_rt_FullFrameFB", TEXTURE_GROUP_RENDER_TARGET );
-	pRenderContext->CopyRenderTargetToTexture( pFullFrameFB );
-
-	pMotionBlurMaterial = materials->FindMaterial( "effects/object_motion_blur", TEXTURE_GROUP_OTHER, true );
-	pFBTextureVariable = pMotionBlurMaterial->FindVar( "$fb_texture", &bFound1, true );
-	pVelocityTextureVariable = pMotionBlurMaterial->FindVar( "$velocity_texture", &bFound2, true );
-	if ( bFound1 && bFound2 )
-	{
-		pFBTextureVariable->SetTextureValue( pFullFrameFB );
-		
-		pVelocityTextureVariable->SetTextureValue( pFullFrameFB1 );
-
-		int nWidth, nHeight;
-		pRenderContext->GetRenderTargetDimensions( nWidth, nHeight );
-
-		pRenderContext->DrawScreenSpaceRectangle( pMotionBlurMaterial, 0, 0, nWidth, nHeight, 0.0f, 0.0f, nWidth - 1, nHeight - 1, nWidth, nHeight );
-	}
-}
-
-void ClientModeTFNormal::DoPostScreenSpaceEffects( const CViewSetup *pSetup )
-{
-	CMatRenderContextPtr pRenderContext( materials );
-	extern bool g_bRenderingGlows;
-
-	if ( mat_object_motion_blur_enable.GetBool() )
-	{
-		DoObjectMotionBlur( pSetup );
-	}
-	
-	// Render object glows and selectively-bloomed objects (under sniper scope)
-	g_bRenderingGlows = true;
-	g_GlowObjectManager.RenderGlowEffects( pSetup, GetSplitScreenPlayerSlot() );
-	g_bRenderingGlows = false;
-}
 
 void ClientModeTFNormal::PostRenderVGui()
 {
@@ -426,22 +311,22 @@ void ClientModeTFNormal::PostRenderVGui()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-bool ClientModeTFNormal::CreateMove( float flInputSampleTime, CUserCmd *cmd )
+bool ClientModeTFNormal::CreateMove(float flInputSampleTime, CUserCmd* cmd)
 {
-	return BaseClass::CreateMove( flInputSampleTime, cmd );
+	return BaseClass::CreateMove(flInputSampleTime, cmd);
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: See if hud elements want key input. Return 0 if the key is swallowed
 //-----------------------------------------------------------------------------
-int	ClientModeTFNormal::HudElementKeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding )
+int	ClientModeTFNormal::HudElementKeyInput(int down, ButtonCode_t keynum, const char* pszCurrentBinding)
 {
 	// Let scoreboard handle input first because on X360 we need gamertags and
 	// gamercards accessible at all times when gamertag is visible.
 #if defined( _X360 )
-	if ( m_pScoreboard )
+	if (m_pScoreboard)
 	{
-		if ( !m_pScoreboard->HudElementKeyInput( down, keynum, pszCurrentBinding ) )
+		if (!m_pScoreboard->HudElementKeyInput(down, keynum, pszCurrentBinding))
 		{
 			return 0;
 		}
@@ -449,42 +334,42 @@ int	ClientModeTFNormal::HudElementKeyInput( int down, ButtonCode_t keynum, const
 #endif
 
 	// check for hud menus
-	if ( m_pMenuEngyBuild )
+	if (m_pMenuEngyBuild)
 	{
-		if ( !m_pMenuEngyBuild->HudElementKeyInput( down, keynum, pszCurrentBinding ) )
+		if (!m_pMenuEngyBuild->HudElementKeyInput(down, keynum, pszCurrentBinding))
 		{
 			return 0;
 		}
 	}
 
-	if ( m_pMenuEngyDestroy )
+	if (m_pMenuEngyDestroy)
 	{
-		if ( !m_pMenuEngyDestroy->HudElementKeyInput( down, keynum, pszCurrentBinding ) )
+		if (!m_pMenuEngyDestroy->HudElementKeyInput(down, keynum, pszCurrentBinding))
 		{
 			return 0;
 		}
 	}
 
-	if ( m_pMenuSpyDisguise )
+	if (m_pMenuSpyDisguise)
 	{
-		if ( !m_pMenuSpyDisguise->HudElementKeyInput( down, keynum, pszCurrentBinding ) )
+		if (!m_pMenuSpyDisguise->HudElementKeyInput(down, keynum, pszCurrentBinding))
 		{
 			return 0;
 		}
 	}
 
-	if ( m_pFreezePanel )
+	if (m_pFreezePanel)
 	{
-		m_pFreezePanel->HudElementKeyInput( down, keynum, pszCurrentBinding );
+		m_pFreezePanel->HudElementKeyInput(down, keynum, pszCurrentBinding);
 	}
 
-	return BaseClass::HudElementKeyInput( down, keynum, pszCurrentBinding );
+	return BaseClass::HudElementKeyInput(down, keynum, pszCurrentBinding);
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: See if spectator input occurred. Return 0 if the key is swallowed.
 //-----------------------------------------------------------------------------
-int ClientModeTFNormal::HandleSpectatorKeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding )
+int ClientModeTFNormal::HandleSpectatorKeyInput(int down, ButtonCode_t keynum, const char* pszCurrentBinding)
 {
 #if defined( _X360 )
 	// On X360 when we have scoreboard up in spectator menu we cannot
@@ -492,11 +377,13 @@ int ClientModeTFNormal::HandleSpectatorKeyInput( int down, ButtonCode_t keynum, 
 	// must be accessible.
 	// We cannot rely on any keybindings in this case since user could have
 	// remapped everything.
-	if ( m_pScoreboard && m_pScoreboard->IsVisible() )
+	if (m_pScoreboard && m_pScoreboard->IsVisible())
 	{
 		return 1;
 	}
 #endif
 
-	return BaseClass::HandleSpectatorKeyInput( down, keynum, pszCurrentBinding );
+	return BaseClass::HandleSpectatorKeyInput(down, keynum, pszCurrentBinding);
 }
+
+void ClientModeTFNormal::DoPostScreenSpaceEffects(const CViewSetup* pSetup) {}

@@ -134,7 +134,7 @@ void RoundInfoOverlay::Paint( void )
 			{
 				if ( i != m_iLastCappedPoint )
 				{
-					bool bBlueTeam = ( ( m_iPrevState & (1<<i) ) != 0);
+					bool bBlueTeam = ((m_iPrevState & (1 << i)) != 0);
 					DrawTeamIcon( x, y, bBlueTeam );
 				}
 			}
@@ -166,7 +166,7 @@ void RoundInfoOverlay::Paint( void )
 			{
 				bool bPointInContention = (m_iNextRoundPoints[0] == i || m_iNextRoundPoints[1] == i );
 
-				bool bBlueTeam = ( ( m_iCurrentState & (1<<i) ) != 0 );
+				bool bBlueTeam = ((m_iCurrentState & (1 << i)) != 0);
 				DrawTeamIcon( x, y, bBlueTeam, bPointInContention ? 1.4 : 1.0 );	// rescale? pop looks weird
 			}
 			break;

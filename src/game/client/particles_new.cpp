@@ -83,7 +83,7 @@ CNewParticleEffect *CNewParticleEffect::CreateOrAggregate( CBaseEntity *pOwner, 
 {
 	CNewParticleEffect *pAggregateTarget = NULL;
 	// see if we should aggregate
-	bool bCanAggregate = ( pOwner == NULL ) && ( pDef->m_flAggregateRadius > 0.0 ) && ( cl_aggregate_particles.GetInt() != 0 );
+	bool bCanAggregate = (pOwner == NULL) && (pDef->m_flAggregateRadius > 0.0) && (cl_aggregate_particles.GetInt() != 0);
 	if ( bCanAggregate )
 	{
 		CParticleSystemDefinition *pDefFallback = pDef;

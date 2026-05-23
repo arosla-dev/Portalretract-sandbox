@@ -37,8 +37,6 @@ public:
 	int	HudElementKeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding );
 #endif
 	
-	void MoveToCenterOfScreen();
-
 protected:
 	virtual void PerformLayout();
 	virtual void ApplySchemeSettings( vgui::IScheme *pScheme );

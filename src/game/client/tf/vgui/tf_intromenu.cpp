@@ -246,7 +246,9 @@ bool CTFIntroMenu::LoadCaptions( void )
 //-----------------------------------------------------------------------------
 void CTFIntroMenu::UpdateCaptions( void )
 {
-	if ( m_pCaptionLabel && m_pCaptionLabel->IsVisible() && ( m_Captions.Count() > 0 ) )
+	IClientMode *pClientMode = GetClientMode();
+
+	if ( pClientMode && m_pCaptionLabel && m_pCaptionLabel->IsVisible() && ( m_Captions.Count() > 0 ) )
 	{
 		CVideoCaption *pCaption = m_Captions[m_iCurrentCaption];
 
@@ -255,7 +257,7 @@ void CTFIntroMenu::UpdateCaptions( void )
 			if ( ( pCaption->m_flCaptionStart >= 0 ) && ( pCaption->m_flCaptionStart + pCaption->m_flDisplayTime < gpGlobals->curtime ) )
 			{
 				// fade out the caption
-				GetClientMode()->GetViewportAnimationController()->StartAnimationSequence( "VideoCaptionFadeOut" );
+				pClientMode->GetViewportAnimationController()->StartAnimationSequence( "VideoCaptionFadeOut" );
 
 				// move to the next caption
 				m_iCurrentCaption++;
@@ -276,7 +278,7 @@ void CTFIntroMenu::UpdateCaptions( void )
 					pCaption->m_flCaptionStart = gpGlobals->curtime;
 
 					// fade in the next caption
-					GetClientMode()->GetViewportAnimationController()->StartAnimationSequence( "VideoCaptionFadeIn" );
+					pClientMode->GetViewportAnimationController()->StartAnimationSequence( "VideoCaptionFadeIn" );
 				}
 			}
 		}

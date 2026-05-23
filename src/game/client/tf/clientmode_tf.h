@@ -23,60 +23,58 @@ class CTFFreezePanel;
 class CTFClientScoreBoardDialog;
 #endif
 
-class ClientModeTFNormal : public ClientModeShared 
+class ClientModeTFNormal : public ClientModeShared
 {
-public:
-DECLARE_CLASS( ClientModeTFNormal, ClientModeShared );
+	DECLARE_CLASS(ClientModeTFNormal, ClientModeShared);
 
 private:
 
-// IClientMode overrides.
+	// IClientMode overrides.
 public:
 
-					ClientModeTFNormal();
+	ClientModeTFNormal();
 	virtual			~ClientModeTFNormal();
 
 	virtual void	Init();
 	virtual void	InitViewport();
 	virtual void	Shutdown();
 
-//	virtual int		KeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding );
+	//	virtual int		KeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding );
 
-	virtual float	GetViewModelFOV( void );
+	virtual float	GetViewModelFOV(void);
 	virtual bool	ShouldDrawViewModel();
 
-	int				GetDeathMessageStartHeight( void );
+	int				GetDeathMessageStartHeight(void);
 
-	virtual void	FireGameEvent( IGameEvent *event );
-	virtual void	DoPostScreenSpaceEffects( const CViewSetup *pSetup );
+	virtual void	FireGameEvent(IGameEvent* event);
 	virtual void	PostRenderVGui();
 
-	virtual bool	CreateMove( float flInputSampleTime, CUserCmd *cmd );
+	virtual bool	CreateMove(float flInputSampleTime, CUserCmd* cmd);
 
-	virtual int		HudElementKeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding );
-	virtual int		HandleSpectatorKeyInput( int down, ButtonCode_t keynum, const char *pszCurrentBinding );
-	
+	virtual int		HudElementKeyInput(int down, ButtonCode_t keynum, const char* pszCurrentBinding);
+	virtual int		HandleSpectatorKeyInput(int down, ButtonCode_t keynum, const char* pszCurrentBinding);
+
+	virtual void	DoPostScreenSpaceEffects(const CViewSetup* pSetup);
+
 private:
-	
+
 	//	void	UpdateSpectatorMode( void );
-	void DoObjectMotionBlur( const CViewSetup *pSetup );
 
 private:
 
-	CHudMenuEngyBuild *m_pMenuEngyBuild;
-	CHudMenuEngyDestroy *m_pMenuEngyDestroy;
-	CHudMenuSpyDisguise *m_pMenuSpyDisguise;
-	CTFFreezePanel		*m_pFreezePanel;
-	IGameUI			*m_pGameUI;
+	CHudMenuEngyBuild* m_pMenuEngyBuild;
+	CHudMenuEngyDestroy* m_pMenuEngyDestroy;
+	CHudMenuSpyDisguise* m_pMenuSpyDisguise;
+	CTFFreezePanel* m_pFreezePanel;
+	IGameUI* m_pGameUI;
 
 #if defined( _X360 )
-	CTFClientScoreBoardDialog	*m_pScoreboard;
+	CTFClientScoreBoardDialog* m_pScoreboard;
 #endif
 };
 
 
-extern IClientMode *GetClientModeNormal();
-extern vgui::HScheme g_hVGuiCombineScheme;
+extern IClientMode* GetClientModeNormal();
 extern ClientModeTFNormal* GetClientModeTFNormal();
 
 #endif // TF_CLIENTMODE_H

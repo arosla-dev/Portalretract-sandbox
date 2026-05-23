@@ -38,8 +38,8 @@ public:
 	virtual void SetParent( vgui::VPANEL parent ){ BaseClass::SetParent( parent ); }
 
 	virtual void FireGameEvent( IGameEvent *event );
-	
-	virtual bool WantsBackgroundBlurred( void ) { return false; }
+
+	virtual bool WantsBackgroundBlurred( void ) { return false; };
 
 protected:
 	virtual void OnKeyCodePressed( vgui::KeyCode code );

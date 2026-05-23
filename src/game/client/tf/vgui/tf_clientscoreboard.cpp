@@ -212,17 +212,6 @@ void CTFClientScoreBoardDialog::SetPlayerListImages( vgui::SectionedListPanel *p
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: Center the dialog on the screen.  (vgui has this method on
-//			Frame, but we're an EditablePanel, need to roll our own.)
-//-----------------------------------------------------------------------------
-void CTFClientScoreBoardDialog::MoveToCenterOfScreen()
-{
-	int wx, wy, ww, wt;
-	surface()->GetWorkspaceBounds(wx, wy, ww, wt);
-	SetPos((ww - GetWide()) / 2, (wt - GetTall()) / 2);
-}
-
-//-----------------------------------------------------------------------------
 // Purpose: Updates the dialog
 //-----------------------------------------------------------------------------
 void CTFClientScoreBoardDialog::Update()
@@ -231,7 +220,7 @@ void CTFClientScoreBoardDialog::Update()
 	UpdatePlayerList();
 	UpdateSpectatorList();
 	UpdatePlayerDetails();
-	MoveToCenterOfScreen();
+	PositionScoreboard();
 
 	// update every second
 	m_fNextUpdateTime = gpGlobals->curtime + 1.0f; 

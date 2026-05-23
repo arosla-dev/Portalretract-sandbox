@@ -12,8 +12,7 @@
 #endif
 
 #include <vgui_controls/Frame.h>
-#include "game/client/iviewport.h"
-#include "tf_shareddefs.h"
+//#include "vgui_controls/KeyRepeat.h"
 
 //-----------------------------------------------------------------------------
 // Purpose: displays the MapInfo menu
@@ -42,14 +41,14 @@ public:
 	virtual void SetParent( vgui::VPANEL parent ){ BaseClass::SetParent( parent ); }
 
 	static const char *GetMapType( const char *mapName );
-	
-	virtual bool WantsBackgroundBlurred( void ) { return false; }
+
+	virtual bool WantsBackgroundBlurred( void ) { return false; };
 
 protected:
-	virtual void OnKeyCodePressed(vgui::KeyCode code);
+//	virtual void OnKeyCodePressed(vgui::KeyCode code);
 	virtual void ApplySchemeSettings( vgui::IScheme *pScheme );
 	virtual void OnCommand( const char *command );
-	virtual void OnKeyCodeReleased( vgui::KeyCode code );
+//	virtual void OnKeyCodeReleased( vgui::KeyCode code );
 	virtual void OnThink();
 	
 private:
@@ -77,6 +76,8 @@ protected:
 	vgui::ImagePanel	*m_pMapImage;
 
 	char				m_szMapName[MAX_PATH];
+
+//	vgui::CKeyRepeatHandler	m_KeyRepeat;
 };
 
 

@@ -28,6 +28,7 @@
 #include "ivrenderview.h"
 #include "iefx.h"
 #include "dlight.h"
+#include "iviewrender.h"
 
 #include "tf_modelpanel.h"
 
@@ -405,7 +406,9 @@ void CModelPanel::Paint()
 
 	C_BasePlayer *pLocalPlayer = C_BasePlayer::GetLocalPlayer();
 
-	if ( !pLocalPlayer || !m_pModelInfo )
+	IViewRender *pViewRender = GetViewRenderInstance();
+
+	if ( !pLocalPlayer || !m_pModelInfo || !pViewRender )
 		return;
 
 	MDLCACHE_CRITICAL_SECTION();
@@ -442,7 +445,8 @@ void CModelPanel::Paint()
 	}
 
 	Vector vecExtraModelOffset( 0, 0, 0 );
-	float flWidthRatio = engine->GetScreenAspectRatio( ScreenWidth(), ScreenHeight() ) / ( 4.0f / 3.0f );
+	const CViewSetup *playerView = pViewRender->GetPlayerViewSetup( -1 );
+	float flWidthRatio = engine->GetScreenAspectRatio( playerView->width, playerView->height ) / ( 4.0f / 3.0f );
 
 	// is this a player model?
 	if ( Q_strstr( GetModelName(), "models/player/" ) )
@@ -500,7 +504,7 @@ void CModelPanel::Paint()
 	}
 
 	pRenderContext->SetLightingOrigin( vec3_origin );
-	pRenderContext->SetAmbientLightColor( 0.4, 0.4, 0.4 );
+	// pRenderContext->SetAmbientLight( 0.4, 0.4, 0.4 );
 
 	static Vector white[6] = 
 	{
@@ -526,15 +530,13 @@ void CModelPanel::Paint()
 	Frustum dummyFrustum;
 	render->Push3DView( view, 0, NULL, dummyFrustum );
 
+	RenderableInstance_t instance;
+	instance.m_nAlpha = 255;
+
 	modelrender->SuppressEngineLighting( true );
 	float color[3] = { 1.0f, 1.0f, 1.0f };
 	render->SetColorModulation( color );
 	render->SetBlend( 1.0f );
-
-
-	RenderableInstance_t instance;
-	instance.m_nAlpha = 255;
-
 	m_hModel->DrawModel( STUDIO_RENDER, instance );
 
 	for ( i = 0 ; i < m_AttachedModels.Count() ; i++ )

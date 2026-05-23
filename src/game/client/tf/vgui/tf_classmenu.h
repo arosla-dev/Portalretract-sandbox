@@ -13,6 +13,7 @@
 
 #include <classmenu.h>
 #include <vgui_controls/EditablePanel.h>
+//#include "vgui_controls/KeyRepeat.h"
 #include <FileSystem.h>
 #include <tf_shareddefs.h>
 #include "cbase.h"
@@ -93,9 +94,9 @@ public:
 
 protected:
 	virtual void ApplySchemeSettings( IScheme *pScheme );
-	virtual void OnKeyCodePressed( KeyCode code );
+//	virtual void OnKeyCodePressed( KeyCode code );
 	virtual CImageMouseOverButton<CTFClassInfoPanel> *GetCurrentClassButton();
-	virtual void OnKeyCodeReleased( vgui::KeyCode code );
+//	virtual void OnKeyCodeReleased( vgui::KeyCode code );
 	virtual void OnThink();
 	virtual void UpdateNumClassLabels( int iTeam );
 
@@ -112,6 +113,7 @@ private:
 
 	ButtonCode_t	m_iClassMenuKey;
 	int				m_iCurrentClassIndex;
+//	vgui::CKeyRepeatHandler	m_KeyRepeat;
 
 #ifndef _X360
 	CTFImagePanel *m_ClassCountImages[CLASS_COUNT_IMAGES];
@@ -146,7 +148,7 @@ public:
 	virtual void ApplySchemeSettings( IScheme *pScheme )
 	{
 		BaseClass::ApplySchemeSettings( pScheme );
-		
+
 		LoadControlSettings( "Resource/UI/Classmenu_blue.res" );
 
 		for( int i = 0; i < GetChildCount(); i++ ) 
@@ -166,9 +168,10 @@ public:
 		if ( bShow )
 		{
 			// make sure the Red class menu isn't open
-			if ( GetViewPortInterface() )
+			IViewPort *pViewPort = GetViewPortInterface();
+			if ( pViewPort )
 			{
-				GetViewPortInterface()->ShowPanel( PANEL_CLASS_RED, false );
+				pViewPort->ShowPanel( PANEL_CLASS_RED, false );
 			}
 		}
 
@@ -215,7 +218,7 @@ public:
 	virtual void ApplySchemeSettings( IScheme *pScheme )
 	{
 		BaseClass::ApplySchemeSettings( pScheme );
-		
+
 		LoadControlSettings( "Resource/UI/Classmenu_red.res" );
 
 		for( int i = 0; i < GetChildCount(); i++ ) 
@@ -235,9 +238,10 @@ public:
 		if ( bShow )
 		{
 			// make sure the Red class menu isn't open
-			if ( GetViewPortInterface() )
+			IViewPort *pViewPort = GetViewPortInterface();
+			if ( pViewPort )
 			{
-				GetViewPortInterface()->ShowPanel( PANEL_CLASS_BLUE, false );
+				pViewPort->ShowPanel( PANEL_CLASS_BLUE, false );
 			}
 		}
 

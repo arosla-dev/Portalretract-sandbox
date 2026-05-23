@@ -71,10 +71,10 @@ void CTFItem::Drop( CTFPlayer *pPlayer, bool bVisible, bool bThrown /*= false*/,
 //-----------------------------------------------------------------------------
 bool CTFItem::ShouldDraw()
 {
-	CBasePlayer *pPlayer = C_BasePlayer::GetLocalPlayer( GET_ACTIVE_SPLITSCREEN_SLOT() );
+	C_BasePlayer* player = C_BasePlayer::GetLocalPlayer();
 
 	// If I'm carrying the flag, don't draw it
-	if ( !pPlayer || ( GetMoveParent() == pPlayer && !pPlayer->ShouldDrawLocalPlayer() ) )
+	if (player && GetMoveParent() == player && !(player->ShouldDrawLocalPlayer()))
 		return false;
 
 	return BaseClass::ShouldDraw();
@@ -85,7 +85,8 @@ bool CTFItem::ShouldDraw()
 //-----------------------------------------------------------------------------
 ShadowType_t CTFItem::ShadowCastType()
 {
-	if ( GetMoveParent() == C_BasePlayer::GetLocalPlayer( GET_ACTIVE_SPLITSCREEN_SLOT() ) )
+	C_BasePlayer* player = C_BasePlayer::GetLocalPlayer();
+	if (player && GetMoveParent() == player)
 		return SHADOWS_NONE;
 
 	return BaseClass::ShadowCastType();

@@ -130,6 +130,8 @@ void CTFMapInfoMenu::ShowPanel( bool bShow )
 	if ( IsVisible() == bShow )
 		return;
 
+	//m_KeyRepeat.Reset();
+
 	if ( bShow )
 	{
 		Activate();
@@ -226,6 +228,8 @@ void CTFMapInfoMenu::CheckBackContinueButtons()
 //-----------------------------------------------------------------------------
 void CTFMapInfoMenu::OnCommand( const char *command )
 {
+	//m_KeyRepeat.Reset();
+
 	if ( !Q_strcmp( command, "back" ) )
 	{
 		 // only want to go back to the Welcome menu if we're not already on a team
@@ -450,8 +454,10 @@ void CTFMapInfoMenu::SetMapTitle()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFMapInfoMenu::OnKeyCodePressed( KeyCode code )
+/*void CTFMapInfoMenu::OnKeyCodePressed( KeyCode code )
 {
+	m_KeyRepeat.KeyDown( code );
+
 	if ( code == KEY_XBUTTON_A )
 	{
 		OnCommand( "continue" );
@@ -480,21 +486,29 @@ void CTFMapInfoMenu::OnKeyCodePressed( KeyCode code )
 	{
 		BaseClass::OnKeyCodePressed( code );
 	}
-}
+}*/
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFMapInfoMenu::OnKeyCodeReleased( vgui::KeyCode code )
+/*void CTFMapInfoMenu::OnKeyCodeReleased( vgui::KeyCode code )
 {
+	m_KeyRepeat.KeyUp( code );
+
 	BaseClass::OnKeyCodeReleased( code );
-}
+}*/
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
 void CTFMapInfoMenu::OnThink()
 {
+/*	vgui::KeyCode code = m_KeyRepeat.KeyRepeated();
+	if ( code )
+	{
+		OnKeyCodePressed( code );
+	}*/
+
 	BaseClass::OnThink();
 }
 
