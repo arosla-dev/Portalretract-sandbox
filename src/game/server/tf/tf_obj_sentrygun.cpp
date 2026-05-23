@@ -1073,6 +1073,7 @@ bool CObjectSentrygun::Fire()
 		EmitSound( "Building_Sentrygun.Empty" );
 		m_flNextAttack = gpGlobals->curtime + 0.2;
 	}
+	m_timeSinceLastFired.Start();
 
 	return true;
 }

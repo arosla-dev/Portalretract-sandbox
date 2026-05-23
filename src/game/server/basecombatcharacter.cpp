@@ -44,6 +44,10 @@
 #include "hl2_gamerules.h"
 #endif
 
+#ifdef TF_DLL
+#include "NextBotManager.h"
+#endif
+
 #ifdef PORTAL
 	#include "portal_util_shared.h"
 	#include "prop_portal_shared.h"
@@ -67,6 +71,10 @@ ConVar ai_use_visibility_cache( "ai_use_visibility_cache", "1" );
 #define ShouldUseVisibilityCache() ai_use_visibility_cache.GetBool()
 #else
 #define ShouldUseVisibilityCache() true
+#endif
+
+#ifdef TF_DLL
+ConVar nb_last_area_update_tolerance("nb_last_area_update_tolerance", "4.0", FCVAR_CHEAT, "Distance a character needs to travel in order to invalidate cached area"); // 4.0 tested as sweet spot (for wanderers, at least). More resulted in little benefit, less quickly diminished benefit [7/31/2008 tom]
 #endif
 
 BEGIN_DATADESC( CBaseCombatCharacter )
@@ -709,6 +717,13 @@ CBaseCombatCharacter::CBaseCombatCharacter( void )
 	m_impactEnergyScale = 1.0f;
 
 	m_bForceServerRagdoll = ai_force_serverside_ragdoll.GetBool();
+
+#if defined( TF_DLL )
+	for (int t = 0; t < MAX_DAMAGE_TEAMS; ++t)
+	{
+		m_damageHistory[t].team = TEAM_INVALID;
+	}
+#endif
 }
 
 //------------------------------------------------------------------------------
@@ -1591,6 +1606,12 @@ void CBaseCombatCharacter::Event_Killed( const CTakeDamageInfo &info )
 			BecomeRagdoll( info, forceVector );
 		}
 	}
+
+
+#ifdef TF_DLL
+	// inform bots
+	TheNextBots().OnKilled(this, info);
+#endif
 }
 
 void CBaseCombatCharacter::Event_Dying( void )
@@ -2303,6 +2324,32 @@ int CBaseCombatCharacter::OnTakeDamage( const CTakeDamageInfo &info )
 		g_pEffects->Sparks( info.GetDamagePosition(), 2, 2 );
 		UTIL_Smoke( info.GetDamagePosition(), random->RandomInt( 10, 15 ), 10 );
 	}
+
+#if defined( TF_DLL )
+	// track damage history
+	if (info.GetAttacker())
+	{
+		int attackerTeam = info.GetAttacker()->GetTeamNumber();
+
+		for (int i = 0; i < MAX_DAMAGE_TEAMS; ++i)
+		{
+			if (m_damageHistory[i].team == attackerTeam)
+			{
+				// restart the injury timer
+				m_damageHistory[i].interval.Start();
+				break;
+			}
+
+			if (m_damageHistory[i].team == TEAM_INVALID)
+			{
+				// team not registered yet
+				m_damageHistory[i].team = attackerTeam;
+				m_damageHistory[i].interval.Start();
+				break;
+			}
+		}
+	}
+#endif
 
 	switch( m_lifeState )
 	{
@@ -3527,8 +3574,8 @@ void CBaseCombatCharacter::UpdateLastKnownArea( void )
 		return;
 	}
 
-	/*
-	if ( z_last_area_update_tolerance.GetFloat() > 0.0f )
+#ifdef TF_DLL
+	if ( nb_last_area_update_tolerance.GetFloat() > 0.0f )
 	{
 		// skip this test if we're not standing on the world (ie: elevators that move us)
 		if ( GetGroundEntity() == NULL || GetGroundEntity()->IsWorld() )
@@ -3536,10 +3583,10 @@ void CBaseCombatCharacter::UpdateLastKnownArea( void )
 			if ( m_lastNavArea && m_NavAreaUpdateMonitor.IsMarkSet() && !m_NavAreaUpdateMonitor.TargetMoved( this ) )
 				return;
 
-			m_NavAreaUpdateMonitor.SetMark( this, z_last_area_update_tolerance.GetFloat() );
+			m_NavAreaUpdateMonitor.SetMark( this, nb_last_area_update_tolerance.GetFloat() );
 		}
 	}
-	*/
+#endif
 
 	// find the area we are directly standing in
 	CNavArea *area = TheNavMesh->GetNearestNavArea( this, GETNAVAREA_CHECK_GROUND | GETNAVAREA_CHECK_LOS, 50.0f );
@@ -3606,4 +3653,45 @@ void CBaseCombatCharacter::OnNavAreaRemoved( CNavArea *removedArea )
 		ClearLastKnownArea();
 	}
 }
+
+#if defined( TF_DLL )
+//-----------------------------------------------------------------------------
+// Return time since we were hurt by a member of the given team
+//-----------------------------------------------------------------------------
+float CBaseCombatCharacter::GetTimeSinceLastInjury(int team /*= TEAM_ANY */) const
+{
+	const float never = 999999999999.9f;
+
+	if (team == TEAM_ANY)
+	{
+		float time = never;
+
+		// find most recent injury time
+		for (int i = 0; i < MAX_DAMAGE_TEAMS; ++i)
+		{
+			if (m_damageHistory[i].team != TEAM_INVALID)
+			{
+				if (m_damageHistory[i].interval.GetElapsedTime() < time)
+				{
+					time = m_damageHistory[i].interval.GetElapsedTime();
+				}
+			}
+		}
+
+		return time;
+	}
+	else
+	{
+		for (int i = 0; i < MAX_DAMAGE_TEAMS; ++i)
+		{
+			if (m_damageHistory[i].team == team)
+			{
+				return m_damageHistory[i].interval.GetElapsedTime();
+			}
+		}
+	}
+
+	return never;
+}
+#endif
 

@@ -28,7 +28,7 @@
 
 #include "IGameUIFuncs.h" // for key bindings
 #include <igameresources.h>
-extern IGameUIFuncs *gameuifuncs; // for key binding details
+extern IGameUIFuncs* gameuifuncs; // for key binding details
 
 #include <game/client/iviewport.h>
 
@@ -40,11 +40,11 @@ using namespace vgui;
 //-----------------------------------------------------------------------------
 // Purpose: Constructor
 //-----------------------------------------------------------------------------
-CTFTextWindow::CTFTextWindow( IViewPort *pViewPort ) : CTextWindow( pViewPort )
+CTFTextWindow::CTFTextWindow(IViewPort* pViewPort) : CTextWindow(pViewPort)
 {
-	m_pTFTextMessage = new CTFRichText( this, "TFTextMessage" );
+	m_pTFTextMessage = new CTFRichText(this, "TFTextMessage");
 
-	SetProportional( true );
+	SetProportional(true);
 }
 
 //-----------------------------------------------------------------------------
@@ -57,24 +57,19 @@ CTFTextWindow::~CTFTextWindow()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ApplySchemeSettings( IScheme *pScheme )
+void CTFTextWindow::ApplySchemeSettings(IScheme* pScheme)
 {
-	Frame::ApplySchemeSettings( pScheme );  // purposely skipping the CTextWindow version
+	Frame::ApplySchemeSettings(pScheme);  // purposely skipping the CTextWindow version
 
 	LoadControlSettings("Resource/UI/TextWindow.res");
 
 	Reset();
-
-	if ( m_pHTMLMessage )
-	{
-		m_pHTMLMessage->SetBgColor( pScheme->GetColor( "HTMLBackground", Color( 255, 0, 0, 255 ) ) );
-	}
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::Reset( void )
+void CTFTextWindow::Reset(void)
 {
 	Update();
 }
@@ -84,21 +79,21 @@ void CTFTextWindow::Reset( void )
 //-----------------------------------------------------------------------------
 void CTFTextWindow::Update()
 {
-	CTFLabel *pTitle = dynamic_cast<CTFLabel *>( FindChildByName( "TFMessageTitle" ) );
-	if ( pTitle )
+	CTFLabel* pTitle = dynamic_cast<CTFLabel*>(FindChildByName("TFMessageTitle"));
+	if (pTitle)
 	{
-		pTitle->SetText( m_szTitle );
+		pTitle->SetText(m_szTitle);
 	}
 
-	if ( m_pTFTextMessage )
+	if (m_pTFTextMessage)
 	{
-		m_pTFTextMessage->SetVisible( false );
+		m_pTFTextMessage->SetVisible(false);
 	}
 
 	BaseClass::Update();
 
-	Panel *pOK = FindChildByName( "ok" );
-	if ( pOK )
+	Panel* pOK = FindChildByName("ok");
+	if (pOK)
 	{
 		pOK->RequestFocus();
 	}
@@ -107,14 +102,14 @@ void CTFTextWindow::Update()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //---------------------------------------------------------------------------
-void CTFTextWindow::SetVisible( bool state )
+void CTFTextWindow::SetVisible(bool state)
 {
-	BaseClass::SetVisible( state );
+	BaseClass::SetVisible(state);
 
-	if ( state )
+	if (state)
 	{
-		Panel *pOK = FindChildByName( "ok" );
-		if ( pOK )
+		Panel* pOK = FindChildByName("ok");
+		if (pOK)
 		{
 			pOK->RequestFocus();
 		}
@@ -124,31 +119,31 @@ void CTFTextWindow::SetVisible( bool state )
 //-----------------------------------------------------------------------------
 // Purpose: shows the text window
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ShowPanel( bool bShow )
+void CTFTextWindow::ShowPanel(bool bShow)
 {
-	if ( IsVisible() == bShow )
+	if (IsVisible() == bShow)
 		return;
 
-	BaseClass::ShowPanel( bShow );
+	BaseClass::ShowPanel(bShow);
 
-	if ( m_pViewPort )
+	if (m_pViewPort)
 	{
-		m_pViewPort->ShowBackGround( false );
+		m_pViewPort->ShowBackGround(false);
 	}
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::OnKeyCodePressed( KeyCode code )
+void CTFTextWindow::OnKeyCodePressed(KeyCode code)
 {
-	if ( code == KEY_XBUTTON_A )
+	if (code == KEY_XBUTTON_A)
 	{
-		OnCommand( "okay" );		
+		OnCommand("okay");
 	}
 	else
 	{
-		BaseClass::OnKeyCodePressed( code );
+		BaseClass::OnKeyCodePressed(code);
 	}
 }
 
@@ -162,30 +157,30 @@ void CTFTextWindow::PaintBackground()
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::OnCommand( const char *command )
+void CTFTextWindow::OnCommand(const char* command)
 {
-	if ( !Q_strcmp( command, "okay" ) )
+	if (!Q_strcmp(command, "okay"))
 	{
-		m_pViewPort->ShowPanel( this, false );
-		m_pViewPort->ShowPanel( PANEL_MAPINFO, true );
+		m_pViewPort->ShowPanel(this, false);
+		m_pViewPort->ShowPanel(PANEL_MAPINFO, true);
 	}
 	else
 	{
-		BaseClass::OnCommand( command );
+		BaseClass::OnCommand(command);
 	}
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ShowText( const char *text )
+void CTFTextWindow::ShowText(const char* text)
 {
-	ShowTitleLabel( true );
+	ShowTitleLabel(true);
 
-	if ( m_pTFTextMessage )
+	if (m_pTFTextMessage)
 	{
-		m_pTFTextMessage->SetVisible( true );
-		m_pTFTextMessage->SetText( text );
+		m_pTFTextMessage->SetVisible(true);
+		m_pTFTextMessage->SetText(text);
 		m_pTFTextMessage->GotoTextStart();
 	}
 }
@@ -193,29 +188,29 @@ void CTFTextWindow::ShowText( const char *text )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ShowURL( const char *URL )
+void CTFTextWindow::ShowURL(const char* URL)
 {
-	ShowTitleLabel( false )	;
-	BaseClass::ShowURL( URL );
+	ShowTitleLabel(false);
+	BaseClass::ShowURL(URL);
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ShowFile( const char *filename )
+void CTFTextWindow::ShowFile(const char* filename)
 {
-	ShowTitleLabel( false )	;
-	BaseClass::ShowFile( filename );
+	ShowTitleLabel(false);
+	BaseClass::ShowFile(filename);
 }
 
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CTFTextWindow::ShowTitleLabel( bool show )
+void CTFTextWindow::ShowTitleLabel(bool show)
 {
-	CTFLabel *pTitle = dynamic_cast<CTFLabel *>( FindChildByName( "TFMessageTitle" ) );
-	if ( pTitle )
+	CTFLabel* pTitle = dynamic_cast<CTFLabel*>(FindChildByName("TFMessageTitle"));
+	if (pTitle)
 	{
-		pTitle->SetVisible( show );
+		pTitle->SetVisible(show);
 	}
 }

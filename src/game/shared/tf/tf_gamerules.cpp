@@ -42,7 +42,10 @@
 	#include "AI_ResponseSystem.h"
 //	#include "hl2orange.spa.h"
 	#include "hltvdirector.h"
-#endif
+#ifdef TF_DLL
+#include "bot/tf_bot_manager.h"
+#endif // NEXTBOTS
+#endif // GAME_DLL
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -452,6 +455,11 @@ bool CTFGameRules::FlagsMayBeCapped( void )
 
 #ifdef GAME_DLL
 
+void CTFGameRules::LevelShutdown(void)
+{
+	TheTFBots().LevelShutdown();
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: Determines whether we should allow mp_timelimit to trigger a map change
 //-----------------------------------------------------------------------------
@@ -730,6 +738,9 @@ void CTFGameRules::SetupOnRoundStart( void )
 	}
 #ifdef GAME_DLL
 	m_szMostRecentCappers[0] = 0;
+
+	// Allows the recomputation of health and ammo for TFBots on round reset. -Cynthia
+	m_areHealthAndAmmoVectorsReady = false;
 #endif
 }
 
@@ -3356,4 +3367,145 @@ const char *CTFGameRules::GetVideoFileForMap( bool bWithExtension /*= true*/ )
 
 	return strFullpath;
 }
+#endif
+
+#if defined( GAME_DLL )
+//-----------------------------------------------------------------------------
+// Populate vector with set of control points the player needs to capture
+void CTFGameRules::CollectCapturePoints(CBasePlayer* player, CUtlVector< CTeamControlPoint* >* captureVector) const
+{
+	if (!captureVector)
+		return;
+
+	captureVector->RemoveAll();
+
+	CTeamControlPointMaster* pMaster = g_hControlPointMasters.Count() ? g_hControlPointMasters[0] : NULL;
+	if (pMaster)
+	{
+		// No KOTH in TF2008
+		// special case hack for KotH mode to use control points that are locked at the start of the round
+		/*if ( IsInKothMode() && pMaster->GetNumPoints() == 1 )
+		{
+			captureVector->AddToTail( pMaster->GetControlPoint( 0 ) );
+			return;
+		}*/
+
+		for (int i = 0; i < pMaster->GetNumPoints(); ++i)
+		{
+			CTeamControlPoint* point = pMaster->GetControlPoint(i);
+			if (point && (!pMaster->GetCurrentRound() || pMaster->GetCurrentRound()->IsControlPointInRound(point)))
+			{
+				if (ObjectiveResource()->GetOwningTeam(point->GetPointIndex()) == player->GetTeamNumber())
+					continue;
+
+				/*if ( player && player->IsBot() && point->ShouldBotsIgnore() )
+					continue;*/
+
+				if (ObjectiveResource()->TeamCanCapPoint(point->GetPointIndex(), player->GetTeamNumber()))
+				{
+					if (TeamplayGameRules()->TeamMayCapturePoint(player->GetTeamNumber(), point->GetPointIndex()))
+					{
+						// unlocked point not on our team available to capture
+						captureVector->AddToTail(point);
+					}
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Populate vector with set of control points the player needs to defend from capture
+void CTFGameRules::CollectDefendPoints(CBasePlayer* player, CUtlVector< CTeamControlPoint* >* defendVector) const
+{
+	if (!defendVector)
+		return;
+
+	defendVector->RemoveAll();
+
+	CTeamControlPointMaster* pMaster = g_hControlPointMasters.Count() ? g_hControlPointMasters[0] : NULL;
+	if (pMaster)
+	{
+		for (int i = 0; i < pMaster->GetNumPoints(); ++i)
+		{
+			CTeamControlPoint* point = pMaster->GetControlPoint(i);
+			if (point && (!pMaster->GetCurrentRound() || pMaster->GetCurrentRound()->IsControlPointInRound(point)))
+			{
+				if (ObjectiveResource()->GetOwningTeam(point->GetPointIndex()) != player->GetTeamNumber())
+					continue;
+
+				/*if ( player && player->IsBot() && point->ShouldBotsIgnore() )
+					continue;*/
+
+				int enemyTeam = (player->GetTeamNumber() == TF_TEAM_BLUE) ? TF_TEAM_RED : TF_TEAM_BLUE;
+
+				if (ObjectiveResource()->TeamCanCapPoint(point->GetPointIndex(), enemyTeam))
+				{
+					if (TeamplayGameRules()->TeamMayCapturePoint(enemyTeam, point->GetPointIndex()))
+					{
+						// unlocked point on our team vulnerable to capture
+						defendVector->AddToTail(point);
+					}
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Compute internal vectors of health and ammo locations
+//-----------------------------------------------------------------------------
+void CTFGameRules::ComputeHealthAndAmmoVectors(void)
+{
+	m_ammoVector.RemoveAll();
+	m_healthVector.RemoveAll();
+
+	CBaseEntity* pEnt = gEntList.FirstEnt();
+	while (pEnt)
+	{
+		if (pEnt->ClassMatches("func_regenerate") || pEnt->ClassMatches("item_healthkit*"))
+		{
+			m_healthVector.AddToTail(pEnt);
+		}
+
+		if (pEnt->ClassMatches("func_regenerate") || pEnt->ClassMatches("item_ammopack*"))
+		{
+			m_ammoVector.AddToTail(pEnt);
+		}
+
+		pEnt = gEntList.NextEnt(pEnt);
+	}
+
+	m_areHealthAndAmmoVectorsReady = true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Return vector of health entities
+//-----------------------------------------------------------------------------
+const CUtlVector< CHandle< CBaseEntity > >& CTFGameRules::GetHealthEntityVector(void)
+{
+	// lazy-populate health and ammo vector since some maps (Dario!) move these entities around between stages
+	if (!m_areHealthAndAmmoVectorsReady)
+	{
+		ComputeHealthAndAmmoVectors();
+	}
+
+	return m_healthVector;
+}
+
+
+//-----------------------------------------------------------------------------
+// Purpose: Return vector of ammo entities
+//-----------------------------------------------------------------------------
+const CUtlVector< CHandle< CBaseEntity > >& CTFGameRules::GetAmmoEntityVector(void)
+{
+	// lazy-populate health and ammo vector since some maps (Dario!) move these entities around between stages
+	if (!m_areHealthAndAmmoVectorsReady)
+	{
+		ComputeHealthAndAmmoVectors();
+	}
+
+	return m_ammoVector;
+}
+
 #endif

@@ -194,6 +194,7 @@ class CTFWeaponBase : public CBaseCombatWeapon
 
 	virtual bool CanFireCriticalShot( bool bIsHeadshot = false ){ return true; }
 
+	virtual bool IsCombatItem(void) const { return false; }
 // Server specific.
 #if !defined( CLIENT_DLL )
 
@@ -280,5 +281,69 @@ private:
 };
 
 #define WEAPON_RANDOM_RANGE 10000
+
+class CTraceFilterIgnoreTeammates : public CTraceFilterSimple
+{
+public:
+	// It does have a base, but we'll never network anything below here..
+	DECLARE_CLASS(CTraceFilterIgnoreTeammates, CTraceFilterSimple);
+
+	CTraceFilterIgnoreTeammates(const IHandleEntity* passentity, int collisionGroup, int iIgnoreTeam)
+		: CTraceFilterSimple(passentity, collisionGroup), m_iIgnoreTeam(iIgnoreTeam)
+	{
+	}
+
+	virtual bool ShouldHitEntity(IHandleEntity* pServerEntity, int contentsMask)
+	{
+		CBaseEntity* pEntity = EntityFromEntityHandle(pServerEntity);
+
+		if (pEntity->IsPlayer() && pEntity->GetTeamNumber() == m_iIgnoreTeam)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	int m_iIgnoreTeam;
+};
+
+class CTraceFilterIgnoreFriendlyCombatItems : public CTraceFilterSimple
+{
+public:
+	DECLARE_CLASS(CTraceFilterIgnoreFriendlyCombatItems, CTraceFilterSimple);
+
+	CTraceFilterIgnoreFriendlyCombatItems(const IHandleEntity* passentity, int collisionGroup, int iIgnoreTeam, bool bIsProjectile = false)
+		: CTraceFilterSimple(passentity, collisionGroup), m_iIgnoreTeam(iIgnoreTeam)
+	{
+		m_bCallerIsProjectile = bIsProjectile;
+	}
+
+	virtual bool ShouldHitEntity(IHandleEntity* pServerEntity, int contentsMask)
+	{
+		CBaseEntity* pEntity = EntityFromEntityHandle(pServerEntity);
+
+		// 		if ( ( pEntity->MyCombatCharacterPointer() || pEntity->MyCombatWeaponPointer() ) && pEntity->GetTeamNumber() == m_iIgnoreTeam )
+		// 			return false;
+		// 
+		// 		if ( pEntity->IsPlayer() && pEntity->GetTeamNumber() == m_iIgnoreTeam )
+		// 			return false;
+
+		if (pEntity->IsCombatItem())
+		{
+			if (pEntity->GetTeamNumber() == m_iIgnoreTeam)
+				return false;
+
+			// If source is a enemy projectile, be explicit, otherwise we fail a "IsTransparent" test downstream
+			if (m_bCallerIsProjectile)
+				return true;
+		}
+
+		return BaseClass::ShouldHitEntity(pServerEntity, contentsMask);
+	}
+
+	int m_iIgnoreTeam;
+	bool m_bCallerIsProjectile;
+};
 
 #endif // TF_WEAPONBASE_H

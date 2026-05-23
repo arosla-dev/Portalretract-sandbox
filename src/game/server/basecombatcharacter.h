@@ -288,6 +288,10 @@ public:
 	virtual void 			OnFriendDamaged( CBaseCombatCharacter *pSquadmate, CBaseEntity *pAttacker ) {}
 	virtual void 			NotifyFriendsOfDamage( CBaseEntity *pAttackerEntity ) {}
 
+#if defined( TF_DLL )
+	virtual float			GetTimeSinceLastInjury(int team = TEAM_ANY) const;		// return time since we were hurt by a member of the given team
+#endif
+
 	virtual void			OnPlayerKilledOther( CBaseEntity *pVictim, const CTakeDamageInfo &info ) {}
 
 	// utility function to calc damage force
@@ -523,6 +527,17 @@ protected:
 	int m_registeredNavTeam;	// ugly, but needed to clean up player team counts in nav mesh
 	
 	friend class CCleanupDefaultRelationShips;
+
+#if defined( TF_DLL )
+	// we do this because MAX_TEAMS is 32, which is wasteful for most games
+	enum { MAX_DAMAGE_TEAMS = 4 };
+	struct DamageHistory
+	{
+		int team;					// which team hurt us (TEAM_INVALID means slot unused)
+		IntervalTimer interval;		// how long has it been
+	};
+	DamageHistory m_damageHistory[MAX_DAMAGE_TEAMS];
+#endif
 };
 
 //-----------------------------------------------------------------------------

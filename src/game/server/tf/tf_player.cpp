@@ -50,6 +50,12 @@
 #include "cdll_int.h"
 #include "tf_weaponbase.h"
 
+#include "bot/tf_bot.h"
+#include "bot/tf_bot_manager.h"
+#include "NextBotUtil.h"
+
+#include "tf_obj_sentrygun.h"
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -280,6 +286,10 @@ IMPLEMENT_SERVERCLASS_ST( CTFPlayer, DT_TFPlayer )
 
 	SendPropBool(SENDINFO(m_bSaveMeParity)),
 
+	// TFBots additions
+	SendPropBool(SENDINFO(m_bIsABot)),
+	SendPropInt(SENDINFO(m_nBotSkill), 3, SPROP_UNSIGNED),
+
 	// This will create a race condition will the local player, but the data will be the same so.....
 	SendPropInt( SENDINFO( m_nWaterLevel ), 2, SPROP_UNSIGNED ),
 
@@ -372,6 +382,9 @@ CTFPlayer::CTFPlayer()
 	m_bInitTaunt = false;
 
 	m_bSpeakingConceptAsDisguisedSpy = false;
+
+	m_calledForMedicTimer.Invalidate();
+	m_weaponFiredTimer.Invalidate();
 }
 
 
@@ -747,6 +760,17 @@ void CTFPlayer::Spawn()
 {
 	MDLCACHE_CRITICAL_SECTION();
 
+	m_bIsABot = IsBot();
+
+	if (m_bIsABot && IsBotOfType(TF_BOT_TYPE))
+	{
+		m_nBotSkill = ToTFBot(this)->GetDifficulty();
+	}
+	else
+	{
+		m_nBotSkill = 0;
+	}
+
 	m_flSpawnTime = gpGlobals->curtime;
 	UpdateModel();
 
@@ -864,6 +888,10 @@ void CTFPlayer::Spawn()
 	Vector mins = VEC_HULL_MIN;
 	Vector maxs = VEC_HULL_MAX;
 	CollisionProp()->SetSurroundingBoundsType( USE_SPECIFIED_BOUNDS, &mins, &maxs );
+
+	m_calledForMedicTimer.Invalidate();
+	m_placedSapperTimer.Invalidate();
+	m_weaponFiredTimer.Invalidate();
 }
 
 //-----------------------------------------------------------------------------
@@ -4272,9 +4300,116 @@ CBaseObject	*CTFPlayer::GetObject( int index )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-int	CTFPlayer::GetObjectCount( void )
+int	CTFPlayer::GetObjectCount(void)
 {
 	return m_aObjects.Count();
+}
+
+//-----------------------------------------------------------------------------------------------------
+// Return true if the given threat is aiming in our direction
+bool CTFPlayer::IsThreatAimingTowardMe(CBaseEntity* threat, float cosTolerance) const
+{
+	CTFPlayer* player = ToTFPlayer(threat);
+	Vector to = GetAbsOrigin() - threat->GetAbsOrigin();
+	float threatRange = to.NormalizeInPlace();
+	Vector forward;
+
+	if (player == NULL)
+	{
+		CObjectSentrygun* sentry = dynamic_cast<CObjectSentrygun*>(threat);
+		if (sentry)
+		{
+			// are we in range?
+			if (threatRange < 1100.0f)
+			{
+				// is it pointing at us?
+				AngleVectors(sentry->GetTurretAngles(), &forward);
+
+				if (DotProduct(to, forward) > cosTolerance)
+				{
+					return true;
+				}
+			}
+		}
+
+		// not a player, not a sentry, not a threat?
+		return false;
+	}
+
+	// is the player pointing at me?
+	player->EyeVectors(&forward);
+
+	if (DotProduct(to, forward) > cosTolerance)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------------------------------
+// Return true if the given threat is aiming in our direction and firing its weapon
+bool CTFPlayer::IsThreatFiringAtMe(CBaseEntity* threat) const
+{
+	if (IsThreatAimingTowardMe(threat))
+	{
+		CTFPlayer* player = ToTFPlayer(threat);
+
+		if (player)
+		{
+			return player->IsFiringWeapon();
+		}
+
+		CObjectSentrygun* sentry = dynamic_cast<CObjectSentrygun*>(threat);
+		if (sentry)
+		{
+			return sentry->GetTimeSinceLastFired() < 1.0f;
+		}
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+CBaseEntity* CTFPlayer::MedicGetHealTarget(void)
+{
+	if (IsPlayerClass(TF_CLASS_MEDIC))
+	{
+		CWeaponMedigun* pWeapon = dynamic_cast <CWeaponMedigun*>(GetActiveWeapon());
+
+		if (pWeapon)
+			return pWeapon->GetHealTarget();
+	}
+
+	return NULL;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+float CTFPlayer::MedicGetChargeLevel(CTFWeaponBase** pRetMedigun)
+{
+	if (IsPlayerClass(TF_CLASS_MEDIC))
+	{
+		CTFWeaponBase* pWpn = (CTFWeaponBase*)Weapon_OwnsThisID(TF_WEAPON_MEDIGUN);
+
+		if (pWpn == NULL)
+			return 0;
+
+		CWeaponMedigun* pMedigun = dynamic_cast <CWeaponMedigun*>(pWpn);
+
+		if (pRetMedigun)
+		{
+			*pRetMedigun = pMedigun;
+		}
+
+		if (pMedigun)
+			return pMedigun->GetChargeLevel();
+	}
+
+	return 0;
 }
 
 //-----------------------------------------------------------------------------
@@ -4837,6 +4972,7 @@ void CTFPlayer::SaveMe( void )
 		return;
 
 	m_bSaveMeParity = !m_bSaveMeParity;
+	m_calledForMedicTimer.Start();
 }
 
 //-----------------------------------------------------------------------------
@@ -6136,6 +6272,60 @@ bool CTFPlayer::ShouldAnnouceAchievement( void )
 	}
 
 	return true; 
+}
+
+bool CTFPlayer::IsBotOfType(int botType) const
+{
+	// bot type of zero is invalid
+	return (GetBotType() != 0) && (GetBotType() == botType);
+}
+
+int CTFPlayer::GetBotType(void) const
+{
+	return 0;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Used by GetObjectOfType() below for TFBots.
+//-----------------------------------------------------------------------------
+CBaseObject* CTFPlayer::GetObject(int index) const
+{
+	return (CBaseObject*)(m_aObjects[index].Get());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Used by Engineer TFBots so they know which buildings they own.
+//-----------------------------------------------------------------------------
+CBaseObject* CTFPlayer::GetObjectOfType(int iObjectType) const
+{
+	int iNumObjects = GetObjectCount();
+	for (int i = 0; i < iNumObjects; i++)
+	{
+		CBaseObject* pObj = GetObject(i);
+
+		if (!pObj)
+			continue;
+
+		if (pObj->GetType() != iObjectType)
+			continue;
+
+		/*if ( pObj->GetObjectMode() != iObjectMode )
+			continue;
+
+		if ( pObj->IsDisposableBuilding() )
+			continue;*/
+
+		return pObj;
+	}
+	return NULL;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+int	CTFPlayer::GetObjectCount(void) const
+{
+	return m_aObjects.Count();
 }
 
 void CC_PlayerParticleEffect( const CCommand &args )

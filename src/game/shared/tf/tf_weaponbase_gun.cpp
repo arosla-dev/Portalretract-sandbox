@@ -250,6 +250,7 @@ void CTFWeaponBaseGun::FireBullet( CTFPlayer *pPlayer )
 		IsCurrentAttackACrit() );
 }
 
+#if 0
 class CTraceFilterIgnoreTeammates : public CTraceFilterSimple
 {
 public:
@@ -275,6 +276,7 @@ public:
 
 	int m_iIgnoreTeam;
 };
+#endif
 
 //-----------------------------------------------------------------------------
 // Purpose: Return the origin & angles for a projectile fired from the player's gun

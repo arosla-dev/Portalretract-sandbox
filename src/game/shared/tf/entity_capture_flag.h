@@ -82,6 +82,8 @@
 #define TF_INVADE_RESET_TIME			60.0f
 #define TF_INVADE_NEUTRAL_TIME			30.0f
 
+DECLARE_AUTO_LIST(ICaptureFlagAutoList)
+
 #ifdef CLIENT_DLL
 	#define CCaptureFlagReturnIcon C_CaptureFlagReturnIcon
 	#define CBaseAnimating C_BaseAnimating
@@ -123,12 +125,14 @@ public:
 //
 // CTF Flag class.
 //
-class CCaptureFlag : public CTFItem
+class CCaptureFlag : public CTFItem, public ICaptureFlagAutoList
 {
 public:
 
 	DECLARE_CLASS( CCaptureFlag, CTFItem );
 	DECLARE_NETWORKCLASS();
+
+	IMPLEMENT_AUTO_LIST_GET();
 
 	CCaptureFlag();
 

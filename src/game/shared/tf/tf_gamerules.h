@@ -111,6 +111,8 @@ public:
 
 #ifdef GAME_DLL
 public:
+
+	virtual void	LevelShutdown(void);
 	// Override this to prevent removal of game specific entities that need to persist
 	virtual bool	RoundCleanupShouldIgnore( CBaseEntity *pEnt );
 	virtual bool	ShouldCreateEntity( const char *pszClassName );
@@ -170,6 +172,13 @@ public:
 	virtual bool	HasPassedMinRespawnTime( CBasePlayer *pPlayer );
 
 	bool			ShouldScorePerRound( void );
+
+
+	// populate vector with set of control points the player needs to capture
+	virtual void CollectCapturePoints(CBasePlayer* player, CUtlVector< CTeamControlPoint* >* captureVector) const;
+
+	// populate vector with set of control points the player needs to defend from capture
+	virtual void CollectDefendPoints(CBasePlayer* player, CUtlVector< CTeamControlPoint* >* defendVector) const;
 
 protected:
 	virtual void	InitTeams( void );
@@ -288,6 +297,9 @@ public:
 	void	SendHudNotification( IRecipientFilter &filter, HudNotification_t iType );
 	void	SendHudNotification( IRecipientFilter &filter, const char *pszText, const char *pszIcon, int iTeam = TEAM_UNASSIGNED );
 
+	const CUtlVector< CHandle< CBaseEntity > >& GetHealthEntityVector(void);		// return vector of health entities 
+	const CUtlVector< CHandle< CBaseEntity > >& GetAmmoEntityVector(void);		// return vector of ammo entities 
+
 private:
 
 	int DefaultFOV( void ) { return 75; }
@@ -310,6 +322,15 @@ private:
 	int m_iPrevRoundState;	// bit string representing the state of the points at the start of the previous miniround
 	int m_iCurrentRoundState;
 	int m_iCurrentMiniRoundMask;
+
+	CUtlVector< CHandle< CBaseEntity > > m_ammoVector;			// vector of active ammo entities
+	bool m_isAmmoVectorReady;									// for lazy evaluation
+
+	CUtlVector< CHandle< CBaseEntity > > m_healthVector;		// vector of active health entities
+	bool m_isHealthVectorReady;									// for lazy evaluation
+
+	void ComputeHealthAndAmmoVectors(void);		// compute internal vectors of health and ammo locations
+	bool m_areHealthAndAmmoVectorsReady;
 
 #endif
 

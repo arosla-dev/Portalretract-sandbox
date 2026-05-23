@@ -15,19 +15,111 @@ WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems be
 material "effects/pyroflame1/flamethrowerfire" not found.
 CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
 maxplayers set to 24
-Missing cfg\cpu_level_2_pc.ekv
-Missing cfg\gpu_level_0_pc.ekv
-Missing cfg\mem_level_2_pc.ekv
-Missing cfg\gpu_mem_level_2_pc.ekv
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: RecursiveLoadFromBuffer:  got } in key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, /@mÉ∆Ü>˛„πöm4@, 
+KeyValues Error: RecursiveLoadFromBuffer:  got NULL key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, ﬂA8ˇÔ9Û∆<F∞´, (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, (*ì»&®÷öô∑*), (*ﬂA8ˇÔ9Û∆<F∞´*), (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
 CGameEventManager::AddListener: event 'campaign_changed' unknown.
 CGameEventManager::AddListener: event 'swarm_state_changed' unknown.
 Running -nogameui mode, using client module instead of gameui
 Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
 No split screen config file 'splitscreen_config.txt', using defaults
-Missing cfg\cpu_level_2_pc.ekv
-Missing cfg\gpu_level_0_pc.ekv
-Missing cfg\mem_level_2_pc.ekv
-Missing cfg\gpu_mem_level_2_pc.ekv
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: RecursiveLoadFromBuffer:  got } in key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, /@mÉ∆Ü>˛„πöm4@, 
+KeyValues Error: RecursiveLoadFromBuffer:  got NULL key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, ﬂA8ˇÔ9Û∆<F∞´, (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, (*ì»&®÷öô∑*), (*ﬂA8ˇÔ9Û∆<F∞´*), (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
 WARNING: unable to link join_class and join_class because one or more is a ConCommand.
 CGameEventManager::AddListener: event 'replay_status' unknown.
 UnserializeDMX: Unable to open file "tf2_playerstats.dmx"
@@ -35,3 +127,314 @@ CUserMessages::HookMessage:  no such message ShowMenuComplex
 CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
 CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
 CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
+NET_GetBindAddresses found 192.168.31.140: 'Realtek PCIe GbE Family Controller'
+NET_GetBindAddresses found 26.133.72.161: 'Famatech Radmin VPN Ethernet Adapter'
+NET_GetBindAddresses found 172.24.90.163: 'ZeroTier Virtual Port #2'
+NET_GetBindAddresses found 10.147.17.76: 'ZeroTier Virtual Port #3'
+NET_GetBindAddresses found 172.16.0.2: 'WireGuard Tunnel'
+Network: IP 10.147.17.76, mode MP, dedicated No, ports 27015 SV / 27005 CL
+Parent cvar in client.dll not allowed (rr_debugresponseconcept)
+Parent cvar in client.dll not allowed (rr_dumpresponses)
+Parent cvar in client.dll not allowed (rr_debugrule)
+Parent cvar in client.dll not allowed (rr_debugresponses)
+WARNING: unable to link rr_debugresponseconcept_exclude and rr_debugresponseconcept_exclude because one or more is a ConCommand.
+Parent cvar in client.dll not allowed (movement_anim_playback_minrate)
+Parent and child ConVars with different default values! mp_forcecamera child: 3 parent: 1 (parent wins)
+WARNING: unable to link rr_reloadresponsesystems and rr_reloadresponsesystems because one or more is a ConCommand.
+material "effects/pyroflame1/flamethrowerfire" not found.
+CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
+maxplayers set to 24
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: RecursiveLoadFromBuffer:  got } in key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, /@mÉ∆Ü>˛„πöm4@, 
+KeyValues Error: RecursiveLoadFromBuffer:  got NULL key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, ﬂA8ˇÔ9Û∆<F∞´, (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, (*ì»&®÷öô∑*), (*ﬂA8ˇÔ9Û∆<F∞´*), (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+CGameEventManager::AddListener: event 'campaign_changed' unknown.
+CGameEventManager::AddListener: event 'swarm_state_changed' unknown.
+Running -nogameui mode, using client module instead of gameui
+Steam config directory: C:\SourceCode\Portalretract-sandbox\game\platform\config
+No split screen config file 'splitscreen_config.txt', using defaults
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\cpu_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_level_0_pc.ekv
+
+KeyValues Error: RecursiveLoadFromBuffer:  got } in key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, /@mÉ∆Ü>˛„πöm4@, 
+KeyValues Error: RecursiveLoadFromBuffer:  got NULL key in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, ì»&®÷öô∑, ﬂA8ˇÔ9Û∆<F∞´, (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: RecursiveLoadFromBuffer:  got EOF instead of keyname in file cfg\gpu_level_0_pc.ekv
+¢å≤÷Ú*—Œ§§.Iº´≠úÜù¶, (*ì»&®÷öô∑*), (*ﬂA8ˇÔ9Û∆<F∞´*), (*/@mÉ∆Ü>˛„πöm4@*), 
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+KeyValues Error: LoadFromBuffer: missing { in file cfg\gpu_mem_level_2_pc.ekv
+
+WARNING: unable to link join_class and join_class because one or more is a ConCommand.
+CGameEventManager::AddListener: event 'replay_status' unknown.
+UnserializeDMX: Unable to open file "tf2_playerstats.dmx"
+CUserMessages::HookMessage:  no such message ShowMenuComplex
+CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
+CGameEventManager::AddListener: event 'player_fullyjoined' unknown.
+CResponseSystem:  scripts\talker\response_rules.txt (563 rules, 224 criteria, and 563 responses)
+ILocalize::AddFile() failed to load file "resource/mp3player_russian.txt".
+cc_lang = 
+Sound Initialization: Start
+DS:stereo speaker configuration detected
+Set primary sound buffer format: yes
+Using secondary sound buffer
+   2 channel(s)
+   16 bits/sample
+   44100 samples/sec
+DirectSound initialized
+Stopping All Sounds...
+Trying cache :  'c:/sourcecode/portalretract-sandbox/game/tf_swarm/maps/soundcache/_master.cache'
+Successfully loaded audio cache file
+Sound Initialization: Finish, Sampling Rate: 44100
+Datacenter::RequestStart, time 3.61
+Datacenter::RequestStop, time 3.62, state 1
+Datacenter::RequestUpdate failed
+material "vgui/logo" not found.
+--- Missing Vgui material vgui/logo
+Stopping All Sounds...
+Stopping: Channel: 0 *#ui\gamestartup1.mp3
+Stopping All Sounds...
+---- Host_NewGame ----
+#######################################
+Map ctf_2fort missing stringtable dictionary, don't ship this way!!!
+#######################################
+Host_NewGame on map ctf_2fort
+Unknown command "sk_bullseye_health"
+Executing listen server config file
+exec: couldn't exec ctf_2fort.cfg
+Unknown command "sk_bullseye_health"
+Set Gravity 800.0 (0.250 tolerance)
+PrecacheScriptSound 'radio_computer.break' failed, no such sound script entry
+PrecacheScriptSound 'foliage.stepleft' failed, no such sound script entry
+PrecacheScriptSound 'foliage.stepright' failed, no such sound script entry
+PrecacheScriptSound 'snow.stepleft' failed, no such sound script entry
+PrecacheScriptSound 'snow.stepright' failed, no such sound script entry
+PrecacheScriptSound 'brassbell.c' failed, no such sound script entry
+PrecacheScriptSound 'brassbell.d' failed, no such sound script entry
+PrecacheScriptSound 'brassbell.e' failed, no such sound script entry
+PrecacheScriptSound 'brassbell.f' failed, no such sound script entry
+PrecacheScriptSound 'sandbarrel.impactsoft' failed, no such sound script entry
+PrecacheScriptSound 'sandbarrel.impacthard' failed, no such sound script entry
+PrecacheScriptSound 'sandbarrel.bulletimpact' failed, no such sound script entry
+PrecacheScriptSound 'Weapon_FlameThrower.AirBurstAttack' failed, no such sound script entry
+SV_BroadcastMessage:  Recipient Filter for message type 23 (reliable: no, init: no) with bogus client index (0) in list of 1 clients
+player/medic.mdl : material "../../effects/invulnfx_red" not found.
+player/medic.mdl : material "models/player/medic/invulnfx_red" not found.
+player/medic.mdl : material "invulnfx_red" not found.
+player/medic.mdl : material "../../effects/invulnfx_blue" not found.
+player/medic.mdl : material "models/player/medic/invulnfx_blue" not found.
+player/medic.mdl : material "invulnfx_blue" not found.
+player/hwm/medic.mdl : material "models/player/medic/hwm/invulnfx_red" not found.
+player/hwm/medic.mdl : material "models/player/medic/hwm/invulnfx_blue" not found.
+player/spy.mdl : material "models/player/spy/hwm/invulnfx_red" not found.
+player/spy.mdl : material "/../../effects/invulnfx_red" not found.
+player/spy.mdl : material "models/player/spy/invulnfx_red" not found.
+player/spy.mdl : material "models/player/spy/hwm/invulnfx_blue" not found.
+player/spy.mdl : material "/../../effects/invulnfx_blue" not found.
+player/spy.mdl : material "models/player/spy/invulnfx_blue" not found.
+PrecacheScriptSound 'Error' failed, no such sound script entry
+PrecacheScriptSound 'Instructor.LessonStart' failed, no such sound script entry
+PrecacheScriptSound 'Instructor.ImportantLessonStart' failed, no such sound script entry
+Failed to CRC scripts/asw_weapon_ammo_bag.txt
+Failed to CRC scripts/asw_weapon_ammo_satchel.txt
+Failed to CRC scripts/asw_weapon_autogun.txt
+Failed to CRC scripts/asw_weapon_blink.txt
+Failed to CRC scripts/asw_weapon_buff_grenade.txt
+Failed to CRC scripts/asw_weapon_chainsaw.txt
+Failed to CRC scripts/asw_weapon_electrified_armor.txt
+Failed to CRC scripts/asw_weapon_fire_extinguisher.txt
+Failed to CRC scripts/asw_weapon_fist.txt
+Failed to CRC scripts/asw_weapon_flamer.txt
+Failed to CRC scripts/asw_weapon_flares.txt
+Failed to CRC scripts/asw_weapon_flashlight.txt
+Failed to CRC scripts/asw_weapon_freeze_grenades.txt
+Failed to CRC scripts/asw_weapon_grenades.txt
+Failed to CRC scripts/asw_weapon_grenade_launcher.txt
+Failed to CRC scripts/asw_weapon_heal_grenade.txt
+Failed to CRC scripts/asw_weapon_heal_gun.txt
+Failed to CRC scripts/asw_weapon_hornet_barrage.txt
+Failed to CRC scripts/asw_weapon_jump_jet.txt
+Failed to CRC scripts/asw_weapon_laser_mines.txt
+Failed to CRC scripts/asw_weapon_medical_satchel.txt
+Failed to CRC scripts/asw_weapon_medkit.txt
+Failed to CRC scripts/asw_weapon_mines.txt
+Failed to CRC scripts/asw_weapon_minigun.txt
+Failed to CRC scripts/asw_weapon_mining_laser.txt
+Failed to CRC scripts/asw_weapon_night_vision.txt
+Failed to CRC scripts/asw_weapon_normal_armor.txt
+Failed to CRC scripts/asw_weapon_pdw.txt
+Failed to CRC scripts/asw_weapon_pistol.txt
+Failed to CRC scripts/asw_weapon_prifle.txt
+Failed to CRC scripts/asw_weapon_railgun.txt
+Failed to CRC scripts/asw_weapon_rifle.txt
+Failed to CRC scripts/asw_weapon_sentry.txt
+Failed to CRC scripts/asw_weapon_sentry_cannon.txt
+Failed to CRC scripts/asw_weapon_sentry_flamer.txt
+Failed to CRC scripts/asw_weapon_sentry_freeze.txt
+Failed to CRC scripts/asw_weapon_shotgun.txt
+Failed to CRC scripts/asw_weapon_smart_bomb.txt
+Failed to CRC scripts/asw_weapon_sniper_rifle.txt
+Failed to CRC scripts/asw_weapon_stim.txt
+Failed to CRC scripts/asw_weapon_tesla_gun.txt
+Failed to CRC scripts/asw_weapon_tesla_trap.txt
+Failed to CRC scripts/asw_weapon_vindicator.txt
+Failed to CRC scripts/asw_weapon_welder.txt
+Created class baseline: 31 classes, 4856 bytes.
+Heartbeat is disabled (usually developer or cheats is on).
+m_eServerMode pre = 0
+m_eServerMode post = 2
+************************************************
+*  Unable to load Steam support library.       *
+*  This server will operate in LAN mode only.  *
+************************************************
+Heartbeat is disabled (usually developer or cheats is on).
+Stopping All Sounds...
+19.456:  Sending UDP connect to public IP 127.0.0.1:27015
+Server using '<none>' lobbies, requiring pw no, lobby id 0
+RememberIPAddressForLobby: lobby 0 from address loopback
+
+Team Fortress
+Map: ctf_2fort
+Players: 1 (0 bots) / 24 humans
+Build: 6653
+Server Number: 1
+
+Attempted to precache unknown particle system "achieved"!
+Attempted to precache unknown particle system "blood_impact_green_01"!
+Attempted to precache unknown particle system "blood_impact_yellow_01"!
+Attempted to precache unknown particle system "blood_impact_green_01"!
+Attempted to precache unknown particle system "blood_impact_green_01"!
+Attempted to precache unknown particle system "blood_impact_yellow_01"!
+Attempted to precache unknown particle system "blood_impact_yellow_01"!
+No pure server whitelist. sv_pure = 0
+Compressing fragments for unnamed(loopback) (5919 -> 4981 bytes)
+material "swarm/effects/frontbuffer" not found.
+Sending full update to Client unnamed (unnamed can't find frame from tick -1)
+Compressing fragments for unnamed(loopback) (10573 -> 9249 bytes)
+got player_spawn event
+unnamed –ø–æ–¥—Å–æ–µ–¥–∏–Ω—è–µ—Ç—Å—è
+Receiving uncompressed update from server
+Set Gravity 800.0 (0.250 tolerance)
+Queued Material System: ENABLED!
+Soundscape: 2fort.OutdoorPond
+Redownloading all lightmaps
+R_RedownloadAllLightmaps took 79.584 msec!
+File 'downloads/1ab72a88.dat' requested from client loopback.
+CreateFragmentsFromFile: 'downloads/1ab72a88.dat' doesn't exist.
+Restoring player view height
+got player_spawn event
+Soundscape: tf2.respawn_room
+Restoring player view height
+got player_spawn event
+Achievements disabled: Steam not running.
+unnamed :  test
+Soundscape: tf2.respawn_room
+Soundscape: 2fort.Indoor
+Soundscape: 2fort.Indoor
+Soundscape: 2fort.OutdoorPond
+Soundscape: 2fort.Indoor
+Soundscape: 2fort.Indoor
+Soundscape: 2fort.OutdoorFort
+Soundscape: 2fort.OutdoorFort
+unnamed paused the game
+unnamed unpaused the game
+unnamed unpaused the game
+unnamed unpaused the game
+Soundscape: 2fort.OutdoorFort
+Soundscape: 2fort.Indoor
+Soundscape: 2fort.Indoor
+unnamed paused the game
+unnamed unpaused the game
+Restoring player view height
+got player_spawn event
+Soundscape: tf2.respawn_room
+unnamed unpaused the game
+unnamed unpaused the game
+unnamed paused the game
+unnamed unpaused the game
+"x" = "voice_menu_2"
+ !! WARNING: NO STEAM CONNECTION! LOGIN REQUIRED TO NORMAL EXPIRIENCE. /n 

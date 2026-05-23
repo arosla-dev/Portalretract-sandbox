@@ -36,7 +36,7 @@ ConVar bot_defend( "bot_defend", "0", 0, "Set to a team number, and that team wi
 ConVar bot_changeclass( "bot_changeclass", "0", 0, "Force all bots to change to the specified class." );
 ConVar bot_dontmove( "bot_dontmove", "0", FCVAR_CHEAT );
 ConVar bot_saveme( "bot_saveme", "0", FCVAR_CHEAT );
-static ConVar bot_mimic( "bot_mimic", "0", 0, "Bot uses usercmd of player by index." );
+extern ConVar bot_mimic;
 static ConVar bot_mimic_yaw_offset( "bot_mimic_yaw_offset", "180", 0, "Offsets the bot yaw." );
 ConVar bot_selectweaponslot( "bot_selectweaponslot", "-1", FCVAR_CHEAT, "set to weapon slot that bot should switch to." );
 ConVar bot_randomnames( "bot_randomnames", "0", FCVAR_CHEAT );
@@ -202,7 +202,7 @@ void Bot_RunAll( void )
 	{
 		CTFPlayer *pPlayer = ToTFPlayer( UTIL_PlayerByIndex( i ) );
 
-		if ( pPlayer && (pPlayer->GetFlags() & FL_FAKECLIENT) )
+		if (pPlayer && (pPlayer->GetFlags() & FL_FAKECLIENT) && pPlayer->MyNextBotPointer() == NULL)
 		{
 			Bot_Think( pPlayer );
 		}

@@ -281,6 +281,17 @@ $Project "Client (TF)"
 					}
 				}
 			}
+
+			$Folder	"Bot"
+			{
+
+				$Folder "Map Entities"
+				{
+					$file "tf\bot_npc\map_entities\c_tf_bot_hint_engineer_nest.cpp"
+					$file "tf\bot_npc\map_entities\c_tf_bot_hint_engineer_nest.h"
+				}
+
+			}
 			
 			$File	"$SRCDIR\game\shared\tf\achievements_tf.cpp"
 			$File	"$SRCDIR\game\shared\tf\baseobject_shared.cpp"
@@ -529,7 +540,15 @@ $Project "Client (TF)"
 				$File	"tf\vgui\vgui_rotation_slider.cpp"
 				$File	"tf\vgui\vgui_rotation_slider.h"
 			}
+
+			$Folder	"NextBot"
+			{
+				$File	"NextBot\C_NextBot.cpp"
+				$File	"NextBot\C_NextBot.h"
+			}
 		}
+
+
 
 		$Folder	"game_controls"
 		{

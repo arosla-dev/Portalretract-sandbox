@@ -112,6 +112,10 @@
 #include "asw_gamerules.h"
 #endif
 
+#if defined( TF_DLL )
+#include "NextBotManager.h"
+#endif
+
 #ifdef PORTAL
 #include "prop_portal_shared.h"
 #include "portal_player.h"
@@ -1223,6 +1227,8 @@ void CServerGameDLL::ServerActivate( edict_t *pEdictList, int edictCount, int cl
 #ifndef _XBOX
 	// load the Navigation Mesh for this map
 	TheNavMesh->Load();
+	TheNavMesh->OnServerActivate();
+	TheNextBots().OnMapLoaded();
 #endif
 #ifdef PORTAL
 	if ( gpGlobals->eLoadType == MapLoad_LoadGame )
@@ -1300,6 +1306,7 @@ void CServerGameDLL::GameFrame( bool simulating )
 
 
 	TheNavMesh->Update();
+	TheNextBots().Update();
 
 	{
 		VPROF( "gamestatsuploader->UpdateConnection" );

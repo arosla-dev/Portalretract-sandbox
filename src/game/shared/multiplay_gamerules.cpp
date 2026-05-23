@@ -40,6 +40,10 @@
 	#include "basemultiplayerplayer.h"
 #endif
 
+#ifdef TF_DLL
+#include "NextBotManager.h"
+#endif
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
@@ -1364,6 +1368,17 @@ CMultiplayRules::CMultiplayRules()
 				}
 
 				pPlayer->NoteSpokeVoiceCommand( szResponse );
+
+#ifdef TF_DLL
+				// let bots react to player's voice commands
+				CUtlVector< INextBot* > botVector;
+				TheNextBots().CollectAllBots(&botVector);
+
+				for (int i = 0; i < botVector.Count(); ++i)
+				{
+					botVector[i]->OnActorEmoted(pPlayer, pItem->m_iConcept);
+				}
+#endif
 			}
 			else
 			{
