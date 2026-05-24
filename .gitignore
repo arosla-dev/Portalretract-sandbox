@@ -3,3 +3,5 @@
 *.pdb
 /game/valve/SAVE
 *.mdmp
+/src/game/client/Release_VALVE
+src/lib/public/meshutils.lib

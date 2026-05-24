@@ -47,4 +47,5 @@ config.cfg
 *.tmp
 /src/.vs
 /game/bin/logs
+/game/tf_swarm
 *.mdmp

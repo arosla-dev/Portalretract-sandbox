@@ -57,6 +57,7 @@ $Project "Server (Portal)"
 			$Folder "Weapons"
 			{
 				$File "$SRCDIR\game\shared\new\weapons\weapon_physgun.cpp"
+				$File "$SRCDIR\game\shared\new\weapons\weapon_toolgun.cpp"
 				$File "new\weapons\weapon_binoculars.cpp"
 				$File "new\weapons\weapon_cguard.cpp"
 				$File "new\weapons\weapon_extinguisher.cpp"
